@@ -6,4 +6,3 @@ staticfiles/
 migrations/
 keys.py
 media/
-venv/

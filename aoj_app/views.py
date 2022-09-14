@@ -662,10 +662,14 @@ class NewIndexView(TemplateView):
         context["countries"] = Country.objects.all()
         return context
 
-class AboutStaffDetailView(ListView):
+class AboutStaffView(ListView):
     template_name = "aoj_app/demo/staff.html"
     model = Staff
 
-class AboutbehaveDetailView(TemplateView):
+class AboutbehaveView(TemplateView):
     template_name = "aoj_app/demo/about_behave.html"
     # model = WhatWeBelieve
+
+
+class AboutFundPolicyView(TemplateView):
+    template_name = "aoj_app/demo/about_fund_policy.html"

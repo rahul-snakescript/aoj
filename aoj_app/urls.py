@@ -154,12 +154,17 @@ urlpatterns = [
     
     url(
         r"^demo/about/staff/$",
-        AboutStaffDetailView.as_view(),
+        AboutStaffView.as_view(),
         name="staff",
     ),
     url(
         r"^demo/about/behave/$",
-        AboutbehaveDetailView.as_view(),
+        AboutbehaveView.as_view(),
         name="behave",
+    ),
+    url(
+        r"^demo/about/fund-policy/$",
+        AboutFundPolicyView.as_view(),
+        name="fund_policy",
     ),
 ]
