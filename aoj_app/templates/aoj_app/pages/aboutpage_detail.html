@@ -1,0 +1,18 @@
+{% extends  'aoj_app/base_template.html' %}
+{% load i18n staticfiles %}
+
+{% block template_body %}
+  <div class="page-about page-funds-policy">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 col-lg-offset-1">
+          <div class="redactor-body">
+            {% autoescape off %}
+              {{ aboutpage.body }}
+            {% endautoescape %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

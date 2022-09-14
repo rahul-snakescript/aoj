@@ -1,0 +1,49 @@
+{% extends  'aoj_app/base_template.html' %}
+{% load i18n staticfiles %}
+
+{% block template_body %}
+    <div class="page-teams page-calendar">
+        <section class="pt-header">
+            <h1 class="page-name">{% trans "Mission Team Calendar" %}<br>​2016</h1>
+        </section>
+        <section class="pt-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 col-lg-offset-1">
+                        <iframe frameborder="0" width="100%" data-inffuse-app="calendar_dev"
+                                data-inffuse-user="81356474" data-inffuse-site="617667285506280882"
+                                data-inffuse-project="fa0a5d4d-5ff8-4050-91c2-c909735bdb4d"
+                                src="https://inffuse-calendar2.appspot.com/widget.html?inffuse-platform=weebly&amp;inffuse-user=81356474&amp;inffuse-site=617667285506280882&amp;inffuse-project=fa0a5d4d-5ff8-4050-91c2-c909735bdb4d"
+                                style="height: 598px;">
+                        </iframe>
+
+                        <hr>
+                        <p class="paragraph">Fri 22nd Jan 2016 - Sat 30th Jan 2016</p>
+                        <p class="paragraph"><strong>{% trans "Mission Trip" %}: Reno Team</strong></p>
+                        <hr>
+                        <p class="paragraph">Sat 27th Feb 2016 - Sat 5th Mar 2016</p>
+                        <p class="paragraph"><strong>{% trans "Mission Trip" %}: Newfoundland</strong></p>
+                        <hr>
+                        <p class="paragraph">Sat 2nd Apr 2016 - Sun 10th Apr 2016</p>
+                        <p class="paragraph"><strong>​{% trans "Mission Trip" %}: Bonavista Baptist, Calgary</strong></p>
+                        <hr>
+                        <p class="paragraph">Fri 6th May 2016 - Fri 13th May 2016</p>
+                        <p class="paragraph"><strong>{% trans "Mission Trip" %}: Dedication Team</strong></p>
+                        <hr>
+                        <p class="paragraph">Sat 18th Jun 2016 - Sat 25th Jun 2016</p>
+                        <p class="paragraph"><strong>{% trans "Mission Trip" %}: The People's Church, NB</strong></p>
+                        <hr>
+                        <p class="paragraph">Sat 2nd Jul 2016 - Sat 9th Jul 2016</p>
+                        <p class="paragraph"><strong>{% trans "Mission Trip" %}: Port Perry Baptist</strong></p>
+                        <hr>
+                        <p class="paragraph">Wed 20th Jul 2016 - Thu 28th Jul 2016</p>
+                        <p class="paragraph"><strong>{% trans "Mission Trip" %}: Zoya Ministries Inc.</strong></p>
+                        <hr>
+                        <p class="paragraph">Sat 1st Oct 2016 - Sun 9th Oct 2016</p>
+                        <p class="paragraph"><strong>{% trans "Mission Trip" %}: Calgary</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}

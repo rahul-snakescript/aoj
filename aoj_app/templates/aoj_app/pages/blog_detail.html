@@ -1,0 +1,30 @@
+{% extends  'aoj_app/base_template.html' %}
+{% load staticfiles %}
+
+{% block template_body %}
+    <div class="page-blog-detail">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <h2>{{ object.title }}</h2>
+                    <p class="text-muted">{{ object.created_date|date:"SHORT_DATE_FORMAT" }}</p>
+                    <div class="blog-wrapper">
+                        {% autoescape off %}
+                            {{ object.body }}
+                        {% endautoescape %}
+                        <div class="clearfix"></div>
+                        <div>
+                            <div class="fb-like"
+                                 data-href="http://www.armsofjesus.org{% url 'blog_detail' object.slug %}"
+                                 data-layout="button_count" data-action="like" data-size="small" data-show-faces="true"
+                                 data-share="false"></div>
+                            <a class="twitter-share-button"
+                               href="https://twitter.com/intent/tweet?text={{ object.title }} - The Arms of Jesus Children's Mission ">
+                                Tweet</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

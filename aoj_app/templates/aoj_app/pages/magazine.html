@@ -1,0 +1,31 @@
+{% extends  'aoj_app/base_template.html' %}
+{% load staticfiles i18n %}
+
+{% block template_body %}
+    <div class="page-magazine">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <h1 class="text-center">{% trans "Magazines" %}</h1>
+                    <hr>
+                    <div class="row">
+                        {% for magazine in object_list %}
+                            <div class="col-lg-2 col-md-3 col-sm-3 col-xs-4">
+                                <div class="magazine-box">
+                                    {% if magazine.iframe_link %}
+                                        <a href="{% url 'magazine_detail' magazine.slug %}">
+                                            <img class="img-responsive" src="{{ magazine.image.url }}" alt="">
+                                        </a>
+                                    {% else %}
+                                        <img class="img-responsive" src="{{ magazine.image.url }}" alt="">
+                                    {% endif %}
+                                    <p class="magazine-title">{{ magazine.title }}</p>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

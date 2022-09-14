@@ -1,0 +1,113 @@
+{% extends  'aoj_app/base_template.html' %}
+{% load staticfiles i18n %}
+
+{% block template_body %}
+    <div class="page-children-detail">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <h2 class="cd-name">{{ object.name }}</h2>
+                    <div class="c-born">
+                        <p>{% trans "Born" %}:<br> {{ object.born }}</p>
+                    </div>
+                    <div class="c-location">
+                        <p>{% trans "Location" %}:<br> {{ object.location }}, {{ object.country }}</p>
+                    </div>
+                    <div class="clearfix"></div>
+                    {% if object.image1 %}
+                        <a class="cd-image-link-1 fancy-image" rel="child" href="{{ object.image1.url }}">
+                            <img class="img-responsive img-cd" src="{{ object.image1.url }}" alt=""></a>
+                    {% endif %}
+                    {% if object.image2 %}
+                        <a class="cd-image-link-2 fancy-image" rel="child" href="{{ object.image2.url }}">
+                            <img class="img-responsive img-cd" src="{{ object.image2.url }}" alt=""></a>
+                    {% endif %}
+                    <p class="cd-description">{{ object.description }}</p>
+
+                    <div class="clearfix"></div>
+                    <h4 class="text-center">
+                        {% blocktrans with child_names=object.get_short_name|upper %}WOULD YOU BE THE ANGEL IN {{ child_names }}’S LIFE?{% endblocktrans %}
+                    </h4>
+                    <hr>
+                    <h3>{% trans "Sponsorship Request Form" %}</h3>
+                    <h4 class="cd-details-header">{% trans "Child Details" %}</h4>
+                    <p class="cd-details">{% trans "Name" %}: {{ object.name }}</p>
+                    <p class="cd-details">{% trans "City" %}: {{ object.location }}</p>
+                    <p class="cd-details">{% trans "Country" %}: {{ object.country }}</p>
+                    <h4 class="cd-details-header">{% trans "Your Details" %}</h4>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-wrapper">
+                                <form id="form-child-sponsorship" action="/api/send_sponsorship_form/" method="POST">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="children_name" value="{{ object.name }}">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="cbfFname">{% trans "First Name" %}</label>
+                                                <input type="text" class="form-control" id="cbfFname" name="first_name">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="cbfLname">{% trans "Last Name" %}</label>
+                                                <input type="text" class="form-control" id="cbfLname" name="last_name">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cbfAddress">{% trans "Address" %}</label>
+                                        <input type="text" class="form-control" id="cbfAddress" name="address">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="cbfCity">{% trans "City" %}</label>
+                                                <input type="text" class="form-control" id="cbfCity" name="city">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="cbfState">{% trans "State" %}</label>
+                                                <input type="text" class="form-control" id="cbfState" name="state">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="cbfZip">{% trans "Zip Code" %}</label>
+                                                <input type="text" class="form-control" id="cbfZip" name="zip">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="cbfCountry">{% trans "Country" %}</label>
+                                                <input type="text" class="form-control" id="cbfCountry" name="country">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cbfEmail">Email</label>
+                                        <input type="email" class="form-control" id="cbfEmail" name="email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cbfPhone">{% trans "Phone" %}</label>
+                                        <input type="text" class="form-control" id="cbfPhone" name="phone">
+                                    </div>
+                                    <button class="btn btn-aoj" type="submit">{% trans "SUBMIT" %}</button>
+                                </form>
+                                <div class="f-message f-success">
+                                    <h3>{% trans "Thank you. Your information has been submitted." %}</h3>
+                                </div>
+                                <div class="f-message f-error">
+                                    <h3>{% trans "Something went wrong, try refreshing and submitting the form again." %}</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

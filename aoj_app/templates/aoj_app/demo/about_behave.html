@@ -1,0 +1,277 @@
+{% load staticfiles i18n %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>behave</title> 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- css link -->
+  <link rel="stylesheet" href="{% static 'demo/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'demo/css/custom.css' %}">
+  <link rel="stylesheet" href="{% static 'demo/css/reponsive_css.css' %}">
+  <link rel="stylesheet" href="{% static 'demo/css/bootstrap.css' %}">
+
+  <link rel="stylesheet" href="{% static 'demo/css/slick.css' %}">
+  <link rel="stylesheet" href="{% static 'demo/css/slick-theme.css' %}">
+
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+  <!-- fav link -->
+  <link rel="icon" type="image/x-icon" href="{% static 'image/fav.png' %}">
+</head>
+
+<body>
+
+  <!-- banner start here -->
+  <section class="banner policy_banner">
+    <!-- header start here -->
+    <header>
+      <div class="header">
+        <div class="children_header">
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="{% url 'newindex' %}"><img src="{% static 'demo/images/logo.png' %}"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'newindex' %}">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Children</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Mission</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Teams</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Catalogue</a>
+                  </li>
+                  <li class="nav-item">
+                  <div class="dropdown">
+                    <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                     About Us
+                    </a>
+
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                      <li><a class="dropdown-item" href="{% url 'behave' %}">About Behave</a></li>
+                      <li><a class="dropdown-item" href="#">About Fund Policy</a></li>
+                      <li><a class="dropdown-item" href="#">About Histroy</a></li>
+                      <li><a class="dropdown-item" href="#">About Mission</a></li>
+                      <li><a class="dropdown-item" href="{% url 'staff' %}">About Staff</a></li>
+                    </ul>
+                  </div>
+                </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                  </li>
+                </ul>
+                <div class="header_btn">
+                  <a href="#" class="donate_btn">Donate</a>
+                  <a href="#" class="sponsor_btn">Sponsor</a>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+  <!-- header close here -->
+    <div class="container children_arm">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="banner_outer"> 
+            <h1>ABOUT US</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- banner close here -->
+
+  <!-- behave sec start here -->
+  <div class="behave">
+    <div class="container children_arm">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="behave_outer">
+            <h2>What We Believe</h2>
+            <ul>
+              <li>The Bible to be the complete Word of God; that the sixty-six books, as originally written, comprising the Old and 
+                New Testament were inspired by the Spirit of God and therefore are entirely free from error; that the Bible is the final 
+                authority in all matters of faith and practice and the true basis of Chris</li>
+                <li>That there is One God, Creator of all, Holy Sovereign, Eternal existing in the three equal persons, the Father, the Son, 
+                  and the Holy Spirit.</li>
+                <li>In the absolute and essential deity of Jesus Christ, in His eternal existence in pre incarnate glory, in His virgin birth, 
+                  sinless life, substitutionary death, bodily resurrection, triumphant resurrection, mediatory ministry and personal return.</li>
+                <li>In the absolute deity and personality of the Holy Spirit who convinces of sin, or righteousness and judgement; who 
+                  regenerates, sanctifies, illuminates and comforts those who believe in Jesus Christ.</li>
+                <li>That Man was divinely created in the image of God; that he sinned, becoming guilty before God, resulting in total 
+                  depravity, thereby incurring physical and spiritual death.</li>
+                <li>That Salvation is by the sovereign grace of God; that by the appointment of the father, Christ voluntarily suffered a 
+                  vicarious, expiratory and propitiatory death; that justification is by faith alone in the all-sufficient sacrifice and 
+                  resurrection of the Lord Jesus Christ.</li>
+                <li>In the Personal, Bodily and Glorious Return of the Lord Jesus Christ; in the Bodily Resurrection of the just and the 
+                  unjust; in the blessedness of the redeemed and in the judgement and conscious punishment of the wicked.</li>
+                  <li>That it is the responsibility of the Local Church to continue the task of World Evangelization and the responsibility of 
+                    Each Believer to give themselves to the fulfilling the Great Commission.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- behave sec close here -->
+
+  <!-- member start here -->
+  <div class="mamber mamber_misson">
+    <div class="container children_arm">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="mamber_outer">
+            <div class="logo_mamber">
+              <img src="{% static 'demo/images/logo_mamber.png' %}" alt="">
+            </div>
+            <p>Certification with CCCC is a powerful endorsement of a charity’s integrity. It demonstrates that the charity has been carefully assessed<br>
+              by CCCC’s rigorous certification process and found to be in compliance with CCCC’s Standards. Donors can give confidently and<br>
+              generously when they see CCCC’s Seal of Accountability on a charity’s website.
+              </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- member close here -->
+
+  <!-- footer start here -->
+  <div class="footer">
+    <div class="container children_arm">
+      <div class="row footer_row1">
+        <div class="col-md-5">
+          <div class="footer_item1">
+            <h6>Contact Us</h6>
+
+            <p class="number_footer">Phone: (905) 492-5007</p>
+            <p class="email_footer">Email: aojchildmis@rogers.com</p>
+
+            <p class="address_hadding">Mailing Address:</p>
+            <p class="2R2">P.O.Box 10 Pickering,Ontario L1V 2R2 Canda</p>
+
+            <p class="office_hadding">Office Address:</p>
+            <p class="office_address">1730 McPherson Ct., Unit 19 Pickering,Ontario<br>L1w 3E6 Canada</p>
+            <div class="footer_btm">
+              <a href="#">Get Direction</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-7">
+          <div class="footer_right_side">
+            <div class="right_side_outer">
+              <div class="footer_logo">
+                <img src="{% static 'demo/images/footer-logo.png' %}" alt="">
+              </div>
+              <div class="social_ic">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+              </div>
+            </div>
+            <div class="footer_manu">
+              <div class="footer_manu_item1">
+                <h5>About Us</h5>
+
+                <ul>
+                  <li><a href="#">About AOJ</a></li>
+                  <li><a href="#">Mission Statement</a></li>
+                  <li><a href="#">History</a></li>
+                </ul>
+              </div>
+              <div class="footer_manu_item1">
+                <h5>Donate</h5>
+
+                <ul>
+                  <li><a href="#">Catalogue</a></li>
+                  <li><a href="#">Donations</a></li> 
+                </ul>
+              </div>
+              <div class="footer_manu_item1">
+                <h5>Get Involved</h5>
+
+                <ul>
+                  <li><a href="#">Catalogue</a></li>
+                  <li><a href="#">Donations</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row copyright_txt">
+        <div class="col-md-12">
+          <p>Copyright © 2021 Arms of Jesus Children's Mission Inc. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- footer close here -->
+
+  <!-- footer bottom start here -->
+  
+  <!-- footer bottom close here -->
+
+<script src="{% static 'demo/js/jquery.min.js' %}"></script>
+  <!-- js link -->
+  <script src="{% static 'demo/js/slick.js' %}"></script>
+  <script src="{% static 'demo/js/slick.min.js' %}"></script>
+  <script src="{% static 'demo/js/popper.min.js' %}"></script>
+  <script src="{% static 'demo/js/bootstrap.min.js' %}"></script>
+  <script>
+
+
+  $('.autoplay').slick({
+  dots: true,
+  infinite: false,
+  speed: 300,
+  slidesToShow: 3,
+  slidesToScroll: 3,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+});
+</script>
+</body>
+
+</html>

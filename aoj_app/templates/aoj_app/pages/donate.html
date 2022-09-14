@@ -1,0 +1,151 @@
+{% extends  'aoj_app/base_template.html' %}
+{% load staticfiles i18n %}
+
+{% block template_body %}
+  <div class="page-donate">
+    <section class="mad">
+      <h1>{% trans "Make a Donation" %}</h1>
+    </section>
+    <section class="pd-body">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-10 col-lg-offset-1">
+            <h4 class="text-center">
+              {% trans "To make a donation and receive a USA Charitable Donation Tax Receipt in USA Dollars, please" %}
+              <a href="https://www.gifttool.com/donations/Donate?ID=2195&AID=3268">{% trans "click here" %}.</a>
+            </h4>
+            <br>
+            <h4 class="text-center">​
+              {% blocktrans trimmed %}
+                To make a donation and receive a Canadian<br> Charitable Donation Tax
+                Receipt in Canadian Dollars, please use the form below.</h4>
+              {% endblocktrans %}
+            <h4>{% trans "Donor Information" %}</h4>
+            <div class="row">
+              <div class="col-sm-6">
+                <form action="https://checkout.e-xact.com/payment" method="POST" id="form-donate">
+                  {% csrf_token %}
+                  <div class="form-group">
+                    <label for="cbfEmail">{% trans "Email address" %}</label>
+                    <input type="email" class="form-control" id="cbfEmail" name="x_email"
+                           required="required" value="{{ latest_cr.email }}">
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label for="cbfFname">{% trans "First Name" %}</label>
+                        <input type="text" class="form-control" id="cbfFname"
+                               required="required"
+                               name="x_first_name" value="{{ latest_cr.first_name }}">
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label for="cbfLname">{% trans "Last Name" %}</label>
+                        <input type="text" class="form-control" id="cbfLname"
+                               required="required"
+                               name="x_last_name" value="{{ latest_cr.last_name }}">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="cbfAddress">{% trans "Address" %}</label>
+                    <input type="text" class="form-control" id="cbfAddress" name="x_address"
+                           required="required" value="{{ latest_cr.address }}">
+                  </div>
+                  <div class="form-group">
+                    <label for="cbfCity">{% trans "City" %}</label>
+                    <input type="text" class="form-control" id="cbfCity" name="x_city"
+                           required="required" value="{{ latest_cr.city }}">
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-8">
+                      <div class="form-group">
+                        <label for="cbfState">{% trans "State" %}</label>
+                        <input type="text" class="form-control" id="cbfState" name="x_state"
+                               required="required" value="{{ latest_cr.state }}">
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label for="cbfZip">{% trans "Zip Code" %}</label>
+                        <input type="text" class="form-control" id="cbfZip" name="x_zip"
+                               required="required" value="{{ latest_cr.zip_code }}">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="cbfCountry">{% trans "Country" %}</label>
+                    <input type="text" class="form-control" id="cbfCountry" name="x_country"
+                           required="required" value="{{ latest_cr.country }}">
+                  </div>
+                  <div class="form-group">
+                    <label for="cbfPhone">{% trans "Phone Number" %}</label>
+                    <input type="text" class="form-control" id="cbfPhone" name="x_phone"
+                           required="required" value="{{ latest_cr.phone }}">
+                  </div>
+                  <div class="form-group">
+                    <label for="cbfAmount">{% trans "Cash Donation" %}</label>
+                    <select class="form-control" id="cbfAmount" required="required">
+                      <option value="25.00">$25</option>
+                      <option value="50.00">$50</option>
+                      <option value="100.00">$100</option>
+                      <option value="250.00">$250</option>
+                      <option value="350.00">$350</option>
+                      <option value="500.00">$500</option>
+                      <option value="750.00">$750</option>
+                      <option value="1000.00">$1000</option>
+                      <option value="1250.00">$1250</option>
+                      <option value="1500.00">$1500</option>
+                      <option value="1700.00">$1700</option>
+                      <option value="2000.00">$2000</option>
+                      <option value="5000.00">$5000</option>
+                      <option value="10000.00">$10000</option>
+                      <option value="40.00">$40 {% trans "Sponsor a Child for one month" %}</option>
+                      <option value="480.00">$480 {% trans "Sponsor a Child for one year" %}</option>
+                      <option value="other">{% trans "Other Amount" %}</option>
+                    </select>
+                  </div>
+                  <div class="form-group oa">
+                    <label for="cbfOA">{% trans "Amount" %}:</label>
+                    <input type="text" class="form-control" id="cbfOA">
+                  </div>
+                  <div class="form-group">
+                    <label for="cbfDescr">{% trans "Extra Details (e.g. name of a sponsored child)" %}</label>
+                    <textarea name="x_description" class="form-control" id="cbfDescr" cols="30"
+                              rows="10"></textarea>
+                  </div>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" name="save_address"> {% trans "Save address for later use" %}
+                    </label>
+                  </div>
+
+                  <input type="hidden" name="x_login" value="{{ x_login }}">
+                  <input type="hidden" name="x_fp_sequence" value="{{ x_fp_sequence }}">
+                  <input type="hidden" name="x_fp_timestamp" value="">
+                  <input type="hidden" name="x_amount" value="{{ x_amount }}">
+                  <input type="hidden" name="x_currency_code" value="{{ x_currency_code }}">
+                  <input type="hidden" name="x_fp_hash" value="">
+                  <input type="hidden" name="x_show_form" value="{{ x_show_form }}">
+                  <input type="hidden" name="x_email_customer" value="{{ x_email_customer }}">
+
+                  <input type="submit" class="btn btn-aoj" value="SUBMIT">
+                </form>
+              </div>
+              <div class="col-sm-6 text-center">
+                <img class="img-responsive" style="margin: 0 auto 30px;"
+                     src="{% static 'img/donate-i1.jpg' %}" alt="">
+                <img class="img-responsive" style="margin: 0 auto;"
+                     src="{% static 'img/donate-i2.png' %}" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+{% endblock %}

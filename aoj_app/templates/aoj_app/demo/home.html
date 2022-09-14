@@ -1,0 +1,417 @@
+{% load staticfiles i18n %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Arm Of God</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- css link -->
+  <link rel="stylesheet" href="{% static 'demo/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'demo/css/custom.css' %}">
+  <link rel="stylesheet" href="{% static 'demo/css/bootstrap.css' %}">
+
+  <link rel="stylesheet" href="{% static 'demo/css/slick.css' %}">
+  <link rel="stylesheet" href="{% static 'demo/css/slick-theme.css' %}">
+
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+  <!-- fav link -->
+  <link rel="icon" type="image/x-icon" href="{% static 'demo/image/fav.png' %}">
+</head>
+
+<body>
+
+  <!-- banner start here -->
+  <section class="banner">
+    <!-- header start here -->
+    <header>
+      <div class="header">
+        <div class="children_header">
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="{% url 'newindex' %}"><img src="{% static 'demo/images/logo.png' %}"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'newindex' %}">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Children</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Mission</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Teams</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Catalogue</a>
+                  </li>
+                  <li class="nav-item">
+                  <div class="dropdown">
+                    <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                     About Us
+                    </a>
+
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                      <li><a class="dropdown-item" href="{% url 'behave' %}">About Behave</a></li>
+                      <li><a class="dropdown-item" href="#">About Fund Policy</a></li>
+                      <li><a class="dropdown-item" href="#">About Histroy</a></li>
+                      <li><a class="dropdown-item" href="#">About Mission</a></li>
+                      <li><a class="dropdown-item" href="{% url 'staff' %}">About Staff</a></li>
+                    </ul>
+                  </div>
+                </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                  </li>
+                </ul>
+                <div class="header_btn">
+                  <a href="#" class="donate_btn">Donate</a>
+                  <a href="#" class="sponsor_btn">Sponsor</a>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+  <!-- header close here -->
+    <div class="container children_arm">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="banner_outer">
+            <h5><img src="{% static 'demo/images/symbole.png' %}" alt=""></h5>
+            <h1>And He took the children in His arms, put His Hands on them and blessed them</h1>
+            <h6>Mark 10:16</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- banner close here -->
+
+  <!-- about start here -->
+  <section>
+    <div class="about">
+      <div class=" about_outer">
+        <div class="about_item">
+          <div class="about-left-sec">
+            <img src="{% static 'demo/images/about.jpg' %}" alt="">
+          </div>
+        </div>
+        <div class=" about_item about_item1">
+          <div class="about_right_sec">
+            <h4>ABOUT</h4>
+            <h2>THE ARMS OF JESUS CHILDREN'S MISSION</h2>
+            <p>We recognize the needs of children around the world and the fact that 
+              God loves children and that they had a special place in the ministry of 
+              the Lord Jesus, The Arms of Jesus Children's Mission Inc. is a Bible 
+              based, evangelical ministry committed under God to respond to the 
+              needs of children, be they physical, emotional, material, and/or spiritual. 
+              In responding to the cry for help from local churches and groups of 
+              believers in developing and/or poor countries in their efforts to help and 
+              minister to children. As well as responding to the desire of Christians in 
+              North America and other countries to reach out and help children of the 
+              world. We recognize that many people have a real burden, a need to 
+              reach out to, and help children but do not know where to start, or what 
+              to do. The Arms of Jesus Children's Mission will facilitate such a need.​</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- about close here -->
+
+  <!-- vision start here -->
+  <section>
+    <div class="vision">
+      <div class="container children_arm">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="vision_outer">
+              <h2>OUR VISION</h2>
+              <p>The Arms of Jesus Children’s Mission will develop the SPIRITUAL, EMOTIONAL, EDUCATIONAL and PHYSICAL 
+                areas in each girl and boy, with the objective to form Christian leaders so that they can become agents of positive change
+                in their family, community and country.</p>
+                <div class="vision_btn">
+                  <a href="#">Learn More</a>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>  
+    </div>
+  </section>
+  <!-- vision close here -->
+
+  <!-- news start here -->
+  <div class="news_outer">
+    <div class="container children_arm">
+      <div class="hadding_lastestNews">
+        <h2>LATEST NEWS</h2>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+          standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled</p>
+      </div>
+      <div class="row lastestNews_outer">
+        <div class="col-md-4">
+          <div class="news_item1">
+            <div class="latest_img">
+              <img src="{% static 'demo/images/news_img1.jpg' %}" alt="">
+            </div>
+            <div class="donors_hadding">
+              <h4>Thanks to Donors</h4>
+              <p>Lorem Ipsum is simply dummy text of the
+                printing and typesetting industry. Lorem
+                Ipsum has been the industry's</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="news_item1">
+            <div class="latest_img">
+              <img src="{% static 'demo/images/news_img2.jpg' %}" alt="">
+            </div>
+            <div class="donors_hadding">
+              <h4>School Dedication</h4>
+              <p>Lorem Ipsum is simply dummy text of the
+                printing and typesetting industry. Lorem
+                Ipsum has been the industry's</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="news_item1">
+            <div class="latest_img">
+              <img src="{% static 'demo/images/news_img3.jpg' %}" alt="">
+            </div>
+            <div class="donors_hadding">
+              <h4>Urgent Prayer Request</h4>
+              <p>Lorem Ipsum is simply dummy text of the
+                printing and typesetting industry. Lorem
+                Ipsum has been the industry's</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="LatestNews_btn">
+        <a href="#">Read More</a>
+      </div>
+    </div>
+  </div>
+  <!-- news close here -->
+
+  <!-- magazines start here -->
+  <div class="magazines">
+    <div class="container magazines_arm">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>LATEST MAGAZINES</h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="slider autoplay slider_autoplay">
+            <div class="our_magzine_product">
+              <img src="{% static 'demo/images/book1.jpg' %}" alt="prdct1">
+              <h3>July 2021 Bulletin</h3>
+            </div>
+            <div class="our_magzine_product">
+              <img src="{% static 'demo/images/book1.jpg' %}" alt="prdct2">
+              <h3>March 2021 Bulletin</h3>
+            </div>
+            <div class="our_magzine_product">
+              <img src="{% static 'demo/images/book1.jpg' %}" alt="prdct3">
+              <h3>January 2021 Bulletin</h3>
+            </div>
+            <div class="our_magzine_product">
+              <img src="{% static 'demo/images/book1.jpg' %}" alt="prdct4">
+              <h3>July 2021 Bulletin</h3>
+            </div>
+            <div class="our_magzine_product">
+              <img src="{% static 'demo/images/book1.jpg' %}" alt="prdct5">
+              <h3>March 2021 Bulletin</h3>
+            </div>
+          </div>
+          <div class="magazines_btn">
+            <a href="#">Go to Magazines</a>
+          </div>
+        </div>
+      </div>
+
+
+
+
+    </div>
+  </div>
+  <!-- magazines close here -->
+
+  <!-- video start here -->
+  <div class="video">
+    <div class="container children_arm">
+      <div class="row">
+        <div class="col-md-12 select_video">
+          <select name="cars" id="cars">
+            <option value="volvo">Guatemala Videos</option>
+            <option value="saab">Guatemala Videos1</option>
+            <option value="mercedes">Guatemala Videos2</option>
+            <option value="audi">Guatemala Videos3</option>
+          </select>
+          <div class="video_outer">
+            <iframe class="video-iframe" src="https://www.youtube.com/embed/bMS9Qp5GhsI" frameborder="0" allowfullscreen=""></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- video close here -->
+
+  <!-- member start here -->
+  <div class="mamber">
+    <div class="container children_arm">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="mamber_outer">
+            <div class="logo_mamber">
+              <img src="{% static 'demo/images/logo_mamber.png' %}" alt="">
+            </div>
+            <p>Certification with CCCC is a powerful endorsement of a charity’s integrity. It demonstrates that the charity has been carefully assessed
+              by CCCC’s rigorous certification process and found to be in compliance with CCCC’s Standards. Donors can give confidently and
+              generously when they see CCCC’s Seal of Accountability on a charity’s website.
+              </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- member close here -->
+
+  <!-- footer start here -->
+  <div class="footer">
+    <div class="container children_arm">
+      <div class="row footer_row1">
+        <div class="col-md-5">
+          <div class="footer_item1">
+            <h6>Contact Us</h6>
+
+            <p class="number_footer">Phone: (905) 492-5007</p>
+            <p class="email_footer">Email: aojchildmis@rogers.com</p>
+
+            <p class="address_hadding">Mailing Address:</p>
+            <p class="2R2">P.O.Box 10 Pickering,Ontario L1V 2R2 Canda</p>
+
+            <p class="office_hadding">Office Address:</p>
+            <p class="office_address">1730 McPherson Ct., Unit 19 Pickering,Ontario<br>L1w 3E6 Canada</p>
+            <div class="footer_btm">
+              <a href="#">Get Direction</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-7">
+          <div class="footer_right_side">
+            <div class="right_side_outer">
+              <div class="footer_logo">
+                <img src="{% static 'demo/images/footer-logo.png' %}" alt="footer-logo">
+              </div>
+              <div class="social_ic">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+              </div>
+            </div>
+            <div class="footer_manu">
+              <div class="footer_manu_item1">
+                <h5>About Us</h5>
+
+                <ul>
+                  <li><a href="#">About AOJ</a></li>
+                  <li><a href="#">Mission Statement</a></li>
+                  <li><a href="#">History</a></li>
+                </ul>
+              </div>
+              <div class="footer_manu_item1">
+                <h5>Donate</h5>
+
+                <ul>
+                  <li><a href="#">Catalogue</a></li>
+                  <li><a href="#">Donations</a></li> 
+                </ul>
+              </div>
+              <div class="footer_manu_item1">
+                <h5>Get Involved</h5>
+
+                <ul>
+                  <li><a href="#">Catalogue</a></li>
+                  <li><a href="#">Donations</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row copyright_txt">
+        <div class="col-md-12">
+          <p>Copyright © 2021 Arms of Jesus Children's Mission Inc. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- footer close here -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script src="{% static 'demo/js/jquery.min.js' %}"></script>
+  <!-- js link -->
+  <script src="{% static 'demo/js/slick.js' %}"></script>
+  <script src="{% static 'demo/js/slick.min.js' %}"></script>
+  <script src="{% static 'demo/js/popper.min.js' %}"></script>
+  <script src="{% static 'demo/js/bootstrap.min.js' %}"></script>
+  <script>
+
+
+  $('.autoplay').slick({
+  dots: true,
+  infinite: false,
+  speed: 300,
+  slidesToShow: 3,
+  slidesToScroll: 3,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: true
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+});
+</script>
+</body>
+
+</html>

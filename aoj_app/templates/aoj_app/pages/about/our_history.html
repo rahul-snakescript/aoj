@@ -1,0 +1,95 @@
+{% extends  'aoj_app/base_template.html' %}
+{% load i18n staticfiles %}
+
+{% block template_body %}
+    <div class="page-about page-our-history">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <h1 class="pa-header">{% trans "Our History" %}</h1>
+                    <p class="paragraph">
+                        {% blocktrans trimmed %}
+                            On Sunday March l7th, 1990 a team of adults from Bayfair Baptist Church in Pickering,
+                            Ontario,
+                            shared their experiences with the entire congregation on their return from a ministry
+                            project in
+                            Jamaica, a project with orphan children. It was obvious that they were deeply moved and
+                            challenged by the experience and this in the words of one who said:
+                            "Pastor, we can't stop! - we must go on, we must do more to help children. God has blessed
+                            us,
+                            we must do more."
+                        {% endblocktrans %}
+                    </p>
+                    <br>
+                    <p class="paragraph">
+                        {% blocktrans trimmed %}
+                            It had been my privilege to lead the team, the third I had led to the island of Jamaica and
+                            I
+                            knew exactly the extent of the emotion being expressed and the deep spiritual burden that
+                            was
+                            gripping the hearts and lives of my people. They were beginning to feel what I had felt for
+                            years.
+                        {% endblocktrans %}
+                    </p>
+                    <br>
+                    <p class="paragraph">
+                        {% blocktrans trimmed %}
+                            Children are the primary victims of disaster and poverty. They are the most vulnerable to
+                            the
+                            effects of evil in society. Yet do they not have the right to adequate nutrition? Clean
+                            water?
+                            Proper health care? Do they not have the right to hear the gospel and to experience the
+                            Gospel?
+                            Do they not have the right to protection against discrimination, abuse, violence, and
+                            neglect?
+                            My answer would be 'Yes, Yes!' and therefore something had to be done.
+                        {% endblocktrans %}
+                    </p>
+                    <br>
+                    <p class="paragraph">
+                        {% blocktrans trimmed %}
+                            After a visit to Africa where I confronted children who were both victims of AIDS, in that,
+                            they
+                            had been orphaned because of the disease, and who suffered with AIDS, children neglected and
+                            rejected. My heart was further moved as the Holy Spirit began to deal with me, so came the
+                            vision of a mission that would reach out to the forgotten children of the world. After much
+                            prayer and the seeking of counsel from respected Christian leaders, and at the direct
+                            leading of
+                            the Holy Spirit, the Mission was established with a simple goal, to bring children into
+                            safety,
+                            security, and love of the Arms of Jesus. God did amazing things to see the Mission
+                            registered
+                            and approved by the Government of Canada, and to see its ministry expand quickly. Of course,
+                            a
+                            Board of Directors was appointed, legal counsel taken, and the work began in October 1990
+                            and
+                            has developed steadily since.
+                        {% endblocktrans %}
+                    </p>
+                    <br>
+                    <p class="paragraph">
+                        {% blocktrans trimmed %}
+                        In 1996 we continued to experience tremendous growth not only in Canada but in the United States
+                        of America and of course to be able to serve and service our donor base, it was necessary for us
+                        to register in the United States as a Mission, that is a non-profit organization reaching out to
+                        help needy children,and to seek registration with the inland revenue service so that we could
+                        issue tax receipts. We were delighted when in early 1997 we were able to secure both and so The
+                        Arms of Jesus Children's Mission is not only registered in Canada but is now registered in the
+                        United States of America with our base being in Buffalo, New York. Not only that we were able to
+                        establish a Board of reference, key people from different states who would give credibility to
+                        our various projects throughout the world and so The Arms of Jesus Children's Mission continues
+                        to grow.
+                        {% endblocktrans %}
+                    </p>
+                    <br>
+                    <p class="paragraph">Dr. Sam Martin</p>
+                    <br>
+                    <p class="paragraph">{% trans "Founder" %}</p>
+                    <iframe height="500" width="100%"
+                            src="http://www.scribd.com/embeds/315828293/content?access_key=key-zuGjgdTF6zRm1iRvr5BS&amp;jsapi=true&amp;xdm_e=http://www.armsofjesus.org&amp;xdm_c=default0&amp;xdm_p=1"
+                            id="" frameborder="0" style="border: 0px; margin-top: 30px;"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

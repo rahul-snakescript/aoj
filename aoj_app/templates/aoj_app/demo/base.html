@@ -1,0 +1,99 @@
+{% load staticfiles i18n %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Arm Of God</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- css link -->
+  <link rel="stylesheet" href="{% static 'demo/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'demo/css/custom.css' %}">
+  <link rel="stylesheet" href="{% static 'demo/css/bootstrap.css' %}">
+
+  <link rel="stylesheet" href="{% static 'demo/css/slick.css' %}">
+  <link rel="stylesheet" href="{% static 'demo/css/slick-theme.css' %}">
+
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+  <!-- fav link -->
+  <link rel="icon" type="image/x-icon" href="{% static 'demo/image/fav.png' %}">
+</head>
+
+<body>
+
+  <!-- banner start here -->
+  <section class="banner">
+    <!-- header start here -->
+    <header>
+      <div class="header">
+        <div class="children_header">
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="home.html"><img src="{% static 'demo/images/logo.png' %}"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Children</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Mission</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Teams</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Catalogue</a>
+                  </li>
+                  <li class="nav-item">
+                  <div class="dropdown">
+                    <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                     About Us
+                    </a>
+
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                      <li><a class="dropdown-item" href="{% url 'behave' %}">About Behave</a></li>
+                      <li><a class="dropdown-item" href="{%  url 'staff' %} ">About Fund Policy</a></li>
+                      <li><a class="dropdown-item" href="about_histroy.html">About Histroy</a></li>
+                      <li><a class="dropdown-item" href="about_mission.html">About Mission</a></li>
+                      <li><a class="dropdown-item" href="{% url 'staff' %}">About Staff</a></li>
+                    </ul>
+                  </div>
+                </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                  </li>
+                </ul>
+                <div class="header_btn">
+                  <a href="#" class="donate_btn">Donate</a>
+                  <a href="#" class="sponsor_btn">Sponsor</a>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+  <!-- header close here -->
+    <div class="container children_arm">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="banner_outer">
+            <h5><img src="{% static 'demo/images/symbole.png' %}" alt=""></h5>
+            <h1>And He took the children in His arms, put His Hands on them and blessed them</h1>
+            <h6>Mark 10:16</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- banner close here -->

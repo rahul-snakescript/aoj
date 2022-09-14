@@ -1,0 +1,59 @@
+{% extends  'aoj_app/base_template.html' %}
+{% load staticfiles i18n %}
+
+{% block template_body %}
+    <div class="page-teams page-official-dedication">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <h1 class="text-center">{% trans "School Official Dedication" %}</h1>
+                    <div class="text-center">
+                        <div id="slides">
+                            <img src="{% static 'img/school_official_dedication/15437_orig.png' %}" alt="">
+                            <img src="{% static 'img/school_official_dedication/img-0085-fotor_orig.jpg' %}" alt="">
+                            <img src="{% static 'img/school_official_dedication/img-0099-fotor_orig.jpg' %}" alt="">
+                            <img src="{% static 'img/school_official_dedication/img-0122-fotor_orig.jpg' %}" alt="">
+                            <img src="{% static 'img/school_official_dedication/img-0127-fotor_orig.jpg' %}" alt="">
+                            <img src="{% static 'img/school_official_dedication/img-0141-fotor_orig.jpg' %}" alt="">
+                            <img src="{% static 'img/school_official_dedication/img-0157-fotor_orig.jpg' %}" alt="">
+                            <img src="{% static 'img/school_official_dedication/img-0173-fotor_orig.jpg' %}" alt="">
+                            <img src="{% static 'img/school_official_dedication/img-0232-fotor_orig.jpg' %}" alt="">
+                            <img src="{% static 'img/school_official_dedication/img-0251-fotor_orig.jpg' %}" alt="">
+                            <img src="{% static 'img/school_official_dedication/img-0252-fotor_orig.jpg' %}" alt="">
+                            <img src="{% static 'img/school_official_dedication/img-0286-fotor_orig.jpg' %}" alt="">
+                            <img src="{% static 'img/school_official_dedication/img-0297-fotor_orig.jpg' %}" alt="">
+                            <img src="{% static 'img/school_official_dedication/img-0311-fotor_orig.jpg' %}" alt="">
+                            <img src="{% static 'img/school_official_dedication/img-0316-fotor_orig.jpg' %}" alt="">
+                            <img src="{% static 'img/school_official_dedication/img-0336-fotor_orig.jpg' %}" alt="">
+                            <img src="{% static 'img/school_official_dedication/img-0577-fotor_orig.jpg' %}" alt="">
+                            <img src="{% static 'img/school_official_dedication/img-0582-fotor_orig.jpg' %}" alt="">
+                            <img src="{% static 'img/school_official_dedication/img-0584-fotor_orig.jpg' %}" alt="">
+                            <img src="{% static 'img/school_official_dedication/img-0589-fotor_orig.jpg' %}" alt="">
+                            <img src="{% static 'img/school_official_dedication/img-0593-fotor_orig.jpg' %}" alt="">
+                            <img src="{% static 'img/school_official_dedication/img-0611-fotor_orig.jpg' %}" alt="">
+                            <img src="{% static 'img/school_official_dedication/img-0616-fotor_orig.jpg' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block include_js %}
+    <script>
+        $(function () {
+            $('#slides').slidesjs({
+                width: 940,
+                height: 528,
+                play: {
+                    active: true,
+                    auto: true,
+                    interval: 4000,
+                    swap: true,
+                    pauseOnHover: true,
+                    restartDelay: 2500
+                }
+            });
+        });
+    </script>
+{% endblock %}

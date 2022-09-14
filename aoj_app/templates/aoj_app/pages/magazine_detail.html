@@ -1,0 +1,13 @@
+{% extends  'aoj_app/base_template.html' %}
+{% load staticfiles %}
+
+{% block template_body %}
+    <div class="page-magazine-detail">
+        <div class="container">
+            <h2 class="text-center">{{ object.title }}</h2>
+            <div class="videoWrapper">
+                <iframe src="{{ object.iframe_link }}" frameborder="0" allowfullscreen="true"></iframe>
+            </div>
+        </div>
+    </div>
+{% endblock %}

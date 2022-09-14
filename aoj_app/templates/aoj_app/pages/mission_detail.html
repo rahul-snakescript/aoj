@@ -1,0 +1,28 @@
+{% extends  'aoj_app/base_template.html' %}
+{% load i18n staticfiles %}
+
+{% block template_body %}
+    <div class="page-missions page-guatemala">
+        <section class="ms-header">
+            <h1 class="country-name">{{ mission.name }}</h1>
+            <p>{{ mission.top_section|linebreaksbr }}</p>
+        </section>
+        <section class="missions-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-10 col-sm-offset-1">
+                        <div class="redactor-body">
+                          {% autoescape off %}
+                            {{ mission.body }}
+                          {% endautoescape %}
+                        </div>
+
+                        <div class="text-center" style="margin-top: 30px;">
+                            <a class="btn btn-aoj" href="{% url 'contact' %}">{% trans "CONTACT US" %}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}

@@ -1,0 +1,129 @@
+{% extends  'aoj_app/base_template.html' %}
+{% load i18n staticfiles %}
+
+{% block template_body %}
+    <div class="page-missions page-haiti">
+        <section class="ms-header">
+            <h1 class="country-name">Haiti</h1>
+            <p>{% trans "Capital" %}: Port-au-Prince<br>
+                {% trans "Population" %}: 6 884 264 (42% 0-14 years)<br>
+                {% trans "Life expectancy" %}: 51- 65 years<br>
+                {% trans "Official Language" %}: Haitian Creole, French<br>
+                {% trans "Location" %}: Caribbean Sea​</p>
+        </section>
+        <section class="missions-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-10 col-sm-offset-1">
+                        <div class="row">
+                            <div class="col-sm-5">
+                                <a rel="hai" class="fancy-image"
+                                   href="{% static 'img/haiti/140816haicaprzm0905_orig.jpg' %}">
+                                    <img class="img-responsive"
+                                         src="{% static 'img/haiti/140816haicaprzm0905_orig.jpg' %}"
+                                         alt="">
+                                </a>
+                            </div>
+                            <div class="col-sm-7">
+                                <p class="paragraph">
+                                    {% blocktrans trimmed with percent="%" %}
+                                        Haiti is the most densely populated country in the Americas and occupies the
+                                        western
+                                        third of the island of Hispaniola, which it shares with Dominican Republic. It
+                                        is
+                                        also one of the poorest countries in the world and historically, is a country
+                                        which
+                                        was dedicated to Satan in 1791. Of the eight million population of Haiti, 80{{ percent }}
+                                        live
+                                        in poverty. Nearly 70{{ percent }} of the people depend on agricultural, which consists
+                                        mostly
+                                        of small-scale subsistence farming. This farming employs nearly two-thirds of
+                                        those
+                                        who work in Haiti.
+                                    {% endblocktrans %}
+                                </p>
+                                <p class="paragraph">
+                                    {% trans "More information" %}:
+                                    <a target="_blank"
+                                       href="https://www.cia.gov/library/publications/the-world-factbook/geos/ha.html">CIA
+                                        Facebook</a>
+                                </p>
+                            </div>
+                        </div>
+                        <h2>​Our Ministries</h2>
+                        <p class="paragraph"><strong>{% trans "​Director" %} : Mr. Wilson Maitre</strong></p>
+                        <p class="paragraph">
+                            {% blocktrans trimmed %}
+                                As a mission, we responded to a burden felt by young Haitian by the name of
+                                Mr. Wilson Maitre, who was a student at the Jamaican Bible College . With the Mission
+                                raising funds to support him and the necessary workers, a program was begun in one of
+                                the
+                                poorest and most rural areas of Haiti.
+                            {% endblocktrans %}
+                        </p>
+                        <p class="paragraph">{% trans "This mission work today in Haiti is basically two fold" %}:</p>
+
+                        <h2>{% trans "Educational/Nutritional" %}</h2>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <p class="paragraph">
+                                    {% blocktrans trimmed %}
+                                        Original Primary School BuildingThe Arms of Jesus Children's
+                                        Mission in Haiti operates three small schools in a remote mountainous area to
+                                        the
+                                        South West of capital Port-au-Prince, called Cap Rouge. Residents of this area
+                                        are
+                                        very poor and live by subsistence farming; they grow corn, peas, beans, various
+                                        fruits, and coffee. Their only income comes from selling their meagre harvest of
+                                        produce in the nearest city, Jacmel, located on the Southern coast of the
+                                        island.
+                                    {% endblocktrans %}
+                                    ​</p>
+                                <p class="paragraph">
+                                    {% blocktrans trimmed %}
+                                        Students of the AOJ school receive a very basic Christian
+                                        education; they are also provided with a hot nutritional lunch each day. This
+                                        meal
+                                        is often the only food the child receives on a regular basis. The mission also
+                                        provides the required educational materials, uniforms, and footwear.
+                                    {% endblocktrans %}
+                                </p>
+                            </div>
+                            <div class="col-sm-6">
+                                <a rel="hai" class="fancy-image"
+                                   href="{% static 'img/haiti/1240181_orig.jpg' %}">
+                                    <img class="img-responsive"
+                                         src="{% static 'img/haiti/1240181_orig.jpg' %}"
+                                         alt="">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <h2>{% trans "Child Sponsorship" %}</h2>
+                            <p class="paragraph">
+                                {% blocktrans trimmed %}
+                                    Through a monthly sponsorship program, the poorest of the poor are provided with
+                                    food,
+                                    clothing and where possible, an education. This program is impacting families in a
+                                    powerful
+                                    way, but without funds many go without. For the many children there is no such thing
+                                    as a daily bath, hot meal or clean clothing. Because of the sponsorship program many
+                                    more children will feel the impact of our help.
+                                {% endblocktrans %}
+                            </p>
+                            <a rel="hai" class="fancy-image"
+                               href="{% static 'img/haiti/3451471.jpg' %}">
+                                <img class="img-responsive"
+                                     src="{% static 'img/haiti/3451471.jpg' %}"
+                                     alt="">
+                            </a>
+
+                            <a style="margin-top: 30px;" class="btn btn-aoj" href="{% url 'contact' %}">{% trans "CONTACT US" %}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}
