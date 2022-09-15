@@ -1,14 +1,18 @@
-from __future__ import unicode_literals
-from email.quoprimime import body_check
+# from __future__ import unicode_literals
+# from email.quoprimime import body_check
 
 import uuid
-# import urlparse
-from urllib.parse import urlparse
+try:
+    import urlparse
+except:
+    from urllib.parse import urlparse
 
 from django.db import models
 from django.template.defaultfilters import slugify
-# from django.core.urlresolvers import reverse
-from django.urls import reverse
+try:
+    from django.core.urlresolvers import reverse
+except:
+    from django.urls import reverse
 from django.contrib.auth import get_user_model
 from django.utils import timezone
 
