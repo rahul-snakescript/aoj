@@ -663,7 +663,7 @@ class NewIndexView(TemplateView):
         return context
 
 class AboutStaffView(ListView):
-    template_name = "aoj_app/demo/staff.html"
+    template_name = "aoj_app/demo/about_staff.html"
     model = Staff
 
 class AboutbehaveView(TemplateView):

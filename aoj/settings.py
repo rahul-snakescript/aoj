@@ -27,7 +27,7 @@ SECRET_KEY = '^$a$4*32@y940t@(5)#@l+i%&8+7(!)@ben@0g@_@c646+2_o@'
 DEBUG = True
 
 if DEBUG:
-    ALLOWED_HOSTS = ['159.203.4.67']
+    ALLOWED_HOSTS = ['*']
 else:
 #     ALLOWED_HOSTS = ['*','.armsofjesus.org']
     ALLOWED_HOSTS = ['127.0.0.1','localhost','.armsofjesus.org']

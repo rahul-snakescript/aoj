@@ -1,0 +1,1402 @@
+@font-face {
+    font-family: 'Proxima Nova Alt Th';
+    src: url('../font/ProximaNovaA-Thin.woff2') format('woff2'),
+        url('../font/ProximaNovaA-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima Nova Alt Rg';
+    src: url('../font/ProximaNovaA-Bold.woff2') format('woff2'),
+        url('../font/ProximaNovaA-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima Nova Alt Lt';
+    src: url('../font/ProximaNovaA-Light.woff2') format('woff2'),
+        url('../font/ProximaNovaA-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima Nova Bl';
+    src: url('../font/ProximaNova-Black.woff2') format('woff2'),
+        url('../font/ProximaNova-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima Nova Th';
+    src: url('../font/ProximaNova-Extrabld.woff2') format('woff2'),
+        url('../font/ProximaNova-Extrabld.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima Nova Th';
+    src: url('../font/ProximaNovaT-Thin.woff2') format('woff2'),
+        url('../font/ProximaNovaT-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima Nova Rg';
+    src: url('../font/ProximaNova-Regular.woff2') format('woff2'),
+        url('../font/ProximaNova-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima Nova Rg';
+    src: url('../font/ProximaNova-Bold.woff2') format('woff2'),
+        url('../font/ProximaNova-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+} 
+
+.children_arm {
+    width: 1170px !important;
+    max-width: 100%;
+}
+
+* {
+    padding: 0 !important;
+}
+
+/* home page css start */
+    .header nav.navbar.navbar-expand-lg.navbar-light {
+        padding: 0 !important;
+    }
+    .header {
+        position: relative;
+        background: rgb(255 255 255 / 80%);
+        padding: 10px 0 !important;
+    }
+    a.donate_btn {
+        height: 51px;
+       /* width: 153px;*/
+        padding: 10px 40px !important;
+        background: #f7941d;
+        border: 1px solid #f7941d;
+        float: left;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        color: #ffffff;
+        font-size: 18px;
+        text-decoration: none; 
+        font-family: 'Proxima Nova Alt Rg';
+    }
+    a.sponsor_btn {
+        background: #174cb5;
+        border: 1px solid #174cb5;
+        height: 51px;
+        /*width: 153px;*/
+        padding: 10px 40px !important;
+        float: left;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        color: #ffffff;
+        text-decoration: none;
+        margin-left: 27px;
+        font-family: 'Proxima Nova Alt Rg';
+    }
+    a.donate_btn:hover {
+        background: none;
+        color: #f7941d;
+    }
+    a.sponsor_btn:hover {
+        background: none;
+        color: #174cb5;
+    }
+    .header ul.navbar-nav.ms-auto.mb-2.mb-lg-0 {
+        margin-right: 42px;
+    }
+    .header .nav-item a.nav-link {
+        font-size: 18px;
+        color: #000000;
+        padding-left: 48px !important;
+        font-family: 'Proxima Nova Rg';
+    }
+    .active {
+        color: #f7941d !important;
+        font-family: 'Proxima Nova Bl' !important;
+    }
+    .header_btn {
+        display: flex;
+    }
+    .children_header{
+        width: 1360px;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    section.banner {
+        background: url(../images/banner.jpg);
+        /*height: 966px;*/
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .banner_outer h5 img {
+        margin-bottom: 4px;
+    }    
+    .banner_outer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        text-transform: uppercase;
+        flex-direction: column;
+        padding: 250px 150px !IMPORTANT;
+    }
+    .banner_outer h1 {
+        font-size: 60px;
+        line-height: 72px;
+        font-family: 'Proxima Nova Alt Rg';
+        text-align: center;
+        margin-bottom: 30px;
+        position: relative;
+    }
+    .banner_outer h6 {
+        font-size: 30px;
+        margin: 0;
+        font-family: 'Proxima Nova Alt Rg';
+    }
+
+
+
+    .about_outer {
+        display: flex;
+        align-items: center;
+    }
+    .about_item {
+        width: 50%;
+        margin-right: 5px;
+    } 
+    .about_right_sec h4 {
+        padding-top: 58px !important;
+    }
+    .about_right_sec h4 {
+        padding-top: 58px;
+        font-size: 30px;
+        color: #f7941d;
+        font-family: 'Proxima Nova Alt Rg';
+        padding-bottom: 6px !important;
+        margin: 0;
+    }
+    .about_right_sec h2 {
+        font-size: 58px;
+        color: #000000;
+        line-height: 60px;
+        font-family: 'Proxima Nova Alt Rg';
+        padding-bottom: 10px !IMPORTANT;
+        margin: 0;
+     }
+    .children_header .dropdown-menu li {
+         padding-bottom: 10px !IMPORTANT;
+     }
+    .children_header .dropdown-menu {
+        padding: 10px 0px !IMPORTANT;
+     }
+     .children_header .dropdown-menu li a{
+        padding-left: 10px !IMPORTANT; 
+       padding-right: 10px !IMPORTANT;
+     }
+    .about_right_sec p {
+        font-size: 18px;
+        margin: 0;
+        padding-bottom: 20px;
+        color: #656565;
+        line-height: 36px;
+        font-family: 'Proxima Nova Th';
+        padding-right: 140px;
+        padding-bottom: 54px !important;
+        padding-right: 30px !IMPORTANT;
+    }
+    .about_right_sec {
+        background: #ffffff;
+        padding: 0 59px !important;
+        box-shadow: 0px 0px 5px #eeeeee;
+        padding-right: 160px !IMPORTANT;
+    }
+
+    .vision {
+        position: relative;
+        background: url(../images/our_vission.jpg);
+        height: 1045px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-origin: content-box;
+    }
+    .vision_outer {
+        text-align: center;
+        margin-top: 90px !important; 
+        padding: 0px 80px !IMPORTANT;
+    }
+    .vision_outer h2 {
+        font-size: 60px;
+        line-height: 72px;
+        font-family: 'Proxima Nova Alt Rg';
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .vision_outer p {
+        font-size: 18px;
+        line-height: 36px;
+        letter-spacing: 1px;
+    }
+    .vision_outer p {
+        font-size: 18px;
+        line-height: 36px;
+        letter-spacing: 1px;
+        font-family: 'Proxima Nova Rg';
+        margin-bottom: 25px;
+    }
+    .vision_btn a {
+        background: #ffffff;
+        height: 52px;
+        float: left;
+        width: 153px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        color: #000000;
+        text-decoration: none;
+        font-size: 18px;
+        font-family: 'Proxima Nova Alt Rg';
+        border: 1px solid #ffffff;
+    }
+    .vision_btn {
+        display: flex;
+        justify-content: center;
+    }
+    .vision_btn a:hover {
+        background: none;
+        color: #000000;
+    }
+
+    .donors_hadding {
+        text-align: center;
+        padding: 0px 30px !IMPORTANT;
+    }
+    .donors_hadding h4 {
+        font-size: 30px;
+        color: #000000;
+        font-family: 'Proxima Nova Alt Rg';
+        padding-top: 28px !important;
+        margin-bottom: 18px;
+    }
+    .donors_hadding p {
+        color: #656565;
+        font-size: 18px;
+        line-height: 30px;
+        margin: 0;
+        font-family: 'Proxima Nova Rg';
+    }
+    .news_item1 {
+        text-align: center;
+    }
+    .latest_img img {
+        width: 100%;
+    }
+    .hadding_lastestNews h2 {
+        font-size: 60px;
+        line-height: 72px;
+        font-family: 'Proxima Nova Alt Rg';
+        text-align: center;
+        margin-bottom: 12px;
+    }
+    .news_outer {
+        margin-top: 90px;
+        position: relative;
+    }
+    .hadding_lastestNews p {
+        color: #656565;
+        font-size: 18px;
+        line-height: 34px;
+        margin-bottom: 36px;
+        font-family: 'Proxima Nova Rg';
+        text-align: center;
+    }
+    .LatestNews_btn a {
+        height: 51px;
+        width: 153px;
+        background: #f7941d;
+        border: 1px solid #f7941d;
+        float: left;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        color: #ffffff;
+        font-size: 18px;
+        text-decoration: none;
+        font-family: 'Proxima Nova Alt Rg';
+        margin-top: 46px;
+    }
+    .LatestNews_btn {
+        display: flex;
+        justify-content: center;
+        position: relative;
+    }
+    .LatestNews_btn a:hover {
+        background: none;
+        color: #000000;
+    }
+
+    .video iframe {
+        border: 0;
+        width: 100%;
+        height: 688px;
+    }
+
+
+    .mamber {
+        background: #f9f9f9;
+        text-align: center;
+        margin-top: 60px;
+    }
+    .logo_mamber img {
+        padding-top: 40px !important;
+        padding-bottom: 41px !important;
+    }
+    .mamber_outer p {
+        font-size: 18px;
+        color: #393939;
+        font-family: 'Proxima Nova Rg';
+        margin-bottom: 60px;
+        line-height: 28px;
+    }
+
+
+
+    .right_side_outer {
+        display: flex;
+        align-items: center;
+        margin-bottom: 60px;
+    }
+    .footer_manu {
+        display: flex;
+    }
+    .social_ic a {
+        border: 2px solid #f7941d;
+        width: 55px;
+        height: 55px;
+        float: left;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: #f7941d;
+        border-radius: 100px;
+        margin-left: 20px;
+        font-size: 22px;
+    }
+    .social_ic i {
+        font-size: 26px;
+    }
+    .social_ic a:nth-child(1) {
+        margin-left: 0;
+    }
+    .footer_logo {
+        margin-right: 66px;
+        width: 25%;
+    }
+    .footer_logo img {
+        width: 100%;
+    }
+    .footer_manu_item1 h5 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        font-family: 'Proxima Nova Bl';
+    }
+    .footer_manu_item1 ul li {
+        list-style: none;
+        margin-bottom: 10px;
+    }
+    .footer_manu_item1 ul {
+        padding: 0;
+        margin: 0;
+    }
+    .footer_manu_item1 ul li a {
+        color: #000000;
+        text-decoration: none;
+        font-size: 18px;
+        font-family: 'Proxima Nova Alt Lt';
+    }
+    .footer_manu_item1 {
+        width: 33.33%;
+    }
+    .footer_item1 {
+        border: 2px solid #ebebeb;
+        padding: 40px 60px 25px 38px !important;
+        float: left;
+        width: 100%;
+    }
+    .footer_item1 h6 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        font-family: 'Proxima Nova Bl';
+    }
+    .footer_item1 p.number_footer {
+        color: #000000;
+        text-decoration: none;
+        font-size: 18px;
+        font-family: 'Proxima Nova Alt Lt';
+        margin-bottom: 12px;
+    }
+    .footer_item1 p{
+        font-family: 'Proxima Nova Alt Lt';
+    }
+    .footer_item1 p.email_footer {
+        color: #000000;
+        text-decoration: none;
+        font-size: 18px;
+        margin-bottom: 46px;
+    }
+    .footer {
+        margin-top: 64px;
+    }
+    .footer_right_side {
+        margin-left: 80px;
+    }
+    .footer_item1 p.address_hadding {
+        color: #000000;
+        text-decoration: none;
+        font-size: 18px;
+        margin-bottom: 4px;
+    }
+    .footer_item1 p.\32 R2 {
+        color: #000000;
+        text-decoration: none;
+        font-size: 18px;
+        margin-bottom: 46px;
+    }
+    .footer_item1 p.office_hadding {
+        color: #000000;
+        text-decoration: none;
+        font-size: 18px;
+        margin-bottom: 4px;
+    }
+    .footer_item1 p.office_address {
+        color: #000000;
+        text-decoration: none;
+        font-size: 18px;
+        margin-bottom: 22px;
+    }
+    .footer_btm a {
+        height: 51px;
+        width: 153px;
+        background: #f7941d;
+        border: 1px solid #f7941d;
+        float: left;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        color: #ffffff;
+        font-size: 18px;
+        text-decoration: none;
+        font-family: 'Proxima Nova Alt Rg';
+        margin-top: 5px;
+    }
+/* home page css close */
+/* home page css start */
+.magazines{
+    background-image: url(../images/latest-magzine.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 70px !important;
+    margin: 65px 0px;
+}
+.select_video select:focus-visible{
+    outline: none;
+}
+.magazines h2{
+    text-align: center;
+    font-size: 60px;
+    font-family: 'Proxima Nova Alt Rg';
+    color: #fff;
+    padding: 85px 0px 25px 0px !important;
+}
+.our_magzine_product{
+    background-image: url(../images/our_magzine1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex !important;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column;
+    padding-bottom: 20px !IMPORTANT;
+}
+.our_magzine_product img {
+    padding-top: 20px !IMPORTANT;
+}
+.our_magzine_product h3{
+    color: #fff;
+    font-size: 30px;
+    font-family: 'Proxima Nova Alt Rg';
+    margin-top: 22px;
+}
+.slider_autoplay .slick-prev:before{
+    display: none;
+}
+.slider_autoplay .slick-prev:after{
+    background-image: url(../images/arrow_left.png);
+    content: " ";
+    position: absolute;
+    width: 55px;
+    left: -40px;
+    height: 55px;
+    top: 0px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.slider_autoplay .slick-next:before{
+    display: none;
+}
+.slider_autoplay .slick-next:after{
+    background-image: url(../images/arrow-right.png);
+    content: " ";
+    position: absolute;
+    width: 55px;
+    right: -40px;
+    height: 55px;
+    top: 0px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.magazines_btn a{
+    height: 51px;
+    padding: 20px 50px !important;
+    background: #f7941d;
+    border: 1px solid #f7941d;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 18px;
+    text-decoration: none;
+    font-family: 'Proxima Nova Alt Rg';
+    margin-top: 26px;
+}
+.magazines_btn {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+.magazines_arm{
+    width: 1170px !IMPORTANT;
+}
+.footer_btm a:hover{
+    color: #fff;
+}
+.copyright_txt {
+    text-align: center;
+    padding-top: 60px !IMPORTANT;
+    padding-bottom: 30px !IMPORTANT;
+}
+.copyright_txt p{
+    margin-bottom: 0px;
+    font-size: 18px;
+    font-family: 'Proxima Nova Alt Lt';
+}
+.select_video {
+    text-align: center;
+}
+.select_video select{
+    font-size: 24px;
+    font-family: 'Proxima Nova Rg';
+    background: transparent;
+    border-radius: 7px;
+    padding: 13px 17px !IMPORTANT;
+    border: 1px solid #174cb5;
+    margin-bottom: 32px;
+}
+/* home page css close */
+
+/* Register page css close */
+.register_banner{
+    background: url(../images/register_banner.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 420px !IMPORTANT;
+    background-position: bottom center;
+}
+.make_donation {
+    text-align: center;
+}
+.make_donation h2{
+    font-size: 48px;
+    font-family: 'Proxima Nova Rg';
+    padding-bottom: 25px !IMPORTANT;
+}
+.make_donation {
+    padding-top: 80px !IMPORTANT;
+}
+.make_donation p {
+    font-size: 22px;
+    font-family: 'Proxima Nova Rg';
+    margin-bottom: 5px;
+}
+.donnar_bg{
+    background: url(../images/donnar_info.png);
+    background-repeat: no-repeat;
+    height: 100%;
+    text-align: center !important;
+    background-position: center;
+    margin-top: 35px !IMPORTANT;
+    margin-bottom: 22px;
+    border: 1px solid #d6e1e5;
+}
+.donnar_bg h2{
+    font-size: 30px;
+    font-family: 'Proxima Nova Alt Rg';
+    text-align: left;
+    padding-top: 54px !IMPORTANT;
+    padding-bottom: 47px !IMPORTANT;
+    padding-left: 30px !IMPORTANT;
+}
+.make_donation_receive {
+    padding-bottom: 25px !IMPORTANT;
+}
+.registeration_form .form-group {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.registeration_form .form-group lable{
+    width: 100%;
+    color: #868686;
+    font-size: 18px;
+    font-family: 'Proxima Nova Rg';
+}
+.registeration_form .form-group input{
+    width: 100%;
+    border: 1px solid #d6e1e5;
+    padding: 10px !IMPORTANT;
+    border-radius: 4px;
+}
+.registeration_form .row{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.registeration_form { 
+    width: 53% !IMPORTANT;
+}
+.main_form_section{
+    border: 1px solid #d6e1e5;
+    padding: 30px !IMPORTANT;
+}
+
+.first_last_name .form-group {
+    width: 98%;
+}
+.first_last_name .form-group:nth-child(2) {
+    width: 98%;
+}
+.lst_items{
+    float: right;
+}
+.registeration_form  select{
+    width: 100%;
+    border: 1px solid #d6e1e5;
+    padding: 10px !IMPORTANT;
+    border-radius: 4px;
+}
+.sbmt_btn{
+    font-size: 18px;
+    font-family: 'Proxima Nova Rg';
+    color: #fffefe;
+    background: #174cb5;
+    padding: 10px;
+    width: 100%;
+    height: 67px;
+    margin-top: 13px;
+    border-radius: 12px !important;
+}
+.accredited_member{
+    background: #f9f9f9;
+    text-align: center;
+    padding: 100px 0px !IMPORTANT;
+    margin-top: 100px;
+}
+.registration_member p {
+    color: #393939;
+    font-size: 22px;
+    font-family: 'Proxima Nova Alt Lt';
+    line-height: 40px;
+}
+.make_donation_receive a{
+    color: #014cde;
+    text-decoration: none;
+}
+.make_donation_receive a:hover{
+    color: #f7941d;
+}
+/* Register page css close */
+.header .nav-item a.nav-link:hover{
+    color: #f7941d !important;
+    /*font-family: 'Proxima Nova Bl' !important;*/
+}
+.magazines_btn a:hover{
+    background: none;
+    color: #fff;
+}
+.footer_btm a:hover{
+   background: none;
+   color: #000; 
+}
+.footer_manu_item1 ul li a:hover{
+    color: #f7941d;
+}
+.social_ic a:hover{
+    background: #f7941d;  
+}
+.social_ic a:hover i{
+     color: #fff;
+}
+.registeration_form .form-group input:focus-visible{
+    outline: none;
+}
+.registeration_form .form-group select:focus-visible{
+    outline: none;
+}
+/* Media Query Start */
+/* Media Query Start */
+@media only screen and (max-width: 1200px) {
+    .news_outer {
+    margin-top: 70px;
+    }
+    body{
+    overflow-x: hidden;
+    }
+    html{
+    overflow-x: hidden;
+    }
+    .header .nav-item a.nav-link{
+    font-size: 16px;
+    padding-left: 20px !important;
+    }
+    a.donate_btn{
+    font-size: 16px;   
+    padding: 10px 30px !important;
+    }
+    a.sponsor_btn{
+    font-size: 16px;
+    padding: 10px 30px !important;  
+    margin-left: 17px;  
+    }
+    .header ul.navbar-nav.ms-auto.mb-2.mb-lg-0 {
+    margin-right: 32px;
+    }
+    .about_right_sec{
+    padding-right: 10px !IMPORTANT;    
+    }
+}
+@media only screen and (max-width: 1024px) {
+    .banner_outer h1 {
+    font-size: 50px;
+    line-height: 62px;
+    }
+    .banner_outer h6 {
+    font-size: 25px;
+    }
+    .about_right_sec h2 {
+    font-size: 50px;
+    line-height: 62px;
+    }
+    .vision_outer h2 {
+    font-size: 50px;
+    }
+    .hadding_lastestNews h2 {
+    font-size: 50px;
+    line-height: 62px;
+    }
+    .magazines h2 {
+    font-size: 50px;
+    }
+    .vision_outer{
+    margin-top: 60px !important;
+    }
+    .about_right_sec{
+    padding-right: 0px !IMPORTANT;    
+    }
+    .magazines_arm{
+    width: auto !IMPORTANT;
+    }
+    .news_outer {
+    margin-top: 60px;
+    }
+    /*---Start Register page-----*/
+    .registeration_form{
+    width: 100% !IMPORTANT;
+    }
+    .donnar_bg{
+    background-position: right center;    
+    }
+    .make_donation {
+    padding-top: 55px !IMPORTANT;
+    }
+    .make_donation h2{
+    font-size: 40px;
+    line-height: 52px;
+    }
+    .make_donation_receive {
+    padding-bottom: 5px !IMPORTANT;
+    }
+    .donnar_bg{
+    margin-top: 20px !IMPORTANT;     
+    }
+    .sbmt_btn{
+    height: 57px;    
+    }
+    /*---End Register page-----*/
+    /*---Start About Behave page-----*/
+    .children_arm .behave_outer h2{
+    font-size: 40px;
+    line-height: 52px;
+    }
+
+    /*---End About Behave page-----*/
+    .our_policy .policy_item h2{
+    font-size: 50px;
+    line-height: 62px;
+    padding-bottom: 20px !IMPORTANT;
+    }
+}
+@media only screen and (max-width: 992px) {
+    .children_header div#navbarSupportedContent li {
+    padding-bottom: 10px !IMPORTANT;
+    }
+    .select_video select{
+    font-size: 18px;
+    }
+    .magazines h2 {
+    font-size: 50px;
+    padding: 45px 0px 15px 0px !important;
+    }
+    .our_magzine_product h3 {
+    font-size: 20px;
+    }
+    .about_right_sec h2 {
+    font-size: 40px;
+    line-height: 52px;
+    }
+    .vision_outer h2 {
+    font-size: 40px;
+    }
+    .hadding_lastestNews h2 {
+    font-size: 40px;
+    line-height: 52px;
+    }
+    .news_outer {
+    margin-top: 50px;
+    }
+    .donors_hadding h4 {
+    font-size: 24px;
+    margin-bottom: 8px;
+    }
+    .LatestNews_btn a{
+    margin-top: 26px;
+    }
+    .magazines h2 {
+    font-size: 40px;
+    }
+    .vision_outer {
+    margin-top: 55px !important;
+    }
+    .our_magzine_product h3{
+    margin-top: 12px;   
+    }
+    .our_magzine_product{
+    padding-bottom: 0px !IMPORTANT;    
+    }
+    .row.footer_row1 {
+    margin: 0 0px !important;
+    }
+    .footer_right_side {
+    margin-left: 40px;
+    }
+    .footer_item1 p.email_footer{
+    margin-bottom: 26px;    
+    }
+    .footer_item1 p.\32 R2{
+    margin-bottom: 26px;    
+    }
+    .footer_btm a{
+    margin-top: 6px;  
+    }
+    .children_header {
+    width: 1360px;
+    max-width: 90%;
+    margin: 0px auto;
+    }
+    .banner_outer{
+    padding: 250px 0px !IMPORTANT;
+    }
+    .about_right_sec{
+    padding: 0 20px !important;    
+    }
+    .about_right_sec p{
+    padding-right: 0px !IMPORTANT;    
+    }
+    .about_item{
+    margin-right: 0px;     
+    }
+    p{
+    font-size: 16px !important;
+    line-height: 30px !IMPORTANT;    
+    }
+    .our_magzine_product img{
+    width: 70%;   
+    }
+    .slider_autoplay .slick-prev:after{
+    width: 45px;
+    height: 45px;
+    left: -30px;
+    }
+    .slider_autoplay .slick-next:after{
+    width: 45px;
+    height: 45px;
+    right: -30px;    
+    }
+    .children_header div#navbarSupportedContent{
+    position: absolute;
+    width: 100%;
+    background: rgb(37 171 224 / 96%);
+    top: 96px;
+    padding: 10px 20px!IMPORTANT;
+    z-index: 9;
+    }
+    .children_header .nav-item a.nav-link{
+    color: #fff;   
+    }
+   .children_header div#navbarSupportedContent li a{
+    padding-left: 0px !IMPORTANT; 
+    }
+   .children_header .navbar-toggler:focus{
+    box-shadow: 0 0 0 0rem;
+    }
+    .children_header .navbar-brand img {
+    width: 100%;
+    max-width: 70px !IMPORTANT;
+    }
+    .children_header i {
+    font-size: 24px;
+    padding: 9px 11px !IMPORTANT;
+    color: #662e91;
+    border-radius: 3px;
+    }
+    .children_header .navbar-toggler {
+    border: 1px solid #030303 !IMPORTANT;
+    }
+    .footer_item1{
+    padding: 30px 40px 15px 18px !important;
+    }
+    .magazines .slick-dots li button:before{
+    font-size: 60px;
+    }
+    /*----About page----*/
+    .children_arm .behave_outer h2{
+    padding-top: 55px !important;
+    padding-bottom: 6px !important;
+    }
+    .mamber_misson {
+    margin-top: 55px;
+    }
+    /*-----Start about fund ploicy----*/
+    .policy_item{
+    margin-top: 55px !important;   
+    }
+
+    /*-----End about fund policy----*/
+    .mamber_policy {
+    margin-top: 55px !IMPORTANT;
+    }
+    .about_history img{
+    width: 90%;
+    margin: 0 auto;
+    }
+    .row.about_history {
+    padding-top: 25px !important;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .behave_outer ul li{
+    font-size: 14px !important;
+    line-height: 24px !IMPORTANT;
+    }
+
+    .video iframe {
+    height: 388px;
+    }
+    .magazines .slick-dots{
+    bottom: -35px;
+    }
+    .magazines .slick-dots li.slick-active button:before{
+    color: rgba(38, 171, 224, 0.5);
+    }
+    .magazines .slick-dots li button:before{
+    font-size: 60px;
+    }
+    .our_magzine_product h3 {
+    font-size: 16px;
+    }
+    .magazines_btn a{
+    font-size: 16px;
+    }
+    .right_side_outer{
+    padding-top: 20px !IMPORTANT;
+    }
+    .donors_hadding{
+    padding-bottom: 20px !IMPORTANT;
+    }
+    .vision_outer{
+    padding: 0px 0px !IMPORTANT;     
+    }
+    .latest_img img {
+    width: 100%;
+    }
+    .about-left-sec img {
+    width: 100%;
+    }
+    .about_item{
+    width: 100%;
+    }
+    .about_right_sec h2 {
+    font-size: 38px;
+    }
+    .vision_outer h2 {
+    font-size: 38px;
+    }
+    .hadding_lastestNews h2 {
+    font-size: 38px;
+    line-height: 42px;
+    }
+    .magazines h2 {
+    font-size: 38px;    
+    }
+    .logo_mamber img{
+    width: 100%;
+    max-width: 230px;
+    }
+    .banner_outer h1 {
+    font-size: 40px;
+    line-height: 52px;
+    }
+    .footer_right_side {
+    margin-left: 10px;
+    }
+    body {
+    overflow-x: hidden;
+    }
+    html {
+    overflow-x: hidden;
+    }
+    .banner_outer{
+    padding: 100px 30px !IMPORTANT;   
+    }
+    .right_side_outer{
+    justify-content: space-between;    
+    }
+    .footer_logo {
+     margin-right: 0px; 
+    }
+    .lst_items{
+    float: left;   
+    }
+    .first_last_name .form-group {
+    width: 100%;
+    }
+    .registeration_form .form-group lable{
+    font-size: 15px;    
+    }
+    .main_form_section{
+    padding: 20px !IMPORTANT;     
+    }
+    /*----Register page-----*/
+    .register_banner{
+    padding-bottom: 320px !IMPORTANT;    
+    }
+    .registeration_form .form-group input{
+    padding: 7px !IMPORTANT;    
+    }
+    /*------About Behave-----*/
+    section.banner.policy_banner .banner_outer {
+    padding: 150px 20px !IMPORTANT;
+    }
+    section.banner.policy_banner{
+    height: 422px !important;   
+    }
+    .our_policy .policy_item h2{
+    font-size: 40px;
+    line-height: 52px;
+    }
+    .policy_item .policy_paragraph{
+    padding: 0 10px !important;    
+    }
+}
+@media only screen and (max-width: 576px) {
+    .logo_mamber img{
+    padding-top: 55px !important;    
+    }
+    .vision{
+    height: 845px;
+    }
+    .mamber{
+    margin-top: 55px;    
+    }
+    .select_video select {
+    font-size: 16px;
+    }
+    .magazines{
+    margin: 55px 0px;
+    }
+    .footer_manu_item1 h5{
+    font-size: 18px;
+    }
+    .footer_manu_item1 ul li a{
+    font-size: 14px;
+    }
+    .footer_manu_item1 ul li{
+    margin-bottom: 5px;   
+    }
+    .social_ic i {
+    font-size: 20px;
+    }
+    .social_ic a{
+    width: 45px;
+    height: 45px;
+    }
+    .right_side_outer{
+    width: 95%;
+    }
+    .children_arm{
+    padding-left: 20px !important;
+    padding-right: 20px !important;    
+    }
+    p {
+    font-size: 15px !important;
+    line-height: 23px !IMPORTANT;
+    }
+    .banner_outer h1 {
+    font-size: 30px;
+    line-height: 35px;
+    }
+    .about_right_sec h2 {
+    font-size: 28px;
+    line-height: 35px;
+    }
+    .about_right_sec{
+    padding: 0 15px !important;    
+    }
+    .about_outer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    }
+    .news_outer {
+    margin-top: 40px;
+    }
+    .magazines{
+    padding-bottom: 55px !important;   
+    }
+    .vision_outer p{
+    padding: 0px 30px !important;     
+    }
+    .hadding_lastestNews p{
+    margin-bottom: 26px;
+    }
+    .donors_hadding p{
+    margin-bottom: 10px;
+    }
+    .about_right_sec h4 {
+    padding-top: 40px !important;
+    font-size: 20px;
+    }
+    .mamber_outer p{
+    margin-bottom: 55px;
+    }
+    .footer {
+    margin-top: 55px;
+    }
+    .footer_item1{
+    padding: 20px 20px 20px 20px !important;   
+    }
+    .social_ic a{
+    width: 40px;
+    height: 40px;    
+    }
+    .footer_right_side {
+    margin-left: 0px;
+    }
+    .footer_manu_item1 {
+    width: 32.33%;
+    padding-right: 3px !IMPORTANT;
+    }
+    .banner_outer h6 {
+    font-size: 19px;
+    }
+    .about_right_sec h4{
+    font-size: 20px; 
+    }
+    .about_right_sec h2{
+    font-size: 30px;
+    line-height: 42px;   
+    }
+    .vision_outer h2{
+    font-size: 30px;
+    line-height: 42px;      
+    }
+    .hadding_lastestNews h2{
+    font-size: 30px;
+    line-height: 42px;         
+    }
+    p {
+    font-size: 14px !important;
+    line-height: 24px !IMPORTANT;
+    }
+    .LatestNews_btn a {
+    margin-top: 0px;
+    }
+    /*------Start Register page-------*/
+    .registeration_form {
+    width: 95% !IMPORTANT;
+    }
+    .make_donation{
+    padding: 0px 20px !important;
+    padding-top: 55px !IMPORTANT;
+    }
+
+    /*------End Register page-------*/
+
+    /*------Start About Behave Register page-------*/
+    .children_arm .behave_outer ul li{
+    padding-bottom: 20px !important;   
+    }
+    .behave_outer ul{
+    margin-bottom: 0px;
+    }
+    .children_arm .behave_outer ul li:last-child{
+    padding-bottom: 0px !important;
+    }
+    /*------End About Behave page-------*/
+    .our_policy .policy_item h2{
+    font-size: 30px;
+    line-height: 35px;
+    }
+    .donnar_bg {
+    background-position: center;
+    }
+    .sbmt_btn {
+    height: 50px;
+    }
+}
+@media only screen and (max-width: 470px) {
+.banner_outer h1 {
+    font-size: 28px;
+    line-height: 35px;
+ }
+.video iframe{
+    height: 210px;
+}
+.magazines h2 {
+    font-size: 28px;
+}
+.donors_hadding h4 {
+    font-size: 22px;
+}
+.hadding_lastestNews h2 {
+    font-size: 28px;
+    line-height: 38px;
+}
+.about_right_sec h2 {
+    font-size: 28px;
+    line-height: 38px;
+}
+.vision_outer h2 {
+    font-size: 28px;
+    line-height: 38px;
+}
+.LatestNews_btn a{
+    font-size: 16px;
+}
+.children_header i {
+    font-size: 20px;
+    padding: 8px 11px !IMPORTANT;
+}
+
+/*----Start Register page css----*/
+.make_donation h2{
+    font-size: 28px;
+    line-height: 38px;
+    padding-bottom: 5px !IMPORTANT;
+}
+.donnar_bg h2 {
+    font-size: 28px;
+}
+.make_donation{
+    padding: 0px 20px !important;
+    padding-top: 55px !IMPORTANT;
+}
+/*----End Register page css----*/
+/*----Start about Behave page css----*/
+    .children_arm .behave_outer h2{
+    font-size: 28px;
+    line-height: 38px;
+    margin-bottom: 10px;
+    }
+    .our_policy .policy_item h2{
+    font-size: 28px;
+    line-height: 35px;
+    }
+/*----End about Behave page css----*/
+}
+@media only screen and (max-width: 380px) {
+    .footer_manu_item1 {
+    width: 100%;
+    padding-right: 3px !IMPORTANT;
+    }
+    .footer_manu{
+    display: block; 
+    }
+    .copyright_txt {
+    text-align: center;
+    padding-top: 40px !IMPORTANT;
+    padding-bottom: 20px !IMPORTANT;
+    }
+    .footer_manu_item1 h5 {
+    margin-bottom: 5px;
+    margin-top: 25px;
+    }
+    .right_side_outer{
+    margin-bottom: 30px;    
+    }
+}
+/* Media Query End */
+/* Media Query End */

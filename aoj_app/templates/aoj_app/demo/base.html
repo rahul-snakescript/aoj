@@ -84,16 +84,153 @@
       </div>
     </header>
   <!-- header close here -->
-    <div class="container children_arm">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="banner_outer">
-            <h5><img src="{% static 'demo/images/symbole.png' %}" alt=""></h5>
-            <h1>And He took the children in His arms, put His Hands on them and blessed them</h1>
-            <h6>Mark 10:16</h6>
+    
+
+
+
+<!-- member start here -->
+<div class="mamber">
+  <div class="container children_arm">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="mamber_outer">
+          <div class="logo_mamber">
+            <img src="{% static 'demo/images/logo_mamber.png' %}" alt="">
+          </div>
+          <p>Certification with CCCC is a powerful endorsement of a charity’s integrity. It demonstrates that the charity has been carefully assessed
+            by CCCC’s rigorous certification process and found to be in compliance with CCCC’s Standards. Donors can give confidently and
+            generously when they see CCCC’s Seal of Accountability on a charity’s website.
+            </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- member close here -->
+
+
+
+
+    <!-- footer start here -->
+    <div class="footer">
+      <div class="container children_arm">
+        <div class="row footer_row1">
+          <div class="col-md-5">
+            <div class="footer_item1">
+              <h6>Contact Us</h6>
+  
+              <p class="number_footer">Phone: (905) 492-5007</p>
+              <p class="email_footer">Email: aojchildmis@rogers.com</p>
+  
+              <p class="address_hadding">Mailing Address:</p>
+              <p class="2R2">P.O.Box 10 Pickering,Ontario L1V 2R2 Canda</p>
+  
+              <p class="office_hadding">Office Address:</p>
+              <p class="office_address">1730 McPherson Ct., Unit 19 Pickering,Ontario<br>L1w 3E6 Canada</p>
+              <div class="footer_btm">
+                <a href="#">Get Direction</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-7">
+            <div class="footer_right_side">
+              <div class="right_side_outer">
+                <div class="footer_logo">
+                  <img src="{% static 'demo/images/footer-logo.png' %}" alt="">
+                </div>
+                <div class="social_ic">
+                  <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                  <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                  <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+              </div>
+              <div class="footer_manu">
+                <div class="footer_manu_item1">
+                  <h5>About Us</h5>
+  
+                  <ul>
+                    <li><a href="#">About AOJ</a></li>
+                    <li><a href="#">Mission Statement</a></li>
+                    <li><a href="#">History</a></li>
+                  </ul>
+                </div>
+                <div class="footer_manu_item1">
+                  <h5>Donate</h5>
+  
+                  <ul>
+                    <li><a href="#">Catalogue</a></li>
+                    <li><a href="#">Donations</a></li> 
+                  </ul>
+                </div>
+                <div class="footer_manu_item1">
+                  <h5>Get Involved</h5>
+  
+                  <ul>
+                    <li><a href="#">Catalogue</a></li>
+                    <li><a href="#">Donations</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row copyright_txt">
+          <div class="col-md-12">
+            <p>Copyright © 2021 Arms of Jesus Children's Mission Inc. All Rights Reserved.</p>
           </div>
         </div>
       </div>
     </div>
-  </section>
-  <!-- banner close here -->
+    <!-- footer close here -->
+
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+    <script src="{% static 'demo/js/jquery.min.js' %}"></script>
+      <!-- js link -->
+      <script src="{% static 'demo/js/slick.js' %}"></script>
+      <script src="{% static 'demo/js/slick.min.js' %}"></script>
+      <script src="{% static 'demo/js/popper.min.js' %}"></script>
+      <script src="{% static 'demo/js/bootstrap.min.js' %}"></script>
+      <script>
+    
+    
+      $('.autoplay').slick({
+      dots: true,
+      infinite: false,
+      speed: 300,
+      slidesToShow: 3,
+      slidesToScroll: 3,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            dots: true
+          }
+        }
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+      ]
+    });
+    </script>
+    </body>
+    
+    </html>

@@ -817,6 +817,11 @@
     .about_right_sec{
     padding-right: 10px !IMPORTANT;    
     }
+    /*----Childern Page-----*/
+    .child_circle img{
+    width: 230px !important;
+    height: 220px !important;    
+    }
 }
 @media only screen and (max-width: 1024px) {
     .banner_outer h1 {
@@ -887,6 +892,44 @@
     font-size: 50px;
     line-height: 62px;
     padding-bottom: 20px !IMPORTANT;
+    }
+    .history_item h2{
+    font-size: 40px !IMPORTANT;
+    line-height: 52px;
+    }
+    .children_arm .about_history {
+    padding-top: 45px !important;
+    }
+    /*----Start Our Staff---*/
+    .staff .children_arm h2{
+    padding-top: 55px !important; 
+    font-size: 40px;
+    line-height: 62px;  
+    padding-bottom: 20px !important; 
+    }
+    .staff_item .staff_hadding p{
+    font-size: 16px !IMPORTANT; 
+    padding-bottom: 1px !IMPORTANT;   
+    }
+    /*---Contact page---*/
+    .container.contact_page_frm {
+    padding: 55px 0px !IMPORTANT;
+    padding-bottom: 0px !IMPORTANT;
+    }
+    .container.contact_page_frm h3 {
+    font-size: 30px !important;
+    }
+    .mailing_address h4 {
+    font-size: 20px !IMPORTANT;
+    padding-top: 0px !important;
+    padding-bottom: 0px !IMPORTANT;
+    margin-bottom: 0px;
+    }
+    .mailing_address p{
+    font-size: 18px !important;
+    }
+    .mailing_address p a{
+    font-size: 18px !important;    
     }
 }
 @media only screen and (max-width: 992px) {
@@ -1027,7 +1070,7 @@
     padding-bottom: 6px !important;
     }
     .mamber_misson {
-    margin-top: 55px;
+    margin-top: 55px !important;
     }
     /*-----Start about fund ploicy----*/
     .policy_item{
@@ -1044,6 +1087,35 @@
     }
     .row.about_history {
     padding-top: 25px !important;
+    }
+    .children_arm .history_item h2{
+    padding-top: 0px !important;
+    padding-bottom: 6px !important;
+    }
+    .history{
+    margin-top: 55px !IMPORTANT;   
+    }
+    /*---Start about mission---*/
+    .mission_outer .mission_list ul{
+    padding-left: 30px !IMPORTANT;
+    margin-bottom: 0px;
+    }
+    .mission_list ul li{
+    font-size: 16px !important;
+    line-height: 30px !IMPORTANT;
+    }
+    /*---End about mission---*/
+    .container .gutenemala_text {
+    padding-top: 55px !IMPORTANT;
+    padding-bottom: 20px !IMPORTANT;
+    }
+    .gutenemala_text h2{
+    font-size: 38px !important;    
+    }
+    /*----Children Page Start---*/
+    .child_circle img {
+    width: 150px !important;
+    height: 150px !important;
     }
 }
 @media only screen and (max-width: 768px) {
@@ -1159,6 +1231,33 @@
     }
     .policy_item .policy_paragraph{
     padding: 0 10px !important;    
+    }
+
+    .mission_list ul li{
+    font-size: 14px !important;
+    line-height: 24px !IMPORTANT;
+    }
+    .mission_list .list_test{
+    padding-left: 12px !important;   
+    }
+     /*---our staff--*/
+    .staff_hadding h5{
+    padding-bottom: 5px !important;
+    }
+    .children_arm .staff_item{
+    padding-bottom: 20px !important;   
+    }
+    /*----Login Page---*/
+    .main_form_login {
+    width: 70% !IMPORTANT;
+    }
+    .child_banner .container.children_arm .banner_outer{
+    padding: 100px 30px !IMPORTANT;    
+    }
+    /*----Children Page---*/
+    .child_circle img {
+    width: 180px !important;
+    height: 180px !important;
     }
 }
 @media only screen and (max-width: 576px) {
@@ -1316,6 +1415,76 @@
     .sbmt_btn {
     height: 50px;
     }
+    /*---Our Staff---*/
+    .staff_item .staff_hadding h5 {
+    font-size: 20px !IMPORTANT;
+    padding-bottom: 3px !important;
+    padding-top: 10px !important;
+    }
+    .staff_item .staff_hadding p {
+    font-size: 14px !IMPORTANT;
+    }
+    .staff .children_arm h2{
+    font-size: 28px;
+    line-height: 32px;
+    padding-bottom: 20px !important;     
+    }
+    .main_form_login .form-group p{
+    margin-bottom: 0px;
+    }
+    .contact_page_frm .row {
+    padding-left: 10px !IMPORTANT;
+    margin-left: 0px !IMPORTANT;
+    margin-right: 0px !IMPORTANT;
+    padding-right: 10px !IMPORTANT;
+    }
+    .col-md-6.send_message_form form {
+    padding-top: 20px !important;
+    }
+    .container.contact_page_frm h3 {
+    font-size: 28px !important;
+    }
+    .mailing_address h4{
+    font-size: 18px !IMPORTANT; 
+    }
+    .mailing_address p {
+    font-size: 16px !important;
+    }
+    .row.mailing_address {
+    padding-left: 0px !IMPORTANT;
+    padding-right: 0px !IMPORTANT;
+    }
+    .mission_usa_address{
+    padding-top: 30px !IMPORTANT;
+    margin-top: 10px;    
+    }
+    .send_mesg{
+    margin-top: 12px;     
+    }
+    .contact_banner .children_arm .banner_outer {
+    padding: 110px 40px !IMPORTANT;
+    }
+    .contact_banner .banner_outer h1{
+    margin-bottom: 0px;    
+    }
+    .send_message_form .form-group label{
+    font-size: 16px; 
+    }
+    .gutenemala_text h2{
+    font-size: 28px !important;    
+    }
+    /*---Childern Page---*/
+    .child_circle img {
+    width: 230px !important;
+    height: 230px !important;
+    }
+    .col-md-3.col-sm-6.child_circle h5{
+    padding-top: 10px !IMPORTANT; 
+    margin-bottom: 0px;   
+    }
+    .child_circle{
+    padding-bottom: 15px !important;    
+    }
 }
 @media only screen and (max-width: 470px) {
 .banner_outer h1 {
@@ -1376,6 +1545,16 @@
     line-height: 35px;
     }
 /*----End about Behave page css----*/
+    .history_item h2{
+    font-size: 28px !IMPORTANT;
+    line-height: 38px;
+    }
+    .about_history img{
+    width: 100%;    
+    }
+    .main_form_login {
+    width: 90% !IMPORTANT;
+    }
 }
 @media only screen and (max-width: 380px) {
     .footer_manu_item1 {
@@ -1396,6 +1575,10 @@
     }
     .right_side_outer{
     margin-bottom: 30px;    
+    }
+    .container .gutenemala_text {
+    padding-top: 45px !IMPORTANT;
+    padding-bottom: 10px !IMPORTANT;
     }
 }
 /* Media Query End */
