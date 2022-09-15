@@ -95,19 +95,27 @@
   <!-- header close here -->
 
 <!-----Start Form Section----->
+{% for country_id,country_name in country_dict.items %}
  <div class="container children_arm">
    <div class="row gutenemala_text">
      <div class="col-md-12">
-       <h2>Guatemala</h2>
+       <h2>{{ country_name }}</h2>
      </div>
    </div>
-   <div class="row">
+   <div class="row"></div>
+   {% for child in object_list %}
+   {% if child.country == country_name %}
      <div class="col-md-3 col-sm-6 child_circle">
-        <img src="images/child1.jpg" alt="children">
-        <h5>Diego</h5>
+        <img src="{{ child.image1 }}" alt="children">
+        <h5>{{ child.name }}</h5>
         <p>Available for Sponsor</p>
      </div>
-     <div class="col-md-3 col-sm-6 child_circle">
+    {% endif %}
+    {% endfor %}
+  </div>
+    {% endfor %}
+
+     <!-- <div class="col-md-3 col-sm-6 child_circle">
         <img src="images/child2.jpg" alt="children">
         <h5>Junior</h5>
         <p>Available for Sponsor</p>
@@ -121,20 +129,26 @@
         <img src="images/child4.jpg" alt="children">
         <h5>Leydy</h5>
         <p>Available for Sponsor</p>
-     </div>
-   </div>
+     </div> -->
+   
+   <!-- {% for child in object_list %}
+   {% if child %}
    <div class="row gutenemala_text">
      <div class="col-md-12">
        <h2>Haiti</h2>
      </div>
    </div>
     <div class="row">
+    {% if child.country == "Haiti" %}
      <div class="col-md-3 col-sm-6 child_circle">
         <img src="images/child5.jpg" alt="children">
-        <h5>Marie</h5>
+        <h5>{{ child.name }}</h5>
         <p>Available for Sponsor</p>
      </div>
-     <div class="col-md-3 col-sm-6 child_circle">
+     {% endif %}
+     {% endif %}
+     {% endfor %} -->
+     <!-- <div class="col-md-3 col-sm-6 child_circle">
         <img src="images/child6.jpg" alt="children">
         <h5>Franceska</h5>
         <p>Available for Sponsor</p>
@@ -148,7 +162,40 @@
         <img src="images/child8.jpg" alt="children">
         <h5>Angelo</h5>
         <p>Available for Sponsor</p>
+     </div> -->
+   <!-- </div>
+   {% for child in object_list %}
+   {% if child %}
+   <div class="row gutenemala_text">
+     <div class="col-md-12">
+       <h2>Kenya</h2>
      </div>
+   </div>
+    <div class="row">
+    {% if child.country == "Kenya" %}
+     <div class="col-md-3 col-sm-6 child_circle">
+        <img src="images/child5.jpg" alt="children">
+        <h5>{{ child.name }}</h5>
+        <p>Available for Sponsor</p>
+     </div>
+     {% endif %}
+     {% endif %}
+     {% endfor %} -->
+     <!-- <div class="col-md-3 col-sm-6 child_circle">
+        <img src="images/child6.jpg" alt="children">
+        <h5>Franceska</h5>
+        <p>Available for Sponsor</p>
+     </div>
+     <div class="col-md-3 col-sm-6 child_circle">
+        <img src="images/child7.jpg" alt="children">
+        <h5>Jean</h5>
+        <p>Available for Sponsor</p>
+     </div>
+     <div class="col-md-3 col-sm-6 child_circle">
+        <img src="images/child8.jpg" alt="children">
+        <h5>Angelo</h5>
+        <p>Available for Sponsor</p>
+     </div> -->
    </div>
  </div>
 <!----Start Accredited Member section---->

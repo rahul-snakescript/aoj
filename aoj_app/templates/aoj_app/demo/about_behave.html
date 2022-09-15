@@ -71,7 +71,7 @@
                   </div>
                 </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{% url 'contact_us' %}">Contact</a>
+                    <a class="nav-link" href="{% url 'contact' %}">Contact</a>
                   </li>
                 </ul>
                 <div class="header_btn">
@@ -103,8 +103,11 @@
       <div class="row">
         <div class="col-md-12">
           <div class="behave_outer">
-            <h2>What We Believe</h2>
+            {% for data in data %}
+            <h2>{{ data.title }}</h2>
+            <!-- <h2>What We Believe</h2> -->
             <ul>
+            {% endfor %}
               <li>The Bible to be the complete Word of God; that the sixty-six books, as originally written, comprising the Old and 
                 New Testament were inspired by the Spirit of God and therefore are entirely free from error; that the Bible is the final 
                 authority in all matters of faith and practice and the true basis of Chris</li>

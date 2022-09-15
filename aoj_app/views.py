@@ -50,12 +50,17 @@ class MagazineDetailView(DetailView):
 
 
 class ChildrenView(ListView):
-    template_name = "aoj_app/pages/children.html"
-    model = Country
+    template_name = "aoj_app/demo/children.html"
+    model = Children
 
     def get_context_data(self, **kwargs):
         context = super(ChildrenView, self).get_context_data(**kwargs)
-        context["test"] = "test"
+        country=Country.objects.all()
+        country_dict={}
+        for country in country:
+            country_dict[country.id]=country.name
+        context['country_dict']=country_dict
+        print(context)
         return context
 
 
@@ -668,8 +673,15 @@ class AboutStaffView(ListView):
 
 class AboutbehaveView(TemplateView):
     template_name = "aoj_app/demo/about_behave.html"
-    # model = WhatWeBelieve
+    def get_context_data(self, **kwargs):
+        context= super().get_context_data(**kwargs)
+        text=WhatWeBelieve.objects.all()
+        context['data']=text
+        print(context) 
+        return context
 
 
 class AboutFundPolicyView(TemplateView):
     template_name = "aoj_app/demo/about_fund_policy.html"
+
+

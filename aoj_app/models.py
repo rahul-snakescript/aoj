@@ -80,7 +80,10 @@ class Product(models.Model):
 class Country(models.Model):
     name = models.CharField(max_length=128, blank=False, null=False)
 
-    def __unicode__(self):
+    # def __unicode__(self):
+    #     return self.name
+
+    def __str__(self):
         return self.name
 
     class Meta:
@@ -168,6 +171,9 @@ class Children(models.Model):
         return reverse("children_detail", kwargs={"slug": self.slug})
 
     def __unicode__(self):
+        return self.name
+    
+    def __str__(self):
         return self.name
 
     class Meta:
