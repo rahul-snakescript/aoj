@@ -107,7 +107,7 @@
    {% for child in object_list %}
    {% if child.country == country_name %}
      <div class="col-md-3 col-sm-6 child_circle">
-        <img src="{{ child.image1 }}" alt="children">
+        <img src="{{ child.image1.url }}" alt="children">
         <h5>{{ child.name }}</h5>
         <p>Available for Sponsor</p>
      </div>
