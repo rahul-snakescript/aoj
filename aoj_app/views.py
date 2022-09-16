@@ -675,7 +675,7 @@ class AboutStaffView(ListView):
 class AboutbehaveView(TemplateView):
     template_name = "aoj_app/demo/about_behave.html"
     def get_context_data(self, **kwargs):
-        context= super().get_context_data(**kwargs)
+        context= super(AboutbehaveView,self).get_context_data(**kwargs)
         text=WhatWeBelieve.objects.all()
         context['data']=text
         return context
@@ -684,22 +684,7 @@ class AboutbehaveView(TemplateView):
 class AboutFundPolicyView(TemplateView):
     template_name = "aoj_app/demo/about_fund_policy.html"
     def get_context_data(self, **kwargs):
-        context=super().get_context_data(**kwargs)
+        context=super(AboutFundPolicyView,self).get_context_data(**kwargs)
         text=FundPolicy.objects.all()
         context['data'] =text
         return context
-
-class ContactUsView(TemplateView):
-    template_name ="aoj_app/demo/contact-us.html"
-
-class HistoryView(TemplateView):
-    template_name ="aoj_app/demo/about_histroy.html"
-
-class MissionView(TemplateView):
-    template_name ="aoj_app/demo/about_mission.html"
-
-class LogInView(TemplateView):
-    template_name = "aoj_app/demo/login.html"
-
-class RegisterView(TemplateView):
-    template_name = "aoj_app/demo/register.html"
