@@ -104,17 +104,23 @@
         <div class="row">
           <div class="col-md-12">
             <div class="policy_item">
-              {% for data in data %}
-              <!-- <h2>Our Policy on Using Fund</h2> -->
+              {% if data %}
+              {% for data in data %}              
               <h2>{{ data.title }}</h2>
-              <!-- <p class="policy_paragraph">Spending funds is confined to board approved programs and projects. Each restricted contribution designated towards a board 
-                approved project or program will be used as designated with the understanding that when the need for such a program or project 
-                has been met, or cannot be completed for any reason determined by the board, the remaining restricted contributions designated 
-                for such programs will be used where most needed.</p> -->
                 <p class="policy_paragraph">{{ data.body|safe }}</p>
-                <!-- <p class="policy_tagLine">We are a proud member of the Canadian Centre for Christian Charities.</p> -->
                 <p class="policy_tagLine">{{ data.foot }}</p>
                 {% endfor %}
+                {% else %}
+                
+                <h2>Our Policy on Using Fund</h2>
+                <p class="policy_paragraph">Spending funds is confined to board approved programs and projects. Each restricted contribution designated towards a board 
+                  approved project or program will be used as designated with the understanding that when the need for such a program or project 
+                  has been met, or cannot be completed for any reason determined by the board, the remaining restricted contributions designated 
+                  for such programs will be used where most needed.</p>
+                  <p class="policy_tagLine">We are a proud member of the Canadian Centre for Christian Charities.</p>
+
+                {% endif %}
+                
             </div>
           </div>
         </div>

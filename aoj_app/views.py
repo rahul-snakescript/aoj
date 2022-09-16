@@ -669,6 +669,9 @@ class NewIndexView(TemplateView):
         return context
 
 class AboutStaffView(ListView):
+    text=Staff.objects.all()
+    for k in text:
+        print(k.staff_image)
     template_name = "aoj_app/demo/about_staff.html"
     model = Staff
 
@@ -677,7 +680,12 @@ class AboutbehaveView(TemplateView):
     def get_context_data(self, **kwargs):
         context= super().get_context_data(**kwargs)
         text=WhatWeBelieve.objects.all()
+        length=0
+        for i in text:
+            length+=1
+        context['length']=length
         context['data']=text
+        print(context)
         return context
 
 
@@ -688,7 +696,6 @@ class AboutFundPolicyView(TemplateView):
         text=FundPolicy.objects.all()
         context['data'] =text
         return context
-
 class ContactUsView(TemplateView):
     template_name ="aoj_app/demo/contact-us.html"
 
@@ -703,3 +710,4 @@ class LogInView(TemplateView):
 
 class RegisterView(TemplateView):
     template_name = "aoj_app/demo/register.html"
+

@@ -103,13 +103,18 @@
       <div class="row">
         <div class="col-md-12">
           <div class="behave_outer">
+            {% if data  %}
             {% for data in data %}
-            <h2>{{ data.title }}</h2>
-            <!-- <h2>What We Believe</h2> -->
+            <h2>{{ data.title }}</h2>  
             <ul>
               {{ data.body|safe }}
+            </ul>
             {% endfor %}
-              <!-- <li>The Bible to be the complete Word of God; that the sixty-six books, as originally written, comprising the Old and 
+
+            {% else %}
+            <h2>What We Believe</h2>
+            <ul>
+              <li>The Bible to be the complete Word of God; that the sixty-six books, as originally written, comprising the Old and 
                 New Testament were inspired by the Spirit of God and therefore are entirely free from error; that the Bible is the final 
                 authority in all matters of faith and practice and the true basis of Chris</li>
                 <li>That there is One God, Creator of all, Holy Sovereign, Eternal existing in the three equal persons, the Father, the Son, 
@@ -126,8 +131,10 @@
                 <li>In the Personal, Bodily and Glorious Return of the Lord Jesus Christ; in the Bodily Resurrection of the just and the 
                   unjust; in the blessedness of the redeemed and in the judgement and conscious punishment of the wicked.</li>
                   <li>That it is the responsibility of the Local Church to continue the task of World Evangelization and the responsibility of 
-                    Each Believer to give themselves to the fulfilling the Great Commission.</li> -->
+                    Each Believer to give themselves to the fulfilling the Great Commission.</li>
             </ul>
+            {% endif %}
+            
           </div>
         </div>
       </div>
