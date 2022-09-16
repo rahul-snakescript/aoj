@@ -58,7 +58,8 @@ class ChildrenView(ListView):
         country=Country.objects.all()
         country_dict={}
         for country in country:
-            country_dict[country.id]=country.name
+            name=country.name
+            country_dict[country.id]=name.capitalize()
         context['country_dict']=country_dict
         print(context)
         return context
@@ -677,11 +678,15 @@ class AboutbehaveView(TemplateView):
         context= super().get_context_data(**kwargs)
         text=WhatWeBelieve.objects.all()
         context['data']=text
-        print(context) 
         return context
 
 
 class AboutFundPolicyView(TemplateView):
     template_name = "aoj_app/demo/about_fund_policy.html"
+    def get_context_data(self, **kwargs):
+        context=super().get_context_data(**kwargs)
+        text=FundPolicy.objects.all()
+        context['data'] =text
+        return context
 
 
