@@ -41,7 +41,7 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+                    <a class="nav-link active" aria-current="page" href="{% url 'newindex' %}">Home</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#">Children</a>
@@ -64,18 +64,18 @@
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                       <li><a class="dropdown-item" href="{% url 'behave' %}">About Behave</a></li>
                       <li><a class="dropdown-item" href="{% url 'fund_policy' %}">About Fund Policy</a></li>
-                      <li><a class="dropdown-item" href="#">About Histroy</a></li>
-                      <li><a class="dropdown-item" href="#">About Mission</a></li>
+                      <li><a class="dropdown-item" href="{% url 'history' %}">About History</a></li>
+                      <li><a class="dropdown-item" href="{% url 'mission' %}">About Mission</a></li>
                       <li><a class="dropdown-item" href="{% url 'staff' %}">About Staff</a></li>
                     </ul>
                   </div>
                 </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="{% url 'contact_us' %}">Contact</a>
                   </li>
                 </ul>
                 <div class="header_btn">
-                  <a href="#" class="donate_btn">Donate</a>
+                  <a href="{% url 'login' %}" class="donate_btn">Donate</a>
                   <a href="#" class="sponsor_btn">Sponsor</a>
                 </div>
               </div>

@@ -64,8 +64,8 @@
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                       <li><a class="dropdown-item" href="{% url 'behave' %}">About Behave</a></li>
                       <li><a class="dropdown-item" href="{% url 'fund_policy' %}">About Fund Policy</a></li>
-                      <li><a class="dropdown-item" href="#">About Histroy</a></li>
-                      <li><a class="dropdown-item" href="#">About Mission</a></li>
+                      <li><a class="dropdown-item" href="{% url 'history' %}">About History</li>
+                      <li><a class="dropdown-item" href="{% url 'mission' %}">About Mission</a></li>
                       <li><a class="dropdown-item" href="{% url 'staff' %}">About Staff</a></li>
                     </ul>
                   </div>
@@ -75,7 +75,7 @@
                   </li>
                 </ul>
                 <div class="header_btn">
-                  <a href="#" class="donate_btn">Donate</a>
+                  <a href="{% url 'login' %}" class="donate_btn">Donate</a>
                   <a href="#" class="sponsor_btn">Sponsor</a>
                 </div>
               </div>
