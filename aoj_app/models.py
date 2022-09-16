@@ -330,4 +330,19 @@ class FundPolicy(models.Model):
     def __unicode__(self):
         return self.title
 
+class AboutHistory(models.Model):
+    title=models.CharField(max_length=200)
+    body=RichTextUploadingField()
+
+    def __unicode__(self):
+        return self.title
+
+class AboutMission(models.Model):
+    title=models.CharField(max_length=200)
+    body=RichTextUploadingField()
+
+    def __unicode__(self):
+        return self.title
+
+
 

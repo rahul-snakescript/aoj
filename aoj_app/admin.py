@@ -4,6 +4,8 @@ from authtools.models import User
 from authtools.admin import NamedUserAdmin, BASE_FIELDS
 from solo.admin import SingletonModelAdmin
 
+# from aoj.aoj_app.views import HistoryView
+
 from .models import *
 
 admin.site.unregister(User)
@@ -85,3 +87,11 @@ class StaffAdmin(admin.ModelAdmin):
 @admin.register(FundPolicy)
 class StaffAdmin(admin.ModelAdmin):
     list_display= ['title','body','foot']
+
+@admin.register(AboutHistory)
+class StaffAdmin(admin.ModelAdmin):
+    list_display= ['title','body']
+
+@admin.register(AboutMission)
+class StaffAdmin(admin.ModelAdmin):
+    list_display= ['title','body']

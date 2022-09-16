@@ -100,9 +100,18 @@
   <!-- history sec start here -->
   <div class="history">
     <div class="container children_arm">
+      {% if data %}
       <div class="row">
         <div class="col-md-12">
           <div class="history_item">
+            {% for data in data %}
+            <h2>{{data.title}}</h2>
+            <p>{{ data.body|safe }}</p>
+            {% endfor %}
+            <br>
+            <br>
+            <br>
+      {% else %}
             <h2>Our History</h2>
             <p>On Sunday March l7th, 1990 a team of adults from Bayfair Baptist Church in Pickering, Ontario, shared their experiences 
               with the entire congregation on their return from a ministry project in Jamaica, a project with orphan children. It was 
@@ -150,7 +159,8 @@
         <div class="col-md-12">
           <img src="{% static 'demo/images/about_histrory.jpg' %}" alt="about_history">
         </div>
-      </div>
+      </div>      
+      {% endif %}
     </div>
   </div>
   <!-- history sec close here -->

@@ -704,9 +704,19 @@ class ContactUsView(TemplateView):
 
 class HistoryView(TemplateView):
     template_name ="aoj_app/demo/about_histroy.html"
+    def get_context_data(self, **kwargs):
+        context=super(HistoryView,self).get_context_data(**kwargs)
+        text=AboutHistory.objects.all()
+        context['data'] =text
+        return context
 
 class MissionView(TemplateView):
     template_name ="aoj_app/demo/about_mission.html"
+    def get_context_data(self, **kwargs):
+        context=super(MissionView,self).get_context_data(**kwargs)
+        text=AboutMission.objects.all()
+        context['data'] =text
+        return context
 
 class LogInView(TemplateView):
     template_name = "aoj_app/demo/login.html"
