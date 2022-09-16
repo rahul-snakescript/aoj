@@ -1,4 +1,4 @@
-{% load staticfiles i18n %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,13 +13,13 @@
   <link rel="stylesheet" href="{% static 'demo/css/bootstrap.css' %}">
 
   <link rel="stylesheet" href="{% static 'demo/css/slick.css' %}">
-  <link rel="stylesheet" href="% static 'demo/css/slick-theme.css' %}">
+  <link rel="stylesheet" href="{% static 'demo/css/slick-theme.css' %} ">
 
   <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
   <!-- fav link -->
-  <link rel="icon" type="image/x-icon" href="{% static 'demo/image/fav.png' %}">
+  <link rel="icon" type="image/x-icon" href="{% static 'demo/images/fav.png' %}">
 </head>
 
 <body>
@@ -41,7 +41,7 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+                    <a class="nav-link active" aria-current="page" href="{% url 'newindex' %}">Home</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="children.html">Children</a>
@@ -63,19 +63,19 @@
 
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                       <li><a class="dropdown-item" href="{% url 'behave' %}">About Behave</a></li>
-                      <li><a class="dropdown-item" href="{%  url 'fund_policy' %}">About Fund Policy</a></li>
-                      <li><a class="dropdown-item" href="about_histroy.html">About Histroy</a></li>
-                      <li><a class="dropdown-item" href="about_mission.html">About Mission</a></li>
+                      <li><a class="dropdown-item" href="{% url 'fund_policy' %}">About Fund Policy</a></li>
+                      <li><a class="dropdown-item" href="{% url 'history' %}">About History</a></li>
+                      <li><a class="dropdown-item" href="{% url 'mission' %}">About Mission</a></li>
                       <li><a class="dropdown-item" href="{% url 'staff' %}">About Staff</a></li>
                     </ul>
                   </div>
                 </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="contact-us.html">Contact</a>
+                    <a class="nav-link" href="{% url 'contact_us' %}">Contact</a>
                   </li>
                 </ul>
                 <div class="header_btn">
-                  <a href="#" class="donate_btn">Donate</a>
+                  <a href="{% url 'login' %}" class="donate_btn">Donate</a>
                   <a href="#" class="sponsor_btn">Sponsor</a>
                 </div>
               </div>
@@ -162,7 +162,7 @@
         <div class="col-md-12">
           <div class="mamber_outer">
             <div class="logo_mamber">
-              <img src="images/logo_mamber.png" alt="">
+              <img src="{% static 'demo/images/logo_mamber.png' %}" alt="">
             </div>
             <p>Certification with CCCC is a powerful endorsement of a charity’s integrity. It demonstrates that the charity has been carefully assessed<br>
               by CCCC’s rigorous certification process and found to be in compliance with CCCC’s Standards. Donors can give confidently and<br>

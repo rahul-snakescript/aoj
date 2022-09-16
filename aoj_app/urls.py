@@ -167,4 +167,29 @@ urlpatterns = [
         AboutFundPolicyView.as_view(),
         name="fund_policy",
     ),
+    url(
+        r"^demo/contact-us/$",
+        ContactUsView.as_view(),
+        name="contact_us",
+    ),
+    url(
+        r"^demo/history/$",
+        HistoryView.as_view(),
+        name="history",
+    ),
+    url(
+        r"^demo/mission/$",
+        MissionView.as_view(),
+        name="mission",
+    ),
+     url(
+        r"^demo/login/$",
+        LogInView.as_view(),
+        name="login",
+    ),
+     url(
+        r"^demo/register/$",
+        RegisterView.as_view(),
+        name="register",
+    )
 ]
