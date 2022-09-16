@@ -678,7 +678,7 @@ class AboutStaffView(ListView):
 class AboutbehaveView(TemplateView):
     template_name = "aoj_app/demo/about_behave.html"
     def get_context_data(self, **kwargs):
-        context= super().get_context_data(**kwargs)
+        context= super(AboutbehaveView.self).get_context_data(**kwargs)
         text=WhatWeBelieve.objects.all()
         length=0
         for i in text:
@@ -692,7 +692,7 @@ class AboutbehaveView(TemplateView):
 class AboutFundPolicyView(TemplateView):
     template_name = "aoj_app/demo/about_fund_policy.html"
     def get_context_data(self, **kwargs):
-        context=super().get_context_data(**kwargs)
+        context=super(AboutFundPolicyView.self).get_context_data(**kwargs)
         text=FundPolicy.objects.all()
         context['data'] =text
         return context
