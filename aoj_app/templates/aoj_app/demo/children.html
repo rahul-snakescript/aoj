@@ -96,22 +96,20 @@
   <!-- header close here -->
 
 <!--Start Form Section-->
-{% for country_id,country_name in country_dict.items %}
+    {% for country,children in child_data.items %}
  <div class="container children_arm">
    <div class="row gutenemala_text">
      <div class="col-md-12">
-       <h2>{{ country_name }}</h2>
+       <h2>{{ country }}</h2>
      </div>
    </div>
-   <div class="row"></div>
-   {% for child in object_list %}
-   {% if child.country == country_name %}
+   <div class="row">
+    {% for child in children %}
      <div class="col-md-3 col-sm-6 child_circle">
         <img src="{{ child.image1.url }}" alt="children">
-        <h5>{{ child.name }}</h5>
+        <h5>{{ child }}</h5>
         <p>Available for Sponsor</p>
      </div>
-    {% endif %}
     {% endfor %}
   </div>
     {% endfor %}

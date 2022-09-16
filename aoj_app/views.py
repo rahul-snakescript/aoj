@@ -1,3 +1,5 @@
+from itertools import count
+from re import L
 import urllib
 import time
 import logging
@@ -55,13 +57,17 @@ class ChildrenView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(ChildrenView, self).get_context_data(**kwargs)
-        country=Country.objects.all()
-        country_dict={}
-        for country in country:
-            name=country.name
-            country_dict[country.id]=name.capitalize()
-        context['country_dict']=country_dict
-        print(context)
+        children=Children.objects.all()
+        data_dict={}
+        for child in children:
+            country_name=child.country.name.capitalize()
+            if country_name not in data_dict:
+                data_dict[country_name]=list()
+                data_dict[country_name].append(child)
+            else:
+                data_dict[country_name].append(child)
+
+            context['child_data']=data_dict
         return context
 
 
@@ -669,9 +675,6 @@ class NewIndexView(TemplateView):
         return context
 
 class AboutStaffView(ListView):
-    text=Staff.objects.all()
-    for k in text:
-        print(k.staff_image)
     template_name = "aoj_app/demo/about_staff.html"
     model = Staff
 
