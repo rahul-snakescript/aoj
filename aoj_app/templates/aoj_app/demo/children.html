@@ -43,7 +43,7 @@
                     <a class="nav-link active" aria-current="page" href="{% url 'newindex' %}">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="children.html">Children</a>
+                    <a class="nav-link" href="{% url 'children' %}">Children</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#">Mission</a>
@@ -95,7 +95,7 @@
   </section>
   <!-- header close here -->
 
-<!-----Start Form Section----->
+<!--Start Form Section-->
 {% for country_id,country_name in country_dict.items %}
  <div class="container children_arm">
    <div class="row gutenemala_text">

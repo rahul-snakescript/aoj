@@ -43,7 +43,7 @@
                     <a class="nav-link active" aria-current="page" href="{% url 'newindex' %}">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Children</a>
+                    <a class="nav-link" href="{% url 'children' %}">Children</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#">Mission</a>
@@ -453,7 +453,7 @@
           <div class="footer_right_side">
             <div class="right_side_outer">
               <div class="footer_logo">
-                <img src="{% static 'demoimages/footer-logo.pn' %}" alt="footer-logo">
+                <img src="{% static 'demo/images/footer-logo.png' %}" alt="footer-logo">
               </div>
               <div class="social_ic">
                 <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
@@ -467,8 +467,8 @@
 
                 <ul>
                   <li><a href="#">About AOJ</a></li>
-                  <li><a href="#">Mission Statement</a></li>
-                  <li><a href="#">History</a></li>
+                  <li><a href="{% url 'mission' %}">Mission Statement</a></li>
+                  <li><a href="{% url 'history' %}">History</a></li>
                 </ul>
               </div>
               <div class="footer_manu_item1">
@@ -476,7 +476,7 @@
 
                 <ul>
                   <li><a href="#">Catalogue</a></li>
-                  <li><a href="#">Donations</a></li> 
+                  <li><a href="{% url 'login' %}">Donations</a></li> 
                 </ul>
               </div>
               <div class="footer_manu_item1">
@@ -484,7 +484,7 @@
 
                 <ul>
                   <li><a href="#">Catalogue</a></li>
-                  <li><a href="#">Donations</a></li>
+                  <li><a href="{% url 'login' %}">Donations</a></li>
                 </ul>
               </div>
             </div>

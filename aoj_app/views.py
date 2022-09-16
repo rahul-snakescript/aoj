@@ -696,19 +696,3 @@ class AboutFundPolicyView(TemplateView):
         text=FundPolicy.objects.all()
         context['data'] =text
         return context
-
-
-class ContactUsView(TemplateView):
-    template_name ="aoj_app/demo/contact-us.html"
-
-class HistoryView(TemplateView):
-    template_name ="aoj_app/demo/about_histroy.html"
-
-class MissionView(TemplateView):
-    template_name ="aoj_app/demo/about_mission.html"
-
-class LogInView(TemplateView):
-    template_name = "aoj_app/demo/login.html"
-
-class RegisterView(TemplateView):
-    template_name = "aoj_app/demo/register.html"
