@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,18 +7,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- css link -->
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/custom.css">
-  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="{% static 'demo/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'demo/css/custom.css'%}">
+  <link rel="stylesheet" href="{% static 'demo/css/bootstrap.css' %}">
 
-  <link rel="stylesheet" href="css/slick.css">
-  <link rel="stylesheet" href="css/slick-theme.css">
+  <link rel="stylesheet" href="{% static 'demo/css/slick.css' %}">
+  <link rel="stylesheet" href="{% static 'demo/css/slick-theme.css' %}">
 
   <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
   <!-- fav link -->
-  <link rel="icon" type="image/x-icon" href="image/fav.png">
+  <link rel="icon" type="image/x-icon" href="{% static 'demo/images/fav.png' %}">
 </head>
 
 <body>
@@ -30,7 +31,7 @@
         <div class="children_header">
           <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
-              <a class="navbar-brand" href="home.html"><img src="images/logo.png"></a>
+              <a class="navbar-brand" href="home.html"><img src="{% static 'demo/images/logo.png' %}"></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -39,7 +40,7 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+                    <a class="nav-link active" aria-current="page" href="{% url 'newindex' %}">Home</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#">Children</a>
@@ -60,20 +61,20 @@
                     </a>
 
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                      <li><a class="dropdown-item" href="about_behave.html">About Behave</a></li>
-                      <li><a class="dropdown-item" href="about_fund_policy.html">About Fund Policy</a></li>
-                      <li><a class="dropdown-item" href="about_histroy.html">About Histroy</a></li>
-                      <li><a class="dropdown-item" href="about_mission.html">About Mission</a></li>
-                      <li><a class="dropdown-item" href="about_staff.html">About Staff</a></li>
+                      <li><a class="dropdown-item" href="{% url 'behave' %}">About Behave</a></li>
+                      <li><a class="dropdown-item" href="{% url 'fund_policy' %}">About Fund Policy</a></li>
+                      <li><a class="dropdown-item" href="{% url 'history' %}">About Histroy</a></li>
+                      <li><a class="dropdown-item" href="{% url 'mission' %}">About Mission</a></li>
+                      <li><a class="dropdown-item" href="{% url 'staff' %}">About Staff</a></li>
                     </ul>
                   </div>
                 </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="{% url 'contact_us' %}">Contact</a>
                   </li>
                 </ul>
                 <div class="header_btn">
-                  <a href="#" class="donate_btn">Donate</a>
+                  <a href="{% url 'login' %}" class="donate_btn">Donate</a>
                   <a href="#" class="sponsor_btn">Sponsor</a>
                 </div>
               </div>
@@ -95,7 +96,7 @@
   </div>
   
 </div>
-<!-----Start Form Section----->
+<!--Start Form Section-->
 <div class="container registeration_form">
   <div class="row donnar_bg">
     <div class="col-md-12">
@@ -412,7 +413,7 @@
         <div class="col-md-12">
           <div class="mamber_outer">
             <div class="logo_mamber">
-              <img src="images/logo_mamber.png" alt="">
+              <img src="{% static 'demoimages/logo_mamber.png' %}" alt="">
             </div>
             <p>Certification with CCCC is a powerful endorsement of a charity’s integrity. It demonstrates that the charity has been carefully assessed
               by CCCC’s rigorous certification process and found to be in compliance with CCCC’s Standards. Donors can give confidently and
@@ -452,7 +453,7 @@
           <div class="footer_right_side">
             <div class="right_side_outer">
               <div class="footer_logo">
-                <img src="images/footer-logo.png" alt="footer-logo">
+                <img src="{% static 'demoimages/footer-logo.pn' %}" alt="footer-logo">
               </div>
               <div class="social_ic">
                 <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
@@ -499,11 +500,11 @@
   </div>
   <!-- footer close here -->
 
-<script src="js/jquery.min.js"></script>
+<script src="{% static 'demo/js/jquery.min.js' %}"></script>
   <!-- js link -->
-  <script src="js/slick.js"></script>
-  <script src="js/slick.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+  <script src="{% static 'demo/js/slick.js' %}"></script>
+  <script src="{% static 'demo/js/slick.min.js' %}"></script>
+  <script src="{% static 'demo/js/popper.min.js' %}"></script>
+  <script src="{% static 'demo/js/bootstrap.min.js' %}"></script>
 </body>
 </html>
