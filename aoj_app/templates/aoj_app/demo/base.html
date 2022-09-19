@@ -31,7 +31,7 @@
         <div class="children_header">
           <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
-              <a class="navbar-brand" href="{% url 'newindex' %}"><img src="{% static 'demo/images/logo.png' %}"></a>
+              <a class="navbar-brand" href="home.html"><img src="{% static 'demo/images/logo.png' %}"></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -49,10 +49,23 @@
                     <a class="nav-link" href="#">Mission</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Teams</a>
+                    <!-- <a class="nav-link" href="#"></a> -->
+                    <div class="dropdown">
+                      <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                        Teams
+                      </a>
+  
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item" href="{% url 't_blog' %}">Teams Blog</a></li>
+                        <li><a class="dropdown-item" href="{%  url 't_calender' %}">Teams Calender</a></li>
+                        <li><a class="dropdown-item" href="{% url 't_consider' %}">Teams Consider</a></li>
+                        <li><a class="dropdown-item" href="{% url 't_resource' %}">Teams Resource</a></li>
+                        <li><a class="dropdown-item" href="{% url 't_training' %}">Teams Training</a></li>
+                      </ul>
+                    </div>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{% url 'catalogue' %}">Catalogue</a>
+                    <a class="nav-link" href="#">Catalogue</a>
                   </li>
                   <li class="nav-item">
                   <div class="dropdown">
@@ -158,7 +171,7 @@
                   <h5>Donate</h5>
   
                   <ul>
-                    <li><a href="{% url 'catalogue' %}">Catalogue</a></li>
+                    <li><a href="#">Catalogue</a></li>
                     <li><a href="{% url 'login' %}">Donations</a></li> 
                   </ul>
                 </div>
@@ -166,7 +179,7 @@
                   <h5>Get Involved</h5>
   
                   <ul>
-                    <li><a href="{% url 'catalogue' %}">Catalogue</a></li>
+                    <li><a href="#">Catalogue</a></li>
                     <li><a href="{% url 'login' %}">Donations</a></li>
                   </ul>
                 </div>

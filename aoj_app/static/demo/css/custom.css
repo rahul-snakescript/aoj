@@ -372,7 +372,7 @@
     margin: 0 auto;
     border: 1px solid #ebebeb;
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 .catalog_section img {
     width: 100%;
@@ -388,6 +388,41 @@
     font-size: 18px;
     color: #ffffff;
     background: #f7941d;
-    padding: 20px;
+    padding: 10px 19px!IMPORTANT;
+    border: none;
+    border-radius: 9px !important;
+    margin-top: 16px;
+    font-family: 'Proxima Nova Alt Rg';
+    border: 1px solid #f7941d;
+}
+.catalog_section_main {
+    margin-top: 70px !IMPORTANT;
+}
+.registration_cataloque .mamber_outer {
+    padding: 0px 70px !IMPORTANT;
+}
+.registration_cataloque p{
+    font-size: 18px !important;
+}
+.add_to_cart:hover{
+    color: #f7941d;
+    background: transparent;
+    border: 1px solid #f7941d;
 }
 /* ---Catalog Page CSS End--- */
+
+/*----Guatenmala mission page start---*/
+.guatemala_banner{
+    background: url(../images/guatenamala_mission_banner.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+.guatemala_banner .banner_outer{
+    padding: 149px 150px !IMPORTANT;
+}
+.guatemala_banner .banner_outer h1{
+    margin-bottom: 0px;
+}
+/*----Guatenmala mission page end---*/
+

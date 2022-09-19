@@ -647,6 +647,7 @@
     background-repeat: no-repeat;
     padding-bottom: 420px !IMPORTANT;
     background-position: bottom center;
+    position: relative;
 }
 .make_donation {
     text-align: center;
@@ -786,6 +787,264 @@
 .registeration_form .form-group select:focus-visible{
     outline: none;
 }
+
+/* teams consider start here */
+.teamsBanner {
+    background: url(../images/Team_banner.jpg);
+    background-size: cover;
+}
+.teamsBanner:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0 0 0 / 40%);
+}
+.teamsConsider_outer {
+    position: absolute;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.teamsConsider_outer h1 {
+    font-size: 60px;
+    color: #ffffff;
+    margin: 0;
+    padding-top: 125px !important;
+    font-family: 'Proxima Nova Alt Rg';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.considerServing_items {
+    padding: 0 15px !important;
+}
+.considerImg_left_side img {
+    width: 100%;
+}
+.outer_consider {
+    margin-top: 30px !important;
+}
+.mission_team {
+    text-align: center;
+    padding-top: 103px !important;
+}
+.mission_team h6 {
+    font-size: 24px;
+    margin: 0;
+    color: #393939;
+    padding-bottom: 47px !important;
+    font-family: 'Proxima Nova Rg';
+}
+.missionTeam_btn a {
+    width: 153px;
+    height: 51px;
+    background: #f7941d;
+    border: 1px solid #f7941d;
+    border-radius: 10px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-family: 'Proxima Nova Alt Rg';
+    text-decoration: none;
+    color: #ffffff;
+}
+.missionTeam_btn a:hover {
+    color: #f7941d;
+    background: none;
+}
+.missionTeam_btn { 
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.consider_hadding h2 {
+    text-align: center;
+    font-size: 48px;
+    line-height: 60px; 
+    color: #000000;
+    margin: 0;
+    padding-bottom: 64px !important;
+    font-family: 'Proxima Nova Rg';
+}
+.considerServing {
+    margin-top: 100px;
+}
+/* teams consider close here */
+
+/* teams blog start here */
+.considerImg_left_side {
+    text-align: center;
+}
+.considerImg_left_side h5 {
+    padding-top: 29px !important;
+    font-size: 30px;
+    font-family: 'Proxima Nova Alt Rg';
+    margin: 0;
+    padding-bottom: 15px !important;
+}
+.considerImg_left_side p {
+    color: #656565;
+    font-size: 18px;
+    margin: 0;
+    line-height: 30px;
+    font-family: 'Proxima Nova Rg';
+}
+.teamsBlogs_item {
+    padding: 0 36px !important;
+}
+.TeamsBlogs_mamber {
+    margin-top: 80px;
+} 
+/* teams blog close here */
+
+/* team resources start here */
+.TeamResources_hadding h2 {
+    font-size: 48px;
+    margin: 0;
+    color: #000000;
+    padding-bottom: 60px !important;
+    font-family: 'Proxima Nova Rg';
+}
+.TeamResources_outer {
+    margin-top: 90px;
+    text-align: center;
+}
+.TeamResources_hadding p {
+    font-size: 24px;
+    color: #343136;
+    padding-bottom: 80px !important;
+    font-family: 'Proxima Nova Rg';
+    margin: 0;
+}
+p.mannual_resources {
+    color: #343136;
+    font-size: 18px;
+    margin: 0;
+    font-family: 'Proxima Nova Rg';
+    padding-bottom: 36px !important;
+}
+p.mannual_resources1 {
+    color: #343136;
+    font-size: 18px;
+    margin: 0;
+    padding-bottom: 20px !important;
+    padding-top: 16px !important;
+    font-family: 'Proxima Nova Rg';
+}
+.download_files a {
+    width: 207px;
+    height: 51px;
+    border-radius: 5px;
+    background: #f7941d;
+    border: 1px solid #f7941d;
+    text-decoration: none;
+    color: #ffffff; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Proxima Nova Rg';
+    font-size: 14px;
+}
+.download_files a:hover {
+    background: none;
+    color: #f7941d;
+}
+.download_files {
+    justify-content: center;
+    display: flex;
+    width: 100%;
+}
+.resources_team {
+    margin-top: 90px !important;
+}
+/* team resources close here */
+
+/* team training start here */
+.training {
+    margin-top: 82px;
+}
+.training_outer1 h2 {
+    font-size: 48px;
+    margin: 0;
+    color: #000000;
+    padding-bottom: 60px !important;
+    font-family: 'Proxima Nova Rg';
+    text-align: center;
+}
+
+/* team training close here */
+
+/* team calender start here */
+.month {
+    padding: 70px 25px;
+    width: 100%;
+    background: #cecece;
+    text-align: center;
+}
+  
+  .month ul {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .month ul li {
+    color: #ffffff;
+    font-size: 20px;  
+  }
+  
+  .month .prev {
+    float: left;
+    padding-top: 10px;
+  }
+  
+  .month .next {
+    float: right;
+    padding-top: 10px;
+  }
+  
+  .weekdays {
+    margin: 0;
+    padding: 10px 0;
+  }
+  
+  .weekdays li {
+    display: inline-block;
+    width: 13.6%;
+    color: #666;
+    text-align: center;
+  }
+  
+  .days {
+    padding: 10px 0;
+    background: #eee;
+    margin: 0;
+  }
+  
+  .days li {
+    list-style-type: none;
+    display: inline-block;
+    width: 13.6%;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size:12px;
+    color: #777;
+  }
+  
+  .days li .active {
+    padding: 5px;
+    background: #1abc9c;
+    color: white !important
+  }
+  /* calender close here */
+
+
+
 /* Media Query Start */
 /* Media Query Start */
 @media only screen and (max-width: 1200px) {
@@ -822,6 +1081,33 @@
     width: 230px !important;
     height: 220px !important;    
     }
+
+    /* tams start */
+    .considerServing {
+        margin-top: 40px;
+    }
+    .consider_hadding h2 { 
+        font-size: 34px; 
+        padding-bottom: 24px !important; 
+    }
+    .mission_team { 
+        padding-top: 60px !important;
+    }
+    /* tams close */
+
+    /* recoures start */
+    .TeamResources_outer {
+        margin-top: 40px; 
+    }
+    .TeamResources_hadding h2 {
+        font-size: 40px; 
+        padding-bottom: 30px !important; 
+    }
+    .TeamResources_hadding p {
+        font-size: 18px; 
+        padding-bottom: 60px !important; 
+    }
+    /* recours close */
 }
 @media only screen and (max-width: 1024px) {
     .banner_outer h1 {
@@ -1117,6 +1403,18 @@
     width: 150px !important;
     height: 150px !important;
     }
+    .children_arm .catalog_section_main {
+    margin-top: 55px !IMPORTANT;
+    }
+
+    /* resources start */
+    .resources_applications {
+        margin-top: 20px !important;
+    }
+    .resources_team {
+        margin-top: 0 !important;
+    }
+    /* resources close */
 }
 @media only screen and (max-width: 768px) {
     .behave_outer ul li{
@@ -1259,6 +1557,32 @@
     width: 180px !important;
     height: 180px !important;
     }
+    .add_to_cart{
+    padding: 7px 19px!IMPORTANT;
+    font-size: 16px !IMPORTANT;
+    }
+    .catalog_section .toy_section{
+     padding: 10px !important;    
+    }
+    .toy_section p{
+    font-size: 14px !important;
+    line-height: 20px !IMPORTANT;
+    }
+    .add_to_cart{
+    font-size: 14px !IMPORTANT;     
+    }
+    .mamber.registration_member.registration_cataloque .mamber_outer {
+    padding: 0px 10px !IMPORTANT;
+    }
+
+    /* teams start */
+    .considerImg_left_side { 
+        margin-top: 20px;
+    }
+    .outer_consider {
+        margin-top: 0 !important;
+    }
+    /* teams close */
 }
 @media only screen and (max-width: 576px) {
     .logo_mamber img{
@@ -1485,6 +1809,12 @@
     .child_circle{
     padding-bottom: 15px !important;    
     }
+    .catalog_section .toy_section {
+    padding: 20px !important;
+    }
+    .registration_cataloque p {
+    font-size: 15px !important;
+    }
 }
 @media only screen and (max-width: 470px) {
 .banner_outer h1 {
@@ -1554,6 +1884,9 @@
     }
     .main_form_login {
     width: 90% !IMPORTANT;
+    }
+    .catalog_section {
+    width: 100% !important;
     }
 }
 @media only screen and (max-width: 380px) {
