@@ -61,6 +61,7 @@
                                  data-show-faces="true"
                                  data-share="true"></div>
                         </div>
+                        {% if latest_post %}
                         <div class="text-center">
                             <img src="{% static 'img/mission-moments.jpg' %}" alt="" class="img-responsive">
                         </div>
@@ -74,6 +75,7 @@
                         <div class="text-center" style="padding: 20px 0;">
                             <a class="btn btn-aoj" href="{% url 'blog' %}">{% trans "GO TO THE BLOG" %}</a>
                         </div>
+                        {% endif %}
                         <hr>
 
                         <h1 class="text-center">{% trans "Latest News" %}</h1>

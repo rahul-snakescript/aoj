@@ -29,8 +29,10 @@ class IndexView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(IndexView, self).get_context_data(**kwargs)
-        context["latest_post"] = BlogEntry.objects.latest("created_date")
-
+        try:
+            context["latest_post"] = BlogEntry.objects.latest("created_date")
+        except:
+            context["latest_post"]= None
         context["latest_magazines"] = Magazine.objects.all()[:6]
         context["countries"] = Country.objects.all()
         return context
@@ -668,8 +670,10 @@ class NewIndexView(TemplateView):
     template_name = "aoj_app/demo/home.html"
     def get_context_data(self, **kwargs):
         context = super(NewIndexView, self).get_context_data(**kwargs)
-        context["latest_post"] = BlogEntry.objects.latest("created_date")
-
+        try:
+            context["latest_post"] = BlogEntry.objects.latest("created_date")
+        except:
+            context['latest_post']=None
         context["latest_magazines"] = Magazine.objects.all()[:6]
         context["countries"] = Country.objects.all()
         return context
