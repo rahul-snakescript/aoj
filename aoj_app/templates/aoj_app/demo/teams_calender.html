@@ -24,7 +24,7 @@
 <body>
 
   <!-- banner start here -->
-  <section class="child_banner">
+  <section class="register_banner teamsBanner">
     <!-- header start here -->
     <header>
       <div class="header">
@@ -40,7 +40,7 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'newindex' %}">Home</a>
+                    <a class="nav-link active" aria-current="page" href="newindex">Home</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'children' %}">Children</a>
@@ -62,8 +62,8 @@
 
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                       <li><a class="dropdown-item" href="{% url 'behave' %}">About Behave</a></li>
-                      <li><a class="dropdown-item" href="{%  url 'fund_policy' %}">About Fund Policy</a></li>
-                      <li><a class="dropdown-item" href="{% url 'history' %}">About History</a></li>
+                      <li><a class="dropdown-item" href="{% url 'fund_policy' %}">About Fund Policy</a></li>
+                      <li><a class="dropdown-item" href="{% url 'history' %}">About Histroy</a></li>
                       <li><a class="dropdown-item" href="{% url 'mission' %}">About Mission</a></li>
                       <li><a class="dropdown-item" href="{% url 'staff' %}">About Staff</a></li>
                     </ul>
@@ -83,122 +83,77 @@
         </div>
       </div>
     </header>
-    <div class="container children_arm">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="banner_outer"> 
-            <h1>YOU CAN SPONSOR A CHILD FOR $40.00 A MONTH OR $480 A YEAR... JUST $1.32 PER DAY</h1>
-          </div>
-        </div>
-      </div>
+    <div class="teamsConsider_outer">
+      <h1>TEAMS</h1>
     </div>
   </section>
   <!-- header close here -->
 
-<!--Start Form Section-->
-    {% for country,children in child_data.items %}
- <div class="container children_arm">
-   <div class="row gutenemala_text">
-     <div class="col-md-12">
-       <h2>{{ country }}</h2>
-     </div>
-   </div>
-   <div class="row">
-    {% for child in children %}
-     <div class="col-md-3 col-sm-6 child_circle">
-        <img src="{{ child.image1.url }}" alt="children">
-        <h5>{{ child }}</h5>
-        <p>Available for Sponsor</p>
-     </div>
-    {% endfor %}
-  </div>
-    {% endfor %}
+  <!-- calender start here -->
+  <div class="calender_outer">
+    <div class="container children_arm">
+      <div class="row">
+        <div class="col-md-12 cal">
+          <div class="month">      
+            <ul>
+              <li class="prev">&#10094;</li>
+              <li class="next">&#10095;</li>
+              <li>
+                September
+                <span style="font-size:18px">2021</span>
+              </li>
+            </ul>
+          </div>
+          <ul class="weekdays">
+            <li>Mo</li>
+            <li>Tu</li>
+            <li>We</li>
+            <li>Th</li>
+            <li>Fr</li>
+            <li>Sa</li>
+            <li>Su</li>
+          </ul>
 
-     <!-- <div class="col-md-3 col-sm-6 child_circle">
-        <img src="images/child2.jpg" alt="children">
-        <h5>Junior</h5>
-        <p>Available for Sponsor</p>
-     </div>
-     <div class="col-md-3 col-sm-6 child_circle">
-        <img src="images/child3.jpg" alt="children">
-        <h5>Francisco</h5>
-        <p>Available for Sponsor</p>
-     </div>
-     <div class="col-md-3 col-sm-6 child_circle">
-        <img src="images/child4.jpg" alt="children">
-        <h5>Leydy</h5>
-        <p>Available for Sponsor</p>
-     </div> -->
-   
-   <!-- {% for child in object_list %}
-   {% if child %}
-   <div class="row gutenemala_text">
-     <div class="col-md-12">
-       <h2>Haiti</h2>
-     </div>
-   </div>
-    <div class="row">
-    {% if child.country == "Haiti" %}
-     <div class="col-md-3 col-sm-6 child_circle">
-        <img src="images/child5.jpg" alt="children">
-        <h5>{{ child.name }}</h5>
-        <p>Available for Sponsor</p>
-     </div>
-     {% endif %}
-     {% endif %}
-     {% endfor %} -->
-     <!-- <div class="col-md-3 col-sm-6 child_circle">
-        <img src="images/child6.jpg" alt="children">
-        <h5>Franceska</h5>
-        <p>Available for Sponsor</p>
-     </div>
-     <div class="col-md-3 col-sm-6 child_circle">
-        <img src="images/child7.jpg" alt="children">
-        <h5>Jean</h5>
-        <p>Available for Sponsor</p>
-     </div>
-     <div class="col-md-3 col-sm-6 child_circle">
-        <img src="images/child8.jpg" alt="children">
-        <h5>Angelo</h5>
-        <p>Available for Sponsor</p>
-     </div> -->
-   <!-- </div>
-   {% for child in object_list %}
-   {% if child %}
-   <div class="row gutenemala_text">
-     <div class="col-md-12">
-       <h2>Kenya</h2>
-     </div>
-   </div>
-    <div class="row">
-    {% if child.country == "Kenya" %}
-     <div class="col-md-3 col-sm-6 child_circle">
-        <img src="images/child5.jpg" alt="children">
-        <h5>{{ child.name }}</h5>
-        <p>Available for Sponsor</p>
-     </div>
-     {% endif %}
-     {% endif %}
-     {% endfor %} -->
-     <!-- <div class="col-md-3 col-sm-6 child_circle">
-        <img src="images/child6.jpg" alt="children">
-        <h5>Franceska</h5>
-        <p>Available for Sponsor</p>
-     </div>
-     <div class="col-md-3 col-sm-6 child_circle">
-        <img src="images/child7.jpg" alt="children">
-        <h5>Jean</h5>
-        <p>Available for Sponsor</p>
-     </div>
-     <div class="col-md-3 col-sm-6 child_circle">
-        <img src="images/child8.jpg" alt="children">
-        <h5>Angelo</h5>
-        <p>Available for Sponsor</p>
-     </div> -->
-   </div>
- </div>
-<!----Start Accredited Member section---->
-<div class="mamber registration_member">
+          <ul class="days">  
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li><span class="active">10</span></li>
+            <li>11</li>
+            <li>12</li>
+            <li>13</li>
+            <li>14</li>
+            <li>15</li>
+            <li>16</li>
+            <li>17</li>
+            <li>18</li>
+            <li>19</li>
+            <li>20</li>
+            <li>21</li>
+            <li>22</li>
+            <li>23</li>
+            <li>24</li>
+            <li>25</li>
+            <li>26</li>
+            <li>27</li>
+            <li>28</li>
+            <li>29</li>
+            <li>30</li> 
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- calender close here -->
+  <!-- mamber start here -->
+  <div class="mamber TeamsBlogs_mamber">
     <div class="container children_arm">
       <div class="row">
         <div class="col-md-12">
@@ -215,10 +170,8 @@
       </div>
     </div>
   </div>
+  <!-- mamber close here -->
 
-<!----End Accredited Member section---->
-
-<!-----End Form Section----->
   <!-- footer start here -->
   <div class="footer">
     <div class="container children_arm">

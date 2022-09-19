@@ -193,4 +193,9 @@ urlpatterns = [
         name="register",
     ),
     url('demo/logout',LogoutView.as_view(next_page='newindex'),name='logout'),
+    url(
+        r"^demo/Catalogue/$",
+        CatalogueView.as_view(),
+        name="Catalogue",
+    )
 ]
