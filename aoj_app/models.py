@@ -66,7 +66,7 @@ MODELS
 """
 
 class AuthUserManager(BaseUserManager):
-    def create_user(self, email, first_name,last_name,address,city,state,country,zip_code,phone_number,password=None):
+    def create_user(self, email, first_name,last_name,address,phone_number,city=None,state=None,country=None,zip_code=None,password=None):
         """
         Creates and saves a User with the given email, date of
         birth and password.
@@ -94,7 +94,7 @@ class AuthUserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, email, first_name,last_name,address,phone_number,password=None):
+    def create_superuser(self,email,first_name,last_name,address,phone_number,password=None):
         """
         Creates and saves a superuser with the given email, date of
         birth and password.
@@ -122,10 +122,10 @@ class AuthUser(AbstractBaseUser):
     first_name=models.CharField(max_length=200)
     last_name=models.CharField(max_length=200)
     address=models.CharField(max_length=256)
-    city=models.CharField(max_length=200)
-    state=models.CharField(max_length=200)
-    zip_code= models.CharField(max_length=200)
-    country=models.CharField(max_length=200)
+    city=models.CharField(max_length=200,blank=True,null=True)
+    state=models.CharField(max_length=200,blank=True,null=True)
+    zip_code= models.CharField(max_length=200,blank=True,null=True)
+    country=models.CharField(max_length=200,blank=True,null=True)
     phone_number=models.CharField(max_length=30)
 
     is_active = models.BooleanField(default=True)
