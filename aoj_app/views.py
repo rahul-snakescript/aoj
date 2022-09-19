@@ -7,17 +7,21 @@ import logging
 from django.utils.decorators import method_decorator
 from django.http import JsonResponse, HttpResponseRedirect, HttpResponse
 from django.views.generic import View, TemplateView, ListView, DetailView, FormView
+from django.contrib.auth.views import LogoutView,LoginView
+from django.contrib.auth import authenticate,login,logout
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
-from django.shortcuts import redirect
+from django.shortcuts import redirect,render
 from django.core.urlresolvers import reverse, reverse_lazy
 from django.conf import settings
 
 from carton.cart import Cart
-from authtools.forms import UserCreationForm
 
+from aoj.settings import LOGIN_REDIRECT_URL
+# from authtools.forms import UserCreationForm
+from .forms import UserCreationForm
 from .models import *
 from .functions import calculate_fp_hash
 
@@ -214,14 +218,14 @@ class SilentPostView(View):
         return HttpResponse()
 
 
-class RegisterView(FormView):
-    form_class = UserCreationForm
-    template_name = "registration/register.html"
-    success_url = reverse_lazy("index")
+# class RegisterView(FormView):
+#     form_class = UserCreationForm
+#     template_name = "registration/register.html"
+#     success_url = reverse_lazy("index")
 
-    def form_valid(self, form):
-        form.save()
-        return super(RegisterView, self).form_valid(form)
+#     def form_valid(self, form):
+#         form.save()
+#         return super(RegisterView, self).form_valid(form)
 
 
 """
@@ -722,17 +726,71 @@ class MissionView(TemplateView):
         context['data'] =text
         return context
 
-class LogInView(TemplateView):
-    template_name = "aoj_app/demo/login.html"
+# class UserLogInView(View):
+#     # template_name = "aoj_app/demo/login.html"
+#     def post(self,request):
+        
+#         user=authenticate(email=email,password=password)
+#         if user is not None:
+#             login(request,user)
+#             redirect('newindex')
+#         else:
+#             message={'error_message': "User doesn't exist"}
+#             return render(request,'aoj_app/demo/login.html',{'message':message})
+
+#     def get(self,request):
+        # return render(request,'aoj_app/demo/login.html')
+
+class UserLogInView(LoginView):
+    template_name='aoj_app/demo/login.html'  
+    LOGIN_REDIRECT_URL='newindex'
 
 # class RegisterView(TemplateView):
 #     template_name = "aoj_app/demo/register.html"
 
-class RegisterView(FormView):
-    form_class = UserCreationForm
-    template_name = "aoj_app/demo/register.html"
-    success_url = reverse_lazy("newindex")
+class RegisterView(View):
+    # form_class = UserCreationForm
+    # template_name = "aoj_app/demo/register.html"
+    # success_url = reverse_lazy("newindex")
 
-    def form_valid(self, form):
-        form.save()
-        return super(RegisterView, self).form_valid(form)
+    def post(self,request):
+        form=UserCreationForm(request.POST)
+        # email=request.POST['email']
+        # password=request.POST['password']
+        # first_name=request.POST['first_name']
+        # last_name=request.POST['last_name']
+        # address=request.POST['address']
+        # city=request.POST['city']
+        # state=request.POST['state']
+        country=request.POST['country']
+        # zip_code=request.POST['zip_code']
+        # phone_number=request.POST['phone_number']
+        if form.is_valid():
+            user=AuthUser.objects.create_user(
+                email=form.cleaned_data['email'],
+                password=form.cleaned_data['password'],
+                first_name=form.cleaned_data['first_name'],
+                last_name=form.cleaned_data['last_name'],
+                address=form.cleaned_data['address'],
+                city=form.cleaned_data['city'],
+                state=form.cleaned_data['state'],
+                country=form.cleaned_data['country'],
+                zip_code=form.cleaned_data['zip_code'],
+                phone_number=form.cleaned_data['phone_number']
+            )
+            login(request,user)
+            message={"success_message":"form data submitted successfully"}
+            return redirect('newindex')
+        else:
+            message={"error_message":"form data has an error"}
+        
+        return render(request,'aoj_app/demo/register.html',{'message':message})
+
+    def get(self,request):
+        form=UserCreationForm()
+        print(form)
+        return render(request,'aoj_app/demo/register.html',{'form':form})
+
+    # def form_valid(self, form):
+    #     form.save()
+    #     return super(RegisterView, self).form_valid(form)

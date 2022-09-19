@@ -1,19 +1,23 @@
 # from __future__ import unicode_literals
 # from email.quoprimime import body_check
 
+from audioop import add
+from itertools import count
 import uuid
 try:
     import urlparse
 except:
     from urllib.parse import urlparse
-
+from django.contrib.auth.models import (
+    BaseUserManager, AbstractBaseUser
+)
 from django.db import models
 from django.template.defaultfilters import slugify
 try:
     from django.core.urlresolvers import reverse
 except:
     from django.urls import reverse
-from django.contrib.auth import get_user_model
+# from django.contrib.auth import get_user_model
 from django.utils import timezone
 
 from solo.models import SingletonModel
@@ -61,6 +65,99 @@ def upload_staff_image_to(instance, filename):
 MODELS
 """
 
+class AuthUserManager(BaseUserManager):
+    def create_user(self, email, first_name,last_name,address,city,state,country,zip_code,phone_number,password=None):
+        """
+        Creates and saves a User with the given email, date of
+        birth and password.
+        """
+        if not email:
+            raise ValueError('Users must have an email address')
+
+        user = self.model(
+            email=self.normalize_email(email),
+            first_name=first_name,
+            last_name=last_name,
+            address=address,
+            phone_number=phone_number
+        )
+        if city:
+                user.city=city
+        if state:
+                user.state=state
+        if country:
+                user.country=country
+        if zip_code:
+                user.zip_code=zip_code
+
+        user.set_password(password)
+        user.save(using=self._db)
+        return user
+
+    def create_superuser(self, email, first_name,last_name,address,phone_number,password=None):
+        """
+        Creates and saves a superuser with the given email, date of
+        birth and password.
+        """
+        user = self.create_user(
+            email,
+            first_name=first_name,
+            last_name=last_name,
+            address=address,
+            phone_number=phone_number,
+            password=password,
+        )
+        user.is_admin = True
+        user.save(using=self._db)
+        return user
+
+
+class AuthUser(AbstractBaseUser):
+    email = models.EmailField(
+        verbose_name='email address',
+        max_length=255,
+        unique=True,
+    )
+    # password=models.CharField(max_length=15,attrs={'input_type':'password'})
+    first_name=models.CharField(max_length=200)
+    last_name=models.CharField(max_length=200)
+    address=models.CharField(max_length=256)
+    city=models.CharField(max_length=200)
+    state=models.CharField(max_length=200)
+    zip_code= models.CharField(max_length=200)
+    country=models.CharField(max_length=200)
+    phone_number=models.CharField(max_length=30)
+
+    is_active = models.BooleanField(default=True)
+    is_admin = models.BooleanField(default=False)
+
+    objects = AuthUserManager()
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['first_name','last_name','address','phone_number']
+
+    def __str__(self):
+        return self.email
+
+    def has_perm(self, perm, obj=None):
+        "Does the user have a specific permission?"
+        # Simplest possible answer: Yes, always
+        return True
+
+    def has_module_perms(self, app_label):
+        "Does the user have permissions to view the app `app_label`?"
+        # Simplest possible answer: Yes, always
+        return True
+    
+    def get_short_name(self):
+        "Returns the short name for the user."
+        return self.first_name
+
+    @property
+    def is_staff(self):
+        "Is the user a member of staff?"
+        # Simplest possible answer: All admins are staff
+        return self.is_admin
 
 class Product(models.Model):
     name = models.CharField(max_length=128, blank=False, null=False)
@@ -251,7 +348,7 @@ class CheckoutRequest(models.Model):
     items = models.TextField(blank=True, null=True)
     typ = models.CharField(max_length=15, choices=TYP_CHOICES, default=CHECKOUT)
     paid = models.BooleanField(default=False)
-    user = models.ForeignKey(get_user_model(), blank=True, null=True)
+    user = models.ForeignKey(AuthUser, blank=True, null=True)
     # to determine "paid", from silent post
     timestamp = models.CharField(max_length=15)
     fp_sequence = models.CharField(max_length=15)
@@ -343,6 +440,12 @@ class AboutMission(models.Model):
 
     def __unicode__(self):
         return self.title
+
+
+
+
+
+
 
 
 

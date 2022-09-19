@@ -204,10 +204,12 @@ else:
     #     },
     # }
 
-AUTH_USER_MODEL = 'authtools.User'
+AUTH_USER_MODEL = 'aoj_app.AuthUser'
 LOGIN_URL = "login"
-LOGIN_REDIRECT_URL = "dashboard:orders"
-LOGOUT_REDIRECT_URL = "index"
+# LOGIN_REDIRECT_URL = "dashboard:orders"
+LOGIN_REDIRECT_URL = "newindex"
+
+LOGOUT_REDIRECT_URL = "newindex"
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
 CKEDITOR_IMAGE_BACKEND = "pillow"

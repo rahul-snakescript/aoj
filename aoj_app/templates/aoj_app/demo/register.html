@@ -97,6 +97,11 @@
   
 </div>
 <!--Start Form Section-->
+{% if message %}
+{{ message.error_message }}
+{% endif %}
+<form method="post">
+  {% csrf_token %}
 <div class="container registeration_form">
   <div class="row donnar_bg">
     <div class="col-md-12">
@@ -108,51 +113,59 @@
       <form>
         <div class="form-group">
           <lable>Email address*</lable>
-          <input type="email" name="" value="">
+          <!-- <input type="email" name="email" value=""> -->
+          {{ form.email }}
         </div>
         <div class="form-group">
           <lable>Password*</lable>
-          <input type="password" name="" value="">
+          <!-- <input type="password" name="password" value=""> -->
+          {{ form.password }}
         </div>
         <div class="row first_last_name">
           <div class="col-md-6">
             <div class="form-group">
               <lable>First Name*</lable>
-              <input type="text" name="" value="">
+              <!-- <input type="text" name="first_name" value=""> -->
+              {{ form.first_name }}
             </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group lst_items">
                   <lable>Last Name*</lable>
-                  <input type="text" name="" value="">
+                  <!-- <input type="text" name="last_name" value=""> -->
+                  {{ form.last_name }}
                 </div>
               </div>
           </div>
              <div class="form-group">
                   <lable>Address*</lable>
-                  <input type="text" name="" value="">
+                  <!-- <input type="text" name="address" value=""> -->
+                  {{ form.address }}
              </div>
              <div class="form-group">
                   <lable>City*</lable>
-                  <input type="text" name="" value="">
+                  <!-- <input type="text" name="city" value=""> -->
+                  {{ form.city }}
              </div>
         <div class="row first_last_name">
           <div class="col-md-6">
             <div class="form-group">
               <lable>State*</lable>
-              <input type="text" name="" value="">
+              <!-- <input type="text" name="state" value=""> -->
+              {{ form.state }}
             </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group lst_items">
                   <lable>Zip Code*</lable>
-                 <input type="text" name="" value="">
+                 <!-- <input type="text" name="zip_code" value=""> -->
+                 {{ form.zip_code }}
                 </div>
               </div>
           </div>
         <div class="form-group">
             <lable>Country*</lable>
-            <select> 
+            <select name="country"> 
                 <option value="Afghanistan">Afghanistan</option>
                   <option value="Albania">Albania</option>
                   <option value="Algeria">Algeria</option>
@@ -396,7 +409,8 @@
                 </div>
                 <div class="form-group">
                   <lable>Phone Number*</lable>
-                  <input type="number" name="" value="">
+                  <!-- <input type="number" name="phone_number" value=""> -->
+                  {{ form.phone_number }}
                 </div>
                 <div class="form-group">
                   <input type="submit" name="" value="SUBMIT!" class="sbmt_btn">
@@ -406,6 +420,7 @@
     </div>
     </div>
   </div>
+</form>
 <!----Start Accredited Member section---->
 <div class="mamber registration_member">
     <div class="container children_arm">
