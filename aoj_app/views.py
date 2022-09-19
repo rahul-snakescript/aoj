@@ -736,3 +736,6 @@ class RegisterView(FormView):
     def form_valid(self, form):
         form.save()
         return super(RegisterView, self).form_valid(form)
+
+class CatalogueView(TemplateView):
+    template_name ="aoj_app/demo/Catalogue.html"

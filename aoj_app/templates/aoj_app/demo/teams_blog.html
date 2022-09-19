@@ -1,4 +1,3 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +11,7 @@
   <link rel="stylesheet" href="{% static 'demo/css/bootstrap.css' %}">
 
   <link rel="stylesheet" href="{% static 'demo/css/slick.css' %}">
-  <link rel="stylesheet" href="{% static 'demo/css/slick-theme.css' %}">
+  <link rel="stylesheet" href="{% static 'demo/css/slick-theme.css '%}">
 
   <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
@@ -24,14 +23,14 @@
 <body>
 
   <!-- banner start here -->
-  <section class="child_banner">
+  <section class="register_banner teamsBanner">
     <!-- header start here -->
     <header>
       <div class="header">
         <div class="children_header">
           <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
-              <a class="navbar-brand" href="{% url 'newindex' %}"><img src="{% static 'demo/images/logo.png' %}"></a>
+              <a class="navbar-brand" href="{% url 'newindex' %}"><img src="{% static 'demo/images/logo.png'%}"></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -40,7 +39,7 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'newindex' %}">Home</a>
+                    <a class="nav-link active" aria-current="page" href="home.html">Home</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'children' %}">Children</a>
@@ -62,8 +61,8 @@
 
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                       <li><a class="dropdown-item" href="{% url 'behave' %}">About Behave</a></li>
-                      <li><a class="dropdown-item" href="{%  url 'fund_policy' %}">About Fund Policy</a></li>
-                      <li><a class="dropdown-item" href="{% url 'history' %}">About History</a></li>
+                      <li><a class="dropdown-item" href="{% url 'fund_policy' %}">About Fund Policy</a></li>
+                      <li><a class="dropdown-item" href="{% url 'history' %}">About Histroy</a></li>
                       <li><a class="dropdown-item" href="{% url 'mission' %}">About Mission</a></li>
                       <li><a class="dropdown-item" href="{% url 'staff' %}">About Staff</a></li>
                     </ul>
@@ -83,122 +82,61 @@
         </div>
       </div>
     </header>
-    <div class="container children_arm">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="banner_outer"> 
-            <h1>YOU CAN SPONSOR A CHILD FOR $40.00 A MONTH OR $480 A YEAR... JUST $1.32 PER DAY</h1>
-          </div>
-        </div>
-      </div>
+    <div class="teamsConsider_outer">
+      <h1>TEAMS</h1>
     </div>
   </section>
   <!-- header close here -->
 
-<!--Start Form Section-->
-    {% for country,children in child_data.items %}
- <div class="container children_arm">
-   <div class="row gutenemala_text">
-     <div class="col-md-12">
-       <h2>{{ country }}</h2>
-     </div>
-   </div>
-   <div class="row">
-    {% for child in children %}
-     <div class="col-md-3 col-sm-6 child_circle">
-        <img src="{{ child.image1.url }}" alt="children">
-        <h5>{{ child }}</h5>
-        <p>Available for Sponsor</p>
-     </div>
-    {% endfor %}
+  <!-- consider serving start here -->
+  <div class="considerServing">
+    <div class="container children_arm">
+      <div class="consider_hadding">
+        <h2>Teams Blogs</h2>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="considerImg_left_side">
+            <img src="{% static 'demo/images/Team_Blogs1.jpg' %}" alt="">
+            <div class="teamsBlogs_item">
+              <h5>Thanks to Donors</h5>
+               <p>Lorem Ipsum is simply dummy text of the 
+                printing and typesetting industry. Lorem 
+                Ipsum has been the industry's</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="considerImg_left_side">
+            <img src="{% static 'demo/images/Team_Blogs2.jpg' %}" alt="">
+            <div class="teamsBlogs_item">
+              <h5>School Dedication</h5>
+              <p>Lorem Ipsum is simply dummy text of the 
+                printing and typesetting industry. Lorem 
+                Ipsum has been the industry's</p>
+            </div>
+            
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="considerImg_left_side">
+            <img src="{% static 'demo/images/Team_Blogs3.jpg' %}" alt="">
+            <div class="teamsBlogs_item">
+              <h5>Urgent Prayer Request</h5>
+              <p>Lorem Ipsum is simply dummy text of the 
+                printing and typesetting industry. Lorem 
+                Ipsum has been the industry's</p>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-    {% endfor %}
+  <!-- consider serving close here -->
 
-     <!-- <div class="col-md-3 col-sm-6 child_circle">
-        <img src="images/child2.jpg" alt="children">
-        <h5>Junior</h5>
-        <p>Available for Sponsor</p>
-     </div>
-     <div class="col-md-3 col-sm-6 child_circle">
-        <img src="images/child3.jpg" alt="children">
-        <h5>Francisco</h5>
-        <p>Available for Sponsor</p>
-     </div>
-     <div class="col-md-3 col-sm-6 child_circle">
-        <img src="images/child4.jpg" alt="children">
-        <h5>Leydy</h5>
-        <p>Available for Sponsor</p>
-     </div> -->
-   
-   <!-- {% for child in object_list %}
-   {% if child %}
-   <div class="row gutenemala_text">
-     <div class="col-md-12">
-       <h2>Haiti</h2>
-     </div>
-   </div>
-    <div class="row">
-    {% if child.country == "Haiti" %}
-     <div class="col-md-3 col-sm-6 child_circle">
-        <img src="images/child5.jpg" alt="children">
-        <h5>{{ child.name }}</h5>
-        <p>Available for Sponsor</p>
-     </div>
-     {% endif %}
-     {% endif %}
-     {% endfor %} -->
-     <!-- <div class="col-md-3 col-sm-6 child_circle">
-        <img src="images/child6.jpg" alt="children">
-        <h5>Franceska</h5>
-        <p>Available for Sponsor</p>
-     </div>
-     <div class="col-md-3 col-sm-6 child_circle">
-        <img src="images/child7.jpg" alt="children">
-        <h5>Jean</h5>
-        <p>Available for Sponsor</p>
-     </div>
-     <div class="col-md-3 col-sm-6 child_circle">
-        <img src="images/child8.jpg" alt="children">
-        <h5>Angelo</h5>
-        <p>Available for Sponsor</p>
-     </div> -->
-   <!-- </div>
-   {% for child in object_list %}
-   {% if child %}
-   <div class="row gutenemala_text">
-     <div class="col-md-12">
-       <h2>Kenya</h2>
-     </div>
-   </div>
-    <div class="row">
-    {% if child.country == "Kenya" %}
-     <div class="col-md-3 col-sm-6 child_circle">
-        <img src="images/child5.jpg" alt="children">
-        <h5>{{ child.name }}</h5>
-        <p>Available for Sponsor</p>
-     </div>
-     {% endif %}
-     {% endif %}
-     {% endfor %} -->
-     <!-- <div class="col-md-3 col-sm-6 child_circle">
-        <img src="images/child6.jpg" alt="children">
-        <h5>Franceska</h5>
-        <p>Available for Sponsor</p>
-     </div>
-     <div class="col-md-3 col-sm-6 child_circle">
-        <img src="images/child7.jpg" alt="children">
-        <h5>Jean</h5>
-        <p>Available for Sponsor</p>
-     </div>
-     <div class="col-md-3 col-sm-6 child_circle">
-        <img src="images/child8.jpg" alt="children">
-        <h5>Angelo</h5>
-        <p>Available for Sponsor</p>
-     </div> -->
-   </div>
- </div>
-<!----Start Accredited Member section---->
-<div class="mamber registration_member">
+  <!-- mamber start here -->
+  <div class="mamber TeamsBlogs_mamber">
     <div class="container children_arm">
       <div class="row">
         <div class="col-md-12">
@@ -215,10 +153,8 @@
       </div>
     </div>
   </div>
+  <!-- mamber close here -->
 
-<!----End Accredited Member section---->
-
-<!-----End Form Section----->
   <!-- footer start here -->
   <div class="footer">
     <div class="container children_arm">

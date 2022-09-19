@@ -191,5 +191,10 @@ urlpatterns = [
         r"^demo/register/$",
         RegisterView.as_view(),
         name="register",
+    ),
+     url(
+        r"^demo/Catalogue/$",
+        CatalogueView.as_view(),
+        name="Catalogue",
     )
 ]

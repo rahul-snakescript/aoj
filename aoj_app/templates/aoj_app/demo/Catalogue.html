@@ -24,7 +24,7 @@
 <body>
 
   <!-- banner start here -->
-  <section class="child_banner">
+  <section class="catalog_banner">
     <!-- header start here -->
     <header>
       <div class="header">
@@ -62,8 +62,8 @@
 
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                       <li><a class="dropdown-item" href="{% url 'behave' %}">About Behave</a></li>
-                      <li><a class="dropdown-item" href="{%  url 'fund_policy' %}">About Fund Policy</a></li>
-                      <li><a class="dropdown-item" href="{% url 'history' %}">About History</a></li>
+                      <li><a class="dropdown-item" href="{% url 'fund_policy' %}">About Fund Policy</a></li>
+                      <li><a class="dropdown-item" href="{% url 'history' %}">About Histroy</a></li>
                       <li><a class="dropdown-item" href="{% url 'mission' %}">About Mission</a></li>
                       <li><a class="dropdown-item" href="{% url 'staff' %}">About Staff</a></li>
                     </ul>
@@ -87,124 +87,125 @@
       <div class="row">
         <div class="col-md-12">
           <div class="banner_outer"> 
-            <h1>YOU CAN SPONSOR A CHILD FOR $40.00 A MONTH OR $480 A YEAR... JUST $1.32 PER DAY</h1>
+            <h1>catalogue</h1>
           </div>
         </div>
       </div>
     </div>
   </section>
+  <br>
+  <br>
+  <br>
   <!-- header close here -->
 
-<!--Start Form Section-->
-    {% for country,children in child_data.items %}
+<!-----Start Form Section----->
  <div class="container children_arm">
-   <div class="row gutenemala_text">
-     <div class="col-md-12">
-       <h2>{{ country }}</h2>
+   <div class="row catalog_section_main">
+     <div class="col-md-4 col-sm-4">
+      <div class="catalog_section">
+         <img src="{% static 'demo/images/catalog1.jpg' %}" alt="catalog">
+         <div class="toy_section">
+            <p>Toy for Child</p>
+            <p>$35.00</p>
+            <button class="add_to_cart">Add to Cart</button>
+          </div>
+      </div>
+     </div>
+     <div class="col-md-4 col-sm-4">
+      <div class="catalog_section">
+        <img src="{% static 'demo/images/catalog2.jpg' %}" alt="catalog">
+        <div class="toy_section">
+         <p>Clothes</p>
+         <p>$50.00</p>
+          <button class="add_to_cart">Add to Cart</button>
+        </div>
+     </div>
+     </div>
+     <div class="col-md-4 col-sm-4">
+      <div class="catalog_section">
+         <img src="{% static 'demo/images/catalog3.jpg' %}" alt="catalog">
+        <div class="toy_section">
+           <p>Running Shoes & Socks</p>
+          <p>$50.00</p>
+          <button class="add_to_cart">Add to Cart</button>
+        </div>
+      </div>
      </div>
    </div>
-   <div class="row">
-    {% for child in children %}
-     <div class="col-md-3 col-sm-6 child_circle">
-        <img src="{{ child.image1.url }}" alt="children">
-        <h5>{{ child }}</h5>
-        <p>Available for Sponsor</p>
+  <div class="row">
+     <div class="col-md-4 col-sm-4">
+      <div class="catalog_section">
+       <img src="{% static 'demo/images/catalog4.jpg' %}" alt="catalog">
+       <div class="toy_section">
+         <p>Toy for Child</p>
+         <p>$35.00</p>
+        <button class="add_to_cart">Add to Cart</button>
+      </div>
      </div>
-    {% endfor %}
-  </div>
-    {% endfor %}
-
-     <!-- <div class="col-md-3 col-sm-6 child_circle">
-        <img src="images/child2.jpg" alt="children">
-        <h5>Junior</h5>
-        <p>Available for Sponsor</p>
      </div>
-     <div class="col-md-3 col-sm-6 child_circle">
-        <img src="images/child3.jpg" alt="children">
-        <h5>Francisco</h5>
-        <p>Available for Sponsor</p>
+     <div class="col-md-4 col-sm-4">
+      <div class="catalog_section">
+        <img src="{% static 'demo/images/catalog5.jpg'%}" alt="catalog">
+        <div class="toy_section">
+           <p>Clothes</p>
+          <p>$50.00</p>
+          <button class="add_to_cart">Add to Cart</button>
+        </div>
      </div>
-     <div class="col-md-3 col-sm-6 child_circle">
-        <img src="images/child4.jpg" alt="children">
-        <h5>Leydy</h5>
-        <p>Available for Sponsor</p>
-     </div> -->
-   
-   <!-- {% for child in object_list %}
-   {% if child %}
-   <div class="row gutenemala_text">
-     <div class="col-md-12">
-       <h2>Haiti</h2>
      </div>
-   </div>
-    <div class="row">
-    {% if child.country == "Haiti" %}
-     <div class="col-md-3 col-sm-6 child_circle">
-        <img src="images/child5.jpg" alt="children">
-        <h5>{{ child.name }}</h5>
-        <p>Available for Sponsor</p>
+     <div class="col-md-4 col-sm-4">
+      <div class="catalog_section">
+        <img src="{% static 'demo/images/catalog6.jpg' %}" alt="catalog">
+        <div class="toy_section">
+            <p>Running Shoes & Socks</p>
+        <p>$50.00</p>
+        <button class="add_to_cart">Add to Cart</button>
+      </div>
      </div>
-     {% endif %}
-     {% endif %}
-     {% endfor %} -->
-     <!-- <div class="col-md-3 col-sm-6 child_circle">
-        <img src="images/child6.jpg" alt="children">
-        <h5>Franceska</h5>
-        <p>Available for Sponsor</p>
-     </div>
-     <div class="col-md-3 col-sm-6 child_circle">
-        <img src="images/child7.jpg" alt="children">
-        <h5>Jean</h5>
-        <p>Available for Sponsor</p>
-     </div>
-     <div class="col-md-3 col-sm-6 child_circle">
-        <img src="images/child8.jpg" alt="children">
-        <h5>Angelo</h5>
-        <p>Available for Sponsor</p>
-     </div> -->
-   <!-- </div>
-   {% for child in object_list %}
-   {% if child %}
-   <div class="row gutenemala_text">
-     <div class="col-md-12">
-       <h2>Kenya</h2>
-     </div>
-   </div>
-    <div class="row">
-    {% if child.country == "Kenya" %}
-     <div class="col-md-3 col-sm-6 child_circle">
-        <img src="images/child5.jpg" alt="children">
-        <h5>{{ child.name }}</h5>
-        <p>Available for Sponsor</p>
-     </div>
-     {% endif %}
-     {% endif %}
-     {% endfor %} -->
-     <!-- <div class="col-md-3 col-sm-6 child_circle">
-        <img src="images/child6.jpg" alt="children">
-        <h5>Franceska</h5>
-        <p>Available for Sponsor</p>
-     </div>
-     <div class="col-md-3 col-sm-6 child_circle">
-        <img src="images/child7.jpg" alt="children">
-        <h5>Jean</h5>
-        <p>Available for Sponsor</p>
-     </div>
-     <div class="col-md-3 col-sm-6 child_circle">
-        <img src="images/child8.jpg" alt="children">
-        <h5>Angelo</h5>
-        <p>Available for Sponsor</p>
-     </div> -->
    </div>
  </div>
+
+ <div class="row">
+     <div class="col-md-4 col-sm-4">
+      <div class="catalog_section">
+       <img src="{% static 'demo/images/catalog7.jpg' %}" alt="catalog">
+       <div class="toy_section">
+         <p>Single Bed</p>
+         <p>$200.00</p>
+        <button class="add_to_cart">Add to Cart</button>
+      </div>
+     </div>
+     </div>
+     <div class="col-md-4 col-sm-4">
+      <div class="catalog_section">
+        <img src="{% static 'demo/images/catalog8.jpg' %}" alt="catalog">
+        <div class="toy_section">
+           <p>Small Food Hamper</p>
+          <p>$40.00</p>
+          <button class="add_to_cart">Add to Cart</button>
+        </div>
+     </div>
+     </div>
+     <div class="col-md-4 col-sm-4">
+      <div class="catalog_section">
+        <img src="{% static 'demo/images/catalog9.jpg' %}" alt="catalog">
+        <div class="toy_section">
+        <p>Large Food Hamper</p>
+        <p>$80.00</p>
+        <button class="add_to_cart">Add to Cart</button>
+      </div>
+     </div>
+   </div>
+ </div>
+</div>
 <!----Start Accredited Member section---->
-<div class="mamber registration_member">
+<div class="mamber registration_member registration_cataloque">
     <div class="container children_arm">
       <div class="row">
         <div class="col-md-12">
           <div class="mamber_outer">
             <div class="logo_mamber">
-              <img src="{% static 'demo/images/logo_mamber.png' %}" alt="">
+              <img src=" {% static 'demo/images/logo_mamber.png' %}" alt="">
             </div>
             <p>Certification with CCCC is a powerful endorsement of a charity’s integrity. It demonstrates that the charity has been carefully assessed
               by CCCC’s rigorous certification process and found to be in compliance with CCCC’s Standards. Donors can give confidently and
@@ -296,6 +297,6 @@
   <script src="{% static 'demo/js/slick.js' %}"></script>
   <script src="{% static 'demo/js/slick.min.js' %}"></script>
   <script src="{% static 'demo/js/popper.min.js' %}"></script>
-  <script src="{% static 'demo/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'demo/js/bootstrap.min.js'%}"></script>
 </body>
 </html>
