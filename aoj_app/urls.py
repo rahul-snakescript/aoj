@@ -85,28 +85,28 @@ urlpatterns = [
     # TEAMS
     url(
         r"^consider-serving/$",
-        TemplateView.as_view(template_name="aoj_app/pages/teams/consider_serving.html"),
-        name="consider_serving",
+        TemplateView.as_view(template_name="aoj_app/demo/teams_consider.html"),
+        name="t_consider",
     ),
     url(
         r"^training/$",
-        TemplateView.as_view(template_name="aoj_app/pages/teams/training.html"),
-        name="training",
+        TemplateView.as_view(template_name="aoj_app/demo/teams_training.html"),
+        name="t_training",
     ),
     url(
         r"^calendar/$",
-        TemplateView.as_view(template_name="aoj_app/pages/teams/calendar.html"),
-        name="calendar",
+        TemplateView.as_view(template_name="aoj_app/demo/teams_calender.html"),
+        name="t_calender",
     ),
     url(
         r"^resources/$",
-        TemplateView.as_view(template_name="aoj_app/pages/teams/resources.html"),
-        name="resources",
+        TemplateView.as_view(template_name="aoj_app/demo/teams_resources.html"),
+        name="t_resource",
     ),
     url(
         r"^team-blogs/$",
-        TemplateView.as_view(template_name="aoj_app/pages/teams/team-blogs.html"),
-        name="team_blogs",
+        TemplateView.as_view(template_name="aoj_app/demo/teams_blog.html"),
+        name="t_blog",
     ),
     # ABOUT
     url(
@@ -193,9 +193,10 @@ urlpatterns = [
         name="register",
     ),
     url('demo/logout',LogoutView.as_view(next_page='newindex'),name='logout'),
+    
     url(
         r"^demo/Catalogue/$",
         CatalogueView.as_view(),
         name="Catalogue",
-    )
+    ),
 ]

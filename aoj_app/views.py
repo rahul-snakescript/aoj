@@ -140,7 +140,7 @@ class DonateView(LoginRequiredMixin, TemplateView):
 
 class CatalogueView(ListView):
     model = Product
-    template_name = "aoj_app/pages/catalogue.html"
+    template_name = "aoj_app/demo/Catalogue.html"
 
     def get_context_data(self, **kwargs):
         context = super(CatalogueView, self).get_context_data(**kwargs)
@@ -795,5 +795,5 @@ class RegisterView(View):
     #     form.save()
     #     return super(RegisterView, self).form_valid(form)
 
-class CatalogueView(TemplateView):
-    template_name ="aoj_app/demo/Catalogue.html"
+# class CatalogueView(TemplateView):
+#     template_name ="aoj_app/demo/Catalogue.html"

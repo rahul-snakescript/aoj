@@ -99,8 +99,26 @@
   <!-- header close here -->
 
 <!-----Start Form Section----->
+{% if object_list %}
  <div class="container children_arm">
    <div class="row catalog_section_main">
+    {% for product in object_list %}
+     <div class="col-md-4 col-sm-4">
+      <div class="catalog_section">
+         <img src="{{ product.image.url }}" alt="catalog">
+         <div class="toy_section">
+            <p>{{ product.name }}</p>
+            <p>${{ product.price }}</p>
+            <button class="add_to_cart">Add to Cart</button>
+          </div>
+      </div>
+     </div>
+     {% endfor %}
+     </div>
+     </div>
+     {% else %}
+     <div class="container children_arm">
+      <div class="row catalog_section_main">
      <div class="col-md-4 col-sm-4">
       <div class="catalog_section">
          <img src="{% static 'demo/images/catalog1.jpg' %}" alt="catalog">
@@ -198,6 +216,7 @@
    </div>
  </div>
 </div>
+{% endif %}
 <!----Start Accredited Member section---->
 <div class="mamber registration_member registration_cataloque">
     <div class="container children_arm">
