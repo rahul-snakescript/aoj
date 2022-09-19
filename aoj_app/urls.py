@@ -184,7 +184,7 @@ urlpatterns = [
     ),
      url(
         r"^demo/login/$",
-        LogInView.as_view(),
+        UserLogInView.as_view(),
         name="login",
     ),
      url(
@@ -192,7 +192,8 @@ urlpatterns = [
         RegisterView.as_view(),
         name="register",
     ),
-     url(
+    url('demo/logout',LogoutView.as_view(next_page='newindex'),name='logout'),
+    url(
         r"^demo/Catalogue/$",
         CatalogueView.as_view(),
         name="Catalogue",
