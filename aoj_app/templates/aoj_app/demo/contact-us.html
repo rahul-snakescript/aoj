@@ -154,7 +154,8 @@
     </div>
       <div class="col-md-6 send_message_form">
         <h3>Send Us A Message:</h3>
-        <form>
+        <form method="post" id="form-contact">
+          {% csrf_token %}
           <div class="form-group">
             <label>First Name</label>
             <input type="text" name="" value="">

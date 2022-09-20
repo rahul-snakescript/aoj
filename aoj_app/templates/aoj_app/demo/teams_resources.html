@@ -105,7 +105,7 @@
             <img src="{% static 'demo/images/TeamResources_ic.png' %}" alt="">
             <p class="mannual_resources1">{{ data.media|cut:"teamsresource/" }}</p>
             <div class="download_files">
-              <a href="{{ data.media.url }}">Download file</a>
+              <a href="{{ data.media.url }}" target="_blank">Download file</a>
             </div>
           </div>
           {% endfor %}
