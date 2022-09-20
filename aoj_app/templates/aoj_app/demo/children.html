@@ -106,9 +106,9 @@
    <div class="row">
     {% for child in children %}
      <div class="col-md-3 col-sm-6 child_circle">
-      <a href="{% url 'children_detail' child.slug %}">
+      <!-- <a href="{% url 'children_detail' child.slug %}"> -->
         <img src="{{ child.image1.url }}" alt="children">
-      </a>
+      <!-- </a> -->
         <h5>{{ child }}</h5>
         <p>Available for Sponsor</p>
      </div>
