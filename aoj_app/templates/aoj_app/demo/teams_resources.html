@@ -96,7 +96,22 @@
         <h2>Resources</h2>
         <p>Applications, Forms & Helpful Items</p>
       </div>
+      {% if object_list %}
       <div class="row">
+        {% for data in object_list %}
+        <div class="col-md-6 col-lg-12 resources_applications">
+          <div class="TeamResources_1">
+            <p class="mannual_resources">{{ data.title }}</p>
+            <img src="{% static 'demo/images/TeamResources_ic.png' %}" alt="">
+            <p class="mannual_resources1">{{ data.media|cut:"teamsresource/" }}</p>
+            <div class="download_files">
+              <a href="{{ data.media.url }}">Download file</a>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        {% else %}
+        <div class="row">
         <div class="col-md-6 col-lg-12 resources_applications">
           <div class="TeamResources_1">
             <p class="mannual_resources">Team Manual 2015</p>
@@ -107,7 +122,6 @@
               <a href="#">Download file</a>
             </div>
           </div>
-        </div>
         <div class="col-md-6 col-lg-12 resources_applications">
           <div class="TeamResources_1">
             <p class="mannual_resources">Team Manual 2015</p>
@@ -188,6 +202,7 @@
           </div>
         </div>
       </div>
+      {% endif %}
     </div>
   </div>
   <!-- consider serving close here -->

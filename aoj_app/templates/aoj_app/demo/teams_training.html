@@ -96,6 +96,17 @@
       <div class="training_outer1">
         <h2>Training</h2>
       </div>
+      {% if object_list %}
+      <div class="row">
+        {% for data in object_list %}
+        <div class="col-md-12">
+          <div class="training_outer">
+            <img src="{{ data.media.url }}" alt="">
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% else %}
       <div class="row">
         <div class="col-md-12">
           <div class="training_outer">
@@ -103,6 +114,7 @@
           </div>
         </div>
       </div>
+      {% endif %}
     </div>
   </div>
   <!-- training close here -->

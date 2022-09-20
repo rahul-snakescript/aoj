@@ -726,45 +726,14 @@ class MissionView(TemplateView):
         context['data'] =text
         return context
 
-# class UserLogInView(View):
-#     # template_name = "aoj_app/demo/login.html"
-#     def post(self,request):
-        
-#         user=authenticate(email=email,password=password)
-#         if user is not None:
-#             login(request,user)
-#             redirect('newindex')
-#         else:
-#             message={'error_message': "User doesn't exist"}
-#             return render(request,'aoj_app/demo/login.html',{'message':message})
-
-#     def get(self,request):
-        # return render(request,'aoj_app/demo/login.html')
-
 class UserLogInView(LoginView):
     template_name='aoj_app/demo/login.html'  
     LOGIN_REDIRECT_URL='newindex'
 
-# class RegisterView(TemplateView):
-#     template_name = "aoj_app/demo/register.html"
-
 class RegisterView(View):
-    # form_class = UserCreationForm
-    # template_name = "aoj_app/demo/register.html"
-    # success_url = reverse_lazy("newindex")
-
     def post(self,request):
         form=UserCreationForm(request.POST)
-        # email=request.POST['email']
-        # password=request.POST['password']
-        # first_name=request.POST['first_name']
-        # last_name=request.POST['last_name']
-        # address=request.POST['address']
-        # city=request.POST['city']
-        # state=request.POST['state']
         country=request.POST['country']
-        # zip_code=request.POST['zip_code']
-        # phone_number=request.POST['phone_number']
         if form.is_valid():
             user=AuthUser.objects.create_user(
                 email=form.cleaned_data['email'],
@@ -788,12 +757,21 @@ class RegisterView(View):
 
     def get(self,request):
         form=UserCreationForm()
-        print(form)
         return render(request,'aoj_app/demo/register.html',{'form':form})
 
-    # def form_valid(self, form):
-    #     form.save()
-    #     return super(RegisterView, self).form_valid(form)
+class TeamsBlogView(ListView):
+    model=TeamsBlog
+    template_name= "aoj_app/demo/teams_blog.html"
 
-# class CatalogueView(TemplateView):
-#     template_name ="aoj_app/demo/Catalogue.html"
+class TeamsConsiderView(ListView):
+    model=TeamsConsider
+    template_name= "aoj_app/demo/teams_consider.html"
+
+class TeamsTrainingView(ListView):
+    model=TeamsTraining
+    template_name= "aoj_app/demo/teams_training.html"
+
+class TeamsResourceView(ListView):
+    model=TeamsResources
+    template_name= "aoj_app/demo/teams_resources.html"
+
