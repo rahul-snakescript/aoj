@@ -94,7 +94,30 @@
     <div class="container children_arm">
       <div class="consider_hadding">
         <h2>Teams Blogs</h2>
+        </div>
+          {% if object_list %}
+            <div class="row">
+              {% for blog in object_list %}
+                <div class="col-md-4">
+                  <div class="considerImg_left_side">
+                    {% if blog.image %}
+                    <a href="{{ blog.image.url }}">
+                    <img src="{{ blog.image.url }}" alt="">
+                    </a>
+                    {% else %}
+                    <img src="" alt="">
+                    {% endif %}
+                      <div class="teamsBlogs_item">
+                          <h5>{{ blog.title }}</h5>
+                          <p>{{ blog.description }}</p>
+                      </div>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+        </div>
       </div>
+        {% else %}
       <div class="row">
         <div class="col-md-4">
           <div class="considerImg_left_side">
@@ -115,8 +138,7 @@
               <p>Lorem Ipsum is simply dummy text of the 
                 printing and typesetting industry. Lorem 
                 Ipsum has been the industry's</p>
-            </div>
-            
+            </div>           
           </div>
         </div>
         <div class="col-md-4">
@@ -128,10 +150,11 @@
                 printing and typesetting industry. Lorem 
                 Ipsum has been the industry's</p>
             </div>
-            
           </div>
         </div>
       </div>
+        {% endif %}
+        
     </div>
   </div>
   <!-- consider serving close here -->

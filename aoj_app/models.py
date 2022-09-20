@@ -60,6 +60,29 @@ def upload_staff_image_to(instance, filename):
     filename = "{0}.{1}".format(uuid_hash, ext)
     return "staff/%s" % filename
 
+def upload_teamblog_image_to(instance, filename):
+    ext = filename.split(".")[-1]
+    uuid_hash = str(uuid.uuid4())[:8]
+    filename = "{0}.{1}".format(uuid_hash, ext)
+    return "teamsblog/%s" % filename
+
+def upload_teamconsider_image_to(instance, filename):
+    ext = filename.split(".")[-1]
+    uuid_hash = str(uuid.uuid4())[:8]
+    filename = "{0}.{1}".format(uuid_hash, ext)
+    return "teamsconsider/%s" % filename
+
+def upload_teamtraining_image_to(instance, filename):
+    ext = filename.split(".")[-1]
+    uuid_hash = str(uuid.uuid4())[:8]
+    filename = "{0}.{1}".format(uuid_hash, ext)
+    return "teamstraining/%s" % filename
+
+def upload_teamresource_image_to(instance, filename):
+    ext = filename.split(".")[-1]
+    uuid_hash = str(uuid.uuid4())[:8]
+    filename = "{0}.{1}".format(uuid_hash, ext)
+    return "teamsresource/%s" % filename
 
 """
 MODELS
@@ -440,6 +463,27 @@ class AboutMission(models.Model):
 
     def __unicode__(self):
         return self.title
+
+class TeamsBlog(models.Model):
+    title=models.CharField(max_length=50)
+    image=models.ImageField(upload_to=upload_teamblog_image_to,blank=True,null=True)
+    description=models.TextField()
+
+class TeamsConsider(models.Model):
+    title=models.CharField(max_length=50,blank=True,null=True)
+    image=models.ImageField(upload_to=upload_teamconsider_image_to)
+    description=models.TextField(blank=True,null=True)
+
+class TeamsTraining(models.Model):
+    title=models.CharField(max_length=50,blank=True,null=True)
+    media=models.FileField(upload_to=upload_teamtraining_image_to)
+    description=models.TextField(blank=True,null=True)
+
+class TeamsResources(models.Model):
+    title=models.CharField(max_length=50,blank=True,null=True)
+    media=models.FileField(upload_to=upload_teamresource_image_to)
+
+
 
 
 

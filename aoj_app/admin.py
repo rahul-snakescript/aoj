@@ -12,13 +12,6 @@ from .models import *
 
 
 class UserAdmin(BaseUserAdmin):
-    # The forms to add and change user instances
-    # form = UserChangeForm
-    # add_form = UserCreationForm
-
-    # The fields to be used in displaying the User model.
-    # These override the definitions on the base UserAdmin
-    # that reference specific fields on auth.User.
     list_display = ('email', 'first_name','address', 'is_admin')
     list_filter = ('is_admin',)
     fieldsets = (
@@ -26,8 +19,6 @@ class UserAdmin(BaseUserAdmin):
         ('Personal info', {'fields': ('first_name','last_name','address','city','state','country','zip_code')}),
         ('Permissions', {'fields': ('is_admin',)}),
     )
-    # add_fieldsets is not a standard ModelAdmin attribute. UserAdmin
-    # overrides get_fieldsets to use this attribute when creating a user.
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
@@ -38,7 +29,6 @@ class UserAdmin(BaseUserAdmin):
     ordering = ('email',)
     filter_horizontal = ()
 
-# Now register the new UserAdmin...
 admin.site.register(AuthUser, UserAdmin)
 
 
@@ -53,16 +43,6 @@ class CheckoutRequestInline(admin.TabularInline):
 
     def has_delete_permission(self, request, obj=None):
         return False
-
-
-# @admin.register(User)
-# class NamedUserAdminReplaced(NamedUserAdmin):
-#     inlines = [CheckoutRequestInline]
-#     fieldsets = (BASE_FIELDS,)
-
-# @admin.register(AuthUser)
-# class UserAdmin(admin.ModelAdmin):
-#     list_display= ('email','first_name','country','state','address')
 
 
 class ChildrenAdmin(admin.ModelAdmin):
@@ -130,3 +110,19 @@ class StaffAdmin(admin.ModelAdmin):
 @admin.register(AboutMission)
 class StaffAdmin(admin.ModelAdmin):
     list_display= ['title','body']
+
+@admin.register(TeamsBlog)
+class TeamsBlogAdmin(admin.ModelAdmin):
+    list_display= ['title','image','description']
+
+@admin.register(TeamsConsider)
+class TeamsConsiderAdmin(admin.ModelAdmin):
+    list_display= ['title','image','description']
+
+@admin.register(TeamsTraining)
+class TeamsTrainingAdmin(admin.ModelAdmin):
+    list_display= ['title','media','description']
+
+@admin.register(TeamsResources)
+class TeamsTrainingAdmin(admin.ModelAdmin):
+    list_display= ['title','media']

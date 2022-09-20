@@ -85,12 +85,12 @@ urlpatterns = [
     # TEAMS
     url(
         r"^consider-serving/$",
-        TemplateView.as_view(template_name="aoj_app/demo/teams_consider.html"),
+        TeamsConsiderView.as_view(),
         name="t_consider",
     ),
     url(
         r"^training/$",
-        TemplateView.as_view(template_name="aoj_app/demo/teams_training.html"),
+        TeamsTrainingView.as_view(),
         name="t_training",
     ),
     url(
@@ -100,12 +100,12 @@ urlpatterns = [
     ),
     url(
         r"^resources/$",
-        TemplateView.as_view(template_name="aoj_app/demo/teams_resources.html"),
+        TeamsResourceView.as_view(),
         name="t_resource",
     ),
     url(
         r"^team-blogs/$",
-        TemplateView.as_view(template_name="aoj_app/demo/teams_blog.html"),
+        TeamsBlogView.as_view(),
         name="t_blog",
     ),
     # ABOUT
