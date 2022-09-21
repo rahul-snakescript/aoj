@@ -101,7 +101,9 @@
         {% for data in object_list %}
         <div class="col-md-12">
           <div class="training_outer">
+            <a href="{{ data.media.url }}">
             <img src="{{ data.media.url }}" alt="">
+            </a>
           </div>
         </div>
         {% endfor %}
