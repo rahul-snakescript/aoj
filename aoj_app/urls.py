@@ -203,4 +203,19 @@ urlpatterns = [
         CatalogueView.as_view(),
         name="Catalogue",
     ),
+    url(
+        r"^demo/missions/guatemala/$",
+        TemplateView.as_view(template_name="aoj_app/demo/guatemala_mission.html"),
+        name="guatemala_mission",
+    ),
+    url(
+        r"^demo/missions/haiti/$",
+        TemplateView.as_view(template_name="aoj_app/demo/mission_haiti.html"),
+        name="mission_haiti",
+    ),
+    # url(
+    #     r"^demo/missions/kenya/$",
+    #     TemplateView.as_view(template_name="aoj_app/demo/guatemala.html"),
+    #     name="Catalogue",
+    # ),
 ]

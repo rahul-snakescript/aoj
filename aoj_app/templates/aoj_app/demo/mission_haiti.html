@@ -1,24 +1,25 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <title>Arm Of God</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- css link -->
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/custom.css">
-  <link rel="stylesheet" href="css/bootstrap.css">
-
-  <link rel="stylesheet" href="css/slick.css">
-  <link rel="stylesheet" href="css/slick-theme.css">
-
-  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-
-  <!-- fav link -->
-  <link rel="icon" type="image/x-icon" href="image/fav.png">
-</head>
+  <head>
+    <title>The Arms Of Jesus</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- css link -->
+    <link rel="stylesheet" href="{% static 'demo/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'demo/css/custom.css' %}">
+    <link rel="stylesheet" href="{% static 'demo/css/bootstrap.css' %}">
+  
+    <link rel="stylesheet" href="{% static 'demo/css/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'demo/css/slick-theme.css' %}">
+  
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  
+    <!-- fav link -->
+    <link rel="icon" type="image/x-icon" href="{% static 'demo/images/fav.png' %}">
+  </head>
 
 <body>
 
@@ -30,28 +31,51 @@
         <div class="children_header">
           <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
-              <a class="navbar-brand" href="home.html"><img src="images/logo.png"></a>
+              <a class="navbar-brand" href="{% url 'newindex' %}"><img src="{% static 'demo/images/logo.png' %}"></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
-                 <i class="fa fa-bars"></i>
+                <i class="fa fa-bars"></i>
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+                    <a class="nav-link active" aria-current="page" href="{% url 'newindex' %}">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="children.html">Children</a>
+                    <a class="nav-link" href="{% url 'children' %}">Children</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Mission</a>
+                    <div class="dropdown">
+                      <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                        Missions
+                      </a>
+  
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item" href="{% url 'guatemala_mission' %}">Guatemala</a></li>
+                        <li><a class="dropdown-item" href="{%  url 'mission_haiti' %}">Haiti</a></li>
+                        <li><a class="dropdown-item" href="#">Kenya</a></li>
+                      </ul>
+                    </div>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Teams</a>
+                    <!-- <a class="nav-link" href="#">Teams</a> -->
+                    <div class="dropdown">
+                      <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                        Teams
+                      </a>
+  
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item" href="{% url 't_blog' %}">Team Blogs</a></li>
+                        <li><a class="dropdown-item" href="{%  url 't_calender' %}">Calendar</a></li>
+                        <li><a class="dropdown-item" href="{% url 't_consider' %}">Consider Serving</a></li>
+                        <li><a class="dropdown-item" href="{% url 't_resource' %}">Resources</a></li>
+                        <li><a class="dropdown-item" href="{% url 't_training' %}">Training</a></li>
+                      </ul>
+                    </div>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Catalogue</a>
+                    <a class="nav-link" href="{% url 'catalogue' %}">Catalogue</a>
                   </li>
                   <li class="nav-item">
                   <div class="dropdown">
@@ -60,20 +84,20 @@
                     </a>
 
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                      <li><a class="dropdown-item" href="about_behave.html">About Behave</a></li>
-                      <li><a class="dropdown-item" href="about_fund_policy.html">About Fund Policy</a></li>
-                      <li><a class="dropdown-item" href="about_histroy.html">About Histroy</a></li>
-                      <li><a class="dropdown-item" href="about_mission.html">About Mission</a></li>
-                      <li><a class="dropdown-item" href="about_staff.html">About Staff</a></li>
+                      <li><a class="dropdown-item" href="{% url 'behave' %}">What We Believe</a></li>
+                      <li><a class="dropdown-item" href="{% url 'fund_policy' %}"> Funds Policy</a></li>
+                      <li><a class="dropdown-item" href="{% url 'history' %}">Our History</a></li>
+                      <li><a class="dropdown-item" href="{% url 'mission' %}">Mission Statement</a></li>
+                      <li><a class="dropdown-item" href="{% url 'staff' %}">Staff</a></li>
                     </ul>
                   </div>
                 </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="contact-us.html">Contact</a>
+                    <a class="nav-link" href="{% url 'contact_us' %}">Contact</a>
                   </li>
                 </ul>
                 <div class="header_btn">
-                  <a href="#" class="donate_btn">Donate</a>
+                  <a href="{% url 'login' %}" class="donate_btn">Donate</a>
                   <a href="#" class="sponsor_btn">Sponsor</a>
                 </div>
               </div>
@@ -128,7 +152,7 @@
       <div class="row">
         <div class="col-md-12 col-lg-12 col-xl-6">
           <div class="haitiMission_img">
-            <img src="images/HaitiMission_img.jpg" alt="">
+            <img src="{% static 'demo/images/HaitiMission_img.jpg' %}" alt="">
           </div>
         </div>
         <div class="col-md-12 col-lg-12 col-xl-6">
@@ -182,7 +206,7 @@
         </div>
         <div class="col-md-12 col-lg-12 col-xl-6">
           <div class="rightSec_imgShool">
-            <img src="images/mission_school.jpg" alt="">
+            <img src="{% static 'demo/images/mission_school.jpg' %}" alt="">
           </div>
         </div>
       </div>
@@ -196,7 +220,7 @@
       <div class="row">
         <div class="col-md-12 col-lg-12 col-xl-6">
           <div class="spon_img">
-            <img src="images/Mission_childImg.jpg" alt="">
+            <img src="{% static 'demo/images/Mission_childImg.jpg' %}" alt="">
           </div>
         </div>
         <div class="col-md-12 col-lg-12 col-xl-6">
@@ -212,7 +236,7 @@
               program many more children will feel the impact of our 
               help.</p>
               <div class="sponsorship_btn">
-                <a href="#">Contact Us</a>
+                <a href="{% url 'contact_us'%}">Contact Us</a>
               </div>
           </div>
         </div>
@@ -228,7 +252,7 @@
         <div class="col-md-12">
           <div class="mamber_outer">
             <div class="logo_mamber">
-              <img src="images/logo_mamber.png" alt="">
+              <img src="{% static 'demo/images/logo_mamber.png' %}" alt="">
             </div>
             <p>Certification with CCCC is a powerful endorsement of a charity’s integrity. It demonstrates that the charity has been carefully assessed
               by CCCC’s rigorous certification process and found to be in compliance with CCCC’s Standards. Donors can give confidently and
@@ -258,7 +282,7 @@
             <p class="office_hadding">Office Address:</p>
             <p class="office_address">1730 McPherson Ct., Unit 19 Pickering,Ontario<br>L1w 3E6 Canada</p>
             <div class="footer_btm">
-              <a href="#">Get Direction</a>
+              <a href="https://www.google.com/maps/place/1730+McPherson+Ct+Unit+19,+Pickering,+ON+L1W+3E6,+Canada/@43.8249902,-79.0602083,17.05z/data=!4m5!3m4!1s0x89d4de59303c42af:0x48e61eac3b83aeef!8m2!3d43.8227487!4d-79.0609166" target="_blank" rel="noopener noreferrer">Get Direction</a>
             </div>
           </div>
         </div>
@@ -266,12 +290,12 @@
           <div class="footer_right_side">
             <div class="right_side_outer">
               <div class="footer_logo">
-                <img src="images/footer-logo.png" alt="footer-logo">
+                <img src="{% static 'demo/images/footer-logo.png' %}" alt="footer-logo">
               </div>
               <div class="social_ic">
-                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.facebook.com/ArmsOfJesus/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a>
                 <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.youtube.com/channel/UCGLEAhozRUSUDzP7o-NGD1A" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a>
               </div>
             </div>
             <div class="footer_manu">
@@ -280,24 +304,24 @@
 
                 <ul>
                   <li><a href="#">About AOJ</a></li>
-                  <li><a href="#">Mission Statement</a></li>
-                  <li><a href="#">History</a></li>
+                  <li><a href="{% url 'mission' %}">Mission Statement</a></li>
+                  <li><a href="{% url 'history' %}">History</a></li>
                 </ul>
               </div>
               <div class="footer_manu_item1">
                 <h5>Donate</h5>
 
                 <ul>
-                  <li><a href="#">Catalogue</a></li>
-                  <li><a href="#">Donations</a></li> 
+                  <li><a href="{% url 'catalogue' %}">Catalogue</a></li>
+                  <li><a href="{% url 'login' %}">Donations</a></li> 
                 </ul>
               </div>
               <div class="footer_manu_item1">
                 <h5>Get Involved</h5>
 
                 <ul>
-                  <li><a href="#">Catalogue</a></li>
-                  <li><a href="#">Donations</a></li>
+                  <li><a href="{% url 'catalogue' %}">Catalogue</a></li>
+                  <li><a href="{% url 'login' %}">Donations</a></li>
                 </ul>
               </div>
             </div>
@@ -313,11 +337,11 @@
   </div>
   <!-- footer close here -->
 
-<script src="js/jquery.min.js"></script>
+<script src="{% static 'demo/js/jquery.min.js' %}"></script>
   <!-- js link -->
-  <script src="js/slick.js"></script>
-  <script src="js/slick.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+  <script src="{% static 'demo/js/slick.js' %}"></script>
+  <script src="{% static 'demo/js/slick.min.js' %}"></script>
+  <script src="{% static 'demo/js/popper.min.js' %}"></script>
+  <script src="{% static 'demo/js/bootstrap.min.js' %}"></script>
 </body>
 </html>
