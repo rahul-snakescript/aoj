@@ -46,7 +46,17 @@
                     <a class="nav-link" href="{% url 'children' %}">Children</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Mission</a>
+                    <div class="dropdown">
+                      <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                        Missions
+                      </a>
+  
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item" href="{% url 'guatemala_mission' %}">Guatemala</a></li>
+                        <li><a class="dropdown-item" href="{%  url 'mission_haiti' %}">Haiti</a></li>
+                        <li><a class="dropdown-item" href="#">Kenya</a></li>
+                      </ul>
+                    </div>
                   </li>
                   <li class="nav-item">
                     <!-- <a class="nav-link" href="#">Teams</a> -->

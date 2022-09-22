@@ -46,7 +46,17 @@
                     <a class="nav-link" href="{% url 'children' %}">Children</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Mission</a>
+                    <div class="dropdown">
+                      <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                        Missions
+                      </a>
+  
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item" href="{% url 'guatemala_mission' %}">Guatemala</a></li>
+                        <li><a class="dropdown-item" href="{%  url 'mission_haiti' %}">Haiti</a></li>
+                        <li><a class="dropdown-item" href="#">Kenya</a></li>
+                      </ul>
+                    </div>
                   </li>
                   <li class="nav-item">
                     <div class="dropdown">
@@ -111,7 +121,7 @@
       {% if object_list %}
       <div class="row">
         {% for data in object_list %}
-        <div class="col-md-6 col-lg-12 resources_applications">
+        <div class="col-md-3 resources_applications">
           <div class="TeamResources_1">
             <p class="mannual_resources">{{ data.title }}</p>
             <img src="{% static 'demo/images/TeamResources_ic.png' %}" alt="">
@@ -124,17 +134,7 @@
         </div>
         {% else %}
         <div class="row">
-        <div class="col-md-6 col-lg-12 resources_applications">
-          <div class="TeamResources_1">
-            <p class="mannual_resources">Team Manual 2015</p>
-            <img src="{% static 'demo/images/TeamResources_ic.png' %}" alt="">
-            <p class="mannual_resources1">teammanual2015.pdf</p>
-
-            <div class="download_files">
-              <a href="#">Download file</a>
-            </div>
-          </div>
-        <div class="col-md-6 col-lg-12 resources_applications">
+        <div class="col-md-3 resources_applications">
           <div class="TeamResources_1">
             <p class="mannual_resources">Team Manual 2015</p>
             <img src="{% static 'demo/images/TeamResources_ic.png' %}" alt="">
@@ -145,7 +145,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-12 resources_applications">
+        <div class="col-md-3 resources_applications">
           <div class="TeamResources_1">
             <p class="mannual_resources">Team Manual 2015</p>
             <img src="{% static 'demo/images/TeamResources_ic.png' %}" alt="">
@@ -156,7 +156,18 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-12 resources_applications">
+        <div class="col-md-3 resources_applications">
+          <div class="TeamResources_1">
+            <p class="mannual_resources">Team Manual 2015</p>
+            <img src="{% static 'demo/images/TeamResources_ic.png' %}" alt="">
+            <p class="mannual_resources1">teammanual2015.pdf</p>
+
+            <div class="download_files">
+              <a href="#">Download file</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 resources_applications">
           <div class="TeamResources_1">
             <p class="mannual_resources">Team Manual 2015</p>
             <img src="{% static 'demo/images/TeamResources_ic.png' %}" alt="">
@@ -169,7 +180,7 @@
         </div>
       </div>
       <div class="row resources_team">
-        <div class="col-md-6 col-lg-12 resources_applications">
+        <div class="col-md-3 resources_applications">
           <div class="TeamResources_1">
             <p class="mannual_resources">Behaviour & Expectation Form</p>
             <img src="{% static 'demo/images/TeamResources_ic.png' %}" alt="">
@@ -180,7 +191,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-12 resources_applications">
+        <div class="col-md-3 resources_applications">
           <div class="TeamResources_1">
             <p class="mannual_resources">Release Form</p>
             <img src="{% static 'demo/images/TeamResources_ic.png' %}" alt="">
@@ -191,7 +202,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-12 resources_applications">
+        <div class="col-md-3 resources_applications">
           <div class="TeamResources_1">
             <p class="mannual_resources">Evaluation Form</p>
             <img src="{% static 'demo/images/TeamResources_ic.png' %}" alt="">
@@ -202,7 +213,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-12 resources_applications">
+        <div class="col-md-3 resources_applications">
           <div class="TeamResources_1">
             <p class="mannual_resources">Short Term Application Form</p>
             <img src="{% static 'demo/images/TeamResources_ic.png' %}" alt="">
