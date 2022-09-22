@@ -624,6 +624,7 @@
 }
 .select_video {
     text-align: center;
+    margin-bottom: 15px;
 }
 .select_video select{
     font-size: 24px;
