@@ -50,7 +50,19 @@
                     <a class="nav-link" href="#">Mission</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Teams</a>
+                    <div class="dropdown">
+                      <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                        Teams
+                      </a>
+  
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item" href="{% url 't_blog' %}">Teams Blog</a></li>
+                        <li><a class="dropdown-item" href="{%  url 't_calender' %}">Teams Calender</a></li>
+                        <li><a class="dropdown-item" href="{% url 't_consider' %}">Teams Consider</a></li>
+                        <li><a class="dropdown-item" href="{% url 't_resource' %}">Teams Resource</a></li>
+                        <li><a class="dropdown-item" href="{% url 't_training' %}">Teams Training</a></li>
+                      </ul>
+                    </div>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'catalogue' %}">Catalogue</a>
