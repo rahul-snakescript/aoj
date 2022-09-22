@@ -75,10 +75,6 @@
     max-width: 100%;
 }
 
-* {
-    padding: 0 !important;
-}
-
 /* home page css start */
     .header nav.navbar.navbar-expand-lg.navbar-light {
         padding: 0 !important;
@@ -369,7 +365,7 @@
     .video iframe {
         border: 0;
         width: 100%;
-        height: 688px;
+        height: 300px;
     }
 
 
