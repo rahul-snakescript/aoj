@@ -34,6 +34,7 @@ api_patterns = [
         ajax_send_checkout_form,
         name="ajax_send_checkout_form",
     ),
+    url(r"send_drop_value/$",ajax_dropdown, name='ajaxdropdown'),
 ]
 
 urlpatterns = [

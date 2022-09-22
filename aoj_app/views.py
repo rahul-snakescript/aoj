@@ -667,6 +667,16 @@ def setlang_view(request):
         response.set_cookie("googtrans", urllib.quote_plus("/auto/" + lang))
     return response
 
+def ajax_dropdown(request):
+    if request.method == 'GET':
+        country=request.GET['country']
+        videos=Media.objects.filter(country=country)
+        data_list=[]
+        for video in videos:
+            data_list.append(video.video)
+        data_dict={'dataresponse':data_list}
+        return JsonResponse(data_dict)
+
 
 # demo views
 
@@ -679,8 +689,16 @@ class NewIndexView(TemplateView):
         except:
             context['latest_post']=None
         context["latest_magazines"] = Magazine.objects.all()[:6]
-        context["countries"] = Country.objects.all()
+        context["countries"]=Country.objects.all()
+        first_country=Country.objects.first()
+        video_list=[]
+        first_country_video=Media.objects.filter(country=first_country)
+        for video in first_country_video:
+            video_list.append(video.video)
+        context['country_video']=video_list
+        print(context)
         return context
+
 
 class AboutStaffView(ListView):
     template_name = "aoj_app/demo/about_staff.html"
