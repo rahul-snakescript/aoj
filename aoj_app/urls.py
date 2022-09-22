@@ -22,11 +22,14 @@ api_patterns = [
         name="ajax_product_decrement_quantity",
     ),
     url(r"^calculate_fp_hash/$", ajax_calculate_fp_hash, name="ajax_calculate_fp_hash"),
+    url(r"^send_donate_form/$", ajax_send_donate_form, name="ajax_send_donate_form"),
+
     url(
         r"^send_sponsorship_form/$",
         ajax_send_sponsorship_form,
         name="ajax_send_sponsorship_form",
     ),
+
     url(r"^send_contact_form/$", ajax_send_contact_form, name="ajax_send_contact_form"),
     url(r"^send_donate_form/$", ajax_send_donate_form, name="ajax_send_donate_form"),
     url(

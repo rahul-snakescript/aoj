@@ -232,23 +232,24 @@ class SilentPostView(View):
 AJAX
 """
 
-
+@login_required
 def ajax_add_to_cart(request):
-    cart = Cart(request.session)
-    product = Product.objects.get(id=request.GET.get("product_id"))
-    cart.add(product, price=product.price)
-    _item = None
-    for item in cart.items:
-        if item.product == product:
-            _item = item
-    return JsonResponse(
-        {
-            "error": 0,
-            "message": "Added to cart",
-            "count": cart.count,
-            "qty": _item.quantity,
-        }
-    )
+        cart = Cart(request.session)
+        product = Product.objects.get(id=request.GET.get("product_id"))
+        cart.add(product, price=product.price)
+        _item = None
+        for item in cart.items:
+            if item.product == product:
+                _item = item
+        return JsonResponse(
+            {
+                "error": 0,
+                "message": "Added to cart",
+                "count": cart.count,
+                "qty": _item.quantity,
+            }
+        )
+
 
 
 def ajax_remove_from_cart(request):
@@ -436,36 +437,37 @@ def ajax_send_sponsorship_form(request):
 
 
 def ajax_send_contact_form(request):
-    first_name = request.POST.get("first_name", "")
-    last_name = request.POST.get("last_name", "")
-    email = request.POST.get("email", "")
-    message = request.POST.get("message", "")
+    if request.method == 'POST':
+        first_name = request.POST.get("first_name", "")
+        last_name = request.POST.get("last_name", "")
+        email = request.POST.get("email", "")
+        message = request.POST.get("message", "")
 
-    config = SiteConfiguration.get_solo()
+        config = SiteConfiguration.get_solo()
 
-    if first_name and last_name and email and message:
-        try:
-            _message = """
-                First Name: %s
-                Last Name: %s
-                Email: %s
-                Message: %s
-                """ % (
-                first_name,
-                last_name,
-                email,
-                message,
+        if first_name and last_name and email and message:
+            try:
+                _message = """
+                    First Name: %s
+                    Last Name: %s
+                    Email: %s
+                    Message: %s
+                    """ % (
+                    first_name,
+                    last_name,
+                    email,
+                    message,
+                )
+                send_mail(
+                    "Children Sponsorship Form", _message, None, config.get_email_list()
+                )
+            except:
+                return JsonResponse({"error": 1, "message": "Invalid header found."})
+            return JsonResponse({"error": 0, "message": "success"})
+        else:
+            return JsonResponse(
+                {"error": 1, "message": "Make sure all fields are entered and valid."}
             )
-            send_mail(
-                "Children Sponsorship Form", _message, None, config.get_email_list()
-            )
-        except:
-            return JsonResponse({"error": 1, "message": "Invalid header found."})
-        return JsonResponse({"error": 0, "message": "success"})
-    else:
-        return JsonResponse(
-            {"error": 1, "message": "Make sure all fields are entered and valid."}
-        )
 
 
 @login_required

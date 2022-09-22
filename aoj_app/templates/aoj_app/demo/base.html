@@ -22,81 +22,15 @@
 </head>
 
 <body>
+  {% block body_temp %}
+  {% endblock %}
 
   <!-- banner start here -->
-  <section class="banner">
-    <!-- header start here -->
-    <header>
-      <div class="header">
-        <div class="children_header">
-          <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="home.html"><img src="{% static 'demo/images/logo.png' %}"></a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <i class="fa fa-bars"></i>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'newindex' %}">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{% url 'children' %}">Children</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Mission</a>
-                  </li>
-                  <li class="nav-item">
-                    <!-- <a class="nav-link" href="#"></a> -->
-                    <div class="dropdown">
-                      <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                        Teams
-                      </a>
   
-                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <li><a class="dropdown-item" href="{% url 't_blog' %}">Teams Blog</a></li>
-                        <li><a class="dropdown-item" href="{%  url 't_calender' %}">Teams Calender</a></li>
-                        <li><a class="dropdown-item" href="{% url 't_consider' %}">Teams Consider</a></li>
-                        <li><a class="dropdown-item" href="{% url 't_resource' %}">Teams Resource</a></li>
-                        <li><a class="dropdown-item" href="{% url 't_training' %}">Teams Training</a></li>
-                      </ul>
-                    </div>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{% url 'catalogue' %}">Catalogue</a>
-                  </li>
-                  <li class="nav-item">
-                  <div class="dropdown">
-                    <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                     About Us
-                    </a>
-
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                      <li><a class="dropdown-item" href="{% url 'behave' %}">About Behave</a></li>
-                      <li><a class="dropdown-item" href="{%  url 'fund_policy' %}">About Fund Policy</a></li>
-                      <li><a class="dropdown-item" href="{% url 'history' %}">About History</a></li>
-                      <li><a class="dropdown-item" href="{% url 'mission' %}">About Mission</a></li>
-                      <li><a class="dropdown-item" href="{% url 'staff' %}">About Staff</a></li>
-                    </ul>
-                  </div>
-                </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{% url 'contact_us' %}">Contact</a>
-                  </li>
-                </ul>
-                <div class="header_btn">
-                  <a href="{% url 'login' %}" class="donate_btn">Donate</a>
-                  <a href="#" class="sponsor_btn">Sponsor</a>
-                </div>
-              </div>
-            </div>
-          </nav>
-        </div>
-      </div>
-    </header>
+    <!-- header start here -->
   <!-- header close here -->
+
+
     
 
 
@@ -125,75 +59,7 @@
 
 
     <!-- footer start here -->
-    <div class="footer">
-      <div class="container children_arm">
-        <div class="row footer_row1">
-          <div class="col-md-5">
-            <div class="footer_item1">
-              <h6>Contact Us</h6>
-  
-              <p class="number_footer">Phone: (905) 492-5007</p>
-              <p class="email_footer">Email: aojchildmis@rogers.com</p>
-  
-              <p class="address_hadding">Mailing Address:</p>
-              <p class="2R2">P.O.Box 10 Pickering,Ontario L1V 2R2 Canda</p>
-  
-              <p class="office_hadding">Office Address:</p>
-              <p class="office_address">1730 McPherson Ct., Unit 19 Pickering,Ontario<br>L1w 3E6 Canada</p>
-              <div class="footer_btm">
-                <a href="https://www.google.com/maps/place/1730+McPherson+Ct+Unit+19,+Pickering,+ON+L1W+3E6,+Canada/@43.8249902,-79.0602083,17.05z/data=!4m5!3m4!1s0x89d4de59303c42af:0x48e61eac3b83aeef!8m2!3d43.8227487!4d-79.0609166" target="_blank" rel="noopener noreferrer">Get Direction</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-7">
-            <div class="footer_right_side">
-              <div class="right_side_outer">
-                <div class="footer_logo">
-                  <img src="{% static 'demo/images/footer-logo.png' %}" alt="">
-                </div>
-                <div class="social_ic">
-                  <a href="https://www.facebook.com/ArmsOfJesus/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a>
-                  <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                  <a href="https://www.youtube.com/channel/UCGLEAhozRUSUDzP7o-NGD1A" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a>
-                </div>
-              </div>
-              <div class="footer_manu">
-                <div class="footer_manu_item1">
-                  <h5>About Us</h5>
-  
-                  <ul>
-                    <li><a href="#">About AOJ</a></li>
-                    <li><a href="{% url 'mission' %}">Mission Statement</a></li>
-                    <li><a href="{% url 'history' %}">History</a></li>
-                  </ul>
-                </div>
-                <div class="footer_manu_item1">
-                  <h5>Donate</h5>
-  
-                  <ul>
-                    <li><a href="#">Catalogue</a></li>
-                    <li><a href="{% url 'login' %}">Donations</a></li> 
-                  </ul>
-                </div>
-                <div class="footer_manu_item1">
-                  <h5>Get Involved</h5>
-  
-                  <ul>
-                    <li><a href="#">Catalogue</a></li>
-                    <li><a href="{% url 'login' %}">Donations</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row copyright_txt">
-          <div class="col-md-12">
-            <p>Copyright © 2021 Arms of Jesus Children's Mission Inc. All Rights Reserved.</p>
-          </div>
-        </div>
-      </div>
-    </div>
+    {% include 'aoj_app/demo/footer.html' %}  
     <!-- footer close here -->
 
 

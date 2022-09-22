@@ -1,9 +1,21 @@
-{% extends  'aoj_app/base_template.html' %}
+{% extends  'aoj_app/demo/base.html' %}
 {% load staticfiles i18n %}
 
-{% block template_body %}
+{% block body_temp %}
+<section class="child_banner">
+{% include 'aoj_app/demo/header.html' %}
+<div class="container children_arm">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="banner_outer"> 
+          <h1>YOU CAN SPONSOR A CHILD FOR $40.00 A MONTH OR $480 A YEAR... JUST $1.32 PER DAY</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
     <div class="page-children-detail">
-        <div class="container">
+        <div class="container mx-auto">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1">
                     <h2 class="cd-name">{{ object.name }}</h2>
@@ -95,7 +107,7 @@
                                         <label for="cbfPhone">{% trans "Phone" %}</label>
                                         <input type="text" class="form-control" id="cbfPhone" name="phone">
                                     </div>
-                                    <button class="btn btn-aoj" type="submit">{% trans "SUBMIT" %}</button>
+                                    <button class="btn btn-primary mt-2" type="submit">{% trans "SUBMIT" %}</button>
                                 </form>
                                 <div class="f-message f-success">
                                     <h3>{% trans "Thank you. Your information has been submitted." %}</h3>
@@ -110,4 +122,121 @@
             </div>
         </div>
     </div>
+<script src="{% static 'lib/jquery/jquery-3.1.1.min.js' %}"></script>
+<script src="{% static 'lib/bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'lib/fancybox/jquery.fancybox.pack.js' %}"></script>
+<script src="{% static 'lib/jquery-validate/jquery.validate.min.js' %}"></script>
+<script src="{% static 'lib/mmenu/jquery.mmenu.all.min.js' %}"></script>
+<script src="{% static 'lib/slidesjs/jquery.slides.min.js' %}"></script>
+<script src="{% static 'js/translate.js' %}"></script>
+<script src="{% static 'js/site.js' %}"></script>
+<script src="//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=190291501407"></script>
+<script src="https://platform.twitter.com/widgets.js"></script>
+<script src="//translate.google.com/translate_a/element.js?cb=TranslateInit"></script>
+<script>
+    $('#form-child-sponsorship').validate({
+        rules: {
+            first_name: {
+                required: true,
+                minlength: 2
+            },
+            last_name: {
+                required: true,
+                minlength: 2
+            },
+            address: {
+                required: true,
+                minlength: 2
+            },
+            city: {
+                required: true,
+                minlength: 2
+            },
+            state: {
+                required: true,
+                minlength: 2
+            },
+            zip: {
+                required: true,
+                minlength: 2
+            },
+            country: {
+                required: true,
+                minlength: 2
+            },
+            email: {
+                required: true,
+                email: true
+            },
+            phone: {
+                required: true,
+                minlength: 2
+            }
+        },
+        messages: {
+            first_name: {
+                required: "This field is required",
+                minlength: "This field must consist of at least 2 characters"
+            },
+            last_name: {
+                required: "This field is required",
+                minlength: "This field must consist of at least 2 characters"
+            },
+            address: {
+                required: "This field is required",
+                minlength: "This field must consist of at least 2 characters"
+            },
+            city: {
+                required: "This field is required",
+                minlength: "This field must consist of at least 2 characters"
+            },
+            state: {
+                required: "This field is required",
+                minlength: "This field must consist of at least 2 characters"
+            },
+            zip: {
+                required: "This field is required",
+                minlength: "This field must consist of at least 2 characters"
+            },
+            country: {
+                required: "This field is required",
+                minlength: "This field must consist of at least 2 characters"
+            },
+            email: {
+                required: "This field is required"
+            },
+            phone: {
+                required: "This field is required",
+                minlength: "This field must consist of at least 2 characters"
+            }
+        },
+        submitHandler: function (form) {
+            ajax_loading_modal(true);
+            $(form).find('button[type="submit"]').attr('disabled', true);
+            $.ajax({
+                method: "POST",
+                // url: "/api/send_sponsorship_form/",
+                url:"{% url 'ajax_send_sponsorship_form' %}",
+                data: $(form).serialize()
+            }).done(function (e) {
+                if (e['error'] === 0) {
+                    $(form).fadeTo("slow", 0.15, function () {
+                        $('.form-wrapper .f-success').fadeIn('slow');
+                    });
+                } else {
+                    $(form).fadeTo("slow", 0.15, function () {
+                        $('.form-wrapper .f-error').fadeIn('slow');
+                    });
+                }
+            }).fail(function () {
+                $(form).fadeTo("slow", 0.15, function () {
+                    $('.form-wrapper .f-error').fadeIn('slow');
+                });
+            }).always(function () {
+                ajax_loading_modal(false);
+                //$(form).find('button[type="submit"]').attr('disabled', true);
+            });
+        }
+    });
+</script>
 {% endblock %}

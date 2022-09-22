@@ -367,9 +367,10 @@ $(function () {
         },
         submitHandler: function (form) {
             ajax_loading_modal(true);
-            $(form).find('button[type="submit"]').attr('disabled', true);
+            $(form).find('input[type="submit"]').attr('disabled', true);
             $.ajax({
-                method: "POST",
+                // method: "POST",
+                type:"POST",
                 url: "/api/send_contact_form/",
                 data: $(form).serialize()
             }).done(function (e) {
