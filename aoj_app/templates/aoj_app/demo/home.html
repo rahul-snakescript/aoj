@@ -233,9 +233,25 @@
       <div class="row">
         <div class="col-md-12">
           <div class="slider autoplay slider_autoplay">
+            {% if latest_magazines %}
+            {% for magazine in latest_magazines %}
             <div class="our_magzine_product">
-              <img src="{% static 'demo/images/book1.jpg' %}" alt="prdct1">
-              <h3>July 2021 Bulletin</h3>
+              {% if magazine.image %}
+              <a href="{% url 'magazine_detail' magazine.slug %}">
+                <img src="{{ magazine.image.url }}" alt="prdct1">
+              </a>
+              {% else %}
+              <a href="{% url 'magazine_detail' magazine.slug %}">
+                <img src="{% static 'demo/images/book1.jpg' %}" alt="prdct2">
+              </a>
+              {% endif %}
+              <h3>{{ magazine.title }}</h3>
+            </div>
+            {% endfor %}
+            {% else %}
+            <div class="our_magzine_product">
+              <img src="{% static 'demo/images/book1.jpg' %}" alt="prdct2">
+              <h3>March 2021 Bulletin</h3>
             </div>
             <div class="our_magzine_product">
               <img src="{% static 'demo/images/book1.jpg' %}" alt="prdct2">
@@ -253,6 +269,7 @@
               <img src="{% static 'demo/images/book1.jpg' %}" alt="prdct5">
               <h3>March 2021 Bulletin</h3>
             </div>
+            {% endif %}
           </div>
           <div class="magazines_btn">
             <a href="#">Go to Magazines</a>
@@ -268,48 +285,36 @@
   <!-- magazines close here -->
 
   <!-- video start here -->
+  {% if countries %}
   <div class="video">
     <div class="container children_arm">
       <div class="row">
         <div class="col-md-12 select_video">
-         
           <select name="cars" class="cars">
             {% for country in countries %}
-            <button type="submit">
-            <option name="country_name" value="{{ country.id }}">
+              <option name="country_name" value="{{ country.id }}">
               {{ country.name }}
             </option>
             {% endfor %}
           </select>
-    
-          </div>
-
         </div>
-
-        <!--change-->
-      <div class="row" id="append_row">
-        {% if country_video %}
-        {% for video in country_video %}
-        <div class="col-md-6 select_video">     
-        <div class="video_outer">
-          <iframe class="video-iframe" src="{{ video }}" frameborder="0" allowfullscreen=""></iframe>
-        </div>
-        </div>
-        {% endfor %}
-        {% endif %}
-
       </div>
 
-      </div>
       <!--change-->
-        <!-- <div class="col-md-6 select_video">     
-          <div class="video_outer">
-            <iframe class="video-iframe" src="https://www.youtube.com/embed/bMS9Qp5GhsI" frameborder="0" allowfullscreen=""></iframe>
+    <div class="row" id="append_row">
+      {% if country_video %}
+        {% for video in country_video %}
+          <div class="col-md-6 select_video">     
+            <div class="video_outer">
+              <iframe class="video-iframe" src="{{ video }}" frameborder="0" allowfullscreen=""></iframe>
+            </div>
           </div>
-        </div>  -->
-      <!-- </div>
+        {% endfor %}
+      {% endif %}
+    </div>
     </div>
   </div>
+  {% endif %}
   <!-- video close here -->
 
   <!-- member start here -->
@@ -444,18 +449,6 @@
         dots: true
       }
     }
-    // You can unslick at a given breakpoint now by adding:
-    // settings: "unslick"
-    // instead of a settings object  
-  //   <div class="row" id="append_row">
-    
-  //   <div class="col-md-6 select_video">       
-  //     <div class="video_outer">
-  //       <iframe class="video-iframe" src="" frameborder="0" allowfullscreen="" id="ifrm"></iframe>
-  //     </div>
-  //   </div>
-
-  // </div>
   ]
 });
 
@@ -465,10 +458,6 @@ $(document).ready(function() {
         var name = $(this).val();
         var row_div=$('#append_row')
         
-        // $('#aa').append('')
-      //  $('.video_outer').children('aaa').atrtr('src','sfsf')
-//finder
-
       $.ajax({
                   type: "GET",
                   url: "{% url 'ajaxdropdown' %}",
@@ -477,6 +466,7 @@ $(document).ready(function() {
                   },
                   success: function (data) {
                     video_link=data.dataresponse
+                    if (video_link.length>0){
                     video_link.forEach(function(item,index){
                       var outer_div=$('<div>').addClass('col-md-6 select_video');
                       var inner_div=$('<div>').addClass('video_outer');
@@ -484,7 +474,13 @@ $(document).ready(function() {
                       $(inner_div).append(videoframe);
                       $(outer_div).append(inner_div)
                       $(row_div).append(outer_div); 
+                    
                     });
+                  }
+                  else{
+                    var errormsg = $('<h3>').addClass('text-center text-warning')
+                    $(errormsg).append('')
+                  }
 
                                        
                   },
@@ -492,22 +488,6 @@ $(document).ready(function() {
 
               row_div.html('');
 })});
-
-var toAdd = document.createDocumentFragment();
-for(var i=0; i < 11; i++){
-   var newDiv = document.createElement('div');
-   newDiv.id = 'r'+i;
-   newDiv.className = 'ansbox';
-   toAdd.appendChild(newDiv);
-}
-
-["a","b","c"]
-
-// document.appendChild(toAdd);
-
-// {% for k in country_videos %}
-// document.getElementById("ifrm").src = "https://www.youtube.com/embed/bMS9Qp5GhsI"
-// {%endfor%}
 
 </script>
 </body>

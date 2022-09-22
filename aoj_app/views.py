@@ -688,7 +688,7 @@ class NewIndexView(TemplateView):
             context["latest_post"] = BlogEntry.objects.latest("created_date")
         except:
             context['latest_post']=None
-        context["latest_magazines"] = Magazine.objects.all()[:6]
+        context["latest_magazines"] = Magazine.objects.all()
         context["countries"]=Country.objects.all()
         first_country=Country.objects.first()
         video_list=[]
