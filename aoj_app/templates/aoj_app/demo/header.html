@@ -30,7 +30,7 @@
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                       <li><a class="dropdown-item" href="{% url 'guatemala_mission' %}">Guatemala</a></li>
                       <li><a class="dropdown-item" href="{%  url 'mission_haiti' %}">Haiti</a></li>
-                      <li><a class="dropdown-item" href="#">Kenya</a></li>
+                      <li><a class="dropdown-item" href="{% url 'mission_kenya' %}">Kenya</a></li>
                       {% for mission in missions %}
                       <li><a class="dropdown-item" href="{{ mission.get_absolute_url }}">{{ mission.name }}</a></li>
                       {% endfor %}
