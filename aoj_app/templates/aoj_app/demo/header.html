@@ -1,6 +1,8 @@
 {% load static %}
 
+
 <header>
+  
     <div class="header">
       <div class="children_header">
         <nav class="navbar navbar-expand-lg navbar-light">
@@ -29,9 +31,13 @@
                       <li><a class="dropdown-item" href="{% url 'guatemala_mission' %}">Guatemala</a></li>
                       <li><a class="dropdown-item" href="{%  url 'mission_haiti' %}">Haiti</a></li>
                       <li><a class="dropdown-item" href="#">Kenya</a></li>
+                      {% for mission in missions %}
+                      <li><a class="dropdown-item" href="{{ mission.get_absolute_url }}">{{ mission.name }}</a></li>
+                      {% endfor %}
                     </ul>
                   </div>
-                </li>
+                </li> 
+                
                 <li class="nav-item">
                   <!-- <a class="nav-link" href="#">Teams</a> -->
                   <div class="dropdown">

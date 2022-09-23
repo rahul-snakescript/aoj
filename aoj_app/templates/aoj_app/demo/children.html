@@ -118,7 +118,7 @@
   <!-- header close here -->
 
 <!--Start Form Section-->
-    {% for country,children in child_data.items %}
+{% for country,children in child_data.items %}
  <div class="container children_arm">
    <div class="row gutenemala_text">
      <div class="col-md-12">
@@ -136,9 +136,10 @@
      </div>
     {% endfor %}
   </div>
+</div>
     {% endfor %}
 
-     <!-- <div class="col-md-3 col-sm-6 child_circle">
+      {% comment %} <div class="col-md-3 col-sm-6 child_circle">
         <img src="images/child2.jpg" alt="children">
         <h5>Junior</h5>
         <p>Available for Sponsor</p>
@@ -152,26 +153,10 @@
         <img src="images/child4.jpg" alt="children">
         <h5>Leydy</h5>
         <p>Available for Sponsor</p>
-     </div> -->
+     </div>
    
-   <!-- {% for child in object_list %}
-   {% if child %}
-   <div class="row gutenemala_text">
-     <div class="col-md-12">
-       <h2>Haiti</h2>
-     </div>
-   </div>
-    <div class="row">
-    {% if child.country == "Haiti" %}
+   
      <div class="col-md-3 col-sm-6 child_circle">
-        <img src="images/child5.jpg" alt="children">
-        <h5>{{ child.name }}</h5>
-        <p>Available for Sponsor</p>
-     </div>
-     {% endif %}
-     {% endif %}
-     {% endfor %} -->
-     <!-- <div class="col-md-3 col-sm-6 child_circle">
         <img src="images/child6.jpg" alt="children">
         <h5>Franceska</h5>
         <p>Available for Sponsor</p>
@@ -185,8 +170,8 @@
         <img src="images/child8.jpg" alt="children">
         <h5>Angelo</h5>
         <p>Available for Sponsor</p>
-     </div> -->
-   <!-- </div>
+     </div> 
+   </div>
    {% for child in object_list %}
    {% if child %}
    <div class="row gutenemala_text">
@@ -203,7 +188,7 @@
      </div>
      {% endif %}
      {% endif %}
-     {% endfor %} -->
+     {% endfor %} --> {% endcomment %}
      <!-- <div class="col-md-3 col-sm-6 child_circle">
         <img src="images/child6.jpg" alt="children">
         <h5>Franceska</h5>
@@ -218,16 +203,18 @@
         <img src="images/child8.jpg" alt="children">
         <h5>Angelo</h5>
         <p>Available for Sponsor</p>
-     </div> -->
+     </div>
    </div>
  </div>
-<!----Start Accredited Member section---->
+
+<!--Start Accredited Member section---->
+
 <div class="mamber registration_member">
-    <div class="container children_arm">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="mamber_outer">
-            <div class="logo_mamber">
+  <div class="container children_arm">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="mamber_outer">
+          <div class="logo_mamber">
               <img src="{% static 'demo/images/logo_mamber.png' %}" alt="">
             </div>
             <p>Certification with CCCC is a powerful endorsement of a charity’s integrity. It demonstrates that the charity has been carefully assessed

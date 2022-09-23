@@ -107,16 +107,21 @@
       </div>
     </header>
     <div class="teamsConsider_outer">
-      <h1>HAITII MISSION</h1>
+      <h1>HAITI MISSION</h1>
     </div>
   </section>
   <!-- header close here -->
 
   <!-- haiti start here -->
+  
   <div class="haitiMission">
     <div class="container children_arm">
       <div class="haiti_hadding">
+        {% if object_list %}
+        <h2>{{ mission.title }}</h2>
+        {% else %}
         <h2>Haiti</h2>
+        {% endif %}
 
         <div class="haitiHadding_btn">
           <div class="haitiHadding_btnItem">
@@ -146,7 +151,11 @@
       </div>
     </div>
   </div>
-
+  {% if object_list %}
+    <div class="missionHatti_bg">
+      <div class="container children_arm">
+          {{ mission.body}}
+  {% else %}
   <div class="missionHatti_bg">
     <div class="container children_arm">
       <div class="row">
@@ -155,6 +164,8 @@
             <img src="{% static 'demo/images/HaitiMission_img.jpg' %}" alt="">
           </div>
         </div>
+        
+        
         <div class="col-md-12 col-lg-12 col-xl-6">
           <div class="haitimission_rightSide">
             <p>Haiti is the most densely populated country in the 
@@ -263,6 +274,8 @@
       </div>
     </div>
   </div>
+
+  {% endif %}
   <!-- mamber close here -->
 
   <!-- footer start here -->

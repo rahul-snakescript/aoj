@@ -1,7 +1,8 @@
-{% extends  'aoj_app/base_template.html' %}
+{% extends  'aoj_app/demo/base.html' %}
 {% load staticfiles %}
-
-{% block template_body %}
+{% load aoj_extras %}
+{% block body_temp %}
+{% get_desktop_nav %}
     <div class="page-magazine-detail">
         <div class="container">
             <h2 class="text-center">{{ object.title }}</h2>

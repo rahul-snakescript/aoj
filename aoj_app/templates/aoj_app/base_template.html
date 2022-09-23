@@ -1,7 +1,7 @@
-{% extends  'aoj_app/base_html.html' %}
+{% extends  'aoj_app/demo/base.html' %}
 {% load staticfiles i18n aoj_extras %}
 
-{% block body_block %}
+{% block body_temp %}
     {% get_site_config as config %}
 
     {% if config.banner_image %}
@@ -21,7 +21,7 @@
     {% endif %}
 
     <section class="aoj-slider">
-        {% get_mobile_nav %}
+        {% get_desktop_nav %}
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1">
@@ -66,11 +66,11 @@
         </div>
     </section>
 
-    <section class="as-black-nav">
+    {% comment %} <section class="as-black-nav">
         <div class="container">
             {% get_desktop_nav %}
         </div>
-    </section>
+    </section> {% endcomment %}
     {#    <div class="as-taoj">#}
     {#        <div class="container">#}
     {#            <h1 class="aoj-title">​​The Arms of Jesus Children's Mission</h1>#}
@@ -87,7 +87,7 @@
         {% endblock %}
     </section>
 
-    <footer class="aoj-footer">
+    {% comment %} <footer class="aoj-footer">
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
@@ -154,7 +154,7 @@
                 <p class="afs-copy">​Copyright © 2016 Arms of Jesus Children's Mission Inc. - All Rights Reserved.</p>
             </div>
         </div>
-    </footer>
+    </footer> {% endcomment %}
 
     <div class="ajax-loading-modal"></div>
 {% endblock %}

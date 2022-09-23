@@ -73,7 +73,133 @@
 .children_arm {
     width: 1170px !important;
     max-width: 100%;
-} 
+}
+
+/* mazion start here */
+h2.cd-name.hadding_mazion {
+    font-size: 48px;
+    text-transform: capitalize;
+    margin: 0;
+    padding-bottom: 20px;
+    text-align: center;
+    font-family: 'Proxima Nova Rg';
+}
+.paragraph_date p {
+    font-size: 22px;
+    margin: 0;
+    color: #000000;
+    padding-bottom: 6px;
+    font-family: 'Proxima Nova Rg';
+    text-align: center;
+}
+.paragraphTittle {
+    text-align: center;
+    margin: 0;
+    font-size: 22px;
+    color: #000000;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    text-transform: capitalize;
+    font-family: 'Proxima Nova Rg';
+}
+h4.text-center.angelTest {
+    font-size: 32px;
+    text-transform: capitalize;
+    margin: 0;
+    padding-bottom: 20px;
+    text-align: center;
+    font-family: 'Proxima Nova Rg';
+    font-weight: bold;
+}
+h4.fromTest_hadding {
+    text-transform: capitalize;
+    margin: 0;
+    padding-bottom: 20px;
+    text-align: center;
+    font-family: 'Proxima Nova Rg';
+}
+.fromGroup_outer .form-control {
+    height: 64px;
+    border: 1px solid #cacaca;
+    border-radius: 5px;
+}
+.fromGroup_outer {
+    margin-bottom: 16px;
+}
+.fromGroup_outer label {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #000000;
+    font-family: 'Proxima Nova Rg';
+}
+button.btn.btn-primary.mt-2.submitBTN {
+    height: 51px;
+    /* width: 153px; */
+    padding: 10px 40px !important;
+    background: #f7941d;
+    border: 1px solid #f7941d;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 18px;
+    text-decoration: none;
+    font-family: 'Proxima Nova Alt Rg';
+}
+button.btn.btn-primary.mt-2.submitBTN:hover {
+    color: #f7941d;
+    background: none;
+}
+
+
+h4.cd-details-header.FromHadding {
+    font-size: 48px;
+    text-transform: capitalize;
+    margin: 0;
+    padding-bottom: 20px;
+    text-align: center;
+    font-family: 'Proxima Nova Rg';
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 6px;
+}
+p.cd-details.fromTest_paragraph {
+    text-align: center;
+    font-size: 18px;
+    margin: 0;
+    padding-bottom: 14px;
+    font-family: 'Proxima Nova Rg';
+}
+.outerFrom_middle {
+    justify-content: center;
+}
+h3.angelTest1 {
+    font-size: 32px;
+    text-transform: capitalize;
+    margin: 0;
+    padding-bottom: 20px;
+    text-align: center;
+    font-family: 'Proxima Nova Rg';
+}
+.page-children-detail {
+    margin-top: 80px;
+    position: relative;
+}
+.fancy-image img.img-responsive.img-cd {
+    height: 440px;
+    margin-right: 32px;
+    width: 25%;
+}
+.paragraph_date1 {
+    margin-bottom: 20px;
+}
+.outerImg {
+    text-align: center;
+}
+*
+/* mazion close here */
 
 /* home page css start */
     .header nav.navbar.navbar-expand-lg.navbar-light {
@@ -163,8 +289,8 @@
         justify-content: center;
         color: #ffffff;
         text-transform: uppercase;
-        flex-direction: column;
-        padding: 250px 150px !IMPORTANT;
+        flex-direction: column; 
+        height: 718px;
     }
     .banner_outer h1 {
         font-size: 60px;
@@ -234,7 +360,7 @@
         background: #ffffff;
         padding: 0 59px !important;
         box-shadow: 0px 0px 5px #eeeeee;
-        padding-right: 160px !IMPORTANT;
+        padding-right: 0px !IMPORTANT;
     }
 
     .vision {
@@ -362,11 +488,16 @@
         color: #000000;
     }
 
-    .video iframe {
+    
+
+    .video .video_outer iframe {
         border: 0;
-        width: 100%;
-        height: 688px;
+        width: 99%;
+        height: 436px;
+        object-fit: cover !important;
     }
+
+
 
 
     .mamber {
@@ -624,7 +755,6 @@
 }
 .select_video {
     text-align: center;
-    margin-bottom: 15px;
 }
 .select_video select{
     font-size: 24px;
@@ -641,10 +771,10 @@
 .register_banner{
     background: url(../images/register_banner.jpg);
     background-size: cover;
-    background-repeat: no-repeat;
-    padding-bottom: 420px !IMPORTANT;
+    background-repeat: no-repeat; 
     background-position: bottom center;
     position: relative;
+    height: 552px;
 }
 .make_donation {
     text-align: center;
@@ -786,9 +916,16 @@
 }
 
 /* teams consider start here */
+.teamsBanner .teamsConsider_outer h1 {
+    padding-top: 0 !important;
+}
+.teamsBanner .teamsConsider_outer {
+    height: 406px; 
+}
 .teamsBanner {
     background: url(../images/Team_banner.jpg);
     background-size: cover;
+    height: 549px;
 }
 .teamsBanner:before {
     content: "";
@@ -798,22 +935,23 @@
     width: 100%;
     height: 100%;
     background: rgb(0 0 0 / 40%);
-}
-.teamsConsider_outer {
-    position: absolute;
-    height: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    align-items: center;
-}
+} 
 .teamsConsider_outer h1 {
     font-size: 60px;
     color: #ffffff;
     margin: 0;
     padding-top: 125px !important;
-    font-family: 'Proxima Nova Alt Rg'; 
+    font-family: 'Proxima Nova Alt Rg';
+    position: relative;
+}
+.teamsConsider_outer {
+    height: 408px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mission_haittiBanner .teamsConsider_outer h1 { 
+    padding-top: 14px !important; 
 }
 .considerServing_items {
     padding: 0 15px !important;
@@ -1162,6 +1300,7 @@ h2.mission_teamHadding {
     }
     .haitiHadding_btnItem a {
         background: #174cb5;
+        border: 1px solid #174cb5;
         width: 214px;
         display: flex;
         height: 50px;
@@ -1169,10 +1308,14 @@ h2.mission_teamHadding {
         justify-content: center;
         color: #ffffff;
         text-decoration: none;
-        font-size: 22px;
+        font-size: 18px;
         text-align: center;
         font-family: 'Proxima Nova Rg';
-        line-height: 20px;
+        line-height: 18px;
+    }
+    .haitiHadding_btnItem a:hover {
+        background: none;
+        color: #000000;
     }
     .haiti_hadding h2 {
         margin: 0;
@@ -1182,8 +1325,7 @@ h2.mission_teamHadding {
         padding-top: 90px !important;
         font-family: 'Proxima Nova Rg';
     }
-    .haitiHadding_btn {
-        display: flex;
+    .haitiHadding_btn { 
         justify-content: space-between;
     }
     .haitiHadding_btnItem p {
@@ -1193,9 +1335,10 @@ h2.mission_teamHadding {
         margin-bottom: 21px;
         font-family: 'Proxima Nova Rg';
         font-weight: bold;
+        width: 214px;
     }
     .haiti_hadding {
-        padding-bottom: 108px !important;
+        padding-bottom: 74px !important;
     }
     .outer_rowMission {
         padding: 0 12px !important;
@@ -1275,6 +1418,7 @@ h2.mission_teamHadding {
         width: 180px;
         height: 53px;
         background: #f7941d;
+        border: 1px solid #f7941d;
         color: #ffffff;
         text-decoration: none;
         margin-top: 48px;
@@ -1283,6 +1427,10 @@ h2.mission_teamHadding {
         justify-content: center;
         font-size: 16px;
         font-family: 'Proxima Nova Rg';
+    }
+    .sponsorship_btn a:hover{
+        background: none;
+        color: #f7941d;
     }
     .haitiMission_img img {
         width: 100%;
@@ -1315,7 +1463,157 @@ h2.mission_teamHadding {
     .spon_img img {
         width: 100%;
     }
-  /* mission haiti css start */
+
+    .haitiHadding_btnItem {
+        float: left;
+        width: 229px;
+    }
+    .missionKenya {
+        width: 100%;
+        float: left;
+        display: flex;
+        justify-content: center;
+        margin-top: 44px;
+        margin-bottom: 82px;
+    }
+    .clearfix {
+        clear: both;
+    }
+    .kenya_outer p {
+        color: #000000;
+        font-size: 22px;
+        line-height: 36px;
+        font-family: 'Proxima Nova Rg';
+        margin: 0;
+    }
+    .kenya_outer {
+        clear: both;
+    }
+    .ministry_left_sec h2 {
+        font-size: 48px;
+        margin: 0;
+        padding-bottom: 28px;
+        font-family: 'Proxima Nova Rg';
+    }
+    p.partnerParagraph {
+        font-size: 24px;
+        color: #000000;
+        font-family: 'Proxima Nova Rg';
+        margin: 0;
+        padding-bottom: 16px;
+    }
+    p.partnerParagraph1 {
+        font-size: 18px;
+        color: #000000;
+        margin: 0;
+        padding-bottom: 8px;
+        font-family: 'Proxima Nova Rg';
+    }
+    .kenya_paragraphOuter {
+        margin-top: 82px;
+    }
+    p.partnerParagraph1:last-child {
+        padding: 0;
+    }
+    .partnerFeatured_outer h2 {
+        font-size: 48px;
+        margin: 0;
+        font-family: 'Proxima Nova Rg';
+        padding-bottom: 6px;
+    }
+    .partnerFeatured {
+        padding-top: 120px;
+    }
+    p.partnerFeatured_tagline {
+        font-size: 24px !important;
+        margin: 0;
+    }
+    .partnerFeatured_outer p {
+        font-size: 22px;
+        margin: 0;
+        font-family: 'Proxima Nova Rg';
+    }
+    .leftSec_missionary1 h2 {
+        font-size: 48px;
+        color: #000000;
+        font-family: 'Proxima Nova Rg';
+        margin: 0;
+        padding-bottom: 12px;
+    }
+    .leftSec_missionary1 p {
+        font-size: 22px;
+        line-height: 30px;
+        margin: 0;
+        font-family: 'Proxima Nova Rg';
+        padding-bottom: 50px;
+    }
+    .leftSec_missionary2 h4 {
+        font-size: 24px;
+        font-family: 'Proxima Nova Rg';
+        font-weight: bold;
+        margin: 0;
+        padding-bottom: 10px;
+        color: #000000;
+    }
+    .leftSec_missionary2 p {
+        font-size: 22px;
+        margin: 0;
+        padding-bottom: 26px;
+        color: #000000;
+        font-family: 'Proxima Nova Rg';
+    }
+    .leftSec_missionary3 h4 {
+        font-size: 24px;
+        font-family: 'Proxima Nova Rg';
+        font-weight: bold;
+        margin: 0;
+        padding-bottom: 10px;
+        color: #000000;
+    }
+    .leftSec_missionary3 p {
+        font-size: 22px;
+        margin: 0; 
+        color: #000000;
+        font-family: 'Proxima Nova Rg';
+    }
+    .missionaryProfile {
+        margin-top: 104px;
+    }
+    .pragraph_tagLine p {
+        font-size: 22px;
+        font-family: 'Proxima Nova Rg';
+        line-height: 36px;
+        color: #000000;
+        margin-top: 22px;
+        margin-bottom: 60px;
+    }
+    .pragraph_tagLine h6 {
+        font-size: 24px;
+        color: #000000;
+        margin: 0;
+        padding-bottom: 44px;
+    }
+    .missionary_btnn button {
+        width: 179px;
+        height: 52px;
+        border-radius: 8px;
+        background: #f7941d;
+        border: 1px solid #f7941d;
+        color: #ffffff;
+        font-size: 16px;
+        font-family: 'Proxima Nova Rg';
+    }
+    .missionary_btnn button:hover {
+        background: none;
+        color: #f7941d;
+    }
+    .mamber { 
+        margin-top: 102px;
+    }
+    .leftSec_missionaryImg img {
+        width: 100%;
+    }
+  /* mission css close */
 
 
 
@@ -1421,13 +1719,13 @@ h2.mission_teamHadding {
     }
     .haitiHadding_btnItem {
         display: inline-block;
-        width: 24%;
+        width: 20%;
     }
     .haitiHadding_btn {
         display: block;
     }
     .haitiHadding_btnItem a { 
-        width: 204px; 
+        width: 176px; 
         font-size: 18px; 
         line-height: 16px;
     }
@@ -1458,7 +1756,95 @@ h2.mission_teamHadding {
         height: 48px; 
         margin-top: 30px; 
     }
+
+
+    .teamsConsider_outer h1 {
+        font-size: 40px; 
+    }
+    .haitiHadding_btnItem p {
+        font-size: 16px;
+        width: 190px;
+        margin-bottom: 10px;
+    }
+    .missionKenya { 
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+    .kenya_outer p { 
+        font-size: 18px;
+        line-height: 30px; 
+    }
+    .ministry_left_sec h2 {
+        font-size: 32px; 
+        padding-bottom: 14px; 
+    }
+    p.partnerParagraph {
+        font-size: 20px; 
+        padding-bottom: 14px;
+    }
+    p.partnerParagraph1 {
+        font-size: 16px; 
+    }
+    .partnerFeatured {
+        padding-top: 40px;
+    }
+    .partnerFeatured_outer h2 {
+        font-size: 32px; 
+    }
+    p.partnerFeatured_tagline {
+        font-size: 18px !important; 
+    }
+    .partnerFeatured_outer p {
+        font-size: 18px; 
+    }
+    .leftSec_missionary1 h2 {
+        font-size: 32px; 
+    }
+    .missionaryProfile {
+        margin-top: 40px;
+    }
+    .leftSec_missionary1 p {
+        font-size: 18px;
+        line-height: 24px; 
+        padding-bottom: 20px;
+    }
+    .leftSec_missionary2 h4 {
+        font-size: 20px; 
+    }
+    .leftSec_missionary2 p {
+        font-size: 18px; 
+        padding-bottom: 20px; 
+    }
+    .leftSec_missionary3 h4 {
+        font-size: 18px; 
+        padding-bottom: 6px; 
+    }
+    .leftSec_missionary3 p {
+        font-size: 18px; 
+    }
+    .pragraph_tagLine p {
+        font-size: 18px; 
+        line-height: 32px; 
+        margin-top: 14px;
+        margin-bottom: 40px;
+    }
+    .pragraph_tagLine h6 {
+        font-size: 18px; 
+        padding-bottom: 26px;
+    }
+    .missionary_btnn button {
+        width: 152px;
+        height: 44px; 
+    }
+    .mamber {
+        margin-top: 40px;
+    }
     /* mission close here */ 
+}
+@media only screen and (max-width: 1025px) {
+    .haitiHadding_btnItem a {
+        width: 180px; 
+    }
 }
 @media only screen and (max-width: 1024px) {
     .banner_outer h1 {
@@ -1568,6 +1954,7 @@ h2.mission_teamHadding {
     .mailing_address p a{
     font-size: 18px !important;    
     }
+    
 }
 @media only screen and (max-width: 992px) {
     .children_header div#navbarSupportedContent li {
@@ -1783,17 +2170,25 @@ h2.mission_teamHadding {
     .TeamsBlogs_mamber {
         margin-top: 40px;
     }
-    .haitiHadding_btnItem a { 
-        width: 184px; 
-        height: 46px; 
-        font-size: 18px; 
+    .haitiHadding_btnItem a {
+        width: 202px;
+        height: 46px;
+        font-size: 18px;
         line-height: 18px;
-        margin-bottom: 10px;
+        margin-bottom: 12px;
+    }
+    .missionKenya {
+        margin-top: 4px;
+        margin-bottom: 12px;
     }
     .haitiHadding_btnItem p { 
         font-size: 16px; 
-        margin-bottom: 14px;
+        margin-bottom: 8px;
         text-align: left;
+    }
+    .kenya_outer p {
+        font-size: 16px;
+        line-height: 24px;
     }
     .logo_mamber img {
         padding-top: 40px !important;
@@ -1931,6 +2326,9 @@ h2.mission_teamHadding {
     }
     .missionTrip_outer table.table {
         width: auto;
+    }
+    .haiti_hadding {
+        padding-bottom: 40px !important;
     }
     /* mission css close */
 }
@@ -2101,6 +2499,97 @@ h2.mission_teamHadding {
         margin-top: 0 !important;
     }
     /* teams close */
+
+    /* mission start here */
+    .haitiHadding_btnItem { 
+        width: 100%;
+        margin-bottom: 14px;
+    }
+    .haitiHadding_btnItem p {
+        font-size: 14px;
+        margin-bottom: 8px;
+        text-align: center;
+        width: 100%;
+    }
+    .kenya_outer p {
+        font-size: 14px;
+        line-height: 24px;
+    }
+    .missionKenya { 
+        display: block;
+    }
+    .ministry_left_sec h2 {
+        font-size: 28px;
+        padding-bottom: 0px;
+    }
+    p.partnerParagraph {
+        font-size: 18px;
+        padding-bottom: 8px;
+    }
+    p.partnerParagraph1 {
+        font-size: 14px;
+    }
+    .kenya_paragraphOuter {
+        margin-top: 30px;
+    }
+    .partnerFeatured {
+        padding-top: 30px;
+    }
+    .partnerFeatured_outer h2 {
+        font-size: 26px;
+    }
+    p.partnerFeatured_tagline {
+        font-size: 14px !important;
+    }
+    .partnerFeatured_outer p {
+        font-size: 14px;
+    }
+    .leftSec_missionary1 h2 {
+        font-size: 26px;
+    }
+    .leftSec_missionary1 p {
+        font-size: 14px;
+        line-height: 20px;
+        padding-bottom: 14px;
+    }
+    .missionaryProfile {
+        margin-top: 30px;
+    }
+    .leftSec_missionary2 h4 {
+        font-size: 18px;
+        padding-bottom: 6px;
+    }
+    .leftSec_missionary2 p {
+        font-size: 14px;
+        padding-bottom: 12px;
+    }
+    .leftSec_missionary3 h4 {
+        font-size: 18px;
+        padding-bottom: 6px;
+    }
+    .leftSec_missionary3 p {
+        font-size: 16px;
+        padding-bottom: 16px;
+    }
+    .pragraph_tagLine p {
+        font-size: 14px;
+        line-height: 24px;
+        margin-top: 8px;
+        margin-bottom: 20px;
+    }
+    .pragraph_tagLine h6 {
+        font-size: 14px;
+        padding-bottom: 16px;
+    }
+    .missionary_btnn button {
+        width: 132px;
+        height: 38px;
+        font-size: 14px;
+    }
+    .haitiHadding_btnItem a { 
+        margin: 0 auto; 
+    }
+    /* mission close here */
 }
 @media only screen and (max-width: 767px) {
     /* mission start here */
@@ -2709,56 +3198,3 @@ h2.mission_teamHadding {
 }
 /* Media Query End */
 /* Media Query End */
-
-
-.form-wrapper {
-    position: relative;
-}
-
-.form-wrapper .f-message {
-    position: absolute;
-    bottom: 90px;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    text-align: center;
-    display: none;
-    text-shadow: 0px 0px 20px #fff;
-    padding: 0 5px;
-}
-
-.form-wrapper .f-success > h3 {
-    color: #8bc34a;
-    font-size: 22px;
-}
-
-.form-wrapper .f-error > h3 {
-    color: #f44336;
-    font-size: 22px;
-}
-
-.ajax-loading-modal {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: rgba(255, 255, 255, .5) url('/static/img/ajax-loader.gif') 50% 50% no-repeat;
-}
-
-body {
-    position: relative;
-    -webkit-text-size-adjust: none;
-    top: 0 !important;
-    position: static !important;
-}
-
-body.loading {
-    overflow: hidden;
-}
-
-body.loading .ajax-loading-modal {
-    display: block;
-}
