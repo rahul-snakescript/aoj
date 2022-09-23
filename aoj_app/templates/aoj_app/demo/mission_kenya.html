@@ -116,7 +116,12 @@
   <div class="haitiMission">
     <div class="container children_arm">
       <div class="haiti_hadding">
+        {% if mission %}
+        <h2>{{ mission.title }}</h2>
+        {% else %}
         <h2>Kenya</h2>
+        {% endif %}
+      </div>
 
         <div class="haitiHadding_btn">
           <div class="haitiHadding_btnItem">
@@ -172,6 +177,11 @@
   <!-- mnistry stat here -->
   <div class="ministry_outer">
     <div class="container children_arm">
+        {% if mission %}
+          {% autoescape off %}
+            {{ mission.body }}
+          {% endautoescape %}
+        {% else %}
       <div class="row">
         <div class="col-md-6">
           <div class="ministry_left_sec">
@@ -301,6 +311,7 @@
       </div>
     </div>
   </div>
+  {% endif %}
   <!-- missionary close here -->
 
   <!-- mamber start here -->

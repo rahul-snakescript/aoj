@@ -827,14 +827,22 @@ class MissionHaitiView(TemplateView):
 class MissionKenyaView(TemplateView):
     def get_context_data(self, **kwargs):
         context= super().get_context_data(**kwargs)
-        mission=MissionKenya.objects.all()
+        try:
+            mission=MissionKenya.objects.first()
+        except:
+            mission=None
         context['mission']=mission
+        print(context)
         return context
 
 class MissionGuatemalaView(TemplateView):
     def get_context_data(self, **kwargs):
         context= super().get_context_data(**kwargs)
-        mission=MissionGuatemala.objects.all()
+        try:
+            mission=MissionGuatemala.objects.first()
+        except:
+            mission=None
         context['mission']=mission
+        print(context)
         return context
 

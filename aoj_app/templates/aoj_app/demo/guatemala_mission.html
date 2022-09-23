@@ -118,11 +118,15 @@
   </section>
   <!-- header close here -->
 
-<!-----Start Form Section----->
+<!--Start Form Section-->
 <div class="container children_arm">
   <div class="row">
     <div class="col-md-12">
+      {% if mission %}
+      <h2>{{ mission.title }}<h2>
+      {% else %}
       <h2>Guatemala</h2>
+      {% endif %}
     </div>
   </div> 
     <div class="row">
@@ -148,7 +152,17 @@
       </div>
   </div>
 </div>
-<!----Start Accredited Member section---->
+{% if mission %}
+<div class="mamber registration_member registration_cataloque">      
+  <div class="container children_arm">
+        {% autoescape off %}
+        {{ mission.body}}
+        {% endautoescape %}
+      </div>
+    </div>     
+  {% endif %}
+<!--Start Accredited Member section-->
+
 <div class="mamber registration_member registration_cataloque">
     <div class="container children_arm">
       <div class="row">
