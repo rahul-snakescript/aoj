@@ -1,4 +1,5 @@
 from itertools import count
+from pyexpat import model
 from re import L
 import urllib
 import time
@@ -813,6 +814,7 @@ class TeamsCalenderView(ListView):
         return context
 
 class MissionHaitiView(TemplateView):
+    model=MissionHaiti
     def get_context_data(self, **kwargs):
         context= super().get_context_data(**kwargs)
         try:
@@ -825,6 +827,7 @@ class MissionHaitiView(TemplateView):
         return context
 
 class MissionKenyaView(TemplateView):
+    model=MissionKenya
     def get_context_data(self, **kwargs):
         context= super().get_context_data(**kwargs)
         try:
@@ -836,6 +839,7 @@ class MissionKenyaView(TemplateView):
         return context
 
 class MissionGuatemalaView(TemplateView):
+    model=MissionGuatemala
     def get_context_data(self, **kwargs):
         context= super().get_context_data(**kwargs)
         try:
