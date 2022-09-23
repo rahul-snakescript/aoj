@@ -37,7 +37,7 @@
         background-position: bottom center !IMPORTANT;
     }
     .policy_banner .banner_outer{
-        padding: 150px 150px !IMPORTANT;
+        height: 408px;
     }
     .policy_banner:before {
         content: "";

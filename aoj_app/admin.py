@@ -126,3 +126,19 @@ class TeamsTrainingAdmin(admin.ModelAdmin):
 @admin.register(TeamsResources)
 class TeamsTrainingAdmin(admin.ModelAdmin):
     list_display= ['title','media']
+
+@admin.register(TeamsCalenderDate)
+class TeamsCalenderAdmin(admin.ModelAdmin):
+    list_display= ['starting_date','ending_date','mission_trip']
+
+@admin.register(MissionHaiti)
+class MissionHaitiAdmin(admin.ModelAdmin):
+    list_display= ['title','body']
+
+@admin.register(MissionGuatemala)
+class MissionGuatemalaAdmin(admin.ModelAdmin):
+    list_display= ['title','body']
+
+@admin.register(MissionKenya)
+class MissionKenyaAdmin(admin.ModelAdmin):
+    list_display= ['title','body']

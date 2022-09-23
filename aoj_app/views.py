@@ -795,3 +795,41 @@ class TeamsResourceView(ListView):
     model=TeamsResources
     template_name= "aoj_app/demo/teams_resources.html"
 
+class TeamsCalenderView(ListView):
+    model=TeamsCalenderDate
+    template_name='aoj_app/demo/teams_calender.html'
+    def get_context_data(self, **kwargs):
+        context=super().get_context_data(**kwargs)
+        data_dict={}
+        dates=TeamsCalenderDate.objects.all()
+        for count,date in enumerate(dates):
+            data_list=[]
+            data_list.append(date.starting_date)
+            data_list.append(date.ending_date)
+            data_list.append(date.mission_trip) 
+            data_dict[count+1]=data_list
+        context['data']=data_dict
+        print(context)
+        return context
+
+class MissionHaitiView(TemplateView):
+    def get_context_data(self, **kwargs):
+        context= super().get_context_data(**kwargs)
+        mission=MissionHaiti.objects.all()
+        context['mission']=mission
+        return context
+
+class MissionKenyaView(TemplateView):
+    def get_context_data(self, **kwargs):
+        context= super().get_context_data(**kwargs)
+        mission=MissionKenya.objects.all()
+        context['mission']=mission
+        return context
+
+class MissionGuatemalaView(TemplateView):
+    def get_context_data(self, **kwargs):
+        context= super().get_context_data(**kwargs)
+        mission=MissionGuatemala.objects.all()
+        context['mission']=mission
+        return context
+

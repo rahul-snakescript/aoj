@@ -1,4 +1,5 @@
-{% load staticfiles i18n %}
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,6 +14,8 @@
 
   <link rel="stylesheet" href="{% static 'demo/css/slick.css' %}">
   <link rel="stylesheet" href="{% static 'demo/css/slick-theme.css' %}">
+  <link rel="stylesheet" href="{% static 'demo/css/old.css' %}">
+
 
   <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
@@ -22,6 +25,7 @@
 </head>
 
 <body>
+
   {% block body_temp %}
   {% endblock %}
 

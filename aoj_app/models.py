@@ -482,6 +482,24 @@ class TeamsTraining(models.Model):
 class TeamsResources(models.Model):
     title=models.CharField(max_length=50,blank=True,null=True)
     media=models.FileField(upload_to=upload_teamresource_image_to)
+ 
+class TeamsCalenderDate(models.Model):
+    starting_date=models.DateField(auto_now_add=False,auto_now=False)
+    ending_date=models.DateField(auto_now_add=False,auto_now=False)
+    mission_trip=models.CharField(max_length=100)
+
+
+class MissionHaiti(models.Model):
+    title=models.CharField(max_length=200)
+    body=RichTextUploadingField()
+
+class MissionKenya(models.Model):
+    title=models.CharField(max_length=200)
+    body=RichTextUploadingField()
+
+class MissionGuatemala(models.Model):
+    title=models.CharField(max_length=200)
+    body=RichTextUploadingField()
 
 
 
