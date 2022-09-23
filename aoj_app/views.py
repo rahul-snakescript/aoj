@@ -816,7 +816,7 @@ class TeamsCalenderView(ListView):
 class MissionHaitiView(TemplateView):
     # model=MissionHaiti
     def get_context_data(self, **kwargs):
-        context= super(MissionHaiti,self).get_context_data(**kwargs)
+        context= super(MissionHaitiView,self).get_context_data(**kwargs)
         try:
             mission=MissionHaiti.objects.first()
         except:
@@ -829,7 +829,7 @@ class MissionHaitiView(TemplateView):
 class MissionKenyaView(TemplateView):
     # model=MissionKenya
     def get_context_data(self, **kwargs):
-        context= super(MissionKenya,self).get_context_data(**kwargs)
+        context= super(MissionKenyaView,self).get_context_data(**kwargs)
         try:
             mission=MissionKenya.objects.first()
         except:
@@ -841,7 +841,7 @@ class MissionKenyaView(TemplateView):
 class MissionGuatemalaView(TemplateView):
     # model=MissionGuatemala
     def get_context_data(self, **kwargs):
-        context= super(MissionGuatemala,self).get_context_data(**kwargs)
+        context= super(MissionGuatemalaView,self).get_context_data(**kwargs)
         try:
             mission=MissionGuatemala.objects.first()
         except:
