@@ -815,8 +815,13 @@ class TeamsCalenderView(ListView):
 class MissionHaitiView(TemplateView):
     def get_context_data(self, **kwargs):
         context= super().get_context_data(**kwargs)
-        mission=MissionHaiti.objects.all()
+        try:
+            mission=MissionHaiti.objects.first()
+        except:
+            mission=None
+        
         context['mission']=mission
+        print(context)
         return context
 
 class MissionKenyaView(TemplateView):

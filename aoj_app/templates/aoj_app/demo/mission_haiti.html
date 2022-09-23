@@ -117,7 +117,7 @@
   <div class="haitiMission">
     <div class="container children_arm">
       <div class="haiti_hadding">
-        {% if object_list %}
+        {% if mission %}
         <h2>{{ mission.title }}</h2>
         {% else %}
         <h2>Haiti</h2>
@@ -151,10 +151,13 @@
       </div>
     </div>
   </div>
-  {% if object_list %}
+  {% if mission %}
     <div class="missionHatti_bg">
       <div class="container children_arm">
-          {{ mission.body}}
+        {% autoescape off %}
+        {{ mission.body}}
+        {% endautoescape %}
+          
   {% else %}
   <div class="missionHatti_bg">
     <div class="container children_arm">
