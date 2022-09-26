@@ -1,8 +1,22 @@
 {% extends  'aoj_app/demo/base.html' %}
-{% load staticfiles i18n %}
+{% load staticfiles i18n aoj_extras %}
 {% load static %}
 
-{% block template_body %}
+
+{% block body_temp %}
+<section class="child_banner">
+  {% get_desktop_nav %}
+{% comment %} {% include 'aoj_app/demo/header.html' %} {% endcomment %}
+<div class="container children_arm">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="banner_outer"> 
+        <h1>YOU CAN SPONSOR A CHILD FOR $40.00 A MONTH OR $480 A YEAR... JUST $1.32 PER DAY</h1>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
   <div class="page-donate">
     <section class="mad">
       <h1>{% trans "Make a Donation" %}</h1>

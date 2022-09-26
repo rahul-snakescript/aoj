@@ -96,8 +96,8 @@
                   </li>
                 </ul>
                 <div class="header_btn">
-                  <a href="{% url 'login' %}" class="donate_btn">Donate</a>
-                  <a href="#" class="sponsor_btn">Sponsor</a>
+                  <a href="{% url 'donate' %}" class="donate_btn">Donate</a>
+                  <a href="{% url 'donate' %}" class="sponsor_btn">Sponsor</a>
                 </div>
               </div>
             </div>
@@ -128,12 +128,19 @@
    <div class="row">
     {% for child in children %}
      <div class="col-md-3 col-sm-6 child_circle">
+      {% if child.checked_out %}
+        <img src="{{ child.image1.url }}" alt="children">
+        <h5>{{ child }}</h5>
+        <p class="text-center text-danger">Checked out<p>
+      {% else %}
       <a href="{% url 'children_detail' child.slug %}">
         <img src="{{ child.image1.url }}" alt="children">
       </a>
         <h5>{{ child }}</h5>
         <p>Available for Sponsor</p>
+      {% endif %}
      </div>
+     
     {% endfor %}
   </div>
 </div>
@@ -278,7 +285,7 @@
 
                 <ul>
                   <li><a href="{% url 'catalogue' %}">Catalogue</a></li>
-                  <li><a href="{% url 'login' %}">Donations</a></li> 
+                  <li><a href="{% url 'donate' %}">Donations</a></li> 
                 </ul>
               </div>
               <div class="footer_manu_item1">
@@ -286,7 +293,7 @@
 
                 <ul>
                   <li><a href="{% url 'catalogue' %}">Catalogue</a></li>
-                  <li><a href="{% url 'login' %}">Donations</a></li>
+                  <li><a href="{% url 'donate' %}">Donations</a></li>
                 </ul>
               </div>
             </div>
