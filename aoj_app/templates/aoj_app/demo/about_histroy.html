@@ -126,10 +126,10 @@
       <div class="row">
         <div class="col-md-12">
           <div class="history_item">
-            {% for data in data %}
+            {% comment %} {% for data in data %} {% endcomment %}
             <h2>{{data.title}}</h2>
             <p>{{ data.body|safe }}</p>
-            {% endfor %}
+            {% comment %} {% endfor %} {% endcomment %}
           </div>
         </div>
       </div>

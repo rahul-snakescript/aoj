@@ -123,6 +123,7 @@
   <div class="staff">
     <div class="container children_arm">
       <h2>Our Staff</h2>
+      {% if object_list %}
       <div class="row">
         {% for staff in object_list %}
         <div class="col-md-3 col-sm-6 col-6">
@@ -137,10 +138,13 @@
           </div>
         </div>
         {% endfor %}
-        <!-- <div class="col-md-3 col-sm-6 col-6">
+      </div>
+    {% else %}
+    <div class="row">
+        <div class="col-md-3 col-sm-6 col-6">
           <div class="staff_item">
             <div class="staff_img">
-              <img src="images/our-staff.jpg" alt="staff">
+              <img src="{% static 'demo/images/our-staff.jpg' %}" alt="staff">
             </div>
             <div class="staff_hadding">
               <h5>Barbara</h5>
@@ -152,7 +156,7 @@
         <div class="col-md-3 col-sm-6 col-6">
           <div class="staff_item">
             <div class="staff_img">
-              <img src="images/our-staff.jpg" alt="staff">
+              <img src="{% static 'demo/images/our-staff.jpg' %}" alt="staff">
             </div>
             <div class="staff_hadding">
               <h5>Tracy</h5>
@@ -160,21 +164,22 @@
               <p>Mission Team Liaisons'</p>
             </div>
           </div>
-        </div> -->
-        <!-- <div class="col-md-3 col-sm-6 col-6">
+        </div>
+        <div class="col-md-3 col-sm-6 col-6">
           <div class="staff_item">
             <div class="staff_img">
-              <img src="images/our-staff.jpg" alt="staff">
+              <img src="{% static 'demo/images/our-staff.jpg' %}" alt="staff">
             </div>
             <div class="staff_hadding">
               <h5>Amanda</h5>
               <p>Accounts</p>
             </div>
           </div>
-        </div> -->
+        </div>
       </div>
     </div>
   </div>
+  {% endif %}
   <!-- staff close here -->
 
   <!-- member start here -->

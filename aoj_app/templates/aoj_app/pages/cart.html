@@ -1,7 +1,22 @@
-{% extends  'aoj_app/base_template.html' %}
-{% load i18n %}
+{% extends  'aoj_app/demo/base.html' %}
+{% load i18n aoj_extras %}
+{% load static %}
 
-{% block template_body %}
+
+{% block body_temp %}
+<section class="catalog_banner">
+    {% get_desktop_nav %}
+    
+    <div class="container children_arm">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="banner_outer"> 
+            <h1>Cart</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
     <div class="page-cart">
         <div class="container">
             <div class="row">
@@ -36,7 +51,7 @@
                                     <td class="td-cart-qty">
                                         <div class="input-group">
                                     <span class="input-group-btn">
-                                        <button type="button" class="btn btn-default btn-number btn-qty-dec"
+                                        <button type="button" class="btn btn-default btn-primary btn-number btn-qty-dec"
                                                 data-type="minus" data-id="{{ item.product.id }}">
                                             <span class="glyphicon glyphicon-minus"></span>
                                         </button>
@@ -45,7 +60,7 @@
                                                    value="{{ item.quantity }}" min="1" max="10"
                                                    data-id="{{ item.product.id }}">
                                             <span class="input-group-btn">
-                                        <button type="button" class="btn btn-default btn-number btn-qty-inc"
+                                        <button type="button" class="btn btn-default btn-primary btn-number btn-qty-inc"
                                                 data-type="plus" data-id="{{ item.product.id }}">
                                             <span class="glyphicon glyphicon-plus"></span>
                                         </button>
@@ -66,6 +81,9 @@
                             {% endfor %}
                             </tbody>
                         </table>
+                        <a href="{% url 'cart' %}">
+                            {% trans "Cart" %} <span id="cart-items-count">{% if items_count > 0 %}({{ items_count }})</span>{% endif %}
+                          </a>
                         <h3 class="text-right">{% trans "TOTAL" %}: $<span id="cart-total">{{ cart.total }}</span></h3>
                         <a class="btn btn-aoj pull-right" href="{% url 'checkout' %}">{% trans "Checkout" %}</a>
                     {% else %}
@@ -76,4 +94,109 @@
         </div>
     </div>
 
+
+<script src="{% static 'lib/jquery/jquery-3.1.1.min.js' %}"></script>
+<script src="{% static 'lib/bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'lib/fancybox/jquery.fancybox.pack.js' %}"></script>
+<script src="{% static 'lib/jquery-validate/jquery.validate.min.js' %}"></script>
+<script src="{% static 'lib/mmenu/jquery.mmenu.all.min.js' %}"></script>
+<script src="{% static 'lib/slidesjs/jquery.slides.min.js' %}"></script>
+<script src="{% static 'js/translate.js' %}"></script>
+<script src="{% static 'js/site.js' %}"></script>
+<script src="//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=190291501407"></script>
+<script src="https://platform.twitter.com/widgets.js"></script>
+<script src="//translate.google.com/translate_a/element.js?cb=TranslateInit"></script>
+    <script>
+        // REMOVE FROM CART
+    $('.btn-remove-from-cart').click(function () {
+        remove_from_cart(this, $(this).data('id'));
+    });
+
+    function remove_from_cart(el, product_id) {
+        ajax_loading_modal(true);
+        $.get('/api/remove_from_cart/', {product_id: product_id}, function (e) {
+            if (e['error'] === 0) {
+                $(el).closest('tr').fadeOut("fast", function () {
+                    $(this).remove();
+                    // Change CART(x) val in the nav
+                    $('#cart-items-count').html(e['count'] > 0 ? '(' + e['count'] + ')' : '');
+                    // Change total value
+                    $('#cart-total').html(e['total']);
+                })
+            }
+        }).always(function (e) {
+            ajax_loading_modal(false);
+        });
+        ;
+    }
+
+// CHANGE QUANTITY
+    $('.cart-qty-input').change(function () {
+        product_change_quantity($(this).data('id'), $(this).val());
+    });
+
+    function product_change_quantity(product_id, qty) {
+        ajax_loading_modal(true);
+        $.get('/api/product_change_quantity/', {product_id: product_id, qty: qty}, function (e) {
+            if (e['error'] === 0) {
+                // Change CART(x) val in the nav
+                $('#cart-items-count').html(e['count'] > 0 ? '(' + e['count'] + ')' : '');
+                // Change input val with a val returned
+                $('.cart-qty-input[data-id="' + product_id + '"]').val(e['qty']);
+                // Change subtotal in item
+                $('.cart-subtotal[data-id="' + product_id + '"]>span').html(e['item_subtotal']);
+                // Change total value
+                $('#cart-total').html(e['total']);
+            }
+        }).always(function (e) {
+            ajax_loading_modal(false);
+        });
+    }
+
+// INCREMENT QTY
+    $('.btn-qty-inc').click(function () {
+        product_increment_quantity($(this).data('id'));
+    });
+
+    function product_increment_quantity(product_id) {
+        ajax_loading_modal(true);
+        $.get('/api/product_increment_quantity/', {product_id: product_id}, function (e) {
+            if (e['error'] === 0) {
+                // Change CART(x) val in the nav
+                $('#cart-items-count').html(e['count'] > 0 ? '(' + e['count'] + ')' : '');
+                // Change input val with a val returned
+                $('.cart-qty-input[data-id="' + product_id + '"]').val(e['qty']);
+                // Change subtotal in item
+                $('.cart-subtotal[data-id="' + product_id + '"]>span').html(e['item_subtotal']);
+                // Change total value
+                $('#cart-total').html(e['total']);
+            }
+        }).always(function (e) {
+            ajax_loading_modal(false);
+        });
+    }
+
+// DECREMENT QTY
+    $('.btn-qty-dec').click(function () {
+        product_decrement_quantity($(this).data('id'));
+    });
+
+    function product_decrement_quantity(product_id) {
+        ajax_loading_modal(true);
+        $.get('/api/product_decrement_quantity/', {product_id: product_id}, function (e) {
+            if (e['error'] === 0) {
+                // Change CART(x) val in the nav
+                $('#cart-items-count').html(e['count'] > 0 ? '(' + e['count'] + ')' : '');
+                // Change input val with a val returned
+                $('.cart-qty-input[data-id="' + product_id + '"]').val(e['qty']);
+                // Change subtotal in item
+                $('.cart-subtotal[data-id="' + product_id + '"]>span').html(e['item_subtotal']);
+                // Change total value
+                $('#cart-total').html(e['total']);
+            }
+        }).always(function (e) {
+            ajax_loading_modal(false);
+        });
+    }
+    </script>
 {% endblock %}

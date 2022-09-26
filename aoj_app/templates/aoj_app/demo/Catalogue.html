@@ -23,6 +23,7 @@
   <!-- header close here -->
 
 <!--Start Form Section-->
+
 {% if object_list %}
  <div class="container children_arm">
    <div class="row catalog_section_main">
@@ -34,9 +35,12 @@
             <p>{{ product.name }}</p>
             <p>${{ product.price }}</p>
             <!-- <button class="add_to_cart">Add to Cart</button> -->
-            <a href="javascript:void(0);" type="button" class="add_to_cart" data-id="{{ product.id }}">Add to Cart</a>
+            <button href="javascript:void(0);" type="button" class="add_to_cart" data-id="{{ product.id }}">Add to Cart</button>
             <h6 class="in-cart text-success" data-id="{{ product.id }}">
               {% if product in cart %}
+                {% comment %} <a href="{% url 'cart' %}">
+                  {% trans "Cart" %} <span id="cart-items-count">{% if items_count > 0 %}({{ items_count }})</span>{% endif %} 
+                </a>{% endcomment %}
                   {% trans "IN CART" %} (x{% get_product_count_in_cart product %})
               {% else %}
                   &nbsp;
@@ -169,7 +173,6 @@
         ajax_loading_modal(true);
         $.get('/api/add_to_cart/', {product_id: product_id}, function (e) {
             if (e['error'] === 0) {
-                console.log("success")
                 // Change CART(x) val in the nav
                 $('#cart-items-count').html(e['count'] > 0 ? '(' + e['count'] + ')' : '');
                 // Add IN CART text to box
