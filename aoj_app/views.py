@@ -830,7 +830,7 @@ class TeamsCalenderView(ListView):
     template_name = 'aoj_app/demo/teams_calender.html'
 
     def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
+        context = super(TeamsCalenderView,self).get_context_data(**kwargs)
         data_dict = {}
         dates = TeamsCalenderDate.objects.all()
         for count, date in enumerate(dates):
@@ -840,7 +840,6 @@ class TeamsCalenderView(ListView):
             data_list.append(date.mission_trip)
             data_dict[count+1] = data_list
         context['data'] = data_dict
-        print(context)
         return context
 
 
