@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 {% load static %}
-=======
-{% load static  %}
->>>>>>> be43ab35d0b44b2d097599f13a96346b2695c101
 <!DOCTYPE html>
 <html lang="en">
 
@@ -102,8 +98,8 @@
                   </li>
                 </ul>
                 <div class="header_btn">
-                  <a href="{% url 'login' %}" class="donate_btn">Donate</a>
-                  <a href="#" class="sponsor_btn">Sponsor</a>
+                  <a href="{% url 'donate' %}" class="donate_btn">Donate</a>
+                  <a href="{% url 'donate' %}" class="sponsor_btn">Sponsor</a>
                 </div>
               </div>
             </div>
@@ -324,7 +320,7 @@
 
                 <ul>
                   <li><a href="{% url 'catalogue' %}">Catalogue</a></li>
-                  <li><a href="{% url 'login' %}">Donations</a></li> 
+                  <li><a href="{% url 'donate' %}">Donations</a></li> 
                 </ul>
               </div>
               <div class="footer_manu_item1">
@@ -332,7 +328,7 @@
 
                 <ul>
                   <li><a href="{% url 'catalogue' %}">Catalogue</a></li>
-                  <li><a href="{% url 'login' %}">Donations</a></li>
+                  <li><a href="{% url 'donate' %}">Donations</a></li>
                 </ul>
               </div>
             </div>

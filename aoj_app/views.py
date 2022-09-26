@@ -8,13 +8,13 @@ import logging
 from django.utils.decorators import method_decorator
 from django.http import JsonResponse, HttpResponseRedirect, HttpResponse
 from django.views.generic import View, TemplateView, ListView, DetailView, FormView
-from django.contrib.auth.views import LogoutView,LoginView
-from django.contrib.auth import authenticate,login,logout
+from django.contrib.auth.views import LogoutView, LoginView
+from django.contrib.auth import authenticate, login, logout
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
-from django.shortcuts import redirect,render
+from django.shortcuts import redirect, render
 from django.core.urlresolvers import reverse, reverse_lazy
 from django.conf import settings
 
@@ -37,7 +37,7 @@ class IndexView(TemplateView):
         try:
             context["latest_post"] = BlogEntry.objects.latest("created_date")
         except:
-            context["latest_post"]= None
+            context["latest_post"] = None
         context["latest_magazines"] = Magazine.objects.all()[:6]
         context["countries"] = Country.objects.all()
         return context
@@ -64,17 +64,18 @@ class ChildrenView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(ChildrenView, self).get_context_data(**kwargs)
-        children=Children.objects.all()
-        data_dict={}
+        children = Children.objects.all()
+        data_dict = {}
         for child in children:
-            country_name=child.country.name.capitalize()
+            country_name = child.country.name.capitalize()
             if country_name not in data_dict:
-                data_dict[country_name]=list()
+                data_dict[country_name] = list()
                 data_dict[country_name].append(child)
             else:
                 data_dict[country_name].append(child)
 
-            context['child_data']=data_dict
+            context['child_data'] = data_dict
+        print(context)
         return context
 
 
@@ -110,8 +111,6 @@ class AboutPageDetailView(DetailView):
     model = AboutPage
 
 
-
-
 class DonateView(LoginRequiredMixin, TemplateView):
     template_name = "aoj_app/pages/donate.html"
 
@@ -120,7 +119,8 @@ class DonateView(LoginRequiredMixin, TemplateView):
 
         try:
             context["latest_cr"] = self.request.user.checkoutrequest_set. \
-                filter(save_address=True, typ=CheckoutRequest.DONATE).latest("created_at")
+                filter(save_address=True, typ=CheckoutRequest.DONATE).latest(
+                    "created_at")
         except CheckoutRequest.DoesNotExist:
             pass
 
@@ -170,7 +170,8 @@ class CheckoutView(LoginRequiredMixin, TemplateView):
 
         try:
             context["latest_cr"] = self.request.user.checkoutrequest_set. \
-                filter(save_address=True, typ=CheckoutRequest.CHECKOUT).latest("created_at")
+                filter(save_address=True, typ=CheckoutRequest.CHECKOUT).latest(
+                    "created_at")
         except CheckoutRequest.DoesNotExist:
             pass
 
@@ -233,24 +234,24 @@ class SilentPostView(View):
 AJAX
 """
 
+
 @login_required
 def ajax_add_to_cart(request):
-        cart = Cart(request.session)
-        product = Product.objects.get(id=request.GET.get("product_id"))
-        cart.add(product, price=product.price)
-        _item = None
-        for item in cart.items:
-            if item.product == product:
-                _item = item
-        return JsonResponse(
-            {
-                "error": 0,
-                "message": "Added to cart",
-                "count": cart.count,
-                "qty": _item.quantity,
-            }
-        )
-
+    cart = Cart(request.session)
+    product = Product.objects.get(id=request.GET.get("product_id"))
+    cart.add(product, price=product.price)
+    _item = None
+    for item in cart.items:
+        if item.product == product:
+            _item = item
+    return JsonResponse(
+        {
+            "error": 0,
+            "message": "Added to cart",
+            "count": cart.count,
+            "qty": _item.quantity,
+        }
+    )
 
 
 def ajax_remove_from_cart(request):
@@ -670,14 +671,15 @@ def setlang_view(request):
         response.set_cookie("googtrans", urllib.quote_plus("/auto/" + lang))
     return response
 
+
 def ajax_dropdown(request):
     if request.method == 'GET':
-        country=request.GET['country']
-        videos=Media.objects.filter(country=country)
-        data_list=[]
+        country = request.GET['country']
+        videos = Media.objects.filter(country=country)
+        data_list = []
         for video in videos:
             data_list.append(video.video)
-        data_dict={'dataresponse':data_list}
+        data_dict = {'dataresponse': data_list}
         return JsonResponse(data_dict)
 
 
@@ -685,20 +687,21 @@ def ajax_dropdown(request):
 
 class NewIndexView(TemplateView):
     template_name = "aoj_app/demo/home.html"
+
     def get_context_data(self, **kwargs):
         context = super(NewIndexView, self).get_context_data(**kwargs)
         try:
             context["latest_post"] = BlogEntry.objects.latest("created_date")
         except:
-            context['latest_post']=None
+            context['latest_post'] = None
         context["latest_magazines"] = Magazine.objects.all()
-        context["countries"]=Country.objects.all()
-        first_country=Country.objects.first()
-        video_list=[]
-        first_country_video=Media.objects.filter(country=first_country)
+        context["countries"] = Country.objects.all()
+        first_country = Country.objects.first()
+        video_list = []
+        first_country_video = Media.objects.filter(country=first_country)
         for video in first_country_video:
             video_list.append(video.video)
-        context['country_video']=video_list
+        context['country_video'] = video_list
         print(context)
         return context
 
@@ -707,56 +710,67 @@ class AboutStaffView(ListView):
     template_name = "aoj_app/demo/about_staff.html"
     model = Staff
 
+
 class AboutbehaveView(TemplateView):
     template_name = "aoj_app/demo/about_behave.html"
+
     def get_context_data(self, **kwargs):
-        context= super(AboutbehaveView,self).get_context_data(**kwargs)
-        text=WhatWeBelieve.objects.all()
-        length=0
+        context = super(AboutbehaveView, self).get_context_data(**kwargs)
+        text = WhatWeBelieve.objects.all()
+        length = 0
         for i in text:
-            length+=1
-        context['length']=length
-        context['data']=text
+            length += 1
+        context['length'] = length
+        context['data'] = text
         print(context)
         return context
 
 
 class AboutFundPolicyView(TemplateView):
     template_name = "aoj_app/demo/about_fund_policy.html"
+
     def get_context_data(self, **kwargs):
-        context=super(AboutFundPolicyView,self).get_context_data(**kwargs)
-        text=FundPolicy.objects.all()
-        context['data'] =text
+        context = super(AboutFundPolicyView, self).get_context_data(**kwargs)
+        text = FundPolicy.objects.all()
+        context['data'] = text
         return context
+
+
 class ContactUsView(TemplateView):
-    template_name ="aoj_app/demo/contact-us.html"
+    template_name = "aoj_app/demo/contact-us.html"
+
 
 class HistoryView(TemplateView):
-    template_name ="aoj_app/demo/about_histroy.html"
+    template_name = "aoj_app/demo/about_histroy.html"
+
     def get_context_data(self, **kwargs):
-        context=super(HistoryView,self).get_context_data(**kwargs)
-        text=AboutHistory.objects.all()
-        context['data'] =text
+        context = super(HistoryView, self).get_context_data(**kwargs)
+        text = AboutHistory.objects.all()
+        context['data'] = text
         return context
+
 
 class MissionView(TemplateView):
-    template_name ="aoj_app/demo/about_mission.html"
+    template_name = "aoj_app/demo/about_mission.html"
+
     def get_context_data(self, **kwargs):
-        context=super(MissionView,self).get_context_data(**kwargs)
-        text=AboutMission.objects.all()
-        context['data'] =text
+        context = super(MissionView, self).get_context_data(**kwargs)
+        text = AboutMission.objects.all()
+        context['data'] = text
         return context
 
+
 class UserLogInView(LoginView):
-    template_name='aoj_app/demo/login.html'  
-    LOGIN_REDIRECT_URL='newindex'
+    template_name = 'aoj_app/demo/login.html'
+    LOGIN_REDIRECT_URL = 'newindex'
+
 
 class RegisterView(View):
-    def post(self,request):
-        form=UserCreationForm(request.POST)
-        country=request.POST['country']
+    def post(self, request):
+        form = UserCreationForm(request.POST)
+        country = request.POST['country']
         if form.is_valid():
-            user=AuthUser.objects.create_user(
+            user = AuthUser.objects.create_user(
                 email=form.cleaned_data['email'],
                 password=form.cleaned_data['password'],
                 first_name=form.cleaned_data['first_name'],
@@ -768,85 +782,93 @@ class RegisterView(View):
                 zip_code=form.cleaned_data['zip_code'],
                 phone_number=form.cleaned_data['phone_number']
             )
-            login(request,user)
-            message={"success_message":"form data submitted successfully"}
+            login(request, user)
+            message = {"success_message": "form data submitted successfully"}
             return redirect('newindex')
         else:
-            message={"error_message":"form data has an error"}
-        
-        return render(request,'aoj_app/demo/register.html',{'message':message})
+            message = {"error_message": "form data has an error"}
 
-    def get(self,request):
-        form=UserCreationForm()
-        return render(request,'aoj_app/demo/register.html',{'form':form})
+        return render(request, 'aoj_app/demo/register.html', {'message': message})
+
+    def get(self, request):
+        form = UserCreationForm()
+        return render(request, 'aoj_app/demo/register.html', {'form': form})
+
 
 class TeamsBlogView(ListView):
-    model=TeamsBlog
-    template_name= "aoj_app/demo/teams_blog.html"
+    model = TeamsBlog
+    template_name = "aoj_app/demo/teams_blog.html"
+
 
 class TeamsConsiderView(ListView):
-    model=TeamsConsider
-    template_name= "aoj_app/demo/teams_consider.html"
+    model = TeamsConsider
+    template_name = "aoj_app/demo/teams_consider.html"
+
 
 class TeamsTrainingView(ListView):
-    model=TeamsTraining
-    template_name= "aoj_app/demo/teams_training.html"
+    model = TeamsTraining
+    template_name = "aoj_app/demo/teams_training.html"
+
 
 class TeamsResourceView(ListView):
-    model=TeamsResources
-    template_name= "aoj_app/demo/teams_resources.html"
+    model = TeamsResources
+    template_name = "aoj_app/demo/teams_resources.html"
+
 
 class TeamsCalenderView(ListView):
-    model=TeamsCalenderDate
-    template_name='aoj_app/demo/teams_calender.html'
+    model = TeamsCalenderDate
+    template_name = 'aoj_app/demo/teams_calender.html'
+
     def get_context_data(self, **kwargs):
-        context=super().get_context_data(**kwargs)
-        data_dict={}
-        dates=TeamsCalenderDate.objects.all()
-        for count,date in enumerate(dates):
-            data_list=[]
+        context = super().get_context_data(**kwargs)
+        data_dict = {}
+        dates = TeamsCalenderDate.objects.all()
+        for count, date in enumerate(dates):
+            data_list = []
             data_list.append(date.starting_date)
             data_list.append(date.ending_date)
-            data_list.append(date.mission_trip) 
-            data_dict[count+1]=data_list
-        context['data']=data_dict
+            data_list.append(date.mission_trip)
+            data_dict[count+1] = data_list
+        context['data'] = data_dict
         print(context)
         return context
+
 
 class MissionHaitiView(TemplateView):
     # model=MissionHaiti
     def get_context_data(self, **kwargs):
-        context= super(MissionHaitiView,self).get_context_data(**kwargs)
+        context = super(MissionHaitiView, self).get_context_data(**kwargs)
         try:
-            mission=MissionHaiti.objects.first()
+            mission = MissionHaiti.objects.first()
         except:
-            mission=None
-        
-        context['mission']=mission
+            mission = None
+
+        context['mission'] = mission
         print(context)
         return context
+
 
 class MissionKenyaView(TemplateView):
     # model=MissionKenya
     def get_context_data(self, **kwargs):
-        context= super(MissionKenyaView,self).get_context_data(**kwargs)
+        context = super(MissionKenyaView, self).get_context_data(**kwargs)
         try:
-            mission=MissionKenya.objects.first()
+            mission = MissionKenya.objects.first()
         except:
-            mission=None
-        context['mission']=mission
+            mission = None
+        context['mission'] = mission
         print(context)
         return context
+
 
 class MissionGuatemalaView(TemplateView):
     # model=MissionGuatemala
     def get_context_data(self, **kwargs):
-        context= super(MissionGuatemalaView,self).get_context_data(**kwargs)
+        context = super(MissionGuatemalaView, self).get_context_data(**kwargs)
         try:
-            mission=MissionGuatemala.objects.first()
+            mission = MissionGuatemala.objects.first()
         except:
-            mission=None
-        context['mission']=mission
+            mission = None
+        context['mission'] = mission
         print(context)
         return context
-

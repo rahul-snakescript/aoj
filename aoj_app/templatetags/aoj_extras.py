@@ -25,6 +25,8 @@ def get_product_count_in_cart(context, product):
 
 # @register.inclusion_tag('aoj_app/nav_desktop.html', takes_context=True)
 # @register.inclusion_tag('aoj_app/demo/footer.html', takes_context=True)
+
+
 @register.inclusion_tag('aoj_app/demo/header.html', takes_context=True)
 def get_desktop_nav(context):
     try:
@@ -37,6 +39,8 @@ def get_desktop_nav(context):
             'missions': Mission.objects.all(), 'aboutpages': AboutPage.objects.all()}
 
 # @register.inclusion_tag('aoj_app/demo/footer.html', takes_context=True)
+
+
 @register.inclusion_tag('aoj_app/demo/header.html', takes_context=True)
 # @register.inclusion_tag('aoj_app/nav_mobile.html', takes_context=True)
 def get_mobile_nav(context):
