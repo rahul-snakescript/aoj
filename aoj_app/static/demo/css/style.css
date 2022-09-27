@@ -3658,7 +3658,7 @@ h3.angelTest1 {
     left: 0;
     height: 100%;
     width: 100%;
-    background: rgba(255, 255, 255, .5) url('/static/img/ajax-loader.gif') 50% 50% no-repeat;
+    background: rgba(255, 255, 255, .5) url('/static/demo/images/ajax-loader.gif') 50% 50% no-repeat;
 }
 
 body {

@@ -178,6 +178,9 @@
                 // Add IN CART text to box
                 $('.in-cart[data-id="' + product_id + '"]').html('IN CART (x' + e['qty'] + ')');
             }
+            else{
+              alert('Need to Login first')
+            }
         }).always(function (e) {
             ajax_loading_modal(false);
         });

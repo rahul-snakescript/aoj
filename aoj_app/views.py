@@ -701,8 +701,23 @@ class NewIndexView(TemplateView):
         for video in first_country_video:
             video_list.append(video.video)
         context['country_video'] = video_list
+        return context
+
+class MediaView(TemplateView):
+    template_name= "aoj_app/pages/media.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(MediaView, self).get_context_data(**kwargs)
+        context["countries"] = Country.objects.all()
+        first_country = Country.objects.first()
+        video_list = []
+        first_country_video = Media.objects.filter(country=first_country)
+        for video in first_country_video:
+            video_list.append(video.video)
+        context['country_video'] = video_list
         print(context)
         return context
+
 
 
 class AboutStaffView(ListView):

@@ -1,7 +1,9 @@
-{% extends  'aoj_app/base_template.html' %}
+{% extends  'aoj_app/demo/base.html' %}
 {% load staticfiles %}
+{% load aoj_extras %}
 
-{% block template_body %}
+{% block body_temp %}
+{% get_desktop_nav %}
     <div class="page-blog-detail">
         <div class="container">
             <div class="row">
