@@ -15,9 +15,6 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                {% comment %} <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="{% url 'newindex' %}">Home</a>
-                </li> {% endcomment %}
                 <li class="nav-item">
                   <div class="dropdown">
                     <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
@@ -25,6 +22,9 @@
                     </a>
 
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                      {% if curr_page != 'newindex' %}
+                      <li><a class="dropdown-item" href="{% url 'newindex' %}">Home</a>
+                        {% endif %}
                       <li><a class="dropdown-item" href="{% url 'blog' %}">Director's Blog</a></li>
                       <li><a class="dropdown-item" href="{% url 'magazine' %}">Magazine</a></li>
                       <li><a class="dropdown-item" href="https://www.facebook.com/ArmsOfJesus/">Facebook</a></li>
