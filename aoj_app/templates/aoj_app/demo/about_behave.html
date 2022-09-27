@@ -126,12 +126,12 @@
         <div class="col-md-12">
           <div class="behave_outer">
             {% if data  %}
-            {% for data in data %}
+            {% comment %} {% for data in data %} {% endcomment %}
             <h2>{{ data.title }}</h2>  
             <ul>
               {{ data.body|safe }}
             </ul>
-            {% endfor %}
+            {% comment %} {% endfor %} {% endcomment %}
 
             {% else %}
             <h2>What We Believe</h2>

@@ -127,10 +127,10 @@
         <div class="col-md-12">
           <div class="mission_outer">
             {% if data %}
-            {% for data in data %}
+            {% comment %} {% for data in data %} {% endcomment %}
             <h2>{{ data.title }}</h2>
-            <p>{{ data.body|safe }}</p>
-            {% endfor %}
+            {{ data.body|safe }}
+            {% comment %} {% endfor %} {% endcomment %}
             {% else %}
             <h2>Mission Statement</h2>
             <p>​Recognizing the needs of children and the fact that God loves children, that children had a special place in the ministry of 

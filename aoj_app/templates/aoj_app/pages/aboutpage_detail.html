@@ -1,18 +1,31 @@
-{% extends  'aoj_app/base_template.html' %}
-{% load i18n staticfiles %}
+{% extends  'aoj_app/demo/base.html' %}
+{% load i18n aoj_extras %}
 
-{% block template_body %}
-  <div class="page-about page-funds-policy">
-    <div class="container">
+{% block body_temp %}
+<section class="banner policy_banner">
+  {% get_desktop_nav %}
+  <div class="container children_arm">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="banner_outer"> 
+          <h1>ABOUT US</h1> 
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="our_policy">
+    <div class="container children_arm">
       <div class="row">
-        <div class="col-lg-10 col-lg-offset-1">
-          <div class="redactor-body">
-            {% autoescape off %}
-              {{ aboutpage.body }}
-            {% endautoescape %}
+        <div class="col-md-12">
+          <div class="policy_item">
+            <h2>{{ aboutpage.name }}</h2>
+            {{ aboutpage.body|safe }}
           </div>
         </div>
       </div>
     </div>
   </div>
+</section>
 {% endblock %}

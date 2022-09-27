@@ -3,8 +3,8 @@ from django.conf.urls import url, include
 from . views import *
 
 api_patterns = [
-    url(r"^add_to_cart/$", ajax_add_to_cart, name="ajax_add_to_cart"),
     url(r"^remove_from_cart/$", ajax_remove_from_cart, name="ajax_remove_from_cart"),
+    url(r"^add_to_cart/$", ajax_add_to_cart, name="ajax_add_to_cart"),
     url(r"^show_cart/$", ajax_show_cart, name="ajax_show_cart"),
     url(
         r"^product_change_quantity/$",

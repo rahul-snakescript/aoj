@@ -75,7 +75,6 @@ class ChildrenView(ListView):
                 data_dict[country_name].append(child)
 
             context['child_data'] = data_dict
-        print(context)
         return context
 
 
@@ -716,11 +715,12 @@ class AboutbehaveView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(AboutbehaveView, self).get_context_data(**kwargs)
-        text = WhatWeBelieve.objects.all()
-        length = 0
-        for i in text:
-            length += 1
-        context['length'] = length
+        try:
+            text = WhatWeBelieve.objects.first()
+        except:
+            text=None
+
+        # context['length'] = len(text)
         context['data'] = text
         print(context)
         return context
@@ -731,7 +731,10 @@ class AboutFundPolicyView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(AboutFundPolicyView, self).get_context_data(**kwargs)
-        text = FundPolicy.objects.all()
+        try:
+            text = FundPolicy.objects.first()
+        except:
+            text=None
         context['data'] = text
         return context
 
@@ -745,7 +748,10 @@ class HistoryView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(HistoryView, self).get_context_data(**kwargs)
-        text = AboutHistory.objects.all()
+        try:
+            text = AboutHistory.objects.first()
+        except:
+            text=None
         context['data'] = text
         return context
 
@@ -755,8 +761,12 @@ class MissionView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(MissionView, self).get_context_data(**kwargs)
-        text = AboutMission.objects.all()
+        try:
+            text = AboutMission.objects.first()
+        except:
+            text=None
         context['data'] = text
+        print(context)
         return context
 
 
@@ -830,7 +840,6 @@ class TeamsCalenderView(ListView):
             data_list.append(date.mission_trip)
             data_dict[count+1] = data_list
         context['data'] = data_dict
-        print(context)
         return context
 
 

@@ -127,11 +127,11 @@
           <div class="col-md-12">
             <div class="policy_item">
               {% if data %}
-              {% for data in data %}              
+              {% comment %} {% for data in data %}               {% endcomment %}
               <h2>{{ data.title }}</h2>
-                <p class="policy_paragraph">{{ data.body|safe }}</p>
+              {{ data.body|safe }}
                 <p class="policy_tagLine">{{ data.foot }}</p>
-                {% endfor %}
+                {% comment %} {% endfor %} {% endcomment %}
                 {% else %}
                 
                 <h2>Our Policy on Using Fund</h2>

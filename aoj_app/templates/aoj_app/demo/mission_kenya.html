@@ -160,6 +160,13 @@
               </a>
             </div>
           </div>
+          {% if mission %}
+          {% autoescape off %}
+            {{ mission.body }}
+        </div>
+      </div>
+          {% endautoescape %}
+        {% else %}
           <div class="kenya_outer">
             <p>The mission in Kenya began with a small sponsorship program, seeking to provide care for 9 orphans in the Mathare Valley, 
               a slum in Nairobi. The Arms of Jesus Children's Mission now supports children in Greater Nairobi through partnership 
@@ -177,11 +184,7 @@
   <!-- mnistry stat here -->
   <div class="ministry_outer">
     <div class="container children_arm">
-        {% if mission %}
-          {% autoescape off %}
-            {{ mission.body }}
-          {% endautoescape %}
-        {% else %}
+        
       <div class="row">
         <div class="col-md-6">
           <div class="ministry_left_sec">
