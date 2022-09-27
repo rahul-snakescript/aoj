@@ -424,7 +424,7 @@ class AboutPage(models.Model):
     def get_absolute_url(self):
         return reverse("aboutpage_detail", args=[self.slug])
 
-class Staff(models.Model):
+class AboutStaff(models.Model):
     staff_name = models.CharField(max_length=200, blank=False)
     staff_image = models.ImageField(upload_to="",blank=True)
     staff_position = models.CharField(max_length=200,blank=False)
@@ -435,14 +435,14 @@ class Staff(models.Model):
     def __unicode__(self):
         return self.staff_name
 
-class WhatWeBelieve(models.Model):
+class AboutWhatWeBelieve(models.Model):
     title=models.CharField(max_length=200)
     body=RichTextUploadingField()
 
     def __unicode__(self):
         return self.title
 
-class FundPolicy(models.Model):
+class AboutFundPolicy(models.Model):
     title=models.CharField(max_length=200)
     body=RichTextUploadingField()
     foot=models.CharField(max_length=200)

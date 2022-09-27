@@ -707,7 +707,7 @@ class NewIndexView(TemplateView):
 
 class AboutStaffView(ListView):
     template_name = "aoj_app/demo/about_staff.html"
-    model = Staff
+    model = AboutStaff
 
 
 class AboutbehaveView(TemplateView):
@@ -716,7 +716,7 @@ class AboutbehaveView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(AboutbehaveView, self).get_context_data(**kwargs)
         try:
-            text = WhatWeBelieve.objects.first()
+            text = AboutWhatWeBelieve.objects.first()
         except:
             text=None
 
@@ -732,7 +732,7 @@ class AboutFundPolicyView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(AboutFundPolicyView, self).get_context_data(**kwargs)
         try:
-            text = FundPolicy.objects.first()
+            text = AboutFundPolicy.objects.first()
         except:
             text=None
         context['data'] = text

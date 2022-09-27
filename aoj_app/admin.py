@@ -91,15 +91,15 @@ class AboutPageAdmin(admin.ModelAdmin):
             'all': ('admin/ckeditor_admin.css',)
         }
 
-@admin.register(Staff)
+@admin.register(AboutStaff)
 class StaffAdmin(admin.ModelAdmin):
     list_display= ['staff_image','staff_name','staff_position']
 
-@admin.register(WhatWeBelieve)
+@admin.register(AboutWhatWeBelieve)
 class StaffAdmin(admin.ModelAdmin):
     list_display= ['title','body']
 
-@admin.register(FundPolicy)
+@admin.register(AboutFundPolicy)
 class StaffAdmin(admin.ModelAdmin):
     list_display= ['title','body','foot']
 
