@@ -215,7 +215,7 @@ urlpatterns = [
     ),
     url(
         r"^demo/missions/guatemala/$",
-        MissionGuatemalaView.as_view(template_name="aoj_app/demo/guatemala_mission.html"),
+        MissionGuatemalaView.as_view(template_name="aoj_app/demo/mission_Guatemala.html"),
         name="guatemala_mission",
     ),
     # url(
