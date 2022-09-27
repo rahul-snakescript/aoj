@@ -808,12 +808,11 @@ class RegisterView(View):
                 phone_number=form.cleaned_data['phone_number']
             )
             login(request, user)
-            message = {"success_message": "form data submitted successfully"}
             return redirect('newindex')
         else:
             message = {"error_message": "form data has an error"}
+            return render(request, 'aoj_app/demo/register.html', {'form': form})
 
-        return render(request, 'aoj_app/demo/register.html', {'message': message})
 
     def get(self, request):
         form = UserCreationForm()

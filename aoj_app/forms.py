@@ -12,6 +12,19 @@ class UserCreationForm(forms.ModelForm):
         model = AuthUser
         fields = ('email', 'first_name', 'last_name', 'address', 'city',
                   'state', 'country', 'zip_code', 'phone_number', 'password')
+    
+    def clean(self):
+        super(UserCreationForm, self).clean()
+        email = self.cleaned_data['email']
+ 
+        if len(email) < 5:
+            self._errors['email'] = self.error_class([
+                'Minimum 5 characters required'])
+        if AuthUser.objects.filter(email=email).exists():
+            self._errors['email'] = self.error_class([
+                'User with this email already exist'])
+
+        return self.cleaned_data
 
     def save(self, commit=True):
         # Save the provided password in hashed format
@@ -20,3 +33,4 @@ class UserCreationForm(forms.ModelForm):
         if commit:
             user.save()
         return user
+

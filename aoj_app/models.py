@@ -182,6 +182,7 @@ class AuthUser(AbstractBaseUser):
         # Simplest possible answer: All admins are staff
         return self.is_admin
 
+
 class Product(models.Model):
     name = models.CharField(max_length=128, blank=False, null=False)
     price = models.DecimalField(
