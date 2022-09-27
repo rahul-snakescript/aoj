@@ -47,7 +47,7 @@
 
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                       <li><a class="dropdown-item" href="{% url 't_blog' %}">Teams Blog</a></li>
-                      <li><a class="dropdown-item" href="{%  url 't_calender' %}">Teams Calender</a></li>
+                      <li><a class="dropdown-item" href="{% url 't_calender' %}">Teams Calender</a></li>
                       <li><a class="dropdown-item" href="{% url 't_consider' %}">Teams Consider</a></li>
                       <li><a class="dropdown-item" href="{% url 't_resource' %}">Teams Resource</a></li>
                       <li><a class="dropdown-item" href="{% url 't_training' %}">Teams Training</a></li>
@@ -69,6 +69,9 @@
                     <li><a class="dropdown-item" href="{% url 'history' %}">About Histroy</a></li>
                     <li><a class="dropdown-item" href="{% url 'mission' %}">About Mission</a></li>
                     <li><a class="dropdown-item" href="{% url 'staff' %}">About Staff</a></li>
+                    {% for about in aboutpages %}
+                      <li><a class="dropdown-item" href="{{ about.get_absolute_url }}">{{ about.name }}</a></li>
+                    {% endfor %}
                   </ul>
                 </div>
               </li>

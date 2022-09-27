@@ -73,134 +73,10 @@
 .children_arm {
     width: 1170px !important;
     max-width: 100%;
+} 
+.children1 {
+    width: 100%;
 }
-
-/* mazion start here */
-h2.cd-name.hadding_mazion {
-    font-size: 48px;
-    text-transform: capitalize;
-    margin: 0;
-    padding-bottom: 20px;
-    text-align: center;
-    font-family: 'Proxima Nova Rg';
-}
-.paragraph_date p {
-    font-size: 22px;
-    margin: 0;
-    color: #000000;
-    padding-bottom: 6px;
-    font-family: 'Proxima Nova Rg';
-    text-align: center;
-}
-.paragraphTittle {
-    text-align: center;
-    margin: 0;
-    font-size: 22px;
-    color: #000000;
-    padding-top: 20px;
-    padding-bottom: 40px;
-    text-transform: capitalize;
-    font-family: 'Proxima Nova Rg';
-}
-h4.text-center.angelTest {
-    font-size: 32px;
-    text-transform: capitalize;
-    margin: 0;
-    padding-bottom: 20px;
-    text-align: center;
-    font-family: 'Proxima Nova Rg';
-    font-weight: bold;
-}
-h4.fromTest_hadding {
-    text-transform: capitalize;
-    margin: 0;
-    padding-bottom: 20px;
-    text-align: center;
-    font-family: 'Proxima Nova Rg';
-}
-.fromGroup_outer .form-control {
-    height: 64px;
-    border: 1px solid #cacaca;
-    border-radius: 5px;
-}
-.fromGroup_outer {
-    margin-bottom: 16px;
-}
-.fromGroup_outer label {
-    font-size: 16px;
-    margin-bottom: 8px;
-    color: #000000;
-    font-family: 'Proxima Nova Rg';
-}
-button.btn.btn-primary.mt-2.submitBTN {
-    height: 51px;
-    /* width: 153px; */
-    padding: 10px 40px !important;
-    background: #f7941d;
-    border: 1px solid #f7941d;
-    float: left;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    color: #ffffff;
-    font-size: 18px;
-    text-decoration: none;
-    font-family: 'Proxima Nova Alt Rg';
-}
-button.btn.btn-primary.mt-2.submitBTN:hover {
-    color: #f7941d;
-    background: none;
-}
-
-
-h4.cd-details-header.FromHadding {
-    font-size: 48px;
-    text-transform: capitalize;
-    margin: 0;
-    padding-bottom: 20px;
-    text-align: center;
-    font-family: 'Proxima Nova Rg';
-    font-weight: bold;
-    margin-top: 30px;
-    margin-bottom: 6px;
-}
-p.cd-details.fromTest_paragraph {
-    text-align: center;
-    font-size: 18px;
-    margin: 0;
-    padding-bottom: 14px;
-    font-family: 'Proxima Nova Rg';
-}
-.outerFrom_middle {
-    justify-content: center;
-}
-h3.angelTest1 {
-    font-size: 32px;
-    text-transform: capitalize;
-    margin: 0;
-    padding-bottom: 20px;
-    text-align: center;
-    font-family: 'Proxima Nova Rg';
-}
-.page-children-detail {
-    margin-top: 80px;
-    position: relative;
-}
-.fancy-image img.img-responsive.img-cd {
-    height: 440px;
-    margin-right: 32px;
-    width: 25%;
-}
-.paragraph_date1 {
-    margin-bottom: 20px;
-}
-.outerImg {
-    text-align: center;
-}
-*
-/* mazion close here */
-
 /* home page css start */
     .header nav.navbar.navbar-expand-lg.navbar-light {
         padding: 0 !important;
@@ -488,16 +364,11 @@ h3.angelTest1 {
         color: #000000;
     }
 
-    
-
-    .video .video_outer iframe {
+    .video iframe {
         border: 0;
-        width: 99%;
-        height: 436px;
-        object-fit: cover !important;
+        width: 100%;
+        height: 688px;
     }
-
-
 
 
     .mamber {
@@ -1613,6 +1484,195 @@ h2.mission_teamHadding {
     .leftSec_missionaryImg img {
         width: 100%;
     }
+
+
+    .tropical_leftSec p {
+        font-size: 22px;
+        color: #343136;
+        line-height: 36px;
+        margin: 0;
+        font-family: 'Proxima Nova Rg';
+        padding-top: 2px;
+    }
+    .tropical_rightSec img {
+        width: 100%;
+    }
+    .outer_tagline p {
+        font-size: 22px;
+        color: #343136;
+        line-height: 36px;
+        margin: 0;
+        font-family: 'Proxima Nova Rg';
+    }
+    .outer_tagline span {
+        color: #0066ff;
+    }
+    .tropical_outer {
+        margin-top: 100px;
+    }
+    .ministriesOuter {
+        margin-top: 110px;
+    }
+    .rightSec_ministrie h2 {
+        font-size: 48px;
+        margin: 0;
+        font-family: 'Proxima Nova Rg';
+        padding-bottom: 12px;
+    }
+    .rightSec_ministrie {
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 100%;
+    }
+    .rightSec_ministrie h5 {
+        font-size: 30px;
+        margin: 0;
+        font-family: 'Proxima Nova Rg';
+        padding-bottom: 20px;
+    }
+    .rightSec_ministrie p {
+        color: #343136;
+        font-size: 22px;
+        line-height: 36px;
+        font-family: 'Proxima Nova Rg';
+        margin: 0;
+    }
+    .PROGRAMTagline span {
+        color: #343136;
+        font-size: 22px;
+        font-family: 'Proxima Nova Rg';
+        font-weight: bold;
+    }
+    .PROGRAMTagline {
+        padding-top: 84px;
+    }
+    .PROGRAMTagline p {
+        font-size: 22px;
+        line-height: 36px;
+        color: #343136;
+        font-family: 'Proxima Nova Rg';
+        margin: 0;
+    }
+    .ELEMENTARY_outerImg {
+        margin-top: 30px;
+    }
+    .ELEMENTARY_outerImg img {
+        width: 100%;
+    }
+    .schoolTagline span {
+        color: #343136;
+        font-size: 22px;
+        font-family: 'Proxima Nova Rg';
+        font-weight: bold;
+    }
+    .schoolTagline p {
+        font-size: 22px;
+        line-height: 36px;
+        color: #343136;
+        font-family: 'Proxima Nova Rg';
+        margin: 0;
+    }
+    .schoolTagline {
+        padding-top: 37px;
+    }
+    .childrenOuter {
+        margin-top: 60px;
+    }
+    .childreOuter_img span {
+        color: #343136;
+        font-size: 22px;
+        font-family: 'Proxima Nova Rg';
+        font-weight: bold;
+    }
+    .childreOuter_img p {
+        font-size: 22px;
+        line-height: 36px;
+        color: #343136;
+        font-family: 'Proxima Nova Rg';
+        margin: 0;
+        padding-top: 50px;
+    }
+    .tradeOuter {
+        margin-top: 42px;
+    }
+    .tadeTagline span {
+        color: #343136;
+        font-size: 22px;
+        font-family: 'Proxima Nova Rg';
+        font-weight: bold;
+    }
+    .tadeTagline p {
+        font-size: 22px;
+        line-height: 36px;
+        color: #343136;
+        font-family: 'Proxima Nova Rg';
+        margin: 0;
+        padding-top: 40px;
+    }
+    .leftSec_trade img {
+        width: 100%;
+    }
+    .community_leftSec span {
+        color: #343136;
+        font-size: 22px;
+        font-family: 'Proxima Nova Rg';
+        font-weight: bold;
+    }
+    .community_leftSec p {
+        font-size: 21px;
+        line-height: 36px;
+        color: #343136;
+        font-family: 'Proxima Nova Rg';
+        margin: 0; 
+    }
+    .COMMUNITYOuter {
+        margin-top: 40px;
+    }
+    p.program1 {
+        font-size: 21px;
+        line-height: 36px;
+        color: #343136;
+        font-family: 'Proxima Nova Rg';
+        margin: 0;
+    }
+    .VOLUNTEERouter_item p {
+        font-size: 21px;
+        line-height: 36px;
+        color: #343136;
+        font-family: 'Proxima Nova Rg';
+        margin: 0;
+        padding-top: 56px;
+    }
+    .VOLUNTEERouter_item span {
+        color: #343136;
+        font-size: 22px;
+        font-family: 'Proxima Nova Rg';
+        font-weight: bold;
+    }
+    .children1 {
+        margin-top: 56px;
+    }
+    button.children1_btn {
+        width: 208px;
+        height: 52px;
+        background: #f7941d;
+        border: 1px solid #f7941d;
+        color: #ffffff;
+        margin-top: 55px;
+        font-family: 'Proxima Nova Rg';
+        font-size: 22px;
+    }
+    button.children1_btn:hover {
+        background: none;
+        color: #f7941d;
+    }
+    .children_outer {
+        justify-content: center;
+        display: flex;
+    }
   /* mission css close */
 
 
@@ -1845,6 +1905,80 @@ h2.mission_teamHadding {
     .haitiHadding_btnItem a {
         width: 180px; 
     }
+
+    /* mission start here */
+    .tropical_leftSec p {
+        font-size: 20px; 
+        padding-top: 0;
+    }
+    .outer_tagline p {
+        font-size: 20px; 
+    }
+    .leftSec_ministrie img {
+        width: 100%;
+    }
+    .rightSec_ministrie h2 {
+        font-size: 42px; 
+    }
+    .rightSec_ministrie h5 {
+        font-size: 26px; 
+    }
+    .rightSec_ministrie p { 
+        font-size: 18px;
+        line-height: 25px; 
+    }
+    .PROGRAMTagline {
+        padding-top: 40px;
+    }
+    .PROGRAMTagline p {
+        font-size: 18px; 
+    }
+    .schoolTagline p {
+        font-size: 18px;
+        line-height: 28px; 
+    }
+    .ELEMENTARY_outerImg {
+        margin-top: 18px;
+    }
+    .schoolTagline {
+        padding-top: 22px;
+    }
+    .childreOuter_img img {
+        width: 100%;
+    }
+    .childrenOuter {
+        margin-top: 30px;
+    }
+    .childreOuter_img p {
+        font-size: 18px;
+        line-height: 26px; 
+        padding-top: 26px;
+    }
+    .tradeOuter {
+        margin-top: 20px;
+    }
+    .tadeTagline p {
+        font-size: 18px;
+        line-height: 28px; 
+        padding-top: 20px;
+    }
+    .tadeTagline span { 
+        font-size: 18px; 
+    }
+    .community_leftSec p {
+        font-size: 18px;
+        line-height: 28px; 
+    }
+    .community_leftSec span { 
+        font-size: 18px; 
+    }
+    button.children1_btn {
+        width: 178px;
+        height: 42px; 
+        margin-top: 35px; 
+        font-size: 18px;
+    }
+    /* mission close here */
 }
 @media only screen and (max-width: 1024px) {
     .banner_outer h1 {
@@ -2330,6 +2464,83 @@ h2.mission_teamHadding {
     .haiti_hadding {
         padding-bottom: 40px !important;
     }
+
+
+    .tropical_leftSec p {
+        font-size: 16px;
+        padding-top: 0;
+        line-height: 26px;
+    }
+    .outer_tagline p {
+        font-size: 16px;
+        line-height: 26px;
+    }
+    .ministriesOuter {
+        margin-top: 40px;
+    }
+    .rightSec_ministrie h2 {
+        font-size: 34px;
+    }
+    .rightSec_ministrie h5 {
+        font-size: 22px;
+    }
+    .rightSec_ministrie p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .PROGRAMTagline p {
+        font-size: 16px;
+        line-height: 26px;
+    }
+    .PROGRAMTagline span { 
+        font-size: 16px; 
+    }
+    .schoolTagline p {
+        font-size: 16px;
+        line-height: 26px;
+    }
+    .schoolTagline span {
+        color: #343136;
+        font-size: 16px; 
+    }
+    .childreOuter_img p {
+        font-size: 16px;
+        line-height: 26px; 
+    }
+    .childreOuter_img span { 
+        font-size: 16px; 
+    }
+    .tadeTagline span {
+        font-size: 16px;
+    }
+    .tadeTagline p {
+        font-size: 16px;
+        line-height: 26px; 
+    }
+    .community_leftSec p {
+        font-size: 16px;
+        line-height: 26px;
+    }
+    .community_leftSec span {
+        font-size: 16px;
+    }
+    p.program1 {
+        font-size: 16px; 
+    }
+    .VOLUNTEERouter_item p {
+        font-size: 16px;
+        line-height: 26px; 
+        padding-top: 40px;
+    }
+    .VOLUNTEERouter_item span { 
+        font-size: 16px; 
+    }
+    .children1 {
+        margin-top: 30px;
+    }
+    .children1 img {
+        width: 100%;
+    }
     /* mission css close */
 }
 @media only screen and (max-width: 768px) {
@@ -2589,16 +2800,96 @@ h2.mission_teamHadding {
     .haitiHadding_btnItem a { 
         margin: 0 auto; 
     }
+
+
+    .tropical_leftSec p {
+        font-size: 14px; 
+        line-height: 20px;
+    }
+    .tropical_outer {
+        margin-top: 30px;
+    }
+    .tropical_rightSec {
+        margin-top: 20px;
+    }
+    .outer_tagline p {
+        font-size: 14px;
+        line-height: 20px;
+        padding-top: 20px;
+    }
+    .rightSec_ministrie h2 {
+        font-size: 28px;
+    }
+    .rightSec_ministrie h5 {
+        font-size: 18px;
+    }
+    .rightSec_ministrie { 
+        margin-top: 20px;
+    }
+    .PROGRAMTagline p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .PROGRAMTagline span {
+        font-size: 14px;
+    }
+    .schoolTagline p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .schoolTagline span {
+        color: #343136;
+        font-size: 14px;
+    }
+    .childreOuter_img p {
+        font-size: 14px;
+        line-height: 20px;
+        padding-top: 10px;
+    }
+    .leftSec_trade {
+        margin-top: 20px;
+    }
+    .tadeTagline p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .tadeTagline span {
+        font-size: 14px;
+    }
+    .community_leftSec p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .community_leftSec span {
+        font-size: 14px;
+    }
+    .COMMUNITYOuter {
+        margin-top: 26px;
+    }
+    p.program1 {
+        font-size: 14px;
+    }
+    .VOLUNTEERouter_item span {
+        font-size: 14px;
+    }
+    .VOLUNTEERouter_item p {
+        font-size: 14px;
+        line-height: 20px;
+        padding-top: 26px;
+    }
     /* mission close here */
 }
 @media only screen and (max-width: 767px) {
     /* mission start here */
+    
+
+
         .teamsConsider_outer { 
             width: 100%;
             justify-content: center;
         }
         .teamsConsider_outer h1 { 
-            font-size: 40px;
+            font-size: 30px;
         }
         .haiti_hadding h2 { 
             font-size: 32px; 
@@ -3198,3 +3489,259 @@ h2.mission_teamHadding {
 }
 /* Media Query End */
 /* Media Query End */
+
+/*
+MAGAZINE DETAIL
+*/
+.page-magazine-detail {
+    padding: 40px 0;
+}
+/* mazion start here */
+h2.cd-name.hadding_mazion {
+    font-size: 48px;
+    text-transform: capitalize;
+    margin: 0;
+    padding-bottom: 20px;
+    text-align: center;
+    font-family: 'Proxima Nova Rg';
+}
+.paragraph_date p {
+    font-size: 22px;
+    margin: 0;
+    color: #000000;
+    padding-bottom: 6px;
+    font-family: 'Proxima Nova Rg';
+    text-align: center;
+}
+.paragraphTittle {
+    text-align: center;
+    margin: 0;
+    font-size: 22px;
+    color: #000000;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    text-transform: capitalize;
+    font-family: 'Proxima Nova Rg';
+}
+h4.text-center.angelTest {
+    font-size: 32px;
+    text-transform: capitalize;
+    margin: 0;
+    padding-bottom: 20px;
+    text-align: center;
+    font-family: 'Proxima Nova Rg';
+    font-weight: bold;
+}
+h4.fromTest_hadding {
+    text-transform: capitalize;
+    margin: 0;
+    padding-bottom: 20px;
+    text-align: center;
+    font-family: 'Proxima Nova Rg';
+}
+.fromGroup_outer .form-control {
+    height: 64px;
+    border: 1px solid #cacaca;
+    border-radius: 5px;
+}
+.fromGroup_outer {
+    margin-bottom: 16px;
+}
+.fromGroup_outer label {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #000000;
+    font-family: 'Proxima Nova Rg';
+}
+button.btn.btn-primary.mt-2.submitBTN {
+    height: 51px;
+    /* width: 153px; */
+    padding: 10px 40px !important;
+    background: #f7941d;
+    border: 1px solid #f7941d;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 18px;
+    text-decoration: none;
+    font-family: 'Proxima Nova Alt Rg';
+}
+button.btn.btn-primary.mt-2.submitBTN:hover {
+    color: #f7941d;
+    background: none;
+}
+
+
+h4.cd-details-header.FromHadding {
+    font-size: 48px;
+    text-transform: capitalize;
+    margin: 0;
+    padding-bottom: 20px;
+    text-align: center;
+    font-family: 'Proxima Nova Rg';
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 6px;
+}
+p.cd-details.fromTest_paragraph {
+    text-align: center;
+    font-size: 18px;
+    margin: 0;
+    padding-bottom: 14px;
+    font-family: 'Proxima Nova Rg';
+}
+.outerFrom_middle {
+    justify-content: center;
+}
+h3.angelTest1 {
+    font-size: 32px;
+    text-transform: capitalize;
+    margin: 0;
+    padding-bottom: 20px;
+    text-align: center;
+    font-family: 'Proxima Nova Rg';
+}
+.page-children-detail {
+    margin-top: 80px;
+    position: relative;
+}
+.fancy-image img.img-responsive.img-cd {
+    height: 440px;
+    margin-right: 32px;
+    width: 25%;
+}
+.paragraph_date1 {
+    margin-bottom: 20px;
+}
+.outerImg {
+    text-align: center;
+}
+*
+/* mazion close here */
+
+.form-wrapper {
+    position: relative;
+}
+
+.form-wrapper .f-message {
+    position: absolute;
+    bottom: 90px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+    display: none;
+    text-shadow: 0px 0px 20px #fff;
+    padding: 0 5px;
+}
+
+.form-wrapper .f-success > h3 {
+    color: #8bc34a;
+    font-size: 22px;
+}
+
+.form-wrapper .f-error > h3 {
+    color: #f44336;
+    font-size: 22px;
+}
+
+.ajax-loading-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(255, 255, 255, .5) url('/static/img/ajax-loader.gif') 50% 50% no-repeat;
+}
+
+body {
+    position: relative;
+    -webkit-text-size-adjust: none;
+    top: 0 !important;
+    position: static !important;
+}
+
+body.loading {
+    overflow: hidden;
+}
+
+body.loading .ajax-loading-modal {
+    display: block;
+}
+/*
+CART
+*/
+.page-cart {
+    padding: 30px 0;
+}
+
+.page-cart .table {
+    text-align: center;
+}
+
+.page-cart .table th {
+    text-align: center;
+}
+
+/*.page-cart .table th:first-child { text-align: left; }*/
+/*.page-cart .table th:last-child { text-align: right; }*/
+.page-cart .table td {
+    vertical-align: middle;
+}
+
+.page-cart .btn-remove-from-cart {
+    color: #f44336;
+}
+
+.page-cart .btn-remove-from-cart:hover {
+    color: #f40b05;
+}
+
+.page-cart .td-cart-img {
+    width: 20%;
+}
+
+/* .page-cart .td-cart-img .img-cart-item {
+} */
+
+.page-cart .td-cart-subtotal {
+    width: 10%;
+}
+
+.page-cart .td-cart-qty {
+    width: 15%;
+}
+/* 
+.page-cart .cart-subtotal {
+} */
+
+/*
+MAGAZINE
+*/
+.page-magazine {
+    padding: 30px 0;
+}
+
+.page-magazine .magazine-box {
+    margin-bottom: 25px;
+    height: 200px;
+}
+
+.page-magazine .magazine-box .magazine-title {
+    font-size: 13px;
+    margin-top: 10px;
+    font-weight: 300;
+}
+
+/*
+MAGAZINE DETAIL
+*/
+.page-magazine-detail {
+    padding: 40px 0;
+}
+
