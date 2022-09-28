@@ -3,6 +3,7 @@
 
 from audioop import add
 from itertools import count
+from unittest.util import _MAX_LENGTH
 import uuid
 try:
     import urlparse
@@ -334,6 +335,7 @@ class SiteConfiguration(SingletonModel):
     site_phone = models.CharField(max_length=100, blank=True, null=True)
     facebook_page = models.URLField(max_length=201, blank=True, null=True)
     youtube_link = models.URLField(max_length=201, blank=True, null=True)
+    twitter_link=models.URLField(max_length=201, blank=True, null=True)
     site_email = models.EmailField(blank=True, null=True)
     banner_image = models.ImageField(
         upload_to=upload_banner_image_to, blank=True, null=True

@@ -1,5 +1,7 @@
 {% load static %}
+{% load aoj_extras %}
 <div class="footer">
+  {% get_site_config as config %}
     <div class="container children_arm">
       <div class="row footer_row1">
         <div class="col-md-5">
@@ -7,7 +9,11 @@
             <h6>Contact Us</h6>
 
             <p class="number_footer">Phone: (905) 492-5007</p>
+            {% if config.site_email %}
+            <p class="email_footer">Email: {{ config.site_email }}</p>
+            {% else %}
             <p class="email_footer">Email: aojchildmis@rogers.com</p>
+            {% endif %}
 
             <p class="address_hadding">Mailing Address:</p>
             <p class="2R2">P.O.Box 10 Pickering,Ontario L1V 2R2 Canda</p>
@@ -26,9 +32,22 @@
                 <img src="{% static 'demo/images/footer-logo.png' %}" alt="footer-logo">
               </div>
               <div class="social_ic">
-                <a href="https://www.facebook.com/ArmsOfJesus/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a>
+                {% if config.facebook_page %}
+                <a href="{{ config.facebook_page }}" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a>
+                {% else %}
+                <a href="https://www.facebook.com/ArmsOfJesus/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a> 
+                {% endif %}
+                {% if config.twitter_link %}
+                <a href="{{ config.twitter_link }}"><i class="fa-brands fa-twitter"></i></a>
+                {% else %}
                 <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                {% endif %}
+                
+                {% if config.youtube_link %}
+                <a href="{{ config.youtube_link }}" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a>
+                {% else %}
                 <a href="https://www.youtube.com/channel/UCGLEAhozRUSUDzP7o-NGD1A" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a>
+                {% endif %}
               </div>
             </div>
             <div class="footer_manu">

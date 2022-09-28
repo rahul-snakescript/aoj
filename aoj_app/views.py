@@ -44,17 +44,17 @@ class IndexView(TemplateView):
 
 
 class MediaView(ListView):
-    template_name = "aoj_app/pages/media.html"
+    template_name = "aoj_app/demo/media.html"
     model = Country
 
 
 class MagazineView(ListView):
-    template_name = "aoj_app/pages/magazine.html"
+    template_name = "aoj_app/demo/magazine.html"
     model = Magazine
 
 
 class MagazineDetailView(DetailView):
-    template_name = "aoj_app/pages/magazine_detail.html"
+    template_name = "aoj_app/demo/magazine_detail.html"
     model = Magazine
 
 
@@ -79,7 +79,7 @@ class ChildrenView(ListView):
 
 
 class ChildrenDetailView(DetailView):
-    template_name = "aoj_app/pages/children_detail.html"
+    template_name = "aoj_app/demo/children_detail.html"
     model = Children
 
     def get(self, *args, **kwargs):
@@ -91,27 +91,27 @@ class ChildrenDetailView(DetailView):
 
 class BlogView(ListView):
     model = BlogEntry
-    template_name = "aoj_app/pages/blog.html"
+    template_name = "aoj_app/demo/blog.html"
     paginate_by = 5
 
 
 class BlogDetailView(DetailView):
-    template_name = "aoj_app/pages/blog_detail.html"
+    template_name = "aoj_app/demo/blog_detail.html"
     model = BlogEntry
 
 
 class MissionDetailView(DetailView):
-    template_name = "aoj_app/pages/mission_detail.html"
+    template_name = "aoj_app/demo/mission/mission_detail.html"
     model = Mission
 
 
 class AboutPageDetailView(DetailView):
-    template_name = "aoj_app/pages/aboutpage_detail.html"
+    template_name = "aoj_app/demo/about/aboutpage_detail.html"
     model = AboutPage
 
 
 class DonateView(LoginRequiredMixin, TemplateView):
-    template_name = "aoj_app/pages/donate.html"
+    template_name = "aoj_app/demo/donate.html"
 
     def get_context_data(self, **kwargs):
         context = super(DonateView, self).get_context_data(**kwargs)
@@ -150,7 +150,7 @@ class CatalogueView(ListView):
 
 
 class CartView(TemplateView):
-    template_name = "aoj_app/pages/cart.html"
+    template_name = "aoj_app/demo/cart.html"
 
     def get_context_data(self, **kwargs):
         context = super(CartView, self).get_context_data(**kwargs)
@@ -160,7 +160,7 @@ class CartView(TemplateView):
 
 
 class CheckoutView(LoginRequiredMixin, TemplateView):
-    template_name = "aoj_app/pages/checkout.html"
+    template_name = "aoj_app/demo/checkout.html"
 
     def get_context_data(self, **kwargs):
         context = super(CheckoutView, self).get_context_data(**kwargs)
@@ -217,16 +217,6 @@ class SilentPostView(View):
             checkout_request.save()
 
         return HttpResponse()
-
-
-# class RegisterView(FormView):
-#     form_class = UserCreationForm
-#     template_name = "registration/register.html"
-#     success_url = reverse_lazy("index")
-
-#     def form_valid(self, form):
-#         form.save()
-#         return super(RegisterView, self).form_valid(form)
 
 
 """
@@ -704,7 +694,7 @@ class NewIndexView(TemplateView):
         return context
 
 class MediaView(TemplateView):
-    template_name= "aoj_app/pages/media.html"
+    template_name= "aoj_app/demo/media.html"
 
     def get_context_data(self, **kwargs):
         context = super(MediaView, self).get_context_data(**kwargs)
@@ -721,12 +711,12 @@ class MediaView(TemplateView):
 
 
 class AboutStaffView(ListView):
-    template_name = "aoj_app/demo/about_staff.html"
+    template_name = "aoj_app/demo/about/about_staff.html"
     model = AboutStaff
 
 
 class AboutbehaveView(TemplateView):
-    template_name = "aoj_app/demo/about_behave.html"
+    template_name = "aoj_app/demo/about/about_behave.html"
 
     def get_context_data(self, **kwargs):
         context = super(AboutbehaveView, self).get_context_data(**kwargs)
@@ -742,7 +732,7 @@ class AboutbehaveView(TemplateView):
 
 
 class AboutFundPolicyView(TemplateView):
-    template_name = "aoj_app/demo/about_fund_policy.html"
+    template_name = "aoj_app/demo/about/about_fund_policy.html"
 
     def get_context_data(self, **kwargs):
         context = super(AboutFundPolicyView, self).get_context_data(**kwargs)
@@ -759,7 +749,7 @@ class ContactUsView(TemplateView):
 
 
 class HistoryView(TemplateView):
-    template_name = "aoj_app/demo/about_histroy.html"
+    template_name = "aoj_app/demo/about/about_histroy.html"
 
     def get_context_data(self, **kwargs):
         context = super(HistoryView, self).get_context_data(**kwargs)
@@ -772,7 +762,7 @@ class HistoryView(TemplateView):
 
 
 class MissionView(TemplateView):
-    template_name = "aoj_app/demo/about_mission.html"
+    template_name = "aoj_app/demo/about/about_mission.html"
 
     def get_context_data(self, **kwargs):
         context = super(MissionView, self).get_context_data(**kwargs)
@@ -821,27 +811,27 @@ class RegisterView(View):
 
 class TeamsBlogView(ListView):
     model = TeamsBlog
-    template_name = "aoj_app/demo/teams_blog.html"
+    template_name = "aoj_app/demo/teams/teams_blog.html"
 
 
 class TeamsConsiderView(ListView):
     model = TeamsConsider
-    template_name = "aoj_app/demo/teams_consider.html"
+    template_name = "aoj_app/demo/teams/teams_consider.html"
 
 
 class TeamsTrainingView(ListView):
     model = TeamsTraining
-    template_name = "aoj_app/demo/teams_training.html"
+    template_name = "aoj_app/demo/teams/teams_training.html"
 
 
 class TeamsResourceView(ListView):
     model = TeamsResources
-    template_name = "aoj_app/demo/teams_resources.html"
+    template_name = "aoj_app/demo/teams/teams_resources.html"
 
 
 class TeamsCalenderView(ListView):
     model = TeamsCalenderDate
-    template_name = 'aoj_app/demo/teams_calender.html'
+    template_name = 'aoj_app/demo/teams/teams_calender.html'
 
     def get_context_data(self, **kwargs):
         context = super(TeamsCalenderView,self).get_context_data(**kwargs)

@@ -20,6 +20,7 @@
 
 <!--Start Form Section-->
   <div class="container contact_page_frm">
+    {% get_site_config as config %}
     <div class="row">
       <div class="col-md-6">
         <div class="mission_contact_address">
@@ -43,7 +44,11 @@
           <div class="row mailing_address">
             <div class="col-md-12">
               <h4>Tel:</h4>
+              {% if config.site_phone %}
+              <p><a href="tel:{{ config.site_phone }}">{{ config.site_phone }}</a></p>
+              {% else %}
               <p><a href="tel:(905) 492-5007">(905) 492-5007</a></p>
+              {% endif %}
               <h4>Fax:</h4>
               <p><a href="tel:(905) 492 - 8002">(905) 492 - 8002</a></p>
             </div>
@@ -69,7 +74,12 @@
           </div>
           <div class="row mailing_address">
             <div class="col-md-12 main_btm">
+              {% if config.site_email %}
+              <h4>Email: <a href="mailto:{{ config.site_email }}">{{ config.site_email }}</a></h4>
+              {% else %}
               <h4>Email: <a href="mailto:aojchildmis@rogers.com">aojchildmis@rogers.com</a></h4>
+              {% endif %}
+              
             </div>
           </div>
       </div>

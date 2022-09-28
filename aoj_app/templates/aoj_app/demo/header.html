@@ -1,8 +1,8 @@
 {% load static %}
-
+{% load aoj_extras %}
 
 <header>
-  
+  {% get_site_config as config %}
     <div class="header">
       <div class="children_header">
         <nav class="navbar navbar-expand-lg navbar-light">
@@ -27,7 +27,12 @@
                         {% endif %}
                       <li><a class="dropdown-item" href="{% url 'blog' %}">Director's Blog</a></li>
                       <li><a class="dropdown-item" href="{% url 'magazine' %}">Magazine</a></li>
+                      {% if config.facebook_page %}
+                      <li><a class="dropdown-item" href="{{ config.facebook_page }}">Facebook</a></li>
+                      {% else %}
                       <li><a class="dropdown-item" href="https://www.facebook.com/ArmsOfJesus/">Facebook</a></li>
+                      {% endif %}
+                      
                       <li><a class="dropdown-item" href="{% url 'media' %}">Media</a></li>
                     </ul>
                   </div>

@@ -1,0 +1,105 @@
+{% extends  'aoj_app/demo/base.html' %}
+{% load staticfiles i18n aoj_extras %}
+
+{% block body_temp %}
+{% get_desktop_nav %}
+    {% comment %} <div class="page-media">
+        <section class="aht">
+            <h1>"{% trans "And He took the children in His arms, <br> put His Hands on them and blessed them." %}"​</h1>
+            <h2>{% trans "​Mark 10:16" %}</h2>
+        </section>
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 col-lg-offset-1">
+                        {% for country in object_list %}
+                            <h1 class="country-name">{{ country.name }} {% trans "Videos" %}</h1>
+                            <hr>
+                            <div class="row">
+                                {% for video in country.media_set.all %}
+                                    <div class="col-sm-4">
+                                        <div class="video-box">
+                                            <div class="videoWrapper">
+                                            <iframe class="video-iframe" src="{{ video.get_youtube_embed_url }}"
+                                                    frameborder="0" allowfullscreen></iframe>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div> {% endcomment %}
+    {% if countries %}
+  <div class="video">
+    <div class="container children_arm">
+      <div class="row">
+        <div class="col-md-12 select_video">
+          <select name="cars" class="cars">
+            {% for country in countries %}
+              <option name="country_name" value="{{ country.id }}">
+              {{ country.name }}
+            </option>
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+
+      <!--change-->
+    <div class="row" id="append_row">
+      {% if country_video %}
+        {% for video in country_video %}
+          <div class="col-md-6 select_video">     
+            <div class="video_outer">
+              <iframe class="video-iframe" src="{{ video }}" frameborder="0" allowfullscreen=""></iframe>
+            </div>
+          </div>
+        {% endfor %}
+      {% else %}
+      <h3 class="text-center text-danger">Sorry! No Media</h3>
+      {% endif %}
+    </div>
+    </div>
+  </div>
+  {% endif %}
+
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script src="{% static 'demo/js/jquery.min.js' %}"></script>
+  <script>
+  $(document).ready(function() {
+    $('.cars').change(function(){
+        var name = $(this).val();
+        var row_div=$('#append_row') 
+      $.ajax({
+                  type: "GET",
+                  url: "{% url 'ajaxdropdown' %}",
+                  data: {
+                      "country": name,
+                  },
+                  success: function (data) {
+                    video_link=data.dataresponse
+                    if (video_link.length>0){
+                    video_link.forEach(function(item,index){
+                      var outer_div=$('<div>').addClass('col-md-6 select_video');
+                      var inner_div=$('<div>').addClass('video_outer');
+                      var videoframe=$('<iframe>').addClass('video-iframe').attr("src",item);
+                      $(inner_div).append(videoframe);
+                      $(outer_div).append(inner_div)
+                      $(row_div).append(outer_div); 
+                    });
+                  }
+                  else{
+                    var errormsg = $('<h3>').addClass('text-center text-danger')
+                    $(errormsg).append('Sorry! No Media')
+                    $(row_div).append(errormsg)
+                  }                     
+                  },
+              });
+              row_div.html('');
+})});
+
+</script>
+{% endblock %}

@@ -99,7 +99,7 @@ urlpatterns = [
     ),
     url(
         r"^calendar/$",
-        TeamsCalenderView.as_view(template_name="aoj_app/demo/teams_calender.html"),
+        TeamsCalenderView.as_view(template_name="aoj_app/demo/teams/teams_calender.html"),
         name="t_calender",
     ),
     url(
@@ -205,22 +205,17 @@ urlpatterns = [
     ),
     url(
         r"^demo/missions/haiti/$",
-        MissionHaitiView.as_view(template_name="aoj_app/demo/mission_haiti.html"),
+        MissionHaitiView.as_view(template_name="aoj_app/demo/mission/mission_haiti.html"),
         name="mission_haiti",
     ),
     url(
         r"^demo/missions/kenya/$",
-        MissionKenyaView.as_view(template_name="aoj_app/demo/mission_kenya.html"),
+        MissionKenyaView.as_view(template_name="aoj_app/demo/mission/mission_kenya.html"),
         name="mission_kenya",
     ),
     url(
         r"^demo/missions/guatemala/$",
-        MissionGuatemalaView.as_view(template_name="aoj_app/demo/guatemala_mission.html"),
+        MissionGuatemalaView.as_view(template_name="aoj_app/demo/mission/guatemala_mission.html"),
         name="guatemala_mission",
     ),
-    # url(
-    #     r"^demo/missions/kenya/$",
-    #     MissionGuatemalaView.as_view(template_name="aoj_app/demo/guatemala.html"),
-    #     name="Catalogue",
-    # ),
 ]
