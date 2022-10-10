@@ -68,8 +68,180 @@
     font-weight: bold;
     font-style: normal;
     font-display: swap;
-} 
+}
 
+
+/* donate css start here */
+.right_imgOuter {
+    display: flex;
+    flex-direction: column;
+}
+.mad h1 {
+    font-size: 48px;
+    font-weight: bold;
+    color: #555;
+    font-family: "Rabiohead";
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.page-donate .mad {
+    background: #fff;
+    padding: 30px 0;
+    text-align: center;
+}
+.page-donate .pd-body {
+    padding: 30px 0;
+    background: #f8f8f8;
+}
+.page-donate h4.text-center {
+    font-size: 18px;
+    margin: 10px 0;
+}
+.donateOuter_row {
+    justify-content: center;
+}
+.donateOuter_row h4 {
+    margin: 10px 0;
+    font-size: 18px;
+}
+form#form-donate label {
+    font-weight: 300;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+form#form-donate .form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 0px !important;
+    -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+form#form-donate .form-group {
+    margin-bottom: 15px;
+}
+.form-control:focus {
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgb(102 175 233 / 60%) !important;
+    border-color: #66afe9 !important;
+}
+.latterUse label {
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 10px !important;
+}
+.latterUse input[type="checkbox"] {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(-0%, -50%);
+}
+.btn-aoj {
+    border-radius: 0 !important;
+    color: #676767 !important;
+    border: 2px solid #676767 !important;
+    text-transform: uppercase !important;
+}
+.btn {
+    display: inline-block !important;
+    padding: 6px 12px !important;
+    margin-bottom: 0 !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    line-height: 1.42857143 !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+/* donate css close here */
+
+
+
+/* checkout page start here */
+.page-checkout {
+    padding: 30px 0;
+    background: #f8f8f8;
+}
+.page-checkout .c-box {
+    padding: 20px 30px !important;
+    margin-bottom: 20px !important;
+    border: 1px solid #d8d8d8 !important;
+    background: #fff !important;
+}
+#form-checkout h5.c-box-caption {
+    font-size: 14px;
+    margin: 10px 0;
+    font-weight: 500;
+}
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #eee;
+}
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 300;
+    font-size: 14px;
+}
+.laterUse {
+    margin-bottom: 10px !important;
+}
+.form-control {
+    border-radius: 0px !important; 
+}
+.groupName {
+    margin-bottom: 15px;
+}
+.btn-aoj:hover {
+    color: #fff !important;
+    background: #676767 !important;
+}
+h5.c-box-caption {
+    margin: 10px 0;
+    font-size: 14px;
+}
+.page-checkout .c-box.c-box-summary .table {
+    border-bottom: 1px dashed #d8d8d8;
+}
+.page-checkout .c-box.c-box-summary .table .td-img {
+    width: 25%;
+}
+img.img-responsive {
+    width: 100%;
+}
+h5.pr-name {
+    font-size: 14px;
+    margin: 0;
+}
+h5.pr-qty {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+/* checkout page close here */
 .children_arm {
     width: 1170px !important;
     max-width: 100%;

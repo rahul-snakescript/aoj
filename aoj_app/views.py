@@ -685,6 +685,7 @@ class NewIndexView(TemplateView):
             context['latest_post'] = None
         context["latest_magazines"] = Magazine.objects.all()
         context["countries"] = Country.objects.all()
+        context["blog"] = TeamsBlog.objects.all()[0:3]
         first_country = Country.objects.first()
         video_list = []
         first_country_video = Media.objects.filter(country=first_country)

@@ -36,14 +36,14 @@
 
                   <div class="row">
                     <div class="col-sm-6">
-                      <div class="form-group">
+                      <div class="form-group groupName">
                         <label for="cbfFname">{% trans "First Name" %}</label>
                         <input type="text" class="form-control" id="cbfFname"
                                name="x_first_name" required="required" value="{{ latest_cr.first_name }}">
                       </div>
                     </div>
                     <div class="col-sm-6">
-                      <div class="form-group">
+                      <div class="form-group groupName">
                         <label for="cbfLname">{% trans "Last Name" %}</label>
                         <input type="text" class="form-control" id="cbfLname"
                                name="x_last_name" required="required" value="{{ latest_cr.last_name }}">
@@ -51,12 +51,12 @@
                     </div>
                   </div>
 
-                  <div class="form-group">
+                  <div class="form-group groupName">
                     <label for="cbfAddress">{% trans "Address" %}</label>
                     <input type="text" class="form-control" id="cbfAddress" name="x_address"
                            required="required" value="{{ latest_cr.address }}">
                   </div>
-                  <div class="form-group">
+                  <div class="form-group groupName">
                     <label for="cbfCity">{% trans "City" %}</label>
                     <input type="text" class="form-control" id="cbfCity" name="x_city"
                            required="required" value="{{ latest_cr.city }}">
@@ -64,7 +64,7 @@
 
                   <div class="row">
                     <div class="col-sm-8">
-                      <div class="form-group">
+                      <div class="form-group groupName">
                         <label for="cbfState">{% trans "State" %}</label>
                         <input type="text" class="form-control" id="cbfState" name="x_state"
                                required="required" value="{{ latest_cr.state }}">
@@ -78,22 +78,22 @@
                       </div>
                     </div>
                   </div>
-                  <div class="form-group">
+                  <div class="form-group groupName">
                     <label for="cbfCountry">{% trans "Country" %}</label>
                     <input type="text" class="form-control" id="cbfCountry" name="x_country"
                            required="required" value="{{ latest_cr.country }}">
                   </div>
-                  <div class="form-group">
+                  <div class="form-group groupName">
                     <label for="cbfPhone">{% trans "Phone Number" %}</label>
                     <input type="text" class="form-control" id="cbfPhone" name="x_phone"
                            required="required" value="{{ latest_cr.phone }}">
                   </div>
-                  <div class="form-group">
+                  <div class="form-group groupName">
                     <label for="cbfExtra">{% trans "Extra Details (e.g. name of a sponsored child)" %}</label>
                     <textarea name="x_description" class="form-control" id="cbfExtra" rows="5"
                               required="required"></textarea>
                   </div>
-                  <div class="checkbox">
+                  <div class="checkbox laterUse">
                     <label>
                       <input type="checkbox" name="save_address"> {% trans "Save address for later use" %}
                     </label>

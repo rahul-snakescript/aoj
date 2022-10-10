@@ -77,6 +77,41 @@
   </section>
   <!-- vision close here -->
 
+
+
+  <!-- Blog start here -->
+  <div class="news_outer">
+    <div class="container children_arm">
+      <div class="hadding_lastestNews">
+        <h2>LATEST BLOG</h2>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+          standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled</p>
+      </div>
+      <div class="row lastestNews_outer">
+        {% for blog in blog %}
+        <div class="col-md-4">
+          <div class="news_item1">
+            <div class="latest_img">
+              <img src="{{blog.image.url}}" alt="">
+            </div>
+            <div class="donors_hadding">
+              <h4>{{blog.title}}</h4>
+              <p>{{blog.description}}</p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        
+      </div>
+      <div class="LatestNews_btn">
+        <a href="#">Read More</a>
+      </div>
+    </div>
+  </div>
+  <!-- news close here -->
+
+
+
   <!-- news start here -->
   <div class="news_outer">
     <div class="container children_arm">
