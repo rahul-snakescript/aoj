@@ -1,13 +1,13 @@
 asgiref==3.5.2
 beautifulsoup4==4.5.1
 Django==1.11.20
-django-authtools
-django-autotranslate
+django-authtools==1.7.0
+django-autotranslate==1.2.0
 django-carton==1.2.1
 django-ckeditor==6.0.0
-django-colorful
+django-colorful==1.3
 django-crispy-forms==1.8.1
-django-js-asset
+django-js-asset==1.2.3
 django-solo==1.1.2
 django-suit-redactor==0.0.4
 django-wysiwyg-redactor==0.4.9.1
