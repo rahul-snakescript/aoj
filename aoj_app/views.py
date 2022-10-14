@@ -15,7 +15,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from django.shortcuts import redirect, render
-from django.urls import reverse
+from django.core.urlresolvers import reverse, reverse_lazy
 from django.conf import settings
 
 from carton.cart import Cart
