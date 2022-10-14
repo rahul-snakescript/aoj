@@ -1,12 +1,25 @@
 {% extends  'aoj_app/demo/base.html' %}
-{% load staticfiles %}
+{% load static %}
 {% load aoj_extras %}
 {% block body_temp %}
-{% get_desktop_nav %}
+
+<section class="register_banner teamsBanner">
+    <header>
+        {% get_desktop_nav %}
+      </header>
+        <!-- header start here -->
+        
+        <div class="teamsConsider_outer">
+          <h1>MAGAZINE DETAIL</h1>
+        </div>
+  </section>
+
+
+
     <div class="page-magazine-detail">
         <div class="container">
-            <h2 class="text-center">{{ object.title }}</h2>
-            <div class="videoWrapper">
+            <h2 class="text-center magazineHadding">{{ object.title }}</h2>
+            <div class="videoWrapper magazineDetail_video">
                 <iframe src="{{ object.iframe_link }}" frameborder="0" allowfullscreen="true"></iframe>
             </div>
         </div>

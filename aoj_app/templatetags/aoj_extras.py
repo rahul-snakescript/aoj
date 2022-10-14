@@ -35,6 +35,7 @@ def get_desktop_nav(context):
     curr_page = req.resolver_match.url_name
     # except:
         # return {'missions': Mission.objects.all(), 'aboutpages': AboutPage.objects.all()}
+    print(curr_page)
     return {'curr_page': curr_page, 'path': req.path, 'items_count': cart.count, 'user': req.user,
             'missions': Mission.objects.all(), 'aboutpages': AboutPage.objects.all()}
 
@@ -47,6 +48,5 @@ def get_mobile_nav(context):
     req = context['request']
     cart = Cart(req.session, session_key=None)
     curr_page = req.resolver_match.url_name
-    print(curr_page)
     return {'curr_page': curr_page, 'path': req.path, 'items_count': cart.count, 'user': req.user,
             'missions': Mission.objects.all(), 'aboutpages': AboutPage.objects.all()}

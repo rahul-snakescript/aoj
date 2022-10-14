@@ -1,8 +1,9 @@
 ﻿*.pyc
 __pycache__/
 db.sqlite3
-staticfiles/
+staticfiles/ls
 .idea/
 migrations/
 keys.py
 media/
+env/

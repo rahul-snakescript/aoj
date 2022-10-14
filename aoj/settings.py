@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 
 import os
 
-from django.utils.translation import gettext_lazy as _
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -54,12 +54,14 @@ INSTALLED_APPS = [
     'redactor',
     'aoj_app',
     'dashboard',
+    
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 if DEBUG:
     INSTALLED_APPS += ["autotranslate"]
 # INSTALLED_APPS += ["autotranslate"]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -69,11 +71,23 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'django.middleware.locale.LocaleMiddleware',
+    # 'cms.middleware.user.CurrentUserMiddleware',
+    # 'cms.middleware.page.CurrentPageMiddleware',
+    # 'cms.middleware.toolbar.ToolbarMiddleware',
+    # 'cms.middleware.language.LanguageCookieMiddleware',
+    # 'cms.middleware.utils.ApphookReloadMiddleware',
+    
     # 'aoj_app.middlewares.RequestLogMiddleware',
 ]
 
 ROOT_URLCONF = 'aoj.urls'
+
+# LANGUAGES = [
+#     ('en', 'English'),
+#     ('de', 'German'),
+# ]
 
 TEMPLATES = [
     {
@@ -87,12 +101,20 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # 'sekizai.context_processors.sekizai',
+                # 'cms.context_processors.cms_settings',
+                # 'django.template.context_processors.i18n'
             ],
         },
     },
 ]
 
 WSGI_APPLICATION = 'aoj.wsgi.application'
+# X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+# CMS_TEMPLATES = [
+#     ('home.html', 'Home page template'),
+# ]
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases

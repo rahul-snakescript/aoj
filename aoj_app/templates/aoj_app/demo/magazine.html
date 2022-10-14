@@ -1,21 +1,33 @@
 {% extends  'aoj_app/demo/base.html' %}
-{% load staticfiles i18n aoj_extras %}
+{% load static i18n aoj_extras %}
 
 {% block body_temp %}
-{% get_desktop_nav %}
+
+<section class="register_banner teamsBanner">
+    <header>
+        {% get_desktop_nav %}
+      </header>
+        <!-- header start here -->
+        
+        <div class="teamsConsider_outer">
+          <h1>MAGAZINE</h1>
+        </div>
+</section>
+
+
     <div class="page-magazine">
         <div class="container">
-            <div class="row">
+            <div class="row magazinePage_row">
                 <div class="col-lg-10 col-lg-offset-1">
-                    <h1 class="text-center">{% trans "Magazines" %}</h1>
+                    <h1 class="text-center magazineHadding">{% trans "Magazines" %}</h1>
                     <hr>
-                    <div class="row">
+                    <div class="row RowMagazine">
                         {% for magazine in object_list %}
                             <div class="col-lg-2 col-md-3 col-sm-3 col-xs-4">
                                 <div class="magazine-box">
                                     {% if magazine.iframe_link %}
                                         <a href="{% url 'magazine_detail' magazine.slug %}">
-                                            <img class="img-responsive" src="{{ magazine.image.url }}" alt="">
+                                            <img class="magazine_reponsive" src="{{ magazine.image.url }}" alt="">
                                         </a>
                                     {% else %}
                                         <img class="img-responsive" src="{{ magazine.image.url }}" alt="">

@@ -17,7 +17,7 @@
 </section>
   <div class="page-checkout">
     <div class="container">
-      <div class="row">
+      <div class="row checkoutRow_page">
         <div class="col-lg-10 col-lg-offset-1">
           <div class="row">
             <div class="col-sm-6">
@@ -146,7 +146,7 @@
                   {% endfor %}
                   </tbody>
                 </table>
-                <h3 class="text-right">{% trans "TOTAL" %}: ${{ cart.total }}</h3>
+                <h3 class="text-right totalValue">{% trans "TOTAL" %}: ${{ cart.total }}</h3>
               </div>
             </div>
           </div>

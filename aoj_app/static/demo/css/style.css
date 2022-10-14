@@ -192,6 +192,7 @@ form#form-donate .form-group {
     font-size: 14px;
     margin: 10px 0;
     font-weight: 500;
+    color: #333333;
 }
 hr {
     margin-top: 20px;
@@ -230,18 +231,253 @@ h5.c-box-caption {
     width: 25%;
 }
 img.img-responsive {
-    width: 100%;
+    width: 50%;
+}
+img.img-responsive:last-child {
+    width: auto;
 }
 h5.pr-name {
     font-size: 14px;
     margin: 0;
+    font-weight: bold;
 }
 h5.pr-qty {
     margin: 10px 0;
     font-size: 14px;
+    font-weight: 500;
+}
+.checkoutRow_page {
+    justify-content: center;
+}
+h5.pr-subtotal {
+    margin-top: 0;
+    text-align: right;
+    font-size: 17px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+.c-box-summary .table tbody {
+    border-style: dotted;
+}
+.c-box-summary .table tbody tr, td, th {
+    border-color: inherit;
+    border-style: dotted;
+    border-width: 0;
 }
 
+element.style {
+}
+.page-checkout .c-box.c-box-summary .table .td-img {
+    width: 25%;
+}
+.table > :not(caption) > * > * {
+    border-bottom-width: inherit !important;
+}
+h3.totalValue {
+    text-align: right;
+    font-size: 24px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    font-weight: 500;
+    color: #333333;
+}
+#form-checkout .form-group {
+    margin-bottom: 15px;
+}
 /* checkout page close here */
+
+/* director blog start here */
+.blog-title a {
+    color: #555555;
+    text-decoration: none;
+}
+.blog-title a:hover {
+    color: #555555;
+    text-decoration: underline;
+}
+h2.blog-title {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+p.text-muted.DateText {
+    color: #777777 !important;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+.VideoIframe {
+    margin: 0 0px 10px 0px;
+}
+.align_socialIc {
+    display: flex;
+}
+hr {
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+    border: 0 !important;
+    border-top: 1px solid #eee !important;
+}
+.blogPage_Row {
+    justify-content: center;
+}
+.page-blog {
+    margin-top: 20px;
+}
+/* director blog close here */
+
+
+/* magazine start here */
+h1.magazineHadding {
+    margin-bottom: 10px;
+    margin-top: 20px;
+    font-size: 36px;
+    font-weight: 500;
+    color: #333333;
+}
+.magazinePage_row {
+    justify-content: center;
+}
+.RowMagazine {
+    justify-content: center;
+}
+/* magazine close here */
+
+
+/* media css start here */
+.mediaSec_video {
+    margin-top: 60px;
+}
+.magazineDetail_video iframe {
+    width: 100%;
+    position: relative;
+    height: 666px;
+}
+.magazineHadding {
+    margin-bottom: 10px;
+    margin-top: 20px;
+    color: #333333;
+}
+/* media css close here */
+
+/* cart css start here */
+.cartItem_outer {
+    background: #f8f8f8;
+}
+.CartRow_OutEr {
+    justify-content: center;
+}
+.CartRow_OutEr .table>thead>tr>th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dddddd;
+    border-bottom-width: 2px !important;
+    border-bottom-color: #dddddd !important;
+    font-size: 14px;
+    font-weight: 500;
+}
+.tdCARD_item {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: aliceblue;
+}
+.tdCARD_item h5.cart-pr-name {
+    font-size: 14px;
+    margin: 10px 0;
+    font-weight: 500;
+}
+.tdCARD_item h5 {
+    font-size: 14px;
+    margin: 10px 0;
+}
+.tdCARD_item .input-group {
+    height: 34px;
+    padding: 0px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+}
+button.btn.btn-default.btn-primary.btn-number.btn-qty-dec {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+    padding: 0px 12px !important;
+    height: 100%;
+    border-radius: 3px 0px 0 3px;
+    width: 39px;
+}
+.tdCARD_item input.form-control.input-number.cart-qty-input {
+    padding: 0;
+    width: 47px;
+    padding: 0px 12px;
+}
+button.btn.btn-default.btn-primary.btn-number.btn-qty-inc {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+    padding: 0px 12px !important;
+    height: 100%;
+    border-radius: 3px 0px 0 3px;
+    width: 39px;
+}
+span.glyphicon.glyphicon-plus {
+    position: relative;
+}
+i.fa.fa-times-circle.fa-2x:before {
+    content: "\f057";
+    font-weight: bold;
+}
+span.glyphicon.glyphicon-plus:before {
+    content: "\002b";
+    font-size: 21px;
+    font-weight: bold;
+}
+span.glyphicon.glyphicon-minus {
+    position: relative;
+}
+span.glyphicon.glyphicon-minus:before {
+    content: "\2212";
+    font-size: 21px;
+    font-weight: bold;
+}
+h3.text-right {
+    text-align: right;
+    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #333333;
+}
+.cartCheckout {
+    text-align: right;
+}
+.cartBtn_outer a {
+    display: block;
+    width: 150px;
+    font-size: 18px;
+    color: #ffffff;
+    background: #f7941d;
+    padding: 10px 19px!IMPORTANT;
+    border-radius: 9px !important;
+    margin-top: 16px;
+    font-family: 'Proxima Nova Alt Rg';
+    border: 1px solid #f7941d;
+    text-decoration: none;
+    margin: 0 auto;
+    text-transform: uppercase;
+    text-align: center;
+}
+.cartBtn_outer a:hover {
+    background: none;
+    color: #f7941d;
+}
+/* cart css close here */
+
+
 .children_arm {
     width: 1170px !important;
     max-width: 100%;
@@ -300,12 +536,12 @@ h5.pr-qty {
         color: #174cb5;
     }
     .header ul.navbar-nav.ms-auto.mb-2.mb-lg-0 {
-        margin-right: 42px;
+        margin-right: 31px;
     }
     .header .nav-item a.nav-link {
         font-size: 18px;
         color: #000000;
-        padding-left: 48px !important;
+        padding-left: 32px !important;
         font-family: 'Proxima Nova Rg';
     }
     .active {
@@ -321,6 +557,10 @@ h5.pr-qty {
         margin: 0 auto;
     }
 
+
+    .magazine_reponsive {
+        width: 100%;
+    }
     section.banner {
         background: url(../images/banner.jpg);
         /*height: 966px;*/
@@ -1653,7 +1893,7 @@ h2.mission_teamHadding {
         color: #f7941d;
     }
     .mamber { 
-        margin-top: 102px;
+        margin-top: 60px;
     }
     .leftSec_missionaryImg img {
         width: 100%;
@@ -1879,7 +2119,7 @@ h2.mission_teamHadding {
         font-size: 18px;
         color: #ffffff;
         text-decoration: none;
-        margin-left: 27px;
+        margin-left: 10px;
         font-family: 'Proxima Nova Alt Rg';
     }
 }

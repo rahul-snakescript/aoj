@@ -5,7 +5,7 @@ from django.urls import reverse_lazy
 from django.views.generic import TemplateView, UpdateView, ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-from authtools.views import PasswordChangeView
+from django.contrib.auth.views import PasswordChangeView
 
 
 class DashOrdersView(LoginRequiredMixin, ListView):

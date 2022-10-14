@@ -1,14 +1,16 @@
 {% extends 'aoj_app/demo/base.html' %}
-{% load staticfiles i18n %}
+{% load static i18n %}
 {% load aoj_extras %}
 
   {% block body_temp %}
+  {% get_site_config as config %}
   <!-- banner start here -->
-  <section class="banner">
+  <section class="banner" {% if config.banner_image %}style="background-image:url({{ config.banner_image.url }});"{% endif %}>
     {% get_desktop_nav %}
     <!-- header start here -->
     
   <!-- header close here -->
+ 
     <div class="container children_arm">
       <div class="row">
         <div class="col-md-12">
@@ -84,15 +86,16 @@
     <div class="container children_arm">
       <div class="hadding_lastestNews">
         <h2>LATEST BLOG</h2>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-          standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled</p>
+        
       </div>
       <div class="row lastestNews_outer">
         {% for blog in blog %}
         <div class="col-md-4">
           <div class="news_item1">
             <div class="latest_img">
+              <a href="{{ blog.image.url }}" target="_blank">
               <img src="{{blog.image.url}}" alt="">
+              </a>
             </div>
             <div class="donors_hadding">
               <h4>{{blog.title}}</h4>
@@ -104,7 +107,7 @@
         
       </div>
       <div class="LatestNews_btn">
-        <a href="#">Read More</a>
+        <a href="{% url 't_blog'%}">Read More</a>
       </div>
     </div>
   </div>

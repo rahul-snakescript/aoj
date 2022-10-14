@@ -15,7 +15,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from django.shortcuts import redirect, render
-from django.core.urlresolvers import reverse, reverse_lazy
+from django.urls import reverse
 from django.conf import settings
 
 from carton.cart import Cart
@@ -334,7 +334,17 @@ def ajax_product_decrement_quantity(request):
             if item.product == product:
                 qty = item.quantity
                 _item = item
-        cart.set_quantity(product, quantity=qty - 1)
+        if qty>1:
+            cart.set_quantity(product, quantity=qty - 1)
+        else:
+            return JsonResponse({
+                "error": 1,
+                "message": "Quantity can't be decremented",
+                "qty": _item.quantity,
+                "item_subtotal": _item.subtotal,
+                "total": cart.total,
+                "count": cart.count,
+            })
         return JsonResponse(
             {
                 "error": 0,
@@ -685,7 +695,8 @@ class NewIndexView(TemplateView):
             context['latest_post'] = None
         context["latest_magazines"] = Magazine.objects.all()
         context["countries"] = Country.objects.all()
-        context["blog"] = TeamsBlog.objects.all()[0:3]
+        context["blog"] = TeamsBlog.objects.order_by('-id')[0:3]
+        context['curr_page']=self.request.resolver_match.url_name
         first_country = Country.objects.first()
         video_list = []
         first_country_video = Media.objects.filter(country=first_country)

@@ -2,6 +2,7 @@
 # from email.quoprimime import body_check
 
 from audioop import add
+from email.policy import default
 from itertools import count
 from unittest.util import _MAX_LENGTH
 import uuid
@@ -14,10 +15,8 @@ from django.contrib.auth.models import (
 )
 from django.db import models
 from django.template.defaultfilters import slugify
-try:
-    from django.core.urlresolvers import reverse
-except:
-    from django.urls import reverse
+
+from django.urls import reverse
 # from django.contrib.auth import get_user_model
 from django.utils import timezone
 
@@ -132,6 +131,7 @@ class AuthUserManager(BaseUserManager):
             password=password,
         )
         user.is_admin = True
+        user.is_superuser = True
         user.save(using=self._db)
         return user
 
@@ -154,6 +154,8 @@ class AuthUser(AbstractBaseUser):
 
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
+    is_superuser = models.BooleanField(default=False)
+    
 
     objects = AuthUserManager()
 
@@ -164,15 +166,15 @@ class AuthUser(AbstractBaseUser):
         return self.email
 
     def has_perm(self, perm, obj=None):
-        "Does the user have a specific permission?"
-        # Simplest possible answer: Yes, always
-        return True
+        return self.is_superuser
+
+
+    def has_perms(self, perm, obj=None):
+        return self.is_superuser
+
 
     def has_module_perms(self, app_label):
-        "Does the user have permissions to view the app `app_label`?"
-        # Simplest possible answer: Yes, always
-        return True
-    
+        return self.is_superuser
     def get_short_name(self):
         "Returns the short name for the user."
         return self.first_name
@@ -182,7 +184,7 @@ class AuthUser(AbstractBaseUser):
         "Is the user a member of staff?"
         # Simplest possible answer: All admins are staff
         return self.is_admin
-
+    
 
 class Product(models.Model):
     name = models.CharField(max_length=128, blank=False, null=False)
@@ -213,7 +215,7 @@ class Country(models.Model):
 
 
 class Media(models.Model):
-    country = models.ForeignKey(Country)
+    country = models.ForeignKey(Country,on_delete=models.CASCADE)
     video = models.URLField(
         max_length=201, blank=False, null=False, help_text="Youtube video link"
     )
@@ -263,7 +265,7 @@ class Children(models.Model):
     slug = models.SlugField(max_length=128, blank=True, unique=True)
     born = models.DateField(blank=True, null=True)
     location = models.CharField(max_length=128, blank=False, null=False)
-    country = models.ForeignKey(Country)
+    country = models.ForeignKey(Country,on_delete=models.CASCADE)
     description = models.TextField(blank=True, null=True, max_length=2000)
     checked_out = models.BooleanField(default=False)
     image1 = models.ImageField(
@@ -374,7 +376,7 @@ class CheckoutRequest(models.Model):
     items = models.TextField(blank=True, null=True)
     typ = models.CharField(max_length=15, choices=TYP_CHOICES, default=CHECKOUT)
     paid = models.BooleanField(default=False)
-    user = models.ForeignKey(AuthUser, blank=True, null=True)
+    user = models.ForeignKey(AuthUser,on_delete=models.CASCADE, blank=True, null=True)
     # to determine "paid", from silent post
     timestamp = models.CharField(max_length=15)
     fp_sequence = models.CharField(max_length=15)
