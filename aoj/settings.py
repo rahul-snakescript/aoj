@@ -51,7 +51,7 @@ INSTALLED_APPS = [
     'colorful',
     'authtools',
     'crispy_forms',
-
+    'redactor',
     'aoj_app',
     'dashboard',
 ]
@@ -169,7 +169,7 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # MEDIA_URL = '/media/'
 MEDIA_URL = '/media/'
-
+MAX_UPLOAD_SIZE = "5242880"
 CART_PRODUCT_MODEL = 'aoj_app.models.Product'
 
 REDACTOR_OPTIONS = {'lang': 'en', 'plugins': ['video', 'imagemanager', 'source', 'properties', 'alignment']}
