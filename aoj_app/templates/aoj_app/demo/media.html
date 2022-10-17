@@ -38,7 +38,7 @@
         {% for video in country_video %}
           <div class="col-md-6 select_video">     
             <div class="video_outer">
-              <iframe class="video-iframe" src="{{ video }}" frameborder="0" allowfullscreen=""></iframe>
+              <iframe class="video-iframe" src="{{ video.get_youtube_embed_url }}" frameborder="0" allowfullscreen=""></iframe>
             </div>
           </div>
         {% endfor %}
