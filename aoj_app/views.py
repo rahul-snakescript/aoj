@@ -701,7 +701,9 @@ class NewIndexView(TemplateView):
         video_list = []
         first_country_video = Media.objects.filter(country=first_country)
         for video in first_country_video:
-            video_list.append(video.video)
+            video_new=video.video.replace("watch?v=","embed/")
+            print(video_new)
+            video_list.append(video_new)
         context['country_video'] = video_list
         return context
 
@@ -715,9 +717,10 @@ class MediaView(TemplateView):
         video_list = []
         first_country_video = Media.objects.filter(country=first_country)
         for video in first_country_video:
-            video_list.append(video.video)
+            video_new=video.video.replace("watch?v=","embed/")
+            print(video_new)
+            video_list.append(video_new)
         context['country_video'] = video_list
-        print(context)
         return context
 
 

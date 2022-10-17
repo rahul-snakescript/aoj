@@ -231,12 +231,11 @@ class Media(models.Model):
             embed_url = "https://player.vimeo.com/video/%s" % vimeo_vid
         return embed_url
 
-    def __unicode__(self):
+    def __str__(self):
         return self.video
 
     class Meta:
         ordering = ["-created_date"]
-
 
 class Magazine(models.Model):
     title = models.CharField(max_length=128, blank=False, null=False)
