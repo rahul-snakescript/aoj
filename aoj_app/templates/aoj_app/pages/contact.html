@@ -1,0 +1,89 @@
+{% extends  'aoj_app/base_template.html' %}
+{% load staticfiles i18n aoj_extras %}
+
+{% block template_body %}
+    {% get_site_config as config %}
+    <div class="page-contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h3>​{% trans "Mission Centre" %}: Canada</h3>
+                            <h4>​{% trans "Mailing Address" %}:</h4>
+                            <p>P. O. Box 10<br>
+                                Pickering,­Ontario<br>
+                                L1V 2R2<br>
+                                Canada</p><br>
+
+                            <h4>{% trans "Office Address" %}:</h4>
+                            <p>1730 McPherson Ct., Unit 19<br>
+                                Pickering,­Ontario<br>
+                                L1W 3E6<br>
+                                Canada</p>
+
+                            <h4>Tel:</h4>
+                            <p>{{ config.site_phone }}</p>
+                            <h4>Fax:</h4>
+                            <p>(905) 492 - 8002</p><br>
+
+                            <h4>Email: {{ config.site_email }}</h4>
+
+                            <h3>​{% trans "Or Send Us A Message" %}:</h3>
+                            <div class="form-wrapper">
+                                <!-- <form action="" method="POST" id="form-contact"> -->
+                                <form action="" method="POST">
+
+                                    {% csrf_token %}
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="cbfFname">{% trans "First Name" %}</label>
+                                                <input type="text" class="form-control" id="cbfFname" name="first_name">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="cbfLname">{% trans "Last Name" %}</label>
+                                                <input type="text" class="form-control" id="cbfLname" name="last_name">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cbfEmail">Email</label>
+                                        <input type="email" class="form-control" id="cbfEmail" name="email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cbfMessage">{% trans "Message" %}</label>
+                                        <textarea class="form-control" name="message" id="" cols="30" rows="10" id="cbfMessage"></textarea>
+                                    </div>
+                                    <button class="btn btn-aoj" type="submit">{% trans "SEND MESSAGE" %}</button>
+                                </form>
+                                <div class="f-message f-success">
+                                    <h3>{% trans "Thank you. Your information has been submitted." %}</h3>
+                                </div>
+                                <div class="f-message f-error">
+                                    <h3>{% trans "Something went wrong, try refreshing and submitting the form again." %}</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <h3>{% trans "Mission Centre" %}: USA</h3>
+                            <h4>​​{% trans "Mailing Address" %}:</h4>
+                            <p>P.O. Box 2010<br>
+                                Buffalo NY, U.S.A.<br>
+                                14231-2010</p>
+
+                            <h4>Tel:</h4>
+                            <p>(716) 689 - 4858</p>
+                            <h4>Fax:</h4>
+                            <p>(716) 688 - 5049</p><br>
+
+                            <img src="{% static 'img/ii2.png' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

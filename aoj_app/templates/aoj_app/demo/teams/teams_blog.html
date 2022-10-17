@@ -1,0 +1,89 @@
+{% extends 'aoj_app/demo/base.html' %}
+{% load staticfiles i18n %}
+{% load aoj_extras %}
+
+{% block body_temp %}
+  <!-- banner start here -->
+  <section class="register_banner teamsBanner">
+    {% get_desktop_nav %}
+    <!-- header start here -->
+    
+    <div class="teamsConsider_outer">
+      <h1>TEAMS</h1>
+    </div>
+  </section>
+  <!-- header close here -->
+
+  <!-- consider serving start here -->
+  <div class="considerServing">
+    <div class="container children_arm">
+      <div class="consider_hadding">
+        <h2>Teams Blogs</h2>
+        </div>
+          {% if object_list %}
+            <div class="row">
+              {% for blog in object_list %}
+                <div class="col-md-4">
+                  <div class="considerImg_left_side">
+                    {% if blog.image %}
+                    <a href="{{ blog.image.url }}" target="_blank">
+                    <img src="{{ blog.image.url }}" alt="">
+                    </a>
+                    {% else %}
+                    <img src="" alt="">
+                    {% endif %}
+                      <div class="teamsBlogs_item">
+                          <h5>{{ blog.title }}</h5>
+                          <p>{{ blog.description }}</p>
+                      </div>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+        </div>
+      </div>
+        {% else %}
+      <div class="row">
+        <div class="col-md-4">
+          <div class="considerImg_left_side">
+            <img src="{% static 'demo/images/Team_Blogs1.jpg' %}" alt="">
+            <div class="teamsBlogs_item">
+              <h5>Thanks to Donors</h5>
+               <p>Lorem Ipsum is simply dummy text of the 
+                printing and typesetting industry. Lorem 
+                Ipsum has been the industry's</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="considerImg_left_side">
+            <img src="{% static 'demo/images/Team_Blogs2.jpg' %}" alt="">
+            <div class="teamsBlogs_item">
+              <h5>School Dedication</h5>
+              <p>Lorem Ipsum is simply dummy text of the 
+                printing and typesetting industry. Lorem 
+                Ipsum has been the industry's</p>
+            </div>           
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="considerImg_left_side">
+            <img src="{% static 'demo/images/Team_Blogs3.jpg' %}" alt="">
+            <div class="teamsBlogs_item">
+              <h5>Urgent Prayer Request</h5>
+              <p>Lorem Ipsum is simply dummy text of the 
+                printing and typesetting industry. Lorem 
+                Ipsum has been the industry's</p>
+            </div>
+          </div>
+        </div>
+      </div>
+        {% endif %}
+        
+    </div>
+  </div>
+  <!-- consider serving close here -->
+
+  <!-- mamber start here -->
+
+{% endblock %}

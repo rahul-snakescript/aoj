@@ -1,0 +1,137 @@
+{% extends 'aoj_app/demo/base.html' %}
+{% load staticfiles i18n %}
+{% load aoj_extras %}
+
+{% block body_temp %}
+  <!-- banner start here -->
+  <section class="register_banner teamsBanner">
+    {% get_desktop_nav %}
+    <!-- header start here -->
+
+    <div class="teamsConsider_outer">
+      <h1>TEAMS</h1>
+    </div>
+  </section>
+  <!-- header close here -->
+
+  <!-- consider serving start here -->
+  <div class="TeamResources_outer">
+    <div class="container children_arm">
+      <div class="TeamResources_hadding">
+        <h2>Resources</h2>
+        <p>Applications, Forms & Helpful Items</p>
+      </div>
+      {% if object_list %}
+      <div class="row">
+        {% for data in object_list %}
+        <div class="col-md-3 resources_applications">
+          <div class="TeamResources_1">
+            <p class="mannual_resources">{{ data.title }}</p>
+            <img src="{% static 'demo/images/TeamResources_ic.png' %}" alt="">
+            <p class="mannual_resources1">{{ data.media|cut:"teamsresource/" }}</p>
+            <div class="download_files">
+              <a href="{{ data.media.url }}" target="_blank">Download file</a>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        {% else %}
+        <div class="row">
+        <div class="col-md-3 resources_applications">
+          <div class="TeamResources_1">
+            <p class="mannual_resources">Team Manual 2015</p>
+            <img src="{% static 'demo/images/TeamResources_ic.png' %}" alt="">
+            <p class="mannual_resources1">teammanual2015.pdf</p>
+
+            <div class="download_files">
+              <a href="#">Download file</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 resources_applications">
+          <div class="TeamResources_1">
+            <p class="mannual_resources">Team Manual 2015</p>
+            <img src="{% static 'demo/images/TeamResources_ic.png' %}" alt="">
+            <p class="mannual_resources1">teammanual2015.pdf</p>
+
+            <div class="download_files">
+              <a href="#">Download file</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 resources_applications">
+          <div class="TeamResources_1">
+            <p class="mannual_resources">Team Manual 2015</p>
+            <img src="{% static 'demo/images/TeamResources_ic.png' %}" alt="">
+            <p class="mannual_resources1">teammanual2015.pdf</p>
+
+            <div class="download_files">
+              <a href="#">Download file</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 resources_applications">
+          <div class="TeamResources_1">
+            <p class="mannual_resources">Team Manual 2015</p>
+            <img src="{% static 'demo/images/TeamResources_ic.png' %}" alt="">
+            <p class="mannual_resources1">teammanual2015.pdf</p>
+
+            <div class="download_files">
+              <a href="#">Download file</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row resources_team">
+        <div class="col-md-3 resources_applications">
+          <div class="TeamResources_1">
+            <p class="mannual_resources">Behaviour & Expectation Form</p>
+            <img src="{% static 'demo/images/TeamResources_ic.png' %}" alt="">
+            <p class="mannual_resources1">behaviour.pdf</p>
+
+            <div class="download_files">
+              <a href="#">Download file</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 resources_applications">
+          <div class="TeamResources_1">
+            <p class="mannual_resources">Release Form</p>
+            <img src="{% static 'demo/images/TeamResources_ic.png' %}" alt="">
+            <p class="mannual_resources1">release.pdf</p>
+
+            <div class="download_files">
+              <a href="#">Download file</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 resources_applications">
+          <div class="TeamResources_1">
+            <p class="mannual_resources">Evaluation Form</p>
+            <img src="{% static 'demo/images/TeamResources_ic.png' %}" alt="">
+            <p class="mannual_resources1">evaluation.pdf</p>
+
+            <div class="download_files">
+              <a href="#">Download file</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 resources_applications">
+          <div class="TeamResources_1">
+            <p class="mannual_resources">Short Term Application Form</p>
+            <img src="{% static 'demo/images/TeamResources_ic.png' %}" alt="">
+            <p class="mannual_resources1">stapplicationform.pdf</p>
+
+            <div class="download_files">
+              <a href="#">Download file</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  <!-- consider serving close here -->
+
+
+{% endblock %}

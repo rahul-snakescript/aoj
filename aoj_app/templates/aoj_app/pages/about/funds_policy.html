@@ -1,0 +1,28 @@
+{% extends  'aoj_app/base_template.html' %}
+{% load i18n staticfiles %}
+
+{% block template_body %}
+    <div class="page-about page-funds-policy">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <h1 class="pa-header">{% trans "Our Policy on Using Funds" %}</h1>
+                    <p class="paragraph">{% blocktrans trimmed %}
+                        Spending funds is confined to board approved programs and projects. Each
+                        restricted contribution designated towards a board approved project or program will be used as
+                        designated with the understanding that when the need for such a program or project has been met,
+                        or cannot be completed for any reason determined by the board, the remaining restricted
+                        contributions designated for such programs will be used where most needed.
+                    {% endblocktrans %}
+                    </p>
+                    <h4 class="text-center">{% trans "We are a proud member of" %}:</h4>
+                    <div class="text-center">
+                        <img src="{% static 'img/donate-i2.png' %}" alt="">
+                    </div>
+                    <a class="cccc-link" href="https://www.cccc.org/" target="_blank">
+                        {% trans "Canadian Council of Christian Charities" %}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

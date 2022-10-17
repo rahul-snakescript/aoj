@@ -1,0 +1,85 @@
+{% extends 'aoj_app/demo/base.html' %}
+{% load staticfiles i18n %}
+{% load aoj_extras %}
+
+{% block body_temp %}
+  <!-- banner start here -->
+  <section class="register_banner teamsBanner">
+    {% get_desktop_nav %}
+
+    <div class="teamsConsider_outer">
+      <h1>TEAMS</h1>
+    </div>
+  </section>
+  <!-- header close here -->
+
+  <!-- consider serving start here -->
+  <div class="considerServing">
+    <div class="container children_arm">
+      <div class="consider_hadding">
+        <h2>Consider Serving</h2>
+      </div>
+      {% if object_list %}
+      <div class="row">
+        {% for data in object_list %}
+        <div class="col-md-6 considerServing_items">
+          <div class="considerImg_left_side">
+            <a href="{{ data.image.url }}" target="_blank">
+              <img src="{{ data.image.url }}" alt="">
+            </a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% else %}
+      <div class="row">
+        <div class="col-md-6 considerServing_items">
+          <div class="considerImg_left_side">
+            <img src="{% static 'demo/images/consider_img1.jpg' %}" alt="">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="considerImg_left_side considerServing_items">
+            <img src="{% static 'demo/images/consider_img2.jpg' %}" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="row outer_consider">
+        <div class="col-md-6 considerServing_items">
+          <div class="considerImg_left_side">
+            <img src="{% static 'demo/images/consider_img3.jpg' %}" alt="">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="considerImg_left_side considerServing_items">
+            <img src="{% static 'demo/images/consider_img4.jpg' %}" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="row outer_consider">
+        <div class="col-md-6 considerServing_items">
+          <div class="considerImg_left_side">
+            <img src="{% static 'demo/images/consider_img5.jpg' %}" alt="">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="considerImg_left_side considerServing_items">
+            <img src="{% static 'demo/images/consider_img6.jpg' %}" alt="">
+          </div>
+        </div>
+      </div>
+      {% endif %}
+
+      <div class="mission_team">
+        <h6>Interested in serving on a mission team?​</h6>
+
+        <div class="missionTeam_btn">
+          <a href="{% url 'contact_us' %}">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- consider serving close here -->
+
+
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends  'aoj_app/base_template.html' %}
+{% load i18n staticfiles %}
+
+{% block template_body %}
+    <div class="page-teams page-resources">
+        <section class="pt-header">
+            <h1 class="page-name">{% trans "Resources" %}</h1>
+        </section>
+        <section class="pt-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 col-lg-offset-1">
+                        <h3 class="afh">{% trans "Applications, Forms & Helpful Items" %}</h3>
+
+                        <h4 class="res-header"><strong>{% trans "Team Manual" %} 2015</strong></h4>
+                        <img class="pull-left img-pdf" src="{% static 'img/pdf.png' %}" alt="">
+                        <p class="name-pdf">teammanual2015.pdf</p>
+                        <a class="link-pdf"
+                           href="{% static 'resources/teammanual2015.pdf' %}">{% trans "Download File" %}</a>
+                        <hr>
+
+                        <h4 class="res-header"><strong>2016 {% trans "Team Cost" %}</strong></h4>
+                        <img class="pull-left img-pdf" src="{% static 'img/pdf.png' %}" alt="">
+                        <p class="name-pdf">2016teamcost.pdf</p>
+                        <a class="link-pdf"
+                           href="{% static 'resources/2016teamcost.pdf' %}">{% trans "Download File" %}</a>
+                        <hr>
+
+                        <h4 class="res-header"><strong>{% trans "Team Application" %}</strong></h4>
+                        <img class="pull-left img-pdf" src="{% static 'img/pdf.png' %}" alt="">
+                        <p class="name-pdf">teamapplication.pdf</p>
+                        <a class="link-pdf"
+                           href="{% static 'resources/teamapplication.pdf' %}">{% trans "Download File" %}</a>
+                        <hr>
+
+                        <h4 class="res-header"><strong>{% trans "Team Leader Checklist" %}</strong></h4>
+                        <img class="pull-left img-pdf" src="{% static 'img/pdf.png' %}" alt="">
+                        <p class="name-pdf">checklist.pdf</p>
+                        <a class="link-pdf"
+                           href="{% static 'resources/checklist.pdf' %}">{% trans "Download File" %}</a>
+                        <hr>
+
+                        <h4 class="res-header"><strong>{% trans "Behaviour & Expectation Form" %}</strong></h4>
+                        <img class="pull-left img-pdf" src="{% static 'img/pdf.png' %}" alt="">
+                        <p class="name-pdf">behaviour.pdf</p>
+                        <a class="link-pdf"
+                           href="{% static 'resources/behaviour.pdf' %}">{% trans "Download File" %}</a>
+                        <hr>
+
+                        <h4 class="res-header"><strong>{% trans "Release Form" %}</strong></h4>
+                        <img class="pull-left img-pdf" src="{% static 'img/pdf.png' %}" alt="">
+                        <p class="name-pdf">release.pdf</p>
+                        <a class="link-pdf" href="{% static 'resources/release.pdf' %}">{% trans "Download File" %}</a>
+                        <hr>
+
+                        <h4 class="res-header"><strong>{% trans "Evaluation Form" %}</strong></h4>
+                        <img class="pull-left img-pdf" src="{% static 'img/pdf.png' %}" alt="">
+                        <p class="name-pdf">evaluation.pdf</p>
+                        <a class="link-pdf"
+                           href="{% static 'resources/evaluation.pdf' %}">{% trans "Download File" %}</a>
+                        <hr>
+
+                        <h4 class="res-header"><strong>{% trans "Short Term Application Form" %}</strong></h4>
+                        <img class="pull-left img-pdf" src="{% static 'img/pdf.png' %}" alt="">
+                        <p class="name-pdf">stapplicationform.pdf</p>
+                        <a class="link-pdf"
+                           href="{% static 'resources/stapplicationform.pdf' %}">{% trans "Download File" %}</a>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}

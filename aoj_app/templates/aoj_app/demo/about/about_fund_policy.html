@@ -1,0 +1,55 @@
+{% extends 'aoj_app/demo/base.html' %}
+{% load staticfiles i18n %}
+{% load aoj_extras %}
+
+{% block body_temp %}
+  <!-- banner start here -->
+  <section class="banner policy_banner">
+    {% get_desktop_nav %}
+    
+  <!-- header close here -->
+    <div class="container children_arm">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="banner_outer"> 
+            <h1>ABOUT US</h1> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- banner close here -->
+
+  <!-- policy start here -->
+  <section>
+    <div class="our_policy">
+      <div class="container children_arm">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="policy_item">
+              {% if data %}
+              {% comment %} {% for data in data %}               {% endcomment %}
+              <h2>{{ data.title }}</h2>
+              {{ data.body|safe }}
+                <p class="policy_tagLine">{{ data.foot }}</p>
+                {% comment %} {% endfor %} {% endcomment %}
+                {% else %}
+                
+                <h2>Our Policy on Using Fund</h2>
+                <p class="policy_paragraph">Spending funds is confined to board approved programs and projects. Each restricted contribution designated towards a board 
+                  approved project or program will be used as designated with the understanding that when the need for such a program or project 
+                  has been met, or cannot be completed for any reason determined by the board, the remaining restricted contributions designated 
+                  for such programs will be used where most needed.</p>
+                  <p class="policy_tagLine">We are a proud member of the Canadian Centre for Christian Charities.</p>
+
+                {% endif %}
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- policy close here -->
+{% endblock %}
+  

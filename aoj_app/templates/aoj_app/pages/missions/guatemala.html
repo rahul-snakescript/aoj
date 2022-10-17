@@ -1,0 +1,232 @@
+{% extends  'aoj_app/base_template.html' %}
+{% load i18n staticfiles %}
+
+{% block template_body %}
+    <div class="page-missions page-guatemala">
+        <section class="ms-header">
+            <h1 class="country-name">Guatemala</h1>
+            <p>{% trans "Capital" %}: Guatemala City<br>
+                {% trans "Population" %}: 12,728,111 (2007 Census)<br>
+                {% trans "Life expectancy" %}: 66 years<br>
+                {% trans "Official Language" %}: Spanish<br>
+                {% trans "Location" %}: Caribbean Sea<br>
+                AOJ Ministry: Since 1991​</p>
+        </section>
+        <section class="missions-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-10 col-sm-offset-1">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <a rel="gua" class="fancy-image" href="{% static 'img/guatemala/2057616_orig.jpg' %}">
+                                    <img class="img-responsive" src="{% static 'img/guatemala/2057616_orig.jpg' %}"
+                                         alt="">
+                                </a>
+                            </div>
+                            <div class="col-sm-6">
+                                <p class="paragraph">
+                                    {% blocktrans trimmed %}
+                                        Guatemala is a tropical country located in Central America, bordering the North
+                                        Pacific Ocean, between El Salvador and Mexico, and bordering the Gulf of
+                                        Honduras
+                                        (Caribbean Sea) between Honduras and Belize. Having first been inhabited by the
+                                        Mayan civilization since the first millennium AD, Guatemala was then colonized
+                                        by
+                                        Spain in the 1520s, and ultimately gained its independence in 1821. In the
+                                        latter
+                                        half of the 20th century it experienced a tragic 36-year guerrilla war (ending
+                                        in
+                                        1996), which left more than 100,000 people dead and created, by some estimates,
+                                        some
+                                        1 million refugees.
+                                    {% endblocktrans %}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-7">
+                                <p class="paragraph">
+                                    {% blocktrans trimmed %}
+                                        The country suffers a great divide between rich and poor. According to 2008
+                                        estimates, more than 60&#37; of Guatemala’s people live below the poverty line, the
+                                        country’s GDP per capita is $4,873.607 US (placing it 77th in the world) and
+                                        only
+                                        2.6&#37; of the country’s GDP is spent on education (placing it 154th in the world).
+                                        The
+                                        vast majority of Guatemala’s poor are among the Maya and indigenous population
+                                        whom
+                                        we seek to serve and help.
+                                        In order to help the children living in these dire circumstances and give them
+                                        hope
+                                        for a better future, AOJ began its ministry in Guatemala with a food
+                                        distribution
+                                        program designed to rescue children whose families were making a living by
+                                        scouring
+                                        the central garbage dump in Guatemala City. Then we introduced a sponsorship
+                                        program
+                                        to better the lives of children. On top of this, various medical outreaches and
+                                        clothing distribution programs were introduced. In 2001, the program began
+                                        providing
+                                        education to young children, who otherwise would not have gone to school. Now we
+                                        have grown to a fully accredited elementary school, along with programs in
+                                        house-building, food distribution and community outreach.
+                                        More information:
+                                    {% endblocktrans %}
+                                    <a target="_blank"
+                                       href="https://www.cia.gov/library/publications/the-world-factbook/geos/gt.html">CIA
+                                        Facebook</a>
+                                </p>
+                            </div>
+                            <div class="col-sm-5">
+                                <a rel="gua" class="fancy-image" href="{% static 'img/guatemala/5925966.jpg' %}">
+                                    <img class="img-responsive" src="{% static 'img/guatemala/5925966.jpg' %}" alt="">
+                                </a>
+                                <a rel="gua" class="fancy-image" href="{% static 'img/guatemala/5568708.jpg' %}">
+                                    <img class="img-responsive" src="{% static 'img/guatemala/5568708.jpg' %}" alt="">
+                                </a>
+                            </div>
+                        </div>
+
+                        <h1 class="text-center">{% trans "​Our Ministries" %}</h1>
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <a rel="gua" class="fancy-image"
+                                   href="{% static 'img/guatemala/img-1111-fotor_orig.jpg' %}">
+                                    <img class="img-responsive"
+                                         src="{% static 'img/guatemala/img-1111-fotor_orig.jpg' %}"
+                                         alt="">
+                                </a>
+                            </div>
+                            <div class="col-sm-6">
+                                <p class="paragraph">
+                                    <strong>{% trans "SPONSORSHIP PROGRAM" %}</strong> –
+                                    {% blocktrans trimmed %}
+                                        In 2011, we have more than 800 sponsored children who
+                                        receive free education either through our private school or a local public
+                                        school. These children also get access to medical care, clothing, food and other
+                                        necessities that are made available through AOJ.
+                                    {% endblocktrans %}
+                                </p>
+                                <p class="paragraph">
+                                    <strong>{% trans "ELEMENTARY SCHOOL" %}</strong> –
+                                    {% blocktrans trimmed %}
+                                        In 2011, we have 500 children registered in
+                                        grades Junior
+                                        Kindergarten to Grade 6 at our private school located in Parramos,
+                                        Chimaltenango. Our students get access to a unique educational environment that
+                                        is not available in most government public schools, such as: computer
+                                        laboratory; research library; science laboratory; and, music and drama programs
+                                        designed to stimulate creativity and self-esteem. Furthermore, we offer English
+                                        classes to all grades with the dreams of becoming a full English bilingual
+                                        school in the near future.
+                                    {% endblocktrans %}
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <p class="paragraph">
+                                    <strong>{% trans "TRADE SCHOOL" %}</strong> –
+                                    {% blocktrans trimmed %}
+                                        Here we provide hands-on-training for older
+                                        students to learn a particular skill or trade that can immediately be applied in
+                                        the marketplace.
+                                        Our trade school offers courses in beauty school, textile making, artisan crafts
+                                        and photography. With these skills, students can work immediately with a
+                                        prospective employer or start their own business.
+                                    {% endblocktrans %}
+                                </p>
+                                <p class="paragraph">
+                                    <strong>{% trans "HOUSE-BUILDING" %}</strong> –
+                                    {% blocktrans trimmed %}
+                                        We seek out families in poor communities who
+                                        are in need of a home. These families often live in shelters built with
+                                        cornstalk or aluminum siding, which are built on a dirt floor with little
+                                        protection from the elements. Through donations, we are able to provide a modest
+                                        home made of drywall that is built on a concrete floor. In 2011, we built 63
+                                        homes for needy families.
+                                    {% endblocktrans %}
+                                </p>
+                            </div>
+                            <div class="col-sm-6">
+                                <a rel="gua" class="fancy-image"
+                                   href="{% static 'img/guatemala/img-1095-fotor_orig.jpg' %}">
+                                    <img class="img-responsive"
+                                         src="{% static 'img/guatemala/img-1095-fotor_orig.jpg' %}"
+                                         alt="">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <a rel="gua" class="fancy-image"
+                                   href="{% static 'img/guatemala/img-0730-fotor_orig.jpg' %}">
+                                    <img class="img-responsive"
+                                         src="{% static 'img/guatemala/img-0730-fotor_orig.jpg' %}"
+                                         alt="">
+                                </a>
+                            </div>
+                            <div class="col-sm-6">
+                                <p class="paragraph">
+                                    <strong>​{% trans "FOOD DISTRIBUTION" %}</strong> –
+                                    {% blocktrans trimmed %}
+                                        Once a month, we provide almost 250 families a
+                                        food hamper that is filled with the following essentials: 1 bag of rice, 1 bag
+                                        of
+                                        beans, 2 bags of evaporated milk, 1 bottle of cooking oil, 1 bottle of bleach,
+                                        and 2
+                                        bags of a vitamin drink.
+                                    {% endblocktrans %}
+                                </p>
+                                <p class="paragraph"><strong>{% trans "COMMUNITY OUTREACH" %}</strong> –
+                                    {% blocktrans trimmed %}
+                                        We provide our
+                                        services in
+                                        remote areas where there is little assistance from the local government or other
+                                        charitable organizations. One such community is Pampay, which is a village of
+                                        approximately 70 indigenous families. Our staff regularly works in this
+                                        community to
+                                        provide spiritual education classes, medical care, and donations to the local
+                                        public
+                                        school. In 2008, we started a sponsorship program in Pampay so now we are able
+                                        to
+                                        make sure this group of children have the help they need to plan for a better
+                                        future.
+                                    {% endblocktrans %}
+                                </p>
+                            </div>
+                        </div>
+                        <p class="paragraph">
+                            {% blocktrans trimmed %}
+                                In Parramos we opened a Community Library which is
+                                meeting a tremendous
+                                need, and where programs are being offered for adults in the area of literacy.
+                            {% endblocktrans %}</p>
+                        <br>
+                        <p class="paragraph"><strong>{% trans "VOLUNTEER OPPORTUNITIES" %}</strong> –
+                            {% blocktrans trimmed %}
+                                We welcome volunteers who are
+                                looking to work with children, build homes and spread the Christian message in the
+                                communities we serve. If you are interested to volunteer as part of a church,
+                                organization
+                                or an individual, please contact the AOJ Canada office.
+                            {% endblocktrans %}
+                        </p>
+
+                        <div class="videoWrapper">
+                            <iframe src="https://www.youtube.com/embed/C6Mfm6CWCgg" frameborder="0"
+                                    allowfullscreen></iframe>
+                        </div>
+
+                        <div class="text-center" style="margin-top: 30px;">
+                            <a class="btn btn-aoj" href="{% url 'contact' %}">{% trans "CONTACT US" %}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}

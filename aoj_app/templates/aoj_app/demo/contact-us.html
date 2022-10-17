@@ -1,0 +1,205 @@
+{% extends 'aoj_app/demo/base.html' %}
+{% load static %}
+{% load staticfiles i18n aoj_extras %}
+{% block body_temp %}
+ 
+  <section class="contact_banner">
+    
+    {% get_desktop_nav %}
+    <div class="container children_arm">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="banner_outer"> 
+            <h1>COntact us</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- header close here -->
+
+<!--Start Form Section-->
+  <div class="container contact_page_frm">
+    {% get_site_config as config %}
+    <div class="row">
+      <div class="col-md-6">
+        <div class="mission_contact_address">
+          <h3>Mission Centre: Canada</h3>
+          <div class="row mailing_address">
+            <div class="col-md-6">
+               <h4>Mailing Address:</h4>
+               <p>P. O. Box 10</p>
+               <p>Pickering,Ontario</p>
+               <p>L1V 2R2</p>
+               <p>Canada</p>
+            </div>
+            <div class="col-md-6">
+              <h4>Office Address:</h4>
+              <p>1730 McPherson Ct., Unit 19</p>
+              <p>Pickering,Ontario</p>
+              <p>L1W 3E6</p>
+              <p> Canada</p>
+            </div>
+          </div>
+          <div class="row mailing_address">
+            <div class="col-md-12">
+              <h4>Tel:</h4>
+              {% if config.site_phone %}
+              <p><a href="tel:{{ config.site_phone }}">{{ config.site_phone }}</a></p>
+              {% else %}
+              <p><a href="tel:(905) 492-5007">(905) 492-5007</a></p>
+              {% endif %}
+              <h4>Fax:</h4>
+              <p><a href="tel:(905) 492 - 8002">(905) 492 - 8002</a></p>
+            </div>
+          </div>
+      </div>
+      <!---mission USA address---->
+      <div class="mission_usa_address">
+          <h3>Mission Centre: USA</h3>
+          <div class="row mailing_address">
+            <div class="col-md-6">
+               <h4>Mailing Address:</h4>
+               <p>P. O. Box 10</p>
+                <p>Pickering,Ontario</p>
+                <p>L1V 2R2</p>
+                <p>Canada</p>
+            </div>
+            <div class="col-md-6">
+              <h4>Tel:</h4>
+              <p><a href="tel:(716) 689 - 4858">(716) 689 - 4858</a></p>
+              <h4>Fax:</h4>
+              <p><a href="tel:(716) 688 - 5049">(716) 688 - 5049</a></p>
+            </div>
+          </div>
+          <div class="row mailing_address">
+            <div class="col-md-12 main_btm">
+              {% if config.site_email %}
+              <h4>Email: <a href="mailto:{{ config.site_email }}">{{ config.site_email }}</a></h4>
+              {% else %}
+              <h4>Email: <a href="mailto:aojchildmis@rogers.com">aojchildmis@rogers.com</a></h4>
+              {% endif %}
+              
+            </div>
+          </div>
+      </div>
+      <!--Mission USA END-->
+    </div>
+      <div class="col-md-6 send_message_form form-wrapper">
+        <h3>Send Us A Message:</h3>
+        <form method="POST" id="form-contact">
+          {% csrf_token %}
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" name="first_name" value="">
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" name="last_name" value="">
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" name="email" value="">
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea name="message"></textarea>
+          </div>
+          <div class="form-group">
+            <input type="submit" name="" value="SEND MESSAGE" class="send_mesg">
+          </div>
+        </form>
+        <div class="f-message f-success">
+          <h3>{% trans "Thank you. Your information has been submitted." %}</h3>
+      </div>
+      <div class="f-message f-error">
+          <h3>{% trans "Something went wrong, try refreshing and submitting the form again." %}</h3>
+      </div>
+      </div>
+    </div>
+  </div>
+<!----Start Accredited Member section---->
+
+<script src="{% static 'lib/jquery/jquery-3.1.1.min.js' %}"></script>
+<script src="{% static 'lib/bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'lib/fancybox/jquery.fancybox.pack.js' %}"></script>
+<script src="{% static 'lib/jquery-validate/jquery.validate.min.js' %}"></script>
+<script src="{% static 'lib/mmenu/jquery.mmenu.all.min.js' %}"></script>
+<script src="{% static 'lib/slidesjs/jquery.slides.min.js' %}"></script>
+<script src="{% static 'js/translate.js' %}"></script>
+<script src="{% static 'js/site.js' %}"></script>
+<script src="//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=190291501407"></script>
+<script src="https://platform.twitter.com/widgets.js"></script>
+<script src="//translate.google.com/translate_a/element.js?cb=TranslateInit"></script>
+
+<script>
+  $('#form-contact').validate({
+        rules: {
+            first_name: {
+                required: true,
+                minlength: 2
+            },
+            last_name: {
+                required: true,
+                minlength: 2
+            },
+            email: {
+                required: true,
+                email: true
+            },
+            message: {
+                required: true,
+                minlength: 2
+            }
+        },
+        messages: {
+            first_name: {
+                required: "This field is required",
+                minlength: "This field must consist of at least 2 characters"
+            },
+            last_name: {
+                required: "This field is required",
+                minlength: "This field must consist of at least 2 characters"
+            },
+            email: {
+                required: "This field is required"
+            },
+            message: {
+                required: "This field is required",
+                minlength: "This field must consist of at least 2 characters"
+            }
+        },
+        submitHandler: function (form) {
+            ajax_loading_modal(true);
+            $(form).find('input[type="submit"]').attr('disabled', true);
+            $.ajax({
+                // method: "POST",
+                type:"POST",
+                // url: "/api/send_contact_form/",
+                url: "{% url 'ajax_send_contact_form' %}",
+                data: $(form).serialize()
+            }).done(function (e) {
+                if (e['error'] === 0) {
+                    $(form).fadeTo("slow", 0.15, function () {
+                        $('.form-wrapper .f-success').fadeIn('slow');
+                    });
+                } else {
+                    $(form).fadeTo("slow", 0.15, function () {
+                        $('.form-wrapper .f-error').fadeIn('slow');
+                    });
+                }
+            }).fail(function () {
+                $(form).fadeTo("slow", 0.15, function () {
+                    $('.form-wrapper .f-error').fadeIn('slow');
+                });
+            }).always(function () {
+                //$(form).find('button[type="submit"]').attr('disabled', true);
+                ajax_loading_modal(false);
+            });
+        }
+    });
+
+
+</script>
+
+  {% endblock %}

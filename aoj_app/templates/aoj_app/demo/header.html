@@ -1,0 +1,116 @@
+{% load static %}
+{% load aoj_extras %}
+
+<header>
+  {% get_site_config as config %}
+    <div class="header">
+      <div class="children_header">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'newindex' %}"><img src="{% static 'demo/images/logo.png' %}"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <div class="dropdown">
+                    <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                      Home
+                    </a>
+
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                      {% if curr_page != 'newindex' %}
+                      <li><a class="dropdown-item" href="{% url 'newindex' %}">Home</a>
+                        {% endif %}
+                      <li><a class="dropdown-item" href="{% url 'blog' %}">Director's Blog</a></li>
+                      <li><a class="dropdown-item" href="{% url 'magazine' %}">Magazine</a></li>
+                      {% if config.facebook_page %}
+                      <li><a class="dropdown-item" href="{{ config.facebook_page }}">Facebook</a></li>
+                      {% else %}
+                      <li><a class="dropdown-item" href="https://www.facebook.com/ArmsOfJesus/">Facebook</a></li>
+                      {% endif %}
+                      
+                      <li><a class="dropdown-item" href="{% url 'media' %}">Media</a></li>
+                    </ul>
+                  </div>
+                </li> 
+
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'children' %}">Children</a>
+                </li>
+                <li class="nav-item">
+                  <div class="dropdown">
+                    <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                      Missions
+                    </a>
+
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                      <li><a class="dropdown-item" href="{% url 'guatemala_mission' %}">Guatemala</a></li>
+                      <li><a class="dropdown-item" href="{%  url 'mission_haiti' %}">Haiti</a></li>
+                      <li><a class="dropdown-item" href="{% url 'mission_kenya' %}">Kenya</a></li>
+                      {% for mission in missions %}
+                      <li><a class="dropdown-item" href="{{ mission.get_absolute_url }}">{{ mission.name }}</a></li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                </li> 
+                
+                <li class="nav-item">
+                  <!-- <a class="nav-link" href="#">Teams</a> -->
+                  <div class="dropdown">
+                    <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                      Teams
+                    </a>
+
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                      <li><a class="dropdown-item" href="{% url 't_blog' %}">Teams Blog</a></li>
+                      <li><a class="dropdown-item" href="{% url 't_calender' %}">Teams Calender</a></li>
+                      <li><a class="dropdown-item" href="{% url 't_consider' %}">Teams Consider</a></li>
+                      <li><a class="dropdown-item" href="{% url 't_resource' %}">Teams Resource</a></li>
+                      <li><a class="dropdown-item" href="{% url 't_training' %}">Teams Training</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'catalogue' %}">Catalogue</a>
+                </li>
+                <li class="nav-item">
+                <div class="dropdown">
+                  <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                   About Us
+                  </a>
+
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li><a class="dropdown-item" href="{% url 'behave' %}">About Behave</a></li>
+                    <li><a class="dropdown-item" href="{% url 'fund_policy' %}">About Fund Policy</a></li>
+                    <li><a class="dropdown-item" href="{% url 'history' %}">About History</a></li>
+                    <li><a class="dropdown-item" href="{% url 'mission' %}">About Mission</a></li>
+                    <li><a class="dropdown-item" href="{% url 'staff' %}">About Staff</a></li>
+                    {% for about in aboutpages %}
+                      <li><a class="dropdown-item" href="{{ about.get_absolute_url }}">{{ about.name }}</a></li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a href="{% url 'cart' %}" class="nav-link">
+                  Cart<span id="cart-items-count">{% if items_count > 0 %}({{ items_count }})</span>{% endif %}
+                </a>
+              </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'contact_us' %}">Contact</a>
+                </li>
+              </ul>
+              <div class="header_btn">
+                <a href="{% url 'donate' %}" class="donate_btn">Donate</a>
+                <a href="{% url 'donate' %}" class="sponsor_btn">Sponsor</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>

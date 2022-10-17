@@ -1,0 +1,124 @@
+.form-wrapper {
+    position: relative;
+}
+
+.form-wrapper .f-message {
+    position: absolute;
+    bottom: 90px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+    display: none;
+    text-shadow: 0px 0px 20px #fff;
+    padding: 0 5px;
+}
+
+.form-wrapper .f-success > h3 {
+    color: #8bc34a;
+    font-size: 22px;
+}
+
+.form-wrapper .f-error > h3 {
+    color: #f44336;
+    font-size: 22px;
+}
+
+.ajax-loading-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(255, 255, 255, .5) url('/static/img/ajax-loader.gif') 50% 50% no-repeat;
+}
+
+body {
+    position: relative;
+    -webkit-text-size-adjust: none;
+    top: 0 !important;
+    position: static !important;
+}
+
+body.loading {
+    overflow: hidden;
+}
+
+body.loading .ajax-loading-modal {
+    display: block;
+}
+/*
+CART
+*/
+.page-cart {
+    padding: 30px 0;
+}
+
+.page-cart .table {
+    text-align: center;
+}
+
+.page-cart .table th {
+    text-align: center;
+}
+
+/*.page-cart .table th:first-child { text-align: left; }*/
+/*.page-cart .table th:last-child { text-align: right; }*/
+.page-cart .table td {
+    vertical-align: middle;
+}
+
+.page-cart .btn-remove-from-cart {
+    color: #f44336;
+}
+
+.page-cart .btn-remove-from-cart:hover {
+    color: #f40b05;
+}
+
+.page-cart .td-cart-img {
+    width: 20%;
+}
+
+/* .page-cart .td-cart-img .img-cart-item {
+} */
+
+.page-cart .td-cart-subtotal {
+    width: 10%;
+}
+
+.page-cart .td-cart-qty {
+    width: 15%;
+}
+/* 
+.page-cart .cart-subtotal {
+} */
+
+/*
+MAGAZINE
+*/
+.page-magazine {
+    padding: 30px 0;
+}
+
+.page-magazine .magazine-box {
+    margin-bottom: 25px;
+    height: 200px;
+}
+
+.page-magazine .magazine-box .magazine-title {
+    font-size: 13px;
+    margin-top: 10px;
+    font-weight: 300;
+}
+
+/*
+MAGAZINE DETAIL
+*/
+.page-magazine-detail {
+    padding: 40px 0;
+}
+
+

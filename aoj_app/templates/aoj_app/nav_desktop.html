@@ -1,0 +1,62 @@
+{% load i18n aoj_extras %}
+{% get_site_config as config %}
+<nav class="desktop-nav">
+  <ul class="level-1">
+    <li class="{% if curr_page == 'index' %}active{% endif %}"><a href="{% url 'index' %}">{% trans "Home" %}</a>
+      <ul>
+        <li><a href="{% url 'blog' %}">{% trans "DIRECTOR'S BLOG" %}</a></li>
+        <li><a href="{% url 'magazine' %}">{% trans "MAGAZINE" %}</a></li>
+        <li><a href="{{ config.facebook_page }}">{% trans "FACEBOOK" %}</a></li>
+        <li><a href="{% url 'media' %}">{% trans "MEDIA" %}</a></li>
+      </ul>
+    </li>
+    <li class="{% if curr_page == 'children' or curr_page == 'children_detail' %}active{% endif %}">
+      <a href="{% url 'children' %}">{% trans "Children" %}</a>
+    </li>
+    <li>
+      <span>{% trans "Missions" %}</span>
+      <ul>
+        {% for mission in missions %}
+          <li><a href="{{ mission.get_absolute_url }}">{{ mission.name|upper }}</a></li>
+        {% endfor %}
+      </ul>
+    </li>
+    <li>
+      <span>{% trans "Teams" %}</span>
+      <ul>
+        <li><a href="{% url 'consider_serving' %}">{% trans "CONSIDER SERVING" %}</a></li>
+        <li><a href="{% url 'training' %}">{% trans "TRAINING" %}</a></li>
+        <li><a href="{% url 'calendar' %}">{% trans "CALENDAR" %}</a></li>
+        <li><a href="{% url 'resources' %}">{% trans "RESOURCES" %}</a></li>
+        <li><a href="{% url 'team_blogs' %}">{% trans "TEAM BLOGS" %}</a></li>
+      </ul>
+    </li>
+    <li class="{% if curr_page == 'catalogue' %}active{% endif %}">
+      <a href="{% url 'catalogue' %}">{% trans "Catalogue" %}</a>
+    </li>
+    <li>
+      <span>{% trans "ABOUT" %}</span>
+      <ul>
+        {% for about in aboutpages %}
+          <li><a href="{{ about.get_absolute_url }}">{{ about.name|upper }}</a></li>
+        {% endfor %}
+      </ul>
+    </li>
+    <li class="{% if curr_page == 'contact' %}active{% endif %}">
+      <a href="{% url 'contact' %}">{% trans "Contact" %}</a>
+    </li>
+    <li class="{% if curr_page == 'donate' %}active{% endif %}">
+      <a href="{% url 'donate' %}">{% trans "Donate" %}</a>
+    </li>
+    <li class="{% if curr_page == 'cart' %}active{% endif %}">
+      <a href="{% url 'cart' %}">
+        {% trans "Cart" %} <span id="cart-items-count">{% if items_count > 0 %}({{ items_count }})</span>{% endif %}
+      </a>
+    </li>
+    {% if user.is_authenticated %}
+      <li class="{% if curr_page == 'orders' %}active{% endif %}">
+        <a href="{% url 'dashboard:orders' %}">{% trans "Dashboard" %}</a>
+      </li>
+    {% endif %}
+  </ul>
+</nav>

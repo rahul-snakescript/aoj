@@ -1,0 +1,49 @@
+{% extends 'aoj_app/demo/base.html' %}
+{% load staticfiles i18n %}
+{% load aoj_extras %}
+
+{% block body_temp %}
+  <!-- banner start here -->
+  <section class="register_banner teamsBanner">
+    {% get_desktop_nav %}
+
+    <div class="teamsConsider_outer">
+      <h1>TEAMS</h1>
+    </div>
+  </section>
+  <!-- header close here -->
+
+
+  <!-- training start here -->
+  <div class="training">
+    <div class="container children_arm">
+      <div class="training_outer1">
+        <h2>Training</h2>
+      </div>
+      {% if object_list %}
+      <div class="row">
+        {% for data in object_list %}
+        <div class="col-md-12">
+          <div class="training_outer">
+            <a href="{{ data.media.url }}">
+            <img src="{{ data.media.url }}" alt="">
+            </a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% else %}
+      <div class="row">
+        <div class="col-md-12">
+          <div class="training_outer">
+            <img src="{% static 'demo/images/video_teams.jpg' %}" alt="">
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  <!-- training close here -->
+
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "registration/base.html" %}
+{% load i18n crispy_forms_tags %}
+
+{% block accounts_block %}
+  <form method="post" action="">
+    {% csrf_token %}
+    {{ form|crispy }}
+
+    {% if next %}
+      <input type="hidden" name="next" value="{{ next }}"/>
+    {% endif %}
+    <button type="submit" class="btn btn-aoj">Submit</button>
+  </form>
+  <br>
+  {% block under_form_block %}{% endblock %}
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends 'aoj_app/demo/base.html' %}
+{% load staticfiles i18n %}
+{% load aoj_extras %}
+
+{% block body_temp %}
+  <!-- banner start here -->
+  <section class="banner policy_banner">
+    {% get_desktop_nav %}
+  <!-- header close here -->
+    <div class="container children_arm">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="banner_outer"> 
+            <h1>ABOUT US</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- banner close here -->
+
+  <!-- behave sec start here -->
+  <div class="behave">
+    <div class="container children_arm">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="behave_outer">
+            {% if data  %}
+            {% comment %} {% for data in data %} {% endcomment %}
+            <h2>{{ data.title }}</h2>  
+            <ul>
+              {{ data.body|safe }}
+            </ul>
+            {% comment %} {% endfor %} {% endcomment %}
+
+            {% else %}
+            <h2>What We Believe</h2>
+            <ul>
+              <li>The Bible to be the complete Word of God; that the sixty-six books, as originally written, comprising the Old and 
+                New Testament were inspired by the Spirit of God and therefore are entirely free from error; that the Bible is the final 
+                authority in all matters of faith and practice and the true basis of Chris</li>
+                <li>That there is One God, Creator of all, Holy Sovereign, Eternal existing in the three equal persons, the Father, the Son, 
+                  and the Holy Spirit.</li>
+                <li>In the absolute and essential deity of Jesus Christ, in His eternal existence in pre incarnate glory, in His virgin birth, 
+                  sinless life, substitutionary death, bodily resurrection, triumphant resurrection, mediatory ministry and personal return.</li>
+                <li>In the absolute deity and personality of the Holy Spirit who convinces of sin, or righteousness and judgement; who 
+                  regenerates, sanctifies, illuminates and comforts those who believe in Jesus Christ.</li>
+                <li>That Man was divinely created in the image of God; that he sinned, becoming guilty before God, resulting in total 
+                  depravity, thereby incurring physical and spiritual death.</li>
+                <li>That Salvation is by the sovereign grace of God; that by the appointment of the father, Christ voluntarily suffered a 
+                  vicarious, expiratory and propitiatory death; that justification is by faith alone in the all-sufficient sacrifice and 
+                  resurrection of the Lord Jesus Christ.</li>
+                <li>In the Personal, Bodily and Glorious Return of the Lord Jesus Christ; in the Bodily Resurrection of the just and the 
+                  unjust; in the blessedness of the redeemed and in the judgement and conscious punishment of the wicked.</li>
+                  <li>That it is the responsibility of the Local Church to continue the task of World Evangelization and the responsibility of 
+                    Each Believer to give themselves to the fulfilling the Great Commission.</li>
+            </ul>
+            {% endif %}
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- behave sec close here -->
+{% endblock %}

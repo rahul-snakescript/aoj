@@ -1,0 +1,4161 @@
+@font-face {
+    font-family: 'Proxima Nova Alt Th';
+    src: url('../font/ProximaNovaA-Thin.woff2') format('woff2'),
+        url('../font/ProximaNovaA-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima Nova Alt Rg';
+    src: url('../font/ProximaNovaA-Bold.woff2') format('woff2'),
+        url('../font/ProximaNovaA-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima Nova Alt Lt';
+    src: url('../font/ProximaNovaA-Light.woff2') format('woff2'),
+        url('../font/ProximaNovaA-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima Nova Bl';
+    src: url('../font/ProximaNova-Black.woff2') format('woff2'),
+        url('../font/ProximaNova-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima Nova Th';
+    src: url('../font/ProximaNova-Extrabld.woff2') format('woff2'),
+        url('../font/ProximaNova-Extrabld.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima Nova Th';
+    src: url('../font/ProximaNovaT-Thin.woff2') format('woff2'),
+        url('../font/ProximaNovaT-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima Nova Rg';
+    src: url('../font/ProximaNova-Regular.woff2') format('woff2'),
+        url('../font/ProximaNova-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima Nova Rg';
+    src: url('../font/ProximaNova-Bold.woff2') format('woff2'),
+        url('../font/ProximaNova-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/* donate css start here */
+.right_imgOuter {
+    display: flex;
+    flex-direction: column;
+}
+.mad h1 {
+    font-size: 48px;
+    font-weight: bold;
+    color: #555;
+    font-family: "Rabiohead";
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.page-donate .mad {
+    background: #fff;
+    padding: 30px 0;
+    text-align: center;
+}
+.page-donate .pd-body {
+    padding: 30px 0;
+    background: #f8f8f8;
+}
+.page-donate h4.text-center {
+    font-size: 18px;
+    margin: 10px 0;
+}
+.donateOuter_row {
+    justify-content: center;
+}
+.donateOuter_row h4 {
+    margin: 10px 0;
+    font-size: 18px;
+}
+form#form-donate label {
+    font-weight: 300;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+form#form-donate .form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 0px !important;
+    -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+form#form-donate .form-group {
+    margin-bottom: 15px;
+}
+.form-control:focus {
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgb(102 175 233 / 60%) !important;
+    border-color: #66afe9 !important;
+}
+.latterUse label {
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 10px !important;
+}
+.latterUse input[type="checkbox"] {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(-0%, -50%);
+}
+.btn-aoj {
+    border-radius: 0 !important;
+    color: #676767 !important;
+    border: 2px solid #676767 !important;
+    text-transform: uppercase !important;
+}
+.btn {
+    display: inline-block !important;
+    padding: 6px 12px !important;
+    margin-bottom: 0 !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    line-height: 1.42857143 !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+/* donate css close here */
+
+
+
+/* checkout page start here */
+.page-checkout {
+    padding: 30px 0;
+    background: #f8f8f8;
+}
+.page-checkout .c-box {
+    padding: 20px 30px !important;
+    margin-bottom: 20px !important;
+    border: 1px solid #d8d8d8 !important;
+    background: #fff !important;
+}
+#form-checkout h5.c-box-caption {
+    font-size: 14px;
+    margin: 10px 0;
+    font-weight: 500;
+    color: #333333;
+}
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #eee;
+}
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 300;
+    font-size: 14px;
+}
+.laterUse {
+    margin-bottom: 10px !important;
+}
+.form-control {
+    border-radius: 0px !important; 
+}
+.groupName {
+    margin-bottom: 15px;
+}
+.btn-aoj:hover {
+    color: #fff !important;
+    background: #676767 !important;
+}
+h5.c-box-caption {
+    margin: 10px 0;
+    font-size: 14px;
+}
+.page-checkout .c-box.c-box-summary .table {
+    border-bottom: 1px dashed #d8d8d8;
+}
+.page-checkout .c-box.c-box-summary .table .td-img {
+    width: 25%;
+}
+img.img-responsive {
+    width: 50%;
+}
+img.img-responsive:last-child {
+    width: auto;
+}
+h5.pr-name {
+    font-size: 14px;
+    margin: 0;
+    font-weight: bold;
+}
+h5.pr-qty {
+    margin: 10px 0;
+    font-size: 14px;
+    font-weight: 500;
+}
+.checkoutRow_page {
+    justify-content: center;
+}
+h5.pr-subtotal {
+    margin-top: 0;
+    text-align: right;
+    font-size: 17px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+.c-box-summary .table tbody {
+    border-style: dotted;
+}
+.c-box-summary .table tbody tr, td, th {
+    border-color: inherit;
+    border-style: dotted;
+    border-width: 0;
+}
+
+element.style {
+}
+.page-checkout .c-box.c-box-summary .table .td-img {
+    width: 25%;
+}
+.table > :not(caption) > * > * {
+    border-bottom-width: inherit !important;
+}
+h3.totalValue {
+    text-align: right;
+    font-size: 24px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    font-weight: 500;
+    color: #333333;
+}
+#form-checkout .form-group {
+    margin-bottom: 15px;
+}
+/* checkout page close here */
+
+/* director blog start here */
+.blog-title a {
+    color: #555555;
+    text-decoration: none;
+}
+.blog-title a:hover {
+    color: #555555;
+    text-decoration: underline;
+}
+h2.blog-title {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+p.text-muted.DateText {
+    color: #777777 !important;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+.VideoIframe {
+    margin: 0 0px 10px 0px;
+}
+.align_socialIc {
+    display: flex;
+}
+hr {
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+    border: 0 !important;
+    border-top: 1px solid #eee !important;
+}
+.blogPage_Row {
+    justify-content: center;
+}
+.page-blog {
+    margin-top: 20px;
+}
+/* director blog close here */
+
+
+/* magazine start here */
+h1.magazineHadding {
+    margin-bottom: 10px;
+    margin-top: 20px;
+    font-size: 36px;
+    font-weight: 500;
+    color: #333333;
+}
+.magazinePage_row {
+    justify-content: center;
+}
+.RowMagazine {
+    justify-content: center;
+}
+/* magazine close here */
+
+
+/* media css start here */
+.mediaSec_video {
+    margin-top: 60px;
+}
+.magazineDetail_video iframe {
+    width: 100%;
+    position: relative;
+    height: 666px;
+}
+.magazineHadding {
+    margin-bottom: 10px;
+    margin-top: 20px;
+    color: #333333;
+}
+/* media css close here */
+
+/* cart css start here */
+.cartItem_outer {
+    background: #f8f8f8;
+}
+.CartRow_OutEr {
+    justify-content: center;
+}
+.CartRow_OutEr .table>thead>tr>th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dddddd;
+    border-bottom-width: 2px !important;
+    border-bottom-color: #dddddd !important;
+    font-size: 14px;
+    font-weight: 500;
+}
+.tdCARD_item {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: aliceblue;
+}
+.tdCARD_item h5.cart-pr-name {
+    font-size: 14px;
+    margin: 10px 0;
+    font-weight: 500;
+}
+.tdCARD_item h5 {
+    font-size: 14px;
+    margin: 10px 0;
+}
+.tdCARD_item .input-group {
+    height: 34px;
+    padding: 0px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+}
+button.btn.btn-default.btn-primary.btn-number.btn-qty-dec {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+    padding: 0px 12px !important;
+    height: 100%;
+    border-radius: 3px 0px 0 3px;
+    width: 39px;
+}
+.tdCARD_item input.form-control.input-number.cart-qty-input {
+    padding: 0;
+    width: 47px;
+    padding: 0px 12px;
+}
+button.btn.btn-default.btn-primary.btn-number.btn-qty-inc {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+    padding: 0px 12px !important;
+    height: 100%;
+    border-radius: 3px 0px 0 3px;
+    width: 39px;
+}
+span.glyphicon.glyphicon-plus {
+    position: relative;
+}
+i.fa.fa-times-circle.fa-2x:before {
+    content: "\f057";
+    font-weight: bold;
+}
+span.glyphicon.glyphicon-plus:before {
+    content: "\002b";
+    font-size: 21px;
+    font-weight: bold;
+}
+span.glyphicon.glyphicon-minus {
+    position: relative;
+}
+span.glyphicon.glyphicon-minus:before {
+    content: "\2212";
+    font-size: 21px;
+    font-weight: bold;
+}
+h3.text-right {
+    text-align: right;
+    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #333333;
+}
+.cartCheckout {
+    text-align: right;
+}
+.cartBtn_outer a {
+    display: block;
+    width: 150px;
+    font-size: 18px;
+    color: #ffffff;
+    background: #f7941d;
+    padding: 10px 19px!IMPORTANT;
+    border-radius: 9px !important;
+    margin-top: 16px;
+    font-family: 'Proxima Nova Alt Rg';
+    border: 1px solid #f7941d;
+    text-decoration: none;
+    margin: 0 auto;
+    text-transform: uppercase;
+    text-align: center;
+}
+.cartBtn_outer a:hover {
+    background: none;
+    color: #f7941d;
+}
+/* cart css close here */
+
+
+.children_arm {
+    width: 1170px !important;
+    max-width: 100%;
+} 
+.children1 {
+    width: 100%;
+}
+/* home page css start */
+    .header nav.navbar.navbar-expand-lg.navbar-light {
+        padding: 0 !important;
+    }
+    .header {
+        position: relative;
+        background: rgb(255 255 255 / 80%);
+        padding: 10px 0 !important;
+    }
+    a.donate_btn {
+        height: 51px;
+       /* width: 153px;*/
+        padding: 10px 40px !important;
+        background: #f7941d;
+        border: 1px solid #f7941d;
+        float: left;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        color: #ffffff;
+        font-size: 18px;
+        text-decoration: none; 
+        font-family: 'Proxima Nova Alt Rg';
+    }
+    a.sponsor_btn {
+        background: #174cb5;
+        border: 1px solid #174cb5;
+        height: 51px;
+        /*width: 153px;*/
+        padding: 10px 40px !important;
+        float: left;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        color: #ffffff;
+        text-decoration: none;
+        margin-left: 27px;
+        font-family: 'Proxima Nova Alt Rg';
+    }
+    a.donate_btn:hover {
+        background: none;
+        color: #f7941d;
+    }
+    a.sponsor_btn:hover {
+        background: none;
+        color: #174cb5;
+    }
+    .header ul.navbar-nav.ms-auto.mb-2.mb-lg-0 {
+        margin-right: 31px;
+    }
+    .header .nav-item a.nav-link {
+        font-size: 18px;
+        color: #000000;
+        padding-left: 32px !important;
+        font-family: 'Proxima Nova Rg';
+    }
+    .active {
+        color: #f7941d !important;
+        font-family: 'Proxima Nova Bl' !important;
+    }
+    .header_btn {
+        display: flex;
+    }
+    .children_header{
+        width: 1360px;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+
+    .magazine_reponsive {
+        width: 100%;
+    }
+    section.banner {
+        background: url(../images/banner.jpg);
+        /*height: 966px;*/
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .banner_outer h5 img {
+        margin-bottom: 4px;
+    }    
+    .banner_outer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        text-transform: uppercase;
+        flex-direction: column; 
+        height: 718px;
+    }
+    .banner_outer h1 {
+        font-size: 60px;
+        line-height: 72px;
+        font-family: 'Proxima Nova Alt Rg';
+        text-align: center;
+        margin-bottom: 30px;
+        position: relative;
+    }
+    .banner_outer h6 {
+        font-size: 30px;
+        margin: 0;
+        font-family: 'Proxima Nova Alt Rg';
+    }
+
+
+
+    .about_outer {
+        display: flex;
+        align-items: center;
+    }
+    .about_item {
+        width: 50%;
+        margin-right: 5px;
+    } 
+    .about_right_sec h4 {
+        padding-top: 58px !important;
+    }
+    .about_right_sec h4 {
+        padding-top: 58px;
+        font-size: 30px;
+        color: #f7941d;
+        font-family: 'Proxima Nova Alt Rg';
+        padding-bottom: 6px !important;
+        margin: 0;
+    }
+    .about_right_sec h2 {
+        font-size: 58px;
+        color: #000000;
+        line-height: 60px;
+        font-family: 'Proxima Nova Alt Rg';
+        padding-bottom: 10px !IMPORTANT;
+        margin: 0;
+     }
+    .children_header .dropdown-menu li {
+         padding-bottom: 10px !IMPORTANT;
+     }
+    .children_header .dropdown-menu {
+        padding: 10px 0px !IMPORTANT;
+     }
+     .children_header .dropdown-menu li a{
+        padding-left: 10px !IMPORTANT; 
+       padding-right: 10px !IMPORTANT;
+     }
+    .about_right_sec p {
+        font-size: 18px;
+        margin: 0;
+        padding-bottom: 20px;
+        color: #656565;
+        line-height: 36px;
+        font-family: 'Proxima Nova Th';
+        padding-right: 140px;
+        padding-bottom: 54px !important;
+        padding-right: 30px !IMPORTANT;
+    }
+    .about_right_sec {
+        background: #ffffff;
+        padding: 0 59px !important;
+        box-shadow: 0px 0px 5px #eeeeee;
+        padding-right: 0px !IMPORTANT;
+    }
+
+    .vision {
+        position: relative;
+        background: url(../images/our_vission.jpg);
+        height: 1045px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-origin: content-box;
+    }
+    .vision_outer {
+        text-align: center;
+        margin-top: 90px !important; 
+        padding: 0px 80px !IMPORTANT;
+    }
+    .vision_outer h2 {
+        font-size: 60px;
+        line-height: 72px;
+        font-family: 'Proxima Nova Alt Rg';
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .vision_outer p {
+        font-size: 18px;
+        line-height: 36px;
+        letter-spacing: 1px;
+    }
+    .vision_outer p {
+        font-size: 18px;
+        line-height: 36px;
+        letter-spacing: 1px;
+        font-family: 'Proxima Nova Rg';
+        margin-bottom: 25px;
+    }
+    .vision_btn a {
+        background: #ffffff;
+        height: 52px;
+        float: left;
+        width: 153px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        color: #000000;
+        text-decoration: none;
+        font-size: 18px;
+        font-family: 'Proxima Nova Alt Rg';
+        border: 1px solid #ffffff;
+    }
+    .vision_btn {
+        display: flex;
+        justify-content: center;
+    }
+    .vision_btn a:hover {
+        background: none;
+        color: #000000;
+    }
+
+    .donors_hadding {
+        text-align: center;
+        padding: 0px 30px !IMPORTANT;
+    }
+    .donors_hadding h4 {
+        font-size: 30px;
+        color: #000000;
+        font-family: 'Proxima Nova Alt Rg';
+        padding-top: 28px !important;
+        margin-bottom: 18px;
+    }
+    .donors_hadding p {
+        color: #656565;
+        font-size: 18px;
+        line-height: 30px;
+        margin: 0;
+        font-family: 'Proxima Nova Rg';
+    }
+    .news_item1 {
+        text-align: center;
+    }
+    .latest_img img {
+        width: 100%;
+    }
+    .hadding_lastestNews h2 {
+        font-size: 60px;
+        line-height: 72px;
+        font-family: 'Proxima Nova Alt Rg';
+        text-align: center;
+        margin-bottom: 12px;
+    }
+    .news_outer {
+        margin-top: 90px;
+        position: relative;
+    }
+    .hadding_lastestNews p {
+        color: #656565;
+        font-size: 18px;
+        line-height: 34px;
+        margin-bottom: 36px;
+        font-family: 'Proxima Nova Rg';
+        text-align: center;
+    }
+    .LatestNews_btn a {
+        height: 51px;
+        width: 153px;
+        background: #f7941d;
+        border: 1px solid #f7941d;
+        float: left;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        color: #ffffff;
+        font-size: 18px;
+        text-decoration: none;
+        font-family: 'Proxima Nova Alt Rg';
+        margin-top: 46px;
+    }
+    .LatestNews_btn {
+        display: flex;
+        justify-content: center;
+        position: relative;
+    }
+    .LatestNews_btn a:hover {
+        background: none;
+        color: #000000;
+    }
+
+    .video .video_outer iframe { 
+        border: 0;
+        width: 99%;
+        height: 436px;
+        margin-bottom: 20px;
+        object-fit: cover !important;
+    }
+
+
+    .mamber {
+        background: #f9f9f9;
+        text-align: center;
+        margin-top: 60px;
+    }
+    .logo_mamber img {
+        padding-top: 40px !important;
+        padding-bottom: 41px !important;
+    }
+    .mamber_outer p {
+        font-size: 18px;
+        color: #393939;
+        font-family: 'Proxima Nova Rg';
+        margin-bottom: 60px;
+        line-height: 28px;
+    }
+
+
+
+    .right_side_outer {
+        display: flex;
+        align-items: center;
+        margin-bottom: 60px;
+    }
+    .footer_manu {
+        display: flex;
+    }
+    .social_ic a {
+        border: 2px solid #f7941d;
+        width: 55px;
+        height: 55px;
+        float: left;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: #f7941d;
+        border-radius: 100px;
+        margin-left: 20px;
+        font-size: 22px;
+    }
+    .social_ic i {
+        font-size: 26px;
+    }
+    .social_ic a:nth-child(1) {
+        margin-left: 0;
+    }
+    .footer_logo {
+        margin-right: 66px;
+        width: 25%;
+    }
+    .footer_logo img {
+        width: 100%;
+    }
+    .footer_manu_item1 h5 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        font-family: 'Proxima Nova Bl';
+    }
+    .footer_manu_item1 ul li {
+        list-style: none;
+        margin-bottom: 10px;
+    }
+    .footer_manu_item1 ul {
+        padding: 0;
+        margin: 0;
+    }
+    .footer_manu_item1 ul li a {
+        color: #000000;
+        text-decoration: none;
+        font-size: 18px;
+        font-family: 'Proxima Nova Alt Lt';
+    }
+    .footer_manu_item1 {
+        width: 33.33%;
+    }
+    .footer_item1 {
+        border: 2px solid #ebebeb;
+        padding: 40px 60px 25px 38px !important;
+        float: left;
+        width: 100%;
+    }
+    .footer_item1 h6 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        font-family: 'Proxima Nova Bl';
+    }
+    .footer_item1 p.number_footer {
+        color: #000000;
+        text-decoration: none;
+        font-size: 18px;
+        font-family: 'Proxima Nova Alt Lt';
+        margin-bottom: 12px;
+    }
+    .footer_item1 p{
+        font-family: 'Proxima Nova Alt Lt';
+    }
+    .footer_item1 p.email_footer {
+        color: #000000;
+        text-decoration: none;
+        font-size: 18px;
+        margin-bottom: 46px;
+    }
+    .footer {
+        margin-top: 64px;
+    }
+    .footer_right_side {
+        margin-left: 80px;
+    }
+    .footer_item1 p.address_hadding {
+        color: #000000;
+        text-decoration: none;
+        font-size: 18px;
+        margin-bottom: 4px;
+    }
+    .footer_item1 p.\32 R2 {
+        color: #000000;
+        text-decoration: none;
+        font-size: 18px;
+        margin-bottom: 46px;
+    }
+    .footer_item1 p.office_hadding {
+        color: #000000;
+        text-decoration: none;
+        font-size: 18px;
+        margin-bottom: 4px;
+    }
+    .footer_item1 p.office_address {
+        color: #000000;
+        text-decoration: none;
+        font-size: 18px;
+        margin-bottom: 22px;
+    }
+    .footer_btm a {
+        height: 51px;
+        width: 153px;
+        background: #f7941d;
+        border: 1px solid #f7941d;
+        float: left;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        color: #ffffff;
+        font-size: 18px;
+        text-decoration: none;
+        font-family: 'Proxima Nova Alt Rg';
+        margin-top: 5px;
+    }
+/* home page css close */
+/* home page css start */
+.magazines{
+    background-image: url(../images/latest-magzine.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 70px !important;
+    margin: 65px 0px;
+}
+.select_video select:focus-visible{
+    outline: none;
+}
+.magazines h2{
+    text-align: center;
+    font-size: 60px;
+    font-family: 'Proxima Nova Alt Rg';
+    color: #fff;
+    padding: 85px 0px 25px 0px !important;
+}
+.our_magzine_product{
+    background-image: url(../images/our_magzine1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex !important;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column;
+    padding-bottom: 20px !IMPORTANT;
+}
+.our_magzine_product img {
+    padding-top: 20px !IMPORTANT;
+}
+.our_magzine_product h3{
+    color: #fff;
+    font-size: 30px;
+    font-family: 'Proxima Nova Alt Rg';
+    margin-top: 22px;
+}
+.slider_autoplay .slick-prev:before{
+    display: none;
+}
+.slider_autoplay .slick-prev:after{
+    background-image: url(../images/arrow_left.png);
+    content: " ";
+    position: absolute;
+    width: 55px;
+    left: -40px;
+    height: 55px;
+    top: 0px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.slider_autoplay .slick-next:before{
+    display: none;
+}
+.slider_autoplay .slick-next:after{
+    background-image: url(../images/arrow-right.png);
+    content: " ";
+    position: absolute;
+    width: 55px;
+    right: -40px;
+    height: 55px;
+    top: 0px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.magazines_btn a{
+    height: 51px;
+    padding: 20px 50px !important;
+    background: #f7941d;
+    border: 1px solid #f7941d;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 18px;
+    text-decoration: none;
+    font-family: 'Proxima Nova Alt Rg';
+    margin-top: 26px;
+}
+.magazines_btn {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+.magazines_arm{
+    width: 1170px !IMPORTANT;
+}
+.footer_btm a:hover{
+    color: #fff;
+}
+.copyright_txt {
+    text-align: center;
+    padding-top: 60px !IMPORTANT;
+    padding-bottom: 30px !IMPORTANT;
+}
+.copyright_txt p{
+    margin-bottom: 0px;
+    font-size: 18px;
+    font-family: 'Proxima Nova Alt Lt';
+}
+.select_video {
+    text-align: center;
+}
+.select_video select{
+    font-size: 24px;
+    font-family: 'Proxima Nova Rg';
+    background: transparent;
+    border-radius: 7px;
+    padding: 13px 17px !IMPORTANT;
+    border: 1px solid #174cb5;
+    margin-bottom: 32px;
+}
+/* home page css close */
+
+/* Register page css close */
+.register_banner{
+    background: url(../images/register_banner.jpg);
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-position: bottom center;
+    position: relative;
+    height: 552px;
+}
+.make_donation {
+    text-align: center;
+}
+.make_donation h2{
+    font-size: 48px;
+    font-family: 'Proxima Nova Rg';
+    padding-bottom: 25px !IMPORTANT;
+}
+.make_donation {
+    padding-top: 80px !IMPORTANT;
+}
+.make_donation p {
+    font-size: 22px;
+    font-family: 'Proxima Nova Rg';
+    margin-bottom: 5px;
+}
+.donnar_bg{
+    background: url(../images/donnar_info.png);
+    background-repeat: no-repeat;
+    height: 100%;
+    text-align: center !important;
+    background-position: center;
+    margin-top: 35px !IMPORTANT;
+    margin-bottom: 22px;
+    border: 1px solid #d6e1e5;
+}
+.donnar_bg h2{
+    font-size: 30px;
+    font-family: 'Proxima Nova Alt Rg';
+    text-align: left;
+    padding-top: 54px !IMPORTANT;
+    padding-bottom: 47px !IMPORTANT;
+    padding-left: 30px !IMPORTANT;
+}
+.make_donation_receive {
+    padding-bottom: 25px !IMPORTANT;
+}
+.registeration_form .form-group {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.registeration_form .form-group lable{
+    width: 100%;
+    color: #868686;
+    font-size: 18px;
+    font-family: 'Proxima Nova Rg';
+}
+.registeration_form .form-group input{
+    width: 100%;
+    border: 1px solid #d6e1e5;
+    padding: 10px !IMPORTANT;
+    border-radius: 4px;
+}
+.registeration_form .row{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.registeration_form { 
+    width: 53% !IMPORTANT;
+}
+.main_form_section{
+    border: 1px solid #d6e1e5;
+    padding: 30px !IMPORTANT;
+}
+
+.first_last_name .form-group {
+    width: 98%;
+}
+.first_last_name .form-group:nth-child(2) {
+    width: 98%;
+}
+.lst_items{
+    float: right;
+}
+.registeration_form  select{
+    width: 100%;
+    border: 1px solid #d6e1e5;
+    padding: 10px !IMPORTANT;
+    border-radius: 4px;
+}
+.sbmt_btn{
+    font-size: 18px;
+    font-family: 'Proxima Nova Rg';
+    color: #fffefe;
+    background: #174cb5;
+    padding: 10px;
+    width: 100%;
+    height: 67px;
+    margin-top: 13px;
+    border-radius: 12px !important;
+}
+.accredited_member{
+    background: #f9f9f9;
+    text-align: center;
+    padding: 100px 0px !IMPORTANT;
+    margin-top: 100px;
+}
+.registration_member p {
+    color: #393939;
+    font-size: 22px;
+    font-family: 'Proxima Nova Alt Lt';
+    line-height: 40px;
+}
+.make_donation_receive a{
+    color: #014cde;
+    text-decoration: none;
+}
+.make_donation_receive a:hover{
+    color: #f7941d;
+}
+/* Register page css close */
+.header .nav-item a.nav-link:hover{
+    color: #f7941d !important;
+    /*font-family: 'Proxima Nova Bl' !important;*/
+}
+.magazines_btn a:hover{
+    background: none;
+    color: #fff;
+}
+.footer_btm a:hover{
+   background: none;
+   color: #000; 
+}
+.footer_manu_item1 ul li a:hover{
+    color: #f7941d;
+}
+.social_ic a:hover{
+    background: #f7941d;  
+}
+.social_ic a:hover i{
+     color: #fff;
+}
+.registeration_form .form-group input:focus-visible{
+    outline: none;
+}
+.registeration_form .form-group select:focus-visible{
+    outline: none;
+}
+
+/* teams consider start here */
+.teamsBanner .teamsConsider_outer h1 {
+    padding-top: 0 !important;
+}
+.teamsBanner .teamsConsider_outer {
+    height: 406px; 
+}
+.teamsBanner {
+    background: url(../images/Team_banner.jpg);
+    background-size: cover;
+    height: 549px;
+}
+.teamsBanner:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0 0 0 / 40%);
+} 
+.teamsConsider_outer h1 {
+    font-size: 60px;
+    color: #ffffff;
+    margin: 0;
+    padding-top: 125px !important;
+    font-family: 'Proxima Nova Alt Rg';
+    position: relative;
+}
+.teamsConsider_outer {
+    height: 408px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mission_haittiBanner .teamsConsider_outer h1 { 
+    padding-top: 14px !important; 
+}
+.considerServing_items {
+    padding: 0 15px !important;
+}
+.considerImg_left_side img {
+    width: 100%;
+}
+.outer_consider {
+    margin-top: 30px !important;
+}
+.mission_team {
+    text-align: center;
+    padding-top: 103px !important;
+}
+.mission_team h6 {
+    font-size: 24px;
+    margin: 0;
+    color: #393939;
+    padding-bottom: 47px !important;
+    font-family: 'Proxima Nova Rg';
+}
+.missionTeam_btn a {
+    width: 153px;
+    height: 51px;
+    background: #f7941d;
+    border: 1px solid #f7941d;
+    border-radius: 10px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-family: 'Proxima Nova Alt Rg';
+    text-decoration: none;
+    color: #ffffff;
+}
+.missionTeam_btn a:hover {
+    color: #f7941d;
+    background: none;
+}
+.missionTeam_btn { 
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.consider_hadding h2 {
+    text-align: center;
+    font-size: 48px;
+    line-height: 60px; 
+    color: #000000;
+    margin: 0;
+    padding-bottom: 64px !important;
+    font-family: 'Proxima Nova Rg';
+}
+.considerServing {
+    margin-top: 100px;
+}
+/* teams consider close here */
+
+/* teams blog start here */
+.considerImg_left_side {
+    text-align: center;
+}
+.considerImg_left_side h5 {
+    padding-top: 29px !important;
+    font-size: 30px;
+    font-family: 'Proxima Nova Alt Rg';
+    margin: 0;
+    padding-bottom: 15px !important;
+}
+.considerImg_left_side p {
+    color: #656565;
+    font-size: 18px;
+    margin: 0;
+    line-height: 30px;
+    font-family: 'Proxima Nova Rg';
+}
+.teamsBlogs_item {
+    padding: 0 36px !important;
+}
+.TeamsBlogs_mamber {
+    margin-top: 80px;
+} 
+/* teams blog close here */
+
+/* team resources start here */
+.TeamResources_hadding h2 {
+    font-size: 48px;
+    margin: 0;
+    color: #000000;
+    padding-bottom: 60px !important;
+    font-family: 'Proxima Nova Rg';
+}
+.TeamResources_outer {
+    margin-top: 90px;
+    text-align: center;
+}
+.TeamResources_hadding p {
+    font-size: 24px;
+    color: #343136;
+    padding-bottom: 80px !important;
+    font-family: 'Proxima Nova Rg';
+    margin: 0;
+}
+p.mannual_resources {
+    color: #343136;
+    font-size: 18px;
+    margin: 0;
+    font-family: 'Proxima Nova Rg';
+    padding-bottom: 36px !important;
+}
+p.mannual_resources1 {
+    color: #343136;
+    font-size: 18px;
+    margin: 0;
+    padding-bottom: 20px !important;
+    padding-top: 16px !important;
+    font-family: 'Proxima Nova Rg';
+}
+.download_files a {
+    width: 207px;
+    height: 51px;
+    border-radius: 5px;
+    background: #f7941d;
+    border: 1px solid #f7941d;
+    text-decoration: none;
+    color: #ffffff; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Proxima Nova Rg';
+    font-size: 14px;
+}
+.download_files a:hover {
+    background: none;
+    color: #f7941d;
+}
+.download_files {
+    justify-content: center;
+    display: flex;
+    width: 100%;
+}
+.resources_team {
+    margin-top: 90px !important;
+}
+/* team resources close here */
+
+/* team training start here */
+.training {
+    margin-top: 82px;
+}
+.training_outer1 h2 {
+    font-size: 48px;
+    margin: 0;
+    color: #000000;
+    padding-bottom: 60px !important;
+    font-family: 'Proxima Nova Rg';
+    text-align: center;
+}
+
+/* team training close here */
+
+/* team calender start here */
+.month {
+    width: 100%;
+    background: #cecece;
+    text-align: center;
+    height: 50px;
+    border-bottom: 1px solid #000000;
+}
+  
+  .month ul {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    position: relative;
+  }
+  
+  .month ul li {
+    color: #000000;
+    font-size: 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .month .prev {
+    float: left;
+    padding-top: 10px;
+    position: absolute;
+    top: 0;
+    left: 348px;
+    padding: 0;
+}
+  .month .next {
+    float: right;
+    padding-top: 10px;
+    position: absolute;
+    right: 350px;
+    top: 0;
+    padding: 0;
+  }
+  
+.weekdays {
+    margin: 0;
+    padding: 10px 0;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.weekdays li {
+    display: inline-block;
+    width: 13.6%;
+    color: #000000;
+    font-size: 14px;
+    text-align: center;
+    font-family: 'Proxima Nova Rg';
+}
+.calender_outer1 {
+    border: 1px solid #dddddd;
+    float: left;
+}
+.days {
+    background: none;
+    margin: 0 20px 20px 20px;
+    border-top: 1px solid #000000;
+    padding: 0;
+    float: left;
+    border-bottom: 1px solid #000000;
+    border-left: 1px solid #000000;
+}
+tr.missionOuter {
+    background: #e1e1e1;
+    height: 90px;
+}
+.missionOuter th {
+    border: 0;
+    height: 90px;
+    padding: 0;
+    line-height: 74px;
+    font-size: 18px;
+    padding-left: 65px !important;
+    font-family: 'Proxima Nova Rg';
+    font-weight: 500;
+    color: #343136;
+}
+.missionTrip_outer .table tbody tr td {
+    color: #343136;
+    font-size: 16px;
+    font-family: 'Proxima Nova Rg';
+    font-weight: 500;
+    padding-left: 65px;
+    border: none;
+}
+.missionTrip_outer {
+    margin-top: 96px;
+}
+.missionTrip_outer .table tbody tr {
+    height: 40px; 
+    line-height: 34px;
+}
+li.active_date {
+    background: #eeeded;
+}
+.missionTrip_outer table.table {
+    border: 1px solid #e1e1e1; 
+    margin: 0 auto;
+}
+.outerCoL_item {
+    display: flex;
+    justify-content: center;
+}
+.september_btn {
+    position: absolute;
+    top: 14px;
+    right: 22px;
+    border: 1px solid #797979;
+    width: 50px;
+    height: 23px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.september_btn a {
+    color: #797979;
+    text-decoration: none;
+    font-size: 12px;
+}
+tr.trRoW_bg {
+    background: #f9f9f9;
+}
+.days li:last-child {
+    border-bottom: 0;
+}
+.days li:nth-child(25) {
+    border-bottom: 0;
+}
+.days li:nth-child(26) {
+    border-bottom: 0;
+}
+.days li:nth-child(27) {
+    border-bottom: 0;
+}
+.days li:nth-child(28) {
+    border-bottom: 0;
+}
+.days li:nth-child(29) {
+    border-bottom: 0;
+}
+h2.mission_teamHadding {
+    text-align: center;
+    margin: 0;
+    font-size: 48px;
+    font-family: 'Proxima Nova Rg';
+    padding-bottom: 66px;
+    padding-top: 90px;
+}
+.days li {
+    list-style-type: none;
+    float: left;
+    width: 220.5px;
+    margin-bottom: 0;
+    font-size: 12px;
+    color: #000;
+    height: 86px;
+    padding: 14px 0px 0px 16px !important;
+    font-family: 'Proxima Nova Rg';
+    border-right: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+}
+  
+  .days li .active {
+    padding: 5px;
+    background: #1abc9c;
+    color: white !important
+  }
+  /* calender close here */
+
+  /* mission haiti css start */
+    .mission_haittiBanner {
+        background: url(../images/Mission_Haiti.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+    .haitiHadding_btnItem a {
+        background: #174cb5;
+        border: 1px solid #174cb5;
+        width: 214px;
+        display: flex;
+        height: 50px;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 18px;
+        text-align: center;
+        font-family: 'Proxima Nova Rg';
+        line-height: 18px;
+    }
+    .haitiHadding_btnItem a:hover {
+        background: none;
+        color: #000000;
+    }
+    .haiti_hadding h2 {
+        margin: 0;
+        font-size: 48px;
+        text-align: center;
+        padding-bottom: 52px !important;
+        padding-top: 90px !important;
+        font-family: 'Proxima Nova Rg';
+    }
+    .haitiHadding_btn { 
+        justify-content: space-between;
+    }
+    .haitiHadding_btnItem p {
+        color: #f7941d;
+        font-size: 18px;
+        text-align: center;
+        margin-bottom: 21px;
+        font-family: 'Proxima Nova Rg';
+        font-weight: bold;
+        width: 214px;
+    }
+    .haiti_hadding {
+        padding-bottom: 74px !important;
+    }
+    .outer_rowMission {
+        padding: 0 12px !important;
+    }
+    .haitimission_rightSide p {
+        color: #343136;
+        font-size: 22px;
+        line-height: 36px;
+        font-family: 'Proxima Nova Rg';
+        letter-spacing: 1px;
+        padding-top: 14px !important;
+    }    
+    .haitimission_rightSide p span {
+        color: #0072ff;
+    }
+    .missionHatti_bg {
+        background: #fbfbfb;
+        padding: 64px 0 !important;
+    }
+    .ministries_hadding h2 {
+        font-size: 48px;
+        color: #000000;
+        margin: 0;
+        font-family: 'Proxima Nova Rg';
+        padding-bottom: 30px !important;
+        padding-top: 140px !important;
+    }
+    .ministries_hadding h6 {
+        color: #343136;
+        font-size: 24px;
+        font-family: 'Proxima Nova Rg';
+        margin: 0;
+        padding-bottom: 38px !important;
+    }
+    .ministries_hadding p {
+        font-size: 22px;
+        color: #343136;
+        line-height: 36px;
+        margin: 0;
+        padding-bottom: 56px !important;
+        font-family: 'Proxima Nova Rg';
+    }
+    .ministries_leftSec h4 {
+        font-size: 30px;
+        font-family: 'Proxima Nova Rg';
+        margin: 0;
+        padding-bottom: 12px !important;
+    }
+    .ministries_leftSec p {
+        font-size: 22px;
+        color: #343136;
+        line-height: 36px;
+        font-family: 'Proxima Nova Rg';
+        margin: 0;
+    }
+    .rightSec_imgShool img {
+        margin-top: 50px;
+        padding-left: 44px !important;
+        width: 100%;
+    }
+    .ministries_outer {
+        margin-bottom: 90px;
+    }
+    .sponsorship_hadding h4 {
+        font-size: 30px;
+        font-family: 'Proxima Nova Rg';
+        margin: 0;
+        padding-bottom: 40px !important;
+    }
+    .sponsorship_hadding p {
+        color: #343136;
+        font-size: 22px;
+        line-height: 36px;
+        font-family: 'Proxima Nova Rg';
+    }
+    .sponsorship_btn a {
+        width: 180px;
+        height: 53px;
+        background: #f7941d;
+        border: 1px solid #f7941d;
+        color: #ffffff;
+        text-decoration: none;
+        margin-top: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        font-family: 'Proxima Nova Rg';
+    }
+    .sponsorship_btn a:hover{
+        background: none;
+        color: #f7941d;
+    }
+    .haitiMission_img img {
+        width: 100%;
+    }
+    .haitimission_rightSide p { 
+        font-size: 18px;
+        line-height: 28px; 
+    }
+    .ministries_hadding h2 {
+        font-size: 40px; 
+        padding-bottom: 20px !important;
+        padding-top: 40px !important;
+    }
+    .ministries_hadding h6 { 
+        font-size: 20px; 
+        padding-bottom: 26px !important;
+    }
+    .ministries_hadding p {
+        font-size: 18px; 
+        line-height: 30px; 
+        padding-bottom: 40px !important; 
+    }
+    .ministries_leftSec h4 {
+        font-size: 28px; 
+    }
+    .ministries_leftSec p {
+        font-size: 18px; 
+        line-height: 32px; 
+    }
+    .spon_img img {
+        width: 100%;
+    }
+
+    .haitiHadding_btnItem {
+        float: left;
+        width: 229px;
+    }
+    .missionKenya {
+        width: 100%;
+        float: left;
+        display: flex;
+        justify-content: center;
+        margin-top: 44px;
+        margin-bottom: 82px;
+    }
+    .clearfix {
+        clear: both;
+    }
+    .kenya_outer p {
+        color: #000000;
+        font-size: 22px;
+        line-height: 36px;
+        font-family: 'Proxima Nova Rg';
+        margin: 0;
+    }
+    .kenya_outer {
+        clear: both;
+    }
+    .ministry_left_sec h2 {
+        font-size: 48px;
+        margin: 0;
+        padding-bottom: 28px;
+        font-family: 'Proxima Nova Rg';
+    }
+    p.partnerParagraph {
+        font-size: 24px;
+        color: #000000;
+        font-family: 'Proxima Nova Rg';
+        margin: 0;
+        padding-bottom: 16px;
+    }
+    p.partnerParagraph1 {
+        font-size: 18px;
+        color: #000000;
+        margin: 0;
+        padding-bottom: 8px;
+        font-family: 'Proxima Nova Rg';
+    }
+    .kenya_paragraphOuter {
+        margin-top: 82px;
+    }
+    p.partnerParagraph1:last-child {
+        padding: 0;
+    }
+    .partnerFeatured_outer h2 {
+        font-size: 48px;
+        margin: 0;
+        font-family: 'Proxima Nova Rg';
+        padding-bottom: 6px;
+    }
+    .partnerFeatured {
+        padding-top: 120px;
+    }
+    p.partnerFeatured_tagline {
+        font-size: 24px !important;
+        margin: 0;
+    }
+    .partnerFeatured_outer p {
+        font-size: 22px;
+        margin: 0;
+        font-family: 'Proxima Nova Rg';
+    }
+    .leftSec_missionary1 h2 {
+        font-size: 48px;
+        color: #000000;
+        font-family: 'Proxima Nova Rg';
+        margin: 0;
+        padding-bottom: 12px;
+    }
+    .leftSec_missionary1 p {
+        font-size: 22px;
+        line-height: 30px;
+        margin: 0;
+        font-family: 'Proxima Nova Rg';
+        padding-bottom: 50px;
+    }
+    .leftSec_missionary2 h4 {
+        font-size: 24px;
+        font-family: 'Proxima Nova Rg';
+        font-weight: bold;
+        margin: 0;
+        padding-bottom: 10px;
+        color: #000000;
+    }
+    .leftSec_missionary2 p {
+        font-size: 22px;
+        margin: 0;
+        padding-bottom: 26px;
+        color: #000000;
+        font-family: 'Proxima Nova Rg';
+    }
+    .leftSec_missionary3 h4 {
+        font-size: 24px;
+        font-family: 'Proxima Nova Rg';
+        font-weight: bold;
+        margin: 0;
+        padding-bottom: 10px;
+        color: #000000;
+    }
+    .leftSec_missionary3 p {
+        font-size: 22px;
+        margin: 0; 
+        color: #000000;
+        font-family: 'Proxima Nova Rg';
+    }
+    .missionaryProfile {
+        margin-top: 104px;
+    }
+    .pragraph_tagLine p {
+        font-size: 22px;
+        font-family: 'Proxima Nova Rg';
+        line-height: 36px;
+        color: #000000;
+        margin-top: 22px;
+        margin-bottom: 60px;
+    }
+    .pragraph_tagLine h6 {
+        font-size: 24px;
+        color: #000000;
+        margin: 0;
+        padding-bottom: 44px;
+    }
+    .missionary_btnn button {
+        width: 179px;
+        height: 52px;
+        border-radius: 8px;
+        background: #f7941d;
+        border: 1px solid #f7941d;
+        color: #ffffff;
+        font-size: 16px;
+        font-family: 'Proxima Nova Rg';
+    }
+    .missionary_btnn button:hover {
+        background: none;
+        color: #f7941d;
+    }
+    .mamber { 
+        margin-top: 60px;
+    }
+    .leftSec_missionaryImg img {
+        width: 100%;
+    }
+
+
+    .tropical_leftSec p {
+        font-size: 22px;
+        color: #343136;
+        line-height: 36px;
+        margin: 0;
+        font-family: 'Proxima Nova Rg';
+        padding-top: 2px;
+    }
+    .tropical_rightSec img {
+        width: 100%;
+    }
+    .outer_tagline p {
+        font-size: 22px;
+        color: #343136;
+        line-height: 36px;
+        margin: 0;
+        font-family: 'Proxima Nova Rg';
+    }
+    .outer_tagline span {
+        color: #0066ff;
+    }
+    .tropical_outer {
+        margin-top: 100px;
+    }
+    .ministriesOuter {
+        margin-top: 110px;
+    }
+    .rightSec_ministrie h2 {
+        font-size: 48px;
+        margin: 0;
+        font-family: 'Proxima Nova Rg';
+        padding-bottom: 12px;
+    }
+    .rightSec_ministrie {
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 100%;
+    }
+    .rightSec_ministrie h5 {
+        font-size: 30px;
+        margin: 0;
+        font-family: 'Proxima Nova Rg';
+        padding-bottom: 20px;
+    }
+    .rightSec_ministrie p {
+        color: #343136;
+        font-size: 22px;
+        line-height: 36px;
+        font-family: 'Proxima Nova Rg';
+        margin: 0;
+    }
+    .PROGRAMTagline span {
+        color: #343136;
+        font-size: 22px;
+        font-family: 'Proxima Nova Rg';
+        font-weight: bold;
+    }
+    .PROGRAMTagline {
+        padding-top: 84px;
+    }
+    .PROGRAMTagline p {
+        font-size: 22px;
+        line-height: 36px;
+        color: #343136;
+        font-family: 'Proxima Nova Rg';
+        margin: 0;
+    }
+    .ELEMENTARY_outerImg {
+        margin-top: 30px;
+    }
+    .ELEMENTARY_outerImg img {
+        width: 100%;
+    }
+    .schoolTagline span {
+        color: #343136;
+        font-size: 22px;
+        font-family: 'Proxima Nova Rg';
+        font-weight: bold;
+    }
+    .schoolTagline p {
+        font-size: 22px;
+        line-height: 36px;
+        color: #343136;
+        font-family: 'Proxima Nova Rg';
+        margin: 0;
+    }
+    .schoolTagline {
+        padding-top: 37px;
+    }
+    .childrenOuter {
+        margin-top: 60px;
+    }
+    .childreOuter_img span {
+        color: #343136;
+        font-size: 22px;
+        font-family: 'Proxima Nova Rg';
+        font-weight: bold;
+    }
+    .childreOuter_img p {
+        font-size: 22px;
+        line-height: 36px;
+        color: #343136;
+        font-family: 'Proxima Nova Rg';
+        margin: 0;
+        padding-top: 50px;
+    }
+    .tradeOuter {
+        margin-top: 42px;
+    }
+    .tadeTagline span {
+        color: #343136;
+        font-size: 22px;
+        font-family: 'Proxima Nova Rg';
+        font-weight: bold;
+    }
+    .tadeTagline p {
+        font-size: 22px;
+        line-height: 36px;
+        color: #343136;
+        font-family: 'Proxima Nova Rg';
+        margin: 0;
+        padding-top: 40px;
+    }
+    .leftSec_trade img {
+        width: 100%;
+    }
+    .community_leftSec span {
+        color: #343136;
+        font-size: 22px;
+        font-family: 'Proxima Nova Rg';
+        font-weight: bold;
+    }
+    .community_leftSec p {
+        font-size: 21px;
+        line-height: 36px;
+        color: #343136;
+        font-family: 'Proxima Nova Rg';
+        margin: 0; 
+    }
+    .COMMUNITYOuter {
+        margin-top: 40px;
+    }
+    p.program1 {
+        font-size: 21px;
+        line-height: 36px;
+        color: #343136;
+        font-family: 'Proxima Nova Rg';
+        margin: 0;
+    }
+    .VOLUNTEERouter_item p {
+        font-size: 21px;
+        line-height: 36px;
+        color: #343136;
+        font-family: 'Proxima Nova Rg';
+        margin: 0;
+        padding-top: 56px;
+    }
+    .VOLUNTEERouter_item span {
+        color: #343136;
+        font-size: 22px;
+        font-family: 'Proxima Nova Rg';
+        font-weight: bold;
+    }
+    .children1 {
+        margin-top: 56px;
+    }
+    button.children1_btn {
+        width: 208px;
+        height: 52px;
+        background: #f7941d;
+        border: 1px solid #f7941d;
+        color: #ffffff;
+        margin-top: 55px;
+        font-family: 'Proxima Nova Rg';
+        font-size: 22px;
+    }
+    button.children1_btn:hover {
+        background: none;
+        color: #f7941d;
+    }
+    .children_outer {
+        justify-content: center;
+        display: flex;
+    }
+  /* mission css close */
+
+
+
+/* Media Query Start */
+/* Media Query Start */
+@media only screen and (max-width: 1300px) {
+    .header .nav-item a.nav-link {
+        font-size: 18px;
+        color: #000000;
+        padding-left: 32px !important;
+        font-family: 'Proxima Nova Rg';
+    }
+    a.donate_btn {
+        height: 48px; 
+        padding: 5px 35px !important; 
+        font-size: 16px; 
+    }
+    a.sponsor_btn {
+        background: #174cb5;
+        border: 1px solid #174cb5;
+        height: 48px;
+        /* width: 153px; */
+        padding: 5px 30px !important;
+        float: left;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        color: #ffffff;
+        text-decoration: none;
+        margin-left: 10px;
+        font-family: 'Proxima Nova Alt Rg';
+    }
+}
+@media only screen and (max-width: 1200px) {
+    .news_outer {
+    margin-top: 70px;
+    }
+    body{
+    overflow-x: hidden;
+    }
+    html{
+    overflow-x: hidden;
+    }
+    .header .nav-item a.nav-link{
+    font-size: 16px;
+    padding-left: 20px !important;
+    }
+    a.donate_btn{
+    font-size: 16px;   
+    padding: 10px 30px !important;
+    }
+    a.sponsor_btn{
+    font-size: 16px;
+    padding: 10px 30px !important;  
+    margin-left: 17px;  
+    }
+    .header ul.navbar-nav.ms-auto.mb-2.mb-lg-0 {
+    margin-right: 32px;
+    }
+    .about_right_sec{
+    padding-right: 10px !IMPORTANT;    
+    }
+    /*----Childern Page-----*/
+    .child_circle img{
+    width: 230px !important;
+    height: 220px !important;    
+    }
+
+    /* tams start */
+    .considerServing {
+        margin-top: 40px;
+    }
+    .consider_hadding h2 { 
+        font-size: 34px; 
+        padding-bottom: 24px !important; 
+    }
+    .mission_team { 
+        padding-top: 60px !important;
+    }
+    /* tams close */
+
+    /* recoures start */
+    .TeamResources_outer {
+        margin-top: 40px; 
+    }
+    .TeamResources_hadding h2 {
+        font-size: 40px; 
+        padding-bottom: 30px !important; 
+    }
+    .TeamResources_hadding p {
+        font-size: 18px; 
+        padding-bottom: 60px !important; 
+    }
+    /* recours close */
+
+    /* mission css start */
+    .haiti_hadding h2 { 
+        font-size: 40px; 
+        padding-bottom: 30px !important;
+        padding-top: 40px !important; 
+    }
+    .haitiHadding_btnItem {
+        display: inline-block;
+        width: 20%;
+    }
+    .haitiHadding_btn {
+        display: block;
+    }
+    .haitiHadding_btnItem a { 
+        width: 176px; 
+        font-size: 18px; 
+        line-height: 16px;
+    }
+    .haiti_hadding {
+        padding-bottom: 40px !important;
+    }
+    .missionHatti_bg { 
+        padding: 30px 0 !important;
+    }
+    .rightSec_imgShool img {
+        margin-top: 40px;
+        padding-left: 0 !important; 
+    }
+    .ministries_outer {
+        margin-bottom: 40px;
+    }
+    .sponsorship_hadding h4 {
+        font-size: 26px; 
+        padding-bottom: 10px !important;
+        padding-top: 20px;
+    }
+    .sponsorship_hadding p { 
+        font-size: 18px;
+        line-height: 32px; 
+    }
+    .sponsorship_btn a {
+        width: 160px;
+        height: 48px; 
+        margin-top: 30px; 
+    }
+
+
+    .teamsConsider_outer h1 {
+        font-size: 40px; 
+    }
+    .haitiHadding_btnItem p {
+        font-size: 16px;
+        width: 190px;
+        margin-bottom: 10px;
+    }
+    .missionKenya { 
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+    .kenya_outer p { 
+        font-size: 18px;
+        line-height: 30px; 
+    }
+    .ministry_left_sec h2 {
+        font-size: 32px; 
+        padding-bottom: 14px; 
+    }
+    p.partnerParagraph {
+        font-size: 20px; 
+        padding-bottom: 14px;
+    }
+    p.partnerParagraph1 {
+        font-size: 16px; 
+    }
+    .partnerFeatured {
+        padding-top: 40px;
+    }
+    .partnerFeatured_outer h2 {
+        font-size: 32px; 
+    }
+    p.partnerFeatured_tagline {
+        font-size: 18px !important; 
+    }
+    .partnerFeatured_outer p {
+        font-size: 18px; 
+    }
+    .leftSec_missionary1 h2 {
+        font-size: 32px; 
+    }
+    .missionaryProfile {
+        margin-top: 40px;
+    }
+    .leftSec_missionary1 p {
+        font-size: 18px;
+        line-height: 24px; 
+        padding-bottom: 20px;
+    }
+    .leftSec_missionary2 h4 {
+        font-size: 20px; 
+    }
+    .leftSec_missionary2 p {
+        font-size: 18px; 
+        padding-bottom: 20px; 
+    }
+    .leftSec_missionary3 h4 {
+        font-size: 18px; 
+        padding-bottom: 6px; 
+    }
+    .leftSec_missionary3 p {
+        font-size: 18px; 
+    }
+    .pragraph_tagLine p {
+        font-size: 18px; 
+        line-height: 32px; 
+        margin-top: 14px;
+        margin-bottom: 40px;
+    }
+    .pragraph_tagLine h6 {
+        font-size: 18px; 
+        padding-bottom: 26px;
+    }
+    .missionary_btnn button {
+        width: 152px;
+        height: 44px; 
+    }
+    .mamber {
+        margin-top: 40px;
+    }
+    /* mission close here */ 
+}
+@media only screen and (max-width: 1025px) {
+    .haitiHadding_btnItem a {
+        width: 180px; 
+    }
+
+    /* mission start here */
+    .tropical_leftSec p {
+        font-size: 20px; 
+        padding-top: 0;
+    }
+    .outer_tagline p {
+        font-size: 20px; 
+    }
+    .leftSec_ministrie img {
+        width: 100%;
+    }
+    .rightSec_ministrie h2 {
+        font-size: 42px; 
+    }
+    .rightSec_ministrie h5 {
+        font-size: 26px; 
+    }
+    .rightSec_ministrie p { 
+        font-size: 18px;
+        line-height: 25px; 
+    }
+    .PROGRAMTagline {
+        padding-top: 40px;
+    }
+    .PROGRAMTagline p {
+        font-size: 18px; 
+    }
+    .schoolTagline p {
+        font-size: 18px;
+        line-height: 28px; 
+    }
+    .ELEMENTARY_outerImg {
+        margin-top: 18px;
+    }
+    .schoolTagline {
+        padding-top: 22px;
+    }
+    .childreOuter_img img {
+        width: 100%;
+    }
+    .childrenOuter {
+        margin-top: 30px;
+    }
+    .childreOuter_img p {
+        font-size: 18px;
+        line-height: 26px; 
+        padding-top: 26px;
+    }
+    .tradeOuter {
+        margin-top: 20px;
+    }
+    .tadeTagline p {
+        font-size: 18px;
+        line-height: 28px; 
+        padding-top: 20px;
+    }
+    .tadeTagline span { 
+        font-size: 18px; 
+    }
+    .community_leftSec p {
+        font-size: 18px;
+        line-height: 28px; 
+    }
+    .community_leftSec span { 
+        font-size: 18px; 
+    }
+    button.children1_btn {
+        width: 178px;
+        height: 42px; 
+        margin-top: 35px; 
+        font-size: 18px;
+    }
+    /* mission close here */
+}
+@media only screen and (max-width: 1024px) {
+    .banner_outer h1 {
+    font-size: 50px;
+    line-height: 62px;
+    }
+    .banner_outer h6 {
+    font-size: 25px;
+    }
+    .about_right_sec h2 {
+    font-size: 50px;
+    line-height: 62px;
+    }
+    .vision_outer h2 {
+    font-size: 50px;
+    }
+    .hadding_lastestNews h2 {
+    font-size: 50px;
+    line-height: 62px;
+    }
+    .magazines h2 {
+    font-size: 50px;
+    }
+    .vision_outer{
+    margin-top: 60px !important;
+    }
+    .about_right_sec{
+    padding-right: 0px !IMPORTANT;    
+    }
+    .magazines_arm{
+    width: auto !IMPORTANT;
+    }
+    .news_outer {
+    margin-top: 60px;
+    }
+    /*---Start Register page-----*/
+    .registeration_form{
+    width: 100% !IMPORTANT;
+    }
+    .donnar_bg{
+    background-position: right center;    
+    }
+    .make_donation {
+    padding-top: 55px !IMPORTANT;
+    }
+    .make_donation h2{
+    font-size: 40px;
+    line-height: 52px;
+    }
+    .make_donation_receive {
+    padding-bottom: 5px !IMPORTANT;
+    }
+    .donnar_bg{
+    margin-top: 20px !IMPORTANT;     
+    }
+    .sbmt_btn{
+    height: 57px;    
+    }
+    /*---End Register page-----*/
+    /*---Start About Behave page-----*/
+    .children_arm .behave_outer h2{
+    font-size: 40px;
+    line-height: 52px;
+    }
+
+    /*---End About Behave page-----*/
+    .our_policy .policy_item h2{
+    font-size: 50px;
+    line-height: 62px;
+    padding-bottom: 20px !IMPORTANT;
+    }
+    .history_item h2{
+    font-size: 40px !IMPORTANT;
+    line-height: 52px;
+    }
+    .children_arm .about_history {
+    padding-top: 45px !important;
+    }
+    /*----Start Our Staff---*/
+    .staff .children_arm h2{
+    padding-top: 55px !important; 
+    font-size: 40px;
+    line-height: 62px;  
+    padding-bottom: 20px !important; 
+    }
+    .staff_item .staff_hadding p{
+    font-size: 16px !IMPORTANT; 
+    padding-bottom: 1px !IMPORTANT;   
+    }
+    /*---Contact page---*/
+    .container.contact_page_frm {
+    padding: 55px 0px !IMPORTANT;
+    padding-bottom: 0px !IMPORTANT;
+    }
+    .container.contact_page_frm h3 {
+    font-size: 30px !important;
+    }
+    .mailing_address h4 {
+    font-size: 20px !IMPORTANT;
+    padding-top: 0px !important;
+    padding-bottom: 0px !IMPORTANT;
+    margin-bottom: 0px;
+    }
+    .mailing_address p{
+    font-size: 18px !important;
+    }
+    .mailing_address p a{
+    font-size: 18px !important;    
+    }
+    
+}
+@media only screen and (max-width: 992px) {
+    .children_header div#navbarSupportedContent li {
+    padding-bottom: 10px !IMPORTANT;
+    }
+    .select_video select{
+    font-size: 18px;
+    }
+    .magazines h2 {
+    font-size: 50px;
+    padding: 45px 0px 15px 0px !important;
+    }
+    .our_magzine_product h3 {
+    font-size: 20px;
+    }
+    .about_right_sec h2 {
+    font-size: 40px;
+    line-height: 52px;
+    }
+    .vision_outer h2 {
+    font-size: 40px;
+    }
+    .hadding_lastestNews h2 {
+    font-size: 40px;
+    line-height: 52px;
+    }
+    .news_outer {
+    margin-top: 50px;
+    }
+    .donors_hadding h4 {
+    font-size: 24px;
+    margin-bottom: 8px;
+    }
+    .LatestNews_btn a{
+    margin-top: 26px;
+    }
+    .magazines h2 {
+    font-size: 40px;
+    }
+    .vision_outer {
+    margin-top: 55px !important;
+    }
+    .our_magzine_product h3{
+    margin-top: 12px;   
+    }
+    .our_magzine_product{
+    padding-bottom: 0px !IMPORTANT;    
+    }
+    .row.footer_row1 {
+    margin: 0 0px !important;
+    }
+    .footer_right_side {
+    margin-left: 10px;
+    }
+    .footer_item1 p.email_footer{
+    margin-bottom: 26px;    
+    } 
+    .footer_btm a{
+    margin-top: 6px;  
+    }
+    .children_header {
+    width: 1360px;
+    max-width: 90%;
+    margin: 0px auto;
+    }
+    .copyright_txt p { 
+        font-size: 16px; 
+    }
+    .copyright_txt { 
+        padding-top: 40px !IMPORTANT;
+        padding-bottom: 20px !IMPORTANT;
+    }
+    .banner_outer{
+    padding: 250px 0px !IMPORTANT;
+    }
+    .about_right_sec{
+    padding: 0 20px !important;    
+    }
+    .about_right_sec p{
+    padding-right: 0px !IMPORTANT;    
+    }
+    .about_item{
+    margin-right: 0px;     
+    } 
+    .our_magzine_product img{
+    width: 70%;   
+    }
+    .slider_autoplay .slick-prev:after{
+    width: 45px;
+    height: 45px;
+    left: -30px;
+    }
+    .slider_autoplay .slick-next:after{
+    width: 45px;
+    height: 45px;
+    right: -30px;    
+    }
+    .children_header div#navbarSupportedContent{
+    position: absolute;
+    width: 100%;
+    background: rgb(37 171 224 / 96%);
+    top: 96px;
+    padding: 10px 20px!IMPORTANT;
+    z-index: 9;
+    }
+    .children_header .nav-item a.nav-link{
+    color: #fff;   
+    }
+   .children_header div#navbarSupportedContent li a{
+    padding-left: 0px !IMPORTANT; 
+    }
+   .children_header .navbar-toggler:focus{
+    box-shadow: 0 0 0 0rem;
+    }
+    .children_header .navbar-brand img {
+    width: 100%;
+    max-width: 70px !IMPORTANT;
+    }
+    .children_header i {
+    font-size: 24px;
+    padding: 9px 11px !IMPORTANT;
+    color: #662e91;
+    border-radius: 3px;
+    }
+    .children_header .navbar-toggler {
+    border: 1px solid #030303 !IMPORTANT;
+    }
+    .footer_item1{
+    padding: 30px 40px 15px 18px !important;
+    }
+    .magazines .slick-dots li button:before{
+    font-size: 60px;
+    }
+    /*----About page----*/
+    .children_arm .behave_outer h2{
+    padding-top: 55px !important;
+    padding-bottom: 6px !important;
+    }
+    .mamber_misson {
+    margin-top: 55px !important;
+    }
+    /*-----Start about fund ploicy----*/
+    .policy_item{
+    margin-top: 55px !important;   
+    }
+
+    /*-----End about fund policy----*/
+    .mamber_policy {
+    margin-top: 55px !IMPORTANT;
+    }
+    .about_history img{
+    width: 90%;
+    margin: 0 auto;
+    }
+    .row.about_history {
+    padding-top: 25px !important;
+    }
+    .children_arm .history_item h2{
+    padding-top: 0px !important;
+    padding-bottom: 6px !important;
+    }
+    .history{
+    margin-top: 55px !IMPORTANT;   
+    }
+    /*---Start about mission---*/
+    .mission_outer .mission_list ul{
+    padding-left: 30px !IMPORTANT;
+    margin-bottom: 0px;
+    }
+    .mission_list ul li{
+    font-size: 16px !important;
+    line-height: 30px !IMPORTANT;
+    }
+    /*---End about mission---*/
+    .container .gutenemala_text {
+    padding-top: 55px !IMPORTANT;
+    padding-bottom: 20px !IMPORTANT;
+    }
+    .gutenemala_text h2{
+    font-size: 38px !important;    
+    }
+    /*----Children Page Start---*/
+    .child_circle img {
+    width: 150px !important;
+    height: 150px !important;
+    }
+    .children_arm .catalog_section_main {
+    margin-top: 55px !IMPORTANT;
+    }
+
+    /* resources start */
+    .resources_applications {
+        margin-top: 20px !important;
+    }
+    .resources_team {
+        margin-top: 0 !important;
+    }
+    /* resources close */
+
+    /* mission css start */
+    .haitiHadding_btnItem {
+        display: inline-block;
+        width: 32%;
+    }
+    .sponsorship_btn a {
+        width: 160px;
+        height: 46px;
+        margin-top: 28px;
+    }
+    .haitiHadding_btn {
+        display: block;
+    }
+    .TeamsBlogs_mamber {
+        margin-top: 40px;
+    }
+    .haitiHadding_btnItem a {
+        width: 202px;
+        height: 46px;
+        font-size: 18px;
+        line-height: 18px;
+        margin-bottom: 12px;
+    }
+    .missionKenya {
+        margin-top: 4px;
+        margin-bottom: 12px;
+    }
+    .haitiHadding_btnItem p { 
+        font-size: 16px; 
+        margin-bottom: 8px;
+        text-align: left;
+    }
+    .kenya_outer p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .logo_mamber img {
+        padding-top: 40px !important;
+        padding-bottom: 20px !important;
+        width: 240px;
+    }
+    .footer_item1 h6 {
+        font-size: 18px;
+        margin-bottom: 14px; 
+    }
+    .footer_item1 p.number_footer { 
+        font-size: 16px; 
+        margin-bottom: 6px;
+    }
+    .footer_item1 p.email_footer { 
+        font-size: 16px; 
+    }
+    .mamber_outer p {
+        font-size: 16px; 
+        line-height: 28px;
+    }
+    .missionHatti_bg {
+        padding: 26px 0 !important;
+        margin-top: 30px;
+    }
+    .haitiMission_img {
+        text-align: center;
+    }
+    .teamsConsider_outer h1 {
+        font-size: 42px; 
+    }
+    .haiti_hadding h2 { 
+        font-size: 36px; 
+        padding-bottom: 26px !important;
+        padding-top: 40px !important; 
+    }
+    .haiti_hadding {
+        padding-bottom: 0 !important;
+    }
+    .haitiMission_img img {
+        width: 100%;
+    }
+    .haitimission_rightSide p { 
+        font-size: 16px;
+        line-height: 28px; 
+        padding-top: 14px !important;
+        margin: 0;
+    }
+    .ministries_hadding h2 {
+        font-size: 32px; 
+        padding-bottom: 14px !important;
+        padding-top: 40px !important;
+    }
+    .ministries_hadding h6 { 
+        font-size: 20px; 
+        padding-bottom: 24px !important;
+    }
+    .ministries_hadding p {
+        font-size: 16px; 
+        line-height: 28px; 
+        padding-bottom: 40px !important; 
+    }
+    .ministries_leftSec h4 {
+        font-size: 24px; 
+        padding-bottom: 12px !important;
+    }
+    .ministries_leftSec p {
+        font-size: 16px; 
+        line-height: 28px; 
+    }
+    .rightSec_imgShool img {
+        margin-top: 40px;
+        padding-left: 0 !important;
+        width: 100%;
+    }
+    .ministries_outer {
+        margin-bottom: 40px;
+    }
+    .spon_img img {
+        width: 100%;
+    }
+    .sponsorship_hadding h4 {
+        font-size: 24px; 
+        padding-bottom: 10px !important;
+        padding-top: 20px !important;
+    }
+    .sponsorship_hadding p { 
+        font-size: 16px;
+        line-height: 28px; 
+    }
+    .footer_item1 {
+        padding: 20px 32px 10px 12px !important;
+    }
+    .footer_item1 p.address_hadding { 
+        font-size: 16px; 
+    }
+    .footer_item1 p.\32 R2 { 
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+    .footer_item1 p.office_hadding { 
+        font-size: 16px; 
+    }
+    .footer_item1 p.office_address { 
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+    .footer_btm a {
+        height: 44px;
+        width: 140px; 
+        font-size: 14px; 
+    }
+    .footer_logo {
+        margin-right: 26px; 
+    }
+    .social_ic a { 
+        width: 44px;
+        height: 44px; 
+    }
+    .social_ic i {
+        font-size: 18px;
+    }
+    .footer_manu_item1 h5 {
+        font-size: 16px;
+        margin-bottom: 6px; 
+    }
+    .footer_manu_item1 ul li a { 
+        font-size: 14px; 
+    }
+    .month .next { 
+        right: 172px; 
+    }
+    .month .prev { 
+        left: 170px; 
+    }
+    .missionTrip_outer table.table {
+        width: auto;
+    }
+    .haiti_hadding {
+        padding-bottom: 40px !important;
+    }
+
+
+    .tropical_leftSec p {
+        font-size: 16px;
+        padding-top: 0;
+        line-height: 26px;
+    }
+    .outer_tagline p {
+        font-size: 16px;
+        line-height: 26px;
+    }
+    .ministriesOuter {
+        margin-top: 40px;
+    }
+    .rightSec_ministrie h2 {
+        font-size: 34px;
+    }
+    .rightSec_ministrie h5 {
+        font-size: 22px;
+    }
+    .rightSec_ministrie p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .PROGRAMTagline p {
+        font-size: 16px;
+        line-height: 26px;
+    }
+    .PROGRAMTagline span { 
+        font-size: 16px; 
+    }
+    .schoolTagline p {
+        font-size: 16px;
+        line-height: 26px;
+    }
+    .schoolTagline span {
+        color: #343136;
+        font-size: 16px; 
+    }
+    .childreOuter_img p {
+        font-size: 16px;
+        line-height: 26px; 
+    }
+    .childreOuter_img span { 
+        font-size: 16px; 
+    }
+    .tadeTagline span {
+        font-size: 16px;
+    }
+    .tadeTagline p {
+        font-size: 16px;
+        line-height: 26px; 
+    }
+    .community_leftSec p {
+        font-size: 16px;
+        line-height: 26px;
+    }
+    .community_leftSec span {
+        font-size: 16px;
+    }
+    p.program1 {
+        font-size: 16px; 
+    }
+    .VOLUNTEERouter_item p {
+        font-size: 16px;
+        line-height: 26px; 
+        padding-top: 40px;
+    }
+    .VOLUNTEERouter_item span { 
+        font-size: 16px; 
+    }
+    .children1 {
+        margin-top: 30px;
+    }
+    .children1 img {
+        width: 100%;
+    }
+    /* mission css close */
+}
+@media only screen and (max-width: 768px) {
+    .behave_outer ul li{
+    font-size: 14px !important;
+    line-height: 24px !IMPORTANT;
+    }
+
+    .video iframe {
+    height: 388px;
+    }
+    .magazines .slick-dots{
+    bottom: -35px;
+    }
+    .magazines .slick-dots li.slick-active button:before{
+    color: rgba(38, 171, 224, 0.5);
+    }
+    .magazines .slick-dots li button:before{
+    font-size: 60px;
+    }
+    .our_magzine_product h3 {
+    font-size: 16px;
+    }
+    .magazines_btn a{
+    font-size: 16px;
+    }
+    .right_side_outer{
+    padding-top: 20px !IMPORTANT;
+    }
+    .donors_hadding{
+    padding-bottom: 20px !IMPORTANT;
+    }
+    .vision_outer{
+    padding: 0px 0px !IMPORTANT;     
+    }
+    .latest_img img {
+    width: 100%;
+    }
+    .about-left-sec img {
+    width: 100%;
+    }
+    .about_item{
+    width: 100%;
+    }
+    .about_right_sec h2 {
+    font-size: 38px;
+    }
+    .vision_outer h2 {
+    font-size: 38px;
+    }
+    .hadding_lastestNews h2 {
+    font-size: 38px;
+    line-height: 42px;
+    }
+    .magazines h2 {
+    font-size: 38px;    
+    }
+    .logo_mamber img{
+    width: 100%;
+    max-width: 230px;
+    }
+    .banner_outer h1 {
+    font-size: 40px;
+    line-height: 52px;
+    }
+    .footer_right_side {
+    margin-left: 10px;
+    }
+    body {
+    overflow-x: hidden;
+    }
+    html {
+    overflow-x: hidden;
+    }
+    .banner_outer{
+    padding: 100px 30px !IMPORTANT;   
+    }
+    .right_side_outer{
+    justify-content: space-between;    
+    }
+    .footer_logo {
+     margin-right: 0px; 
+    }
+    .lst_items{
+    float: left;   
+    }
+    .first_last_name .form-group {
+    width: 100%;
+    }
+    .registeration_form .form-group lable{
+    font-size: 15px;    
+    }
+    .main_form_section{
+    padding: 20px !IMPORTANT;     
+    }
+    /*----Register page-----*/
+    .register_banner{
+    padding-bottom: 320px !IMPORTANT;    
+    }
+    .registeration_form .form-group input{
+    padding: 7px !IMPORTANT;    
+    }
+    /*------About Behave-----*/
+    section.banner.policy_banner .banner_outer {
+    padding: 150px 20px !IMPORTANT;
+    }
+    section.banner.policy_banner{
+    height: 422px !important;   
+    }
+    .our_policy .policy_item h2{
+    font-size: 40px;
+    line-height: 52px;
+    }
+    .policy_item .policy_paragraph{
+    padding: 0 10px !important;    
+    }
+
+    .mission_list ul li{
+    font-size: 14px !important;
+    line-height: 24px !IMPORTANT;
+    }
+    .mission_list .list_test{
+    padding-left: 12px !important;   
+    }
+     /*---our staff--*/
+    .staff_hadding h5{
+    padding-bottom: 5px !important;
+    }
+    .children_arm .staff_item{
+    padding-bottom: 20px !important;   
+    }
+    /*----Login Page---*/
+    .main_form_login {
+    width: 70% !IMPORTANT;
+    }
+    .child_banner .container.children_arm .banner_outer{
+    padding: 100px 30px !IMPORTANT;    
+    }
+    /*----Children Page---*/
+    .child_circle img {
+    width: 180px !important;
+    height: 180px !important;
+    }
+    .add_to_cart{
+    padding: 7px 19px!IMPORTANT;
+    font-size: 16px !IMPORTANT;
+    }
+    .catalog_section .toy_section{
+     padding: 10px !important;    
+    }
+    .toy_section p{
+    font-size: 14px !important;
+    line-height: 20px !IMPORTANT;
+    }
+    .add_to_cart{
+    font-size: 14px !IMPORTANT;     
+    }
+    .mamber.registration_member.registration_cataloque .mamber_outer {
+    padding: 0px 10px !IMPORTANT;
+    }
+
+    /* teams start */
+    .considerImg_left_side { 
+        margin-top: 20px;
+    }
+    .outer_consider {
+        margin-top: 0 !important;
+    }
+    /* teams close */
+
+    /* mission start here */
+    .haitiHadding_btnItem { 
+        width: 100%;
+        margin-bottom: 14px;
+    }
+    .haitiHadding_btnItem p {
+        font-size: 14px;
+        margin-bottom: 8px;
+        text-align: center;
+        width: 100%;
+    }
+    .kenya_outer p {
+        font-size: 14px;
+        line-height: 24px;
+    }
+    .missionKenya { 
+        display: block;
+    }
+    .ministry_left_sec h2 {
+        font-size: 28px;
+        padding-bottom: 0px;
+    }
+    p.partnerParagraph {
+        font-size: 18px;
+        padding-bottom: 8px;
+    }
+    p.partnerParagraph1 {
+        font-size: 14px;
+    }
+    .kenya_paragraphOuter {
+        margin-top: 30px;
+    }
+    .partnerFeatured {
+        padding-top: 30px;
+    }
+    .partnerFeatured_outer h2 {
+        font-size: 26px;
+    }
+    p.partnerFeatured_tagline {
+        font-size: 14px !important;
+    }
+    .partnerFeatured_outer p {
+        font-size: 14px;
+    }
+    .leftSec_missionary1 h2 {
+        font-size: 26px;
+    }
+    .leftSec_missionary1 p {
+        font-size: 14px;
+        line-height: 20px;
+        padding-bottom: 14px;
+    }
+    .missionaryProfile {
+        margin-top: 30px;
+    }
+    .leftSec_missionary2 h4 {
+        font-size: 18px;
+        padding-bottom: 6px;
+    }
+    .leftSec_missionary2 p {
+        font-size: 14px;
+        padding-bottom: 12px;
+    }
+    .leftSec_missionary3 h4 {
+        font-size: 18px;
+        padding-bottom: 6px;
+    }
+    .leftSec_missionary3 p {
+        font-size: 16px;
+        padding-bottom: 16px;
+    }
+    .pragraph_tagLine p {
+        font-size: 14px;
+        line-height: 24px;
+        margin-top: 8px;
+        margin-bottom: 20px;
+    }
+    .pragraph_tagLine h6 {
+        font-size: 14px;
+        padding-bottom: 16px;
+    }
+    .missionary_btnn button {
+        width: 132px;
+        height: 38px;
+        font-size: 14px;
+    }
+    .haitiHadding_btnItem a { 
+        margin: 0 auto; 
+    }
+
+
+    .tropical_leftSec p {
+        font-size: 14px; 
+        line-height: 20px;
+    }
+    .tropical_outer {
+        margin-top: 30px;
+    }
+    .tropical_rightSec {
+        margin-top: 20px;
+    }
+    .outer_tagline p {
+        font-size: 14px;
+        line-height: 20px;
+        padding-top: 20px;
+    }
+    .rightSec_ministrie h2 {
+        font-size: 28px;
+    }
+    .rightSec_ministrie h5 {
+        font-size: 18px;
+    }
+    .rightSec_ministrie { 
+        margin-top: 20px;
+    }
+    .PROGRAMTagline p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .PROGRAMTagline span {
+        font-size: 14px;
+    }
+    .schoolTagline p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .schoolTagline span {
+        color: #343136;
+        font-size: 14px;
+    }
+    .childreOuter_img p {
+        font-size: 14px;
+        line-height: 20px;
+        padding-top: 10px;
+    }
+    .leftSec_trade {
+        margin-top: 20px;
+    }
+    .tadeTagline p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .tadeTagline span {
+        font-size: 14px;
+    }
+    .community_leftSec p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .community_leftSec span {
+        font-size: 14px;
+    }
+    .COMMUNITYOuter {
+        margin-top: 26px;
+    }
+    p.program1 {
+        font-size: 14px;
+    }
+    .VOLUNTEERouter_item span {
+        font-size: 14px;
+    }
+    .VOLUNTEERouter_item p {
+        font-size: 14px;
+        line-height: 20px;
+        padding-top: 26px;
+    }
+    /* mission close here */
+}
+@media only screen and (max-width: 767px) {
+    /* mission start here */
+    
+
+
+        .teamsConsider_outer { 
+            width: 100%;
+            justify-content: center;
+        }
+        .teamsConsider_outer h1 { 
+            font-size: 30px;
+        }
+        .haiti_hadding h2 { 
+            font-size: 32px; 
+            padding-bottom: 10px !important;
+            padding-top: 30px !important; 
+        }
+        .haitiHadding_btn {
+            display: block;
+        }
+        .haitiHadding_btnItem a { 
+            width: 196px; 
+            font-size: 16px; 
+            margin-bottom: 10px;
+            margin: 0 auto;
+        }
+        .haitiHadding_btnItem {
+            margin-bottom: 8px;
+        }
+        .haiti_hadding {
+            padding-bottom: 30px !important;
+        }      
+        .haitiMission_img img {
+            width: 100%;
+        }
+        .missionHatti_bg { 
+            padding: 26px 0 !important;
+        }
+        .haitimission_rightSide p {
+            font-size: 14px;
+            line-height: 20px;
+        }
+        .ministries_hadding h2 {
+            font-size: 28px; 
+            padding-bottom: 10px !important;
+            padding-top: 30px !important;
+        }
+        .ministries_hadding h6 { 
+            font-size: 18px; 
+            padding-bottom: 10px !important;
+        }
+        .ministries_hadding p {
+            font-size: 14px; 
+            line-height: 24px; 
+            padding-bottom: 56px !important; 
+        }
+        .ministries_leftSec h4 {
+            font-size: 24px; 
+            padding-bottom: 10px !important;
+        }
+        .rightSec_imgShool img {
+            margin-top: 20px;
+            padding-left: 0 !important;
+            width: 100%;
+        }
+        .ministries_leftSec p {
+            font-size: 14px; 
+            line-height: 24px; 
+        }
+        .ministries_outer {
+            margin-bottom: 30px;
+        }
+        .spon_img img {
+            width: 100%;
+        }
+        .sponsorship_hadding h4 {
+            font-size: 22px; 
+            padding-bottom: 10px !important;
+            padding-top: 20px !important;
+        }
+        .sponsorship_hadding p { 
+            font-size: 14px;
+            line-height: 26px; 
+        }
+        .sponsorship_btn a {
+            width: 140px;
+            height: 45px;
+            background: #f7941d; 
+            margin-top: 22px; 
+            font-size: 16px; 
+        }
+        .mamber {
+            margin-top: 30px;
+        }
+    /* mission close here */
+
+    /* mission calender start here */
+    h2.mission_teamHadding { 
+        font-size: 26px; 
+        padding-bottom: 18px;
+        padding-top: 30px;
+    }
+    .month ul li { 
+        font-size: 12px; 
+    }
+    .days li { 
+        width: 92px; 
+    }
+    .weekdays { 
+        display: block;
+        height: auto;
+    }
+    .weekdays li { 
+        width: 23.6%; 
+    }
+    .missionTrip_outer table.table {
+        width: auto;
+    }
+    tr.missionOuter { 
+        height: 60px;
+    }
+    .missionOuter th { 
+        height: 60px; 
+        line-height: 43px;
+        font-size: 14px;
+        padding-left: 35px !important; 
+    }
+    .missionTrip_outer .table tbody tr td { 
+        font-size: 13px; 
+        padding-left: 35px; 
+        line-height: 24px;
+    }
+    .missionTrip_outer {
+        margin-top: 30px;
+    }
+    .month .next { 
+        right: 151px; 
+    }
+    .month .prev { 
+        left: 150px; 
+    }
+    /* mission calender close here */
+}
+@media only screen and (max-width: 721px) {
+    .days li {
+        width: 157px;
+    }
+    .days li:nth-child(25) {
+        border-bottom: 1px solid #000000;
+    }
+    .days li:nth-child(26) {
+        border-bottom: 1px solid #000000;
+    }
+    .days li:nth-child(27) {
+        border-bottom: 1px solid #000000;
+    }
+}
+@media only screen and (max-width: 668px) {
+.days li {
+    width: 236px;
+}
+.days li:nth-child(25) {
+    border-bottom: 1px solid #000000;
+}
+.days li:nth-child(26) {
+    border-bottom: 1px solid #000000;;
+}
+.days li:nth-child(27) {
+    border-bottom: 1px solid #000000;
+}
+.days li:nth-child(28) {
+    border-bottom: 1px solid #000000;;
+}
+}
+@media only screen and (max-width: 642px) {
+.days li {
+    width: 94px;
+}
+}
+@media only screen and (max-width: 576px) {
+    .logo_mamber img{
+    padding-top: 55px !important;    
+    }
+    .vision{
+    height: 845px;
+    } 
+    .select_video select {
+    font-size: 16px;
+    }
+    .magazines{
+    margin: 55px 0px;
+    }
+    .footer_manu_item1 h5{
+    font-size: 18px;
+    }
+    .footer_manu_item1 ul li a{
+    font-size: 14px;
+    }
+    .footer_manu_item1 ul li{
+    margin-bottom: 5px;   
+    }
+    .social_ic i {
+    font-size: 20px;
+    }
+    .social_ic a{
+    width: 45px;
+    height: 45px;
+    }
+    .right_side_outer{
+    width: 95%;
+    }
+    .children_arm{
+    padding-left: 20px !important;
+    padding-right: 20px !important;    
+    } 
+    .banner_outer h1 {
+    font-size: 30px;
+    line-height: 35px;
+    }
+    .about_right_sec h2 {
+    font-size: 28px;
+    line-height: 35px;
+    }
+    .about_right_sec{
+    padding: 0 15px !important;    
+    }
+    .about_outer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    }
+    .news_outer {
+    margin-top: 40px;
+    }
+    .magazines{
+    padding-bottom: 55px !important;   
+    }
+    .vision_outer p{
+    padding: 0px 30px !important;     
+    }
+    .hadding_lastestNews p{
+    margin-bottom: 26px;
+    }
+    .donors_hadding p{
+    margin-bottom: 10px;
+    }
+    .about_right_sec h4 {
+    padding-top: 40px !important;
+    font-size: 20px;
+    }
+    .mamber_outer p{
+    margin-bottom: 55px;
+    font-size: 14px;
+    }
+    .footer {
+    margin-top: 55px;
+    }
+    .footer_item1{
+    padding: 20px 20px 20px 20px !important;   
+    }
+    .social_ic a{
+    width: 40px;
+    height: 40px;    
+    }
+    .footer_right_side {
+    margin-left: 0px;
+    }
+    .footer_manu_item1 {
+    width: 32.33%;
+    padding-right: 3px !IMPORTANT;
+    }
+    .banner_outer h6 {
+    font-size: 19px;
+    }
+    .about_right_sec h4{
+    font-size: 20px; 
+    }
+    .about_right_sec h2{
+    font-size: 30px;
+    line-height: 42px;   
+    }
+    .vision_outer h2{
+    font-size: 30px;
+    line-height: 42px;      
+    }
+    .hadding_lastestNews h2{
+    font-size: 30px;
+    line-height: 42px;         
+    }
+    .LatestNews_btn a {
+    margin-top: 0px;
+    }
+    /*------Start Register page-------*/
+    .registeration_form {
+    width: 95% !IMPORTANT;
+    }
+    .make_donation{
+    padding: 0px 20px !important;
+    padding-top: 55px !IMPORTANT;
+    }
+
+    /*------End Register page-------*/
+
+    /*------Start About Behave Register page-------*/
+    .children_arm .behave_outer ul li{
+    padding-bottom: 20px !important;   
+    }
+    .behave_outer ul{
+    margin-bottom: 0px;
+    }
+    .children_arm .behave_outer ul li:last-child{
+    padding-bottom: 0px !important;
+    }
+    /*------End About Behave page-------*/
+    .our_policy .policy_item h2{
+    font-size: 30px;
+    line-height: 35px;
+    }
+    .donnar_bg {
+    background-position: center;
+    }
+    .sbmt_btn {
+    height: 50px;
+    }
+    /*---Our Staff---*/
+    .staff_item .staff_hadding h5 {
+    font-size: 20px !IMPORTANT;
+    padding-bottom: 3px !important;
+    padding-top: 10px !important;
+    }
+    .staff_item .staff_hadding p {
+    font-size: 14px !IMPORTANT;
+    }
+    .staff .children_arm h2{
+    font-size: 28px;
+    line-height: 32px;
+    padding-bottom: 20px !important;     
+    }
+    .main_form_login .form-group p{
+    margin-bottom: 0px;
+    }
+    .contact_page_frm .row {
+    padding-left: 10px !IMPORTANT;
+    margin-left: 0px !IMPORTANT;
+    margin-right: 0px !IMPORTANT;
+    padding-right: 10px !IMPORTANT;
+    }
+    .col-md-6.send_message_form form {
+    padding-top: 20px !important;
+    }
+    .container.contact_page_frm h3 {
+    font-size: 28px !important;
+    }
+    .mailing_address h4{
+    font-size: 18px !IMPORTANT; 
+    }
+    .mailing_address p {
+    font-size: 16px !important;
+    }
+    .row.mailing_address {
+    padding-left: 0px !IMPORTANT;
+    padding-right: 0px !IMPORTANT;
+    }
+    .mission_usa_address{
+    padding-top: 30px !IMPORTANT;
+    margin-top: 10px;    
+    }
+    .send_mesg{
+    margin-top: 12px;     
+    }
+    .contact_banner .children_arm .banner_outer {
+    padding: 110px 40px !IMPORTANT;
+    }
+    .contact_banner .banner_outer h1{
+    margin-bottom: 0px;    
+    }
+    .send_message_form .form-group label{
+    font-size: 16px; 
+    }
+    .gutenemala_text h2{
+    font-size: 28px !important;    
+    }
+    /*---Childern Page---*/
+    .child_circle img {
+    width: 230px !important;
+    height: 230px !important;
+    }
+    .col-md-3.col-sm-6.child_circle h5{
+    padding-top: 10px !IMPORTANT; 
+    margin-bottom: 0px;   
+    }
+    .child_circle{
+    padding-bottom: 15px !important;    
+    }
+    .catalog_section .toy_section {
+    padding: 20px !important;
+    }
+    .registration_cataloque p {
+    font-size: 15px !important;
+    }
+}
+@media only screen and (max-width: 542px) {
+.days li {
+    width: 152px;
+}
+}
+@media only screen and (max-width: 470px) {
+.banner_outer h1 {
+    font-size: 28px;
+    line-height: 35px;
+ }
+.video iframe{
+    height: 210px;
+}
+.magazines h2 {
+    font-size: 28px;
+}
+.donors_hadding h4 {
+    font-size: 22px;
+}
+.hadding_lastestNews h2 {
+    font-size: 28px;
+    line-height: 38px;
+}
+.about_right_sec h2 {
+    font-size: 28px;
+    line-height: 38px;
+}
+.vision_outer h2 {
+    font-size: 28px;
+    line-height: 38px;
+}
+.LatestNews_btn a{
+    font-size: 16px;
+}
+.children_header i {
+    font-size: 20px;
+    padding: 8px 11px !IMPORTANT;
+}
+
+/*----Start Register page css----*/
+.make_donation h2{
+    font-size: 28px;
+    line-height: 38px;
+    padding-bottom: 5px !IMPORTANT;
+}
+.donnar_bg h2 {
+    font-size: 28px;
+}
+.make_donation{
+    padding: 0px 20px !important;
+    padding-top: 55px !IMPORTANT;
+}
+/*----End Register page css----*/
+/*----Start about Behave page css----*/
+    .children_arm .behave_outer h2{
+    font-size: 28px;
+    line-height: 38px;
+    margin-bottom: 10px;
+    }
+    .our_policy .policy_item h2{
+    font-size: 28px;
+    line-height: 35px;
+    }
+/*----End about Behave page css----*/
+    .history_item h2{
+    font-size: 28px !IMPORTANT;
+    line-height: 38px;
+    }
+    .about_history img{
+    width: 100%;    
+    }
+    .main_form_login {
+    width: 90% !IMPORTANT;
+    }
+    .catalog_section {
+    width: 100% !important;
+    }
+}
+@media only screen and (max-width: 415px) {
+.days li {
+    width: 165px;
+}
+}
+@media only screen and (max-width: 413px) {
+.days li {
+    width: 164px;
+}
+}
+@media only screen and (max-width: 394px) {
+    .days li {
+        width: 155px;
+    }
+    .month .next {
+        right: 84px;
+    }
+    .month .prev {
+        left: 82px;
+    }
+    .missionTrip_outer .table tbody tr td { 
+        padding-left: 15px; 
+    }
+    .missionOuter th { 
+        padding-left: 15px !important;
+    }
+    .days li:nth-child(25) {
+        border-bottom: 1px solid #000000;
+    }
+    .days li:nth-child(26) {
+        border-bottom: 1px solid #000000;
+    }
+    .days li:nth-child(27) {
+        border-bottom: 1px solid #000000;
+    }
+    .days li:nth-child(28) {
+        border-bottom: 1px solid #000000;
+    }
+}
+@media only screen and (max-width: 391px) {
+.days li {
+    width: 153px;
+}
+}
+@media only screen and (max-width: 380px) {
+    .footer_manu_item1 {
+    width: 100%;
+    padding-right: 3px !IMPORTANT;
+    }
+    .footer_manu{
+    display: block; 
+    }
+    .copyright_txt {
+    text-align: center;
+    padding-top: 40px !IMPORTANT;
+    padding-bottom: 20px !IMPORTANT;
+    }
+    .footer_manu_item1 h5 {
+    margin-bottom: 5px;
+    margin-top: 25px;
+    }
+    .right_side_outer{
+    margin-bottom: 30px;    
+    }
+    .container .gutenemala_text {
+    padding-top: 45px !IMPORTANT;
+    padding-bottom: 10px !IMPORTANT;
+    }
+}
+@media only screen and (max-width: 376px) {
+.days li {
+    width: 146px;
+}
+}
+@media only screen and (max-width: 362px) {
+.days li {
+    width: 138px;
+}
+.days li:nth-child(25) {
+    border-bottom: 1px solid #000000;
+}
+.days li:nth-child(26) {
+    border-bottom: 1px solid #000000;
+}
+.days li:nth-child(27) {
+    border-bottom: 1px solid #000000;
+}
+.days li:nth-child(28) {
+    border-bottom: 1px solid #000000;
+}
+.month .prev {
+    left: 73px;
+}
+.month .next {
+    right: 84px;
+}
+.month .prev {
+    left: 83px;
+}
+}
+@media only screen and (max-width: 322px) {
+.days li {
+    width: 118px;
+}
+.month .next {
+    right: 84px;
+}
+.month .prev {
+    left: 82px;
+}
+.missionTrip_outer .table tbody tr td { 
+    padding-left: 15px; 
+}
+.missionOuter th { 
+    padding-left: 15px !important;
+}
+.days li:nth-child(25) {
+    border-bottom: 1px solid #000000;
+}
+.days li:nth-child(26) {
+    border-bottom: 1px solid #000000;
+}
+.days li:nth-child(27) {
+    border-bottom: 1px solid #000000;
+}
+.days li:nth-child(28) {
+    border-bottom: 1px solid #000000;
+}
+}
+/* Media Query End */
+/* Media Query End */
+
+/*
+MAGAZINE DETAIL
+*/
+.page-magazine-detail {
+    padding: 40px 0;
+}
+/* mazion start here */
+h2.cd-name.hadding_mazion {
+    font-size: 48px;
+    text-transform: capitalize;
+    margin: 0;
+    padding-bottom: 20px;
+    text-align: center;
+    font-family: 'Proxima Nova Rg';
+}
+.paragraph_date p {
+    font-size: 22px;
+    margin: 0;
+    color: #000000;
+    padding-bottom: 6px;
+    font-family: 'Proxima Nova Rg';
+    text-align: center;
+}
+.paragraphTittle {
+    text-align: center;
+    margin: 0;
+    font-size: 22px;
+    color: #000000;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    text-transform: capitalize;
+    font-family: 'Proxima Nova Rg';
+}
+h4.text-center.angelTest {
+    font-size: 32px;
+    text-transform: capitalize;
+    margin: 0;
+    padding-bottom: 20px;
+    text-align: center;
+    font-family: 'Proxima Nova Rg';
+    font-weight: bold;
+}
+h4.fromTest_hadding {
+    text-transform: capitalize;
+    margin: 0;
+    padding-bottom: 20px;
+    text-align: center;
+    font-family: 'Proxima Nova Rg';
+}
+.fromGroup_outer .form-control {
+    height: 64px;
+    border: 1px solid #cacaca;
+    border-radius: 5px;
+}
+.fromGroup_outer {
+    margin-bottom: 16px;
+}
+.fromGroup_outer label {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #000000;
+    font-family: 'Proxima Nova Rg';
+}
+button.btn.btn-primary.mt-2.submitBTN {
+    height: 51px;
+    /* width: 153px; */
+    padding: 10px 40px !important;
+    background: #f7941d;
+    border: 1px solid #f7941d;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 18px;
+    text-decoration: none;
+    font-family: 'Proxima Nova Alt Rg';
+}
+button.btn.btn-primary.mt-2.submitBTN:hover {
+    color: #f7941d;
+    background: none;
+}
+
+
+h4.cd-details-header.FromHadding {
+    font-size: 48px;
+    text-transform: capitalize;
+    margin: 0;
+    padding-bottom: 20px;
+    text-align: center;
+    font-family: 'Proxima Nova Rg';
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 6px;
+}
+p.cd-details.fromTest_paragraph {
+    text-align: center;
+    font-size: 18px;
+    margin: 0;
+    padding-bottom: 14px;
+    font-family: 'Proxima Nova Rg';
+}
+.outerFrom_middle {
+    justify-content: center;
+}
+h3.angelTest1 {
+    font-size: 32px;
+    text-transform: capitalize;
+    margin: 0;
+    padding-bottom: 20px;
+    text-align: center;
+    font-family: 'Proxima Nova Rg';
+}
+.page-children-detail {
+    margin-top: 80px;
+    position: relative;
+}
+.fancy-image img.img-responsive.img-cd {
+    height: 440px;
+    margin-right: 32px;
+    width: 25%;
+}
+.paragraph_date1 {
+    margin-bottom: 20px;
+}
+.outerImg {
+    text-align: center;
+}
+*
+/* mazion close here */
+
+.form-wrapper {
+    position: relative;
+}
+
+.form-wrapper .f-message {
+    position: absolute;
+    bottom: 90px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+    display: none;
+    text-shadow: 0px 0px 20px #fff;
+    padding: 0 5px;
+}
+
+.form-wrapper .f-success > h3 {
+    color: #8bc34a;
+    font-size: 22px;
+}
+
+.form-wrapper .f-error > h3 {
+    color: #f44336;
+    font-size: 22px;
+}
+
+.ajax-loading-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(255, 255, 255, .5) url('/static/demo/images/ajax-loader.gif') 50% 50% no-repeat;
+}
+
+body {
+    position: relative;
+    -webkit-text-size-adjust: none;
+    top: 0 !important;
+    position: static !important;
+}
+
+body.loading {
+    overflow: hidden;
+}
+
+body.loading .ajax-loading-modal {
+    display: block;
+}
+/*
+CART
+*/
+.page-cart {
+    padding: 30px 0;
+}
+
+.page-cart .table {
+    text-align: center;
+}
+
+.page-cart .table th {
+    text-align: center;
+}
+
+/*.page-cart .table th:first-child { text-align: left; }*/
+/*.page-cart .table th:last-child { text-align: right; }*/
+.page-cart .table td {
+    vertical-align: middle;
+}
+
+.page-cart .btn-remove-from-cart {
+    color: #f44336;
+}
+
+.page-cart .btn-remove-from-cart:hover {
+    color: #f40b05;
+}
+
+.page-cart .td-cart-img {
+    width: 20%;
+}
+
+/* .page-cart .td-cart-img .img-cart-item {
+} */
+
+.page-cart .td-cart-subtotal {
+    width: 10%;
+}
+
+.page-cart .td-cart-qty {
+    width: 15%;
+}
+/* 
+.page-cart .cart-subtotal {
+} */
+
+/*
+MAGAZINE
+*/
+.page-magazine {
+    padding: 30px 0;
+}
+
+.page-magazine .magazine-box {
+    margin-bottom: 25px;
+    height: 200px;
+}
+
+.page-magazine .magazine-box .magazine-title {
+    font-size: 13px;
+    margin-top: 10px;
+    font-weight: 300;
+}
+
+/*
+MAGAZINE DETAIL
+*/
+.page-magazine-detail {
+    padding: 40px 0;
+}
+

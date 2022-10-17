@@ -1,0 +1,86 @@
+{% extends 'aoj_app/demo/base.html' %}
+{% load staticfiles i18n %}
+{% load aoj_extras %}
+
+{% block body_temp %}
+  <!-- banner start here -->
+  <section class="banner policy_banner">
+    <!-- header start here -->
+    {% get_desktop_nav %}
+  <!-- header close here -->
+    <div class="container children_arm">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="banner_outer"> 
+            <h1>ABOUT US</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- banner close here -->
+
+  <!-- staff start here -->
+  <div class="staff">
+    <div class="container children_arm">
+      <h2>Our Staff</h2>
+      {% if object_list %}
+      <div class="row">
+        {% for staff in object_list %}
+        <div class="col-md-3 col-sm-6 col-6">
+          <div class="staff_item">
+            <div class="staff_img">
+              <img src="{{ staff.staff_image.url }}" alt="staff">
+            </div>
+            <div class="staff_hadding">
+              <h5>{{ staff.staff_name }}</h5>
+              <p>{{ staff.staff_position}}</p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    {% else %}
+    <div class="row">
+        <div class="col-md-3 col-sm-6 col-6">
+          <div class="staff_item">
+            <div class="staff_img">
+              <img src="{% static 'demo/images/our-staff.jpg' %}" alt="staff">
+            </div>
+            <div class="staff_hadding">
+              <h5>Barbara</h5>
+              <p>Office Manager & Child </p>
+              <p>Sponsorship</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-6">
+          <div class="staff_item">
+            <div class="staff_img">
+              <img src="{% static 'demo/images/our-staff.jpg' %}" alt="staff">
+            </div>
+            <div class="staff_hadding">
+              <h5>Tracy</h5>
+              <p>Accounts Assistant &</p>
+              <p>Mission Team Liaisons'</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-6">
+          <div class="staff_item">
+            <div class="staff_img">
+              <img src="{% static 'demo/images/our-staff.jpg' %}" alt="staff">
+            </div>
+            <div class="staff_hadding">
+              <h5>Amanda</h5>
+              <p>Accounts</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+  {% endif %}
+</div>
+</div>
+  
+{% endblock %}
