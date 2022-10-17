@@ -677,7 +677,8 @@ def ajax_dropdown(request):
         videos = Media.objects.filter(country=country)
         data_list = []
         for video in videos:
-            data_list.append(video.video)
+            video_new=video.video.replace("watch?v=","embed/")
+            data_list.append(video_new)
         data_dict = {'dataresponse': data_list}
         return JsonResponse(data_dict)
 
