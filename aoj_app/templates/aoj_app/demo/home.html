@@ -188,11 +188,11 @@
             <div class="our_magzine_product">
               {% if magazine.image %}
               <a href="{% url 'magazine_detail' magazine.slug %}">
-                <img src="{{ magazine.image.url }}" alt="prdct1">
+                <img src="{{ magazine.image.url }}" alt="prdct1" class="magazineImg">
               </a>
               {% else %}
               <a href="{% url 'magazine_detail' magazine.slug %}">
-                <img src="{% static 'demo/images/book1.jpg' %}" alt="prdct2">
+                <img src="{% static 'demo/images/book1.jpg' %}" alt="prdct2" class="magazineImg">
               </a>
               {% endif %}
               <h3>{{ magazine.title }}</h3>

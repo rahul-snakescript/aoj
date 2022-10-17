@@ -71,6 +71,11 @@
 }
 
 
+.magazineImg {
+    width: 100%;
+}
+
+
 /* donate css start here */
 .right_imgOuter {
     display: flex;
