@@ -76,6 +76,9 @@
     height: 520px;
     object-fit: cover;
 }
+.magazineBox_img {
+    width: 100%;
+}
 
 
 /* donate css start here */

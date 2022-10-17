@@ -27,10 +27,10 @@
                                 <div class="magazine-box">
                                     {% if magazine.iframe_link %}
                                         <a href="{% url 'magazine_detail' magazine.slug %}">
-                                            <img class="magazine_reponsive" src="{{ magazine.image.url }}" alt="">
+                                            <img class="magazine_reponsive magazineBox_img" src="{{ magazine.image.url }}" alt="">
                                         </a>
                                     {% else %}
-                                        <img class="img-responsive" src="{{ magazine.image.url }}" alt="">
+                                        <img class="magazine_reponsive magazineBox_img" src="{{ magazine.image.url }}" alt="">
                                     {% endif %}
                                     <p class="magazine-title">{{ magazine.title }}</p>
                                 </div>

@@ -106,6 +106,7 @@ MAGAZINE
 .page-magazine .magazine-box {
     margin-bottom: 25px;
     height: 200px;
+    margin-top: 30px;
 }
 
 .page-magazine .magazine-box .magazine-title {
