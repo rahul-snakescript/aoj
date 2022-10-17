@@ -1,1 +1,0 @@
-default_app_config = 'aoj_app.apps.AojAppConfig'

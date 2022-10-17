@@ -1,9 +1,0 @@
-﻿*.pyc
-__pycache__/
-db.sqlite3
-staticfiles/
-.idea/
-migrations/
-keys.py
-media/
-venv/
