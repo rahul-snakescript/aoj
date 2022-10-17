@@ -2,39 +2,23 @@
 {% load staticfiles i18n aoj_extras %}
 
 {% block body_temp %}
-{% get_desktop_nav %}
-    {% comment %} <div class="page-media">
-        <section class="aht">
-            <h1>"{% trans "And He took the children in His arms, <br> put His Hands on them and blessed them." %}"​</h1>
-            <h2>{% trans "​Mark 10:16" %}</h2>
-        </section>
-        <section>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-10 col-lg-offset-1">
-                        {% for country in object_list %}
-                            <h1 class="country-name">{{ country.name }} {% trans "Videos" %}</h1>
-                            <hr>
-                            <div class="row">
-                                {% for video in country.media_set.all %}
-                                    <div class="col-sm-4">
-                                        <div class="video-box">
-                                            <div class="videoWrapper">
-                                            <iframe class="video-iframe" src="{{ video.get_youtube_embed_url }}"
-                                                    frameborder="0" allowfullscreen></iframe>
-                                            </div>
-                                        </div>
-                                    </div>
-                                {% endfor %}
-                            </div>
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div> {% endcomment %}
+
+<section class="register_banner teamsBanner">
+  <header>
+      {% get_desktop_nav %}
+    </header>
+      <!-- header start here -->
+      
+      <div class="teamsConsider_outer">
+        <h1>MEDIA</h1>
+      </div>
+</section>
+
+
+
+
     {% if countries %}
-  <div class="video">
+  <div class="video mediaSec_video">
     <div class="container children_arm">
       <div class="row">
         <div class="col-md-12 select_video">

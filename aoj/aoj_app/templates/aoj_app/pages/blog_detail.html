@@ -3,13 +3,24 @@
 {% load aoj_extras %}
 
 {% block body_temp %}
-{% get_desktop_nav %}
+{% comment %} {% get_desktop_nav %} {% endcomment %}
+<section class="register_banner teamsBanner">
+    <header>
+        {% get_desktop_nav %}
+      </header>
+        <!-- header start here -->
+        
+        <div class="teamsConsider_outer">
+          <h1>DIRECTOR'S BLOG</h1>
+        </div>
+</section>
     <div class="page-blog-detail">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1">
                     <h2>{{ object.title }}</h2>
-                    <p class="text-muted">{{ object.created_date|date:"SHORT_DATE_FORMAT" }}</p>
+                    <p class="text-muted">{{ object.created_date|date:"SHORT_DATE_FORMAT" }}</p> 
+                    </div>{% endcomment %}
                     <div class="blog-wrapper">
                         {% autoescape off %}
                             {{ object.body }}
@@ -17,8 +28,9 @@
                         <div class="clearfix"></div>
                         <div>
                             <div class="fb-like"
-                                 data-href="http://www.armsofjesus.org{% url 'blog_detail' object.slug %}"
-                                 data-layout="button_count" data-action="like" data-size="small" data-show-faces="true"
+                                 data-href="http://127.0.0.1:8000{% url 'blog_detail' object.slug %}"
+                                 data-layout="button_count" data-action="like" data-size="small"
+                                 data-show-faces="true"
                                  data-share="false"></div>
                             <a class="twitter-share-button"
                                href="https://twitter.com/intent/tweet?text={{ object.title }} - The Arms of Jesus Children's Mission ">
@@ -29,4 +41,8 @@
             </div>
         </div>
     </div>
+    <script src="//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=190291501407"></script>
+    <script src="https://platform.twitter.com/widgets.js"></script>
+    <script src="//translate.google.com/translate_a/element.js?cb=TranslateInit"></script>
+
 {% endblock %}

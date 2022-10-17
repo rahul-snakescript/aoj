@@ -6,4 +6,8 @@ staticfiles/
 migrations/
 keys.py
 media/
+<<<<<<< HEAD:aoj/.gitignore
 venv/
+=======
+
+>>>>>>> d4d2512dcd50f5b4945f8e611f9101dcd756e52d:.gitignore
