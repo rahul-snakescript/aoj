@@ -687,7 +687,7 @@ def setlang_view(request):
 def ajax_dropdown(request):
     if request.method == 'GET':
         country = request.GET['country']
-        videos = Media.objects.filter(country=country)
+        videos = Media.objects.filter(country=country)[0:4]
         data_list = []
         for video in videos:
             video_new=video.video.replace("watch?v=","embed/")
@@ -714,7 +714,7 @@ class NewIndexView(TemplateView):
         context['curr_page']=self.request.resolver_match.url_name
         first_country = Country.objects.first()
         video_list = []
-        first_country_video = Media.objects.filter(country=first_country)
+        first_country_video = Media.objects.filter(country=first_country)[0:4]
         for video in first_country_video:
             video_new=video.video.replace("watch?v=","embed/")
             print(video_new)
