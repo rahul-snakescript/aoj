@@ -59,7 +59,7 @@
         var row_div=$('#append_row') 
       $.ajax({
                   type: "GET",
-                  url: "{% url 'ajaxdropdown' %}",
+                  url: "{% url 'ajaxdropdown_list' %}",
                   data: {
                       "country": name,
                   },
