@@ -392,7 +392,7 @@ class Mission(models.Model):
     top_section = models.TextField(blank=True)
     body = RichTextUploadingField()
     created_date = models.DateTimeField(auto_now_add=True)
-    country=models.ForeignKey(Country,on_delete=models.CASCADE,blank=True)
+    country=models.ForeignKey(Country,on_delete=models.CASCADE,blank=True,null=True)
 
     class Meta:
         ordering = ["name"]
@@ -503,17 +503,17 @@ class TeamsCalenderDate(models.Model):
 class MissionHaiti(models.Model):
     title=models.CharField(max_length=200)
     body=RichTextUploadingField()
-    country=models.ForeignKey(Country,on_delete=models.CASCADE,blank=True)
+    country=models.ForeignKey(Country,on_delete=models.CASCADE,blank=True,null=True)
 
 class MissionKenya(models.Model):
     title=models.CharField(max_length=200)
     body=RichTextUploadingField()
-    country=models.ForeignKey(Country,on_delete=models.CASCADE,blank=True)
+    country=models.ForeignKey(Country,on_delete=models.CASCADE,blank=True,null=True)
 
 class MissionGuatemala(models.Model):
     title=models.CharField(max_length=200)
     body=RichTextUploadingField()
-    country=models.ForeignKey(Country,on_delete=models.CASCADE,blank=True)
+    country=models.ForeignKey(Country,on_delete=models.CASCADE,blank=True,null=True)
 
 
 
