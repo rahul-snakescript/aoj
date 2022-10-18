@@ -17,7 +17,7 @@ class DashOrdersView(LoginRequiredMixin, ListView):
 
 class DashProfileView(LoginRequiredMixin, UpdateView):
     template_name = "dashboard/pages/profile.html"
-    fields = ["name"]
+    fields = ["email"]
     success_url = reverse_lazy("dashboard:profile")
 
     def get_object(self, queryset=None):

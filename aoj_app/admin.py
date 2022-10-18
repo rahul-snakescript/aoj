@@ -142,3 +142,5 @@ class MissionGuatemalaAdmin(admin.ModelAdmin):
 @admin.register(MissionKenya)
 class MissionKenyaAdmin(admin.ModelAdmin):
     list_display= ['title','body']
+
+admin.site.register(MissionPageAttributes)

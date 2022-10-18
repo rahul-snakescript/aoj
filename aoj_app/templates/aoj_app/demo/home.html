@@ -98,7 +98,7 @@
               </a>
             </div>
             <div class="donors_hadding">
-              <h4>{{ blog.title }}</h4>
+              <h4><a href="{% url 'blog_detail' blog.slug %}" style="text-decoration:none; color:black;">{{ blog.title }}</a></h4>
               <p>{{ blog.body|safe }}</p>
             </div>
           </div>

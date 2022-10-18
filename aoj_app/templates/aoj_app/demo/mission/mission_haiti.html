@@ -19,9 +19,16 @@
       <div class="haiti_hadding">
         {% if mission %}
         <h2>{{ mission.title }}</h2>
+        <div class="haitiHadding_btn">
+          {% for data in attributes %}
+          <div class="haitiHadding_btnItem">
+            <p>{{ data.title }}:</p>
+            <a href="#">{{ data.value }}</a>
+          </div>
+          {% endfor %}
+        </div>
         {% else %}
         <h2>Haiti</h2>
-        {% endif %}
 
         <div class="haitiHadding_btn">
           <div class="haitiHadding_btnItem">
@@ -48,6 +55,7 @@
             </a>
           </div>
         </div>
+        {% endif %}
       </div>
     </div>
   </div>

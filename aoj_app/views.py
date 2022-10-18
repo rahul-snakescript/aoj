@@ -103,6 +103,19 @@ class BlogDetailView(DetailView):
 class MissionDetailView(DetailView):
     template_name = "aoj_app/demo/mission/mission_detail.html"
     model = Mission
+    
+    def get_context_data(self, **kwargs):
+        context=super().get_context_data(**kwargs)
+        mission=context['mission']
+        try:
+            attributes=MissionPageAttributes.objects.filter(country=mission.country)
+        except:
+            attributes=None
+        print(attributes)
+        print(context)
+        context['attributes']=attributes
+        return context
+
 
 
 class AboutPageDetailView(DetailView):
@@ -869,11 +882,14 @@ class MissionHaitiView(TemplateView):
         context = super(MissionHaitiView, self).get_context_data(**kwargs)
         try:
             mission = MissionHaiti.objects.first()
+            attributes=MissionPageAttributes.objects.filter(country=mission.country)
         except:
             mission = None
-
+            attributes=None
         context['mission'] = mission
+        context['attributes']=attributes
         print(context)
+        print(attributes)
         return context
 
 
@@ -883,10 +899,14 @@ class MissionKenyaView(TemplateView):
         context = super(MissionKenyaView, self).get_context_data(**kwargs)
         try:
             mission = MissionKenya.objects.first()
+            attributes=MissionPageAttributes.objects.filter(country=mission.country)
         except:
             mission = None
+            attributes=None
         context['mission'] = mission
+        context['attributes']=attributes
         print(context)
+        print(attributes)
         return context
 
 
@@ -896,8 +916,12 @@ class MissionGuatemalaView(TemplateView):
         context = super(MissionGuatemalaView, self).get_context_data(**kwargs)
         try:
             mission = MissionGuatemala.objects.first()
+            attributes=MissionPageAttributes.objects.filter(country=mission.country)
         except:
             mission = None
-        context['mission'] = mission
+            attributes=None
+        context['mission'] = mission 
+        context['attributes']=attributes       
         print(context)
+        print(attributes)
         return context

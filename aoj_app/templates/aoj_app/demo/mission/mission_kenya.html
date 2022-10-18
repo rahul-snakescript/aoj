@@ -19,10 +19,16 @@
       <div class="haiti_hadding">
         {% if mission %}
         <h2>{{ mission.title }}</h2>
+        <div class="haitiHadding_btn">
+          {% for data in attributes %}
+          <div class="haitiHadding_btnItem">
+            <p>{{ data.title }}:</p>
+            <a href="#">{{ data.value }}</a>
+          </div>
+          {% endfor %}
+        </div>
         {% else %}
         <h2>Kenya</h2>
-        {% endif %}
-      </div>
 
         <div class="haitiHadding_btn">
           <div class="haitiHadding_btnItem">
@@ -61,12 +67,19 @@
               </a>
             </div>
           </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
           {% if mission %}
+          <div class="missionHatti_bg">
+            <div class="container children_arm">
           {% autoescape off %}
             {{ mission.body }}
-        </div>
-      </div>
+      
           {% endautoescape %}
+            </div>
+          </div>
         {% else %}
           <div class="kenya_outer">
             <p>The mission in Kenya began with a small sponsorship program, seeking to provide care for 9 orphans in the Mathare Valley, 

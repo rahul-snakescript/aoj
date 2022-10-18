@@ -22,31 +22,15 @@
     <div class="container children_arm">
       <div class="haiti_hadding">
         <h2>{{ mission.name }}</h2>
-
         <div class="haitiHadding_btn">
+          {% if attributes %}
+          {% for data in attributes %}
           <div class="haitiHadding_btnItem">
-            <p>Capital:</p>
-            <a href="#">Port-au-Prince</a>
+            <p>{{ data.title }}:</p>
+            <a href="#">{{ data.value }}</a>
           </div>
-          <div class="haitiHadding_btnItem">
-            <p>Population:</p>
-            <a href="#">6 884 264<br>(42% 0-14 years)</a>
-          </div>
-          <div class="haitiHadding_btnItem">
-            <p>Life expectancy:</p>
-            <a href="#">51- 65 years</a>
-          </div>
-          <div class="haitiHadding_btnItem">
-            <p>Official Language:</p>
-            <a href="#">Haitian Creole,
-              French
-            </a>
-          </div>
-          <div class="haitiHadding_btnItem">
-            <p>Location:</p>
-            <a href="#">Caribbean Sea
-            </a>
-          </div>
+          {% endfor %}
+          {% endif %}
         </div>
       </div>
     </div>

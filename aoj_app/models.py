@@ -392,6 +392,7 @@ class Mission(models.Model):
     top_section = models.TextField(blank=True)
     body = RichTextUploadingField()
     created_date = models.DateTimeField(auto_now_add=True)
+    country=models.ForeignKey(Country,on_delete=models.CASCADE)
 
     class Meta:
         ordering = ["name"]
@@ -405,6 +406,14 @@ class Mission(models.Model):
 
     def get_absolute_url(self):
         return reverse("mission_detail", args=[self.slug])
+
+class MissionPageAttributes(models.Model):
+    title=models.CharField(max_length=50)
+    value=models.CharField(max_length=50)
+    country=models.ForeignKey(Country,on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.title+" of "+str(self.country)
 
 
 class AboutPage(models.Model):
@@ -494,14 +503,17 @@ class TeamsCalenderDate(models.Model):
 class MissionHaiti(models.Model):
     title=models.CharField(max_length=200)
     body=RichTextUploadingField()
+    country=models.ForeignKey(Country,on_delete=models.CASCADE)
 
 class MissionKenya(models.Model):
     title=models.CharField(max_length=200)
     body=RichTextUploadingField()
+    country=models.ForeignKey(Country,on_delete=models.CASCADE)
 
 class MissionGuatemala(models.Model):
     title=models.CharField(max_length=200)
     body=RichTextUploadingField()
+    country=models.ForeignKey(Country,on_delete=models.CASCADE)
 
 
 
