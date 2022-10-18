@@ -98,8 +98,8 @@
               </a>
             </div>
             <div class="donors_hadding">
-              <h4><a href="{% url 'blog_detail' blog.slug %}" style="text-decoration:none; color:black;">{{ blog.title }}</a></h4>
               <p>{{ blog.body|safe }}</p>
+              <h4><a href="{% url 'blog_detail' blog.slug %}" style="text-decoration:none; color:black;">{{ blog.title }}</a></h4>
             </div>
           </div>
         </div>
@@ -107,7 +107,7 @@
         
       </div>
       <div class="LatestNews_btn">
-        <a href="{% url 't_blog'%}">Read More</a>
+        <a href="{% url 'blog'%}">Read More</a>
       </div>
     </div>
   </div>
