@@ -703,13 +703,14 @@ class NewIndexView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(NewIndexView, self).get_context_data(**kwargs)
-        try:
-            context["latest_post"] = BlogEntry.objects.latest("created_date")
-        except:
-            context['latest_post'] = None
+        # try:
+        #     context["latest_post"] = BlogEntry.objects.latest("created_date")
+        # except:
+        #     context['latest_post'] = None
         context["latest_magazines"] = Magazine.objects.all()
         context["countries"] = Country.objects.all()
-        context["blog"] = BlogEntry.objects.order_by('-id')[0:3]
+        context["blog"] = BlogEntry.objects.order_by('-created_date')[0:3]
+        print(context['blog'])
         context['curr_page']=self.request.resolver_match.url_name
         first_country = Country.objects.first()
         video_list = []
