@@ -182,7 +182,7 @@
                 $('.in-cart[data-id="' + product_id + '"]').html('IN CART (' + e['qty'] + ')');
             }
             else{
-              alert('Need to Login first')
+              window.location = "{% url 'login' %}";
             }
         }).always(function (e) {
             ajax_loading_modal(false);

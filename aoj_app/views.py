@@ -154,6 +154,7 @@ class DonateView(LoginRequiredMixin, TemplateView):
 class CatalogueView(ListView):
     model = Product
     template_name = "aoj_app/demo/Catalogue.html"
+    # paginate_by= 20
 
     def get_context_data(self, **kwargs):
         context = super(CatalogueView, self).get_context_data(**kwargs)
