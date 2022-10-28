@@ -126,6 +126,20 @@
           standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled</p>
       </div>
       <div class="row lastestNews_outer">
+        <div class="col-md-4">
+          <div class="news_item1">
+            <div class="latest_img">
+              
+              <img src="{% static 'demo/images/news_img2.jpg' %}" alt="">
+            </div>
+            <div class="donors_hadding">
+              <a href="{% url 'school_official_dedication' %}" style="text-decoration:none; color:black;"><h4>Thanks to Donors</h4></a>
+              <p>Lorem Ipsum is simply dummy text of the
+                printing and typesetting industry. Lorem
+                Ipsum has been the industry's</p>
+            </div>
+          </div>
+        </div>
         {% for data in latest_news %}
         <div class="col-md-4">
           <div class="news_item1">

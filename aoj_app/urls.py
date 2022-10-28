@@ -144,7 +144,7 @@ urlpatterns = [
     url(
         r"^school-official-dedication/$",
         TemplateView.as_view(
-            template_name="aoj_app/pages/school_official_dedication.html"
+            template_name="aoj_app/demo/school_official_dedication.html"
         ),
         name="school_official_dedication",
     ),
