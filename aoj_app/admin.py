@@ -144,3 +144,4 @@ class MissionKenyaAdmin(admin.ModelAdmin):
     list_display= ['title','body']
 
 admin.site.register(MissionPageAttributes)
+admin.site.register(LatestNews)

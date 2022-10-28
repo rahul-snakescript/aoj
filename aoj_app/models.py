@@ -85,6 +85,18 @@ def upload_teamresource_image_to(instance, filename):
     filename = "{0}.{1}".format(uuid_hash, ext)
     return "teamsresource/%s" % filename
 
+def upload_newscover_image_to(instance, filename):
+    ext = filename.split(".")[-1]
+    uuid_hash = str(uuid.uuid4())[:8]
+    filename = "{0}.{1}".format(uuid_hash, ext)
+    return "latestnews/%s" % filename
+
+def upload_blogentry_image_to(instance, filename):
+    ext = filename.split(".")[-1]
+    uuid_hash = str(uuid.uuid4())[:8]
+    filename = "{0}.{1}".format(uuid_hash, ext)
+    return "blogentry/%s" % filename
+
 """
 MODELS
 """
@@ -305,6 +317,7 @@ class Children(models.Model):
 class BlogEntry(models.Model):
     title = models.CharField(max_length=200, blank=False)
     slug = models.SlugField(max_length=200, unique=True)
+    cover=models.ImageField(upload_to=upload_blogentry_image_to,blank=True,null=True)
     body = RedactorField(verbose_name="Body", allow_image_upload=True)
     created_date = models.DateTimeField(default=timezone.now)
 
@@ -515,7 +528,23 @@ class MissionGuatemala(models.Model):
     body=RichTextUploadingField()
     country=models.ForeignKey(Country,on_delete=models.CASCADE,blank=True,null=True)
 
+class LatestNews(models.Model):
+    title=models.CharField(max_length=200)
+    slug = models.SlugField(max_length=200, unique=True,blank=True)
+    shortdesc=models.CharField(max_length=500)
+    cover=models.ImageField(upload_to=upload_newscover_image_to)
+    body=RichTextUploadingField()
+    created_date = models.DateTimeField(default=timezone.now)
 
+    def __str__(self):
+        return self.title
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title)
+        super(LatestNews, self).save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return reverse("latest_news", args=[self.slug])
 
 
 

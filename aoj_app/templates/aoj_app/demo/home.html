@@ -93,9 +93,11 @@
         <div class="col-md-4">
           <div class="news_item1">
             <div class="latest_img">
-              {% comment %} <a href="{{ blog.image.url }}" target="_blank">
-              <img src="{{blog.image.url}}" alt=""> {% endcomment %}
+              {% if blog.cover %}
+              <a href="{{ blog.cover.url }}" target="_blank">
+              <img src="{{blog.cover.url}}" alt="">
               </a>
+              {% endif %}
             </div>
             <div class="donors_hadding">
               <p>{{ blog.body|safe }}</p>
@@ -124,7 +126,20 @@
           standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled</p>
       </div>
       <div class="row lastestNews_outer">
+        {% for data in latest_news %}
         <div class="col-md-4">
+          <div class="news_item1">
+            <div class="latest_img">
+              <img src="{{ data.cover.url }}" alt="">
+            </div>
+            <div class="donors_hadding">
+              <a href="{{ data.get_absolute_url }}" style="text-decoration:none; color:black;"><h4>{{ data.title }}</h4></a>
+              <p>{{ data.shortdesc }}</p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        {% comment %} <div class="col-md-4">
           <div class="news_item1">
             <div class="latest_img">
               <img src="{% static 'demo/images/news_img1.jpg' %}" alt="">
@@ -162,7 +177,7 @@
                 Ipsum has been the industry's</p>
             </div>
           </div>
-        </div>
+        </div> {% endcomment %}
       </div>
       <div class="LatestNews_btn">
         <a href="#">Read More</a>

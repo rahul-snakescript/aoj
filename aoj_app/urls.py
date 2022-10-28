@@ -219,4 +219,9 @@ urlpatterns = [
         MissionGuatemalaView.as_view(template_name="aoj_app/demo/mission/guatemala_mission.html"),
         name="guatemala_mission",
     ),
+    url(
+        r"^latestnews/(?P<slug>[-\w]+)/$",
+        LatestNewsPageDetailView.as_view(),
+        name="latest_news",
+    ),
 ]

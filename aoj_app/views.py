@@ -720,6 +720,7 @@ class NewIndexView(TemplateView):
         #     context['latest_post'] = None
         context["latest_magazines"] = Magazine.objects.all()
         context["countries"] = Country.objects.all()
+        context["latest_news"] = LatestNews.objects.order_by('-created_date')[0:2]       
         context["blog"] = BlogEntry.objects.order_by('-created_date')[0:3]
         print(context['blog'])
         context['curr_page']=self.request.resolver_match.url_name
@@ -937,3 +938,7 @@ class MissionGuatemalaView(TemplateView):
         print(context)
         print(attributes)
         return context
+
+class LatestNewsPageDetailView(DetailView):
+    template_name = "aoj_app/demo/latestnews/latestnews_detail.html"
+    model = LatestNews
