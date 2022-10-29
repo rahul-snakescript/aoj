@@ -224,4 +224,14 @@ urlpatterns = [
         LatestNewsPageDetailView.as_view(),
         name="latest_news",
     ),
+    url(
+        r"^navbar/(?P<slug>[-\w]+)/$",
+        HeaderPageDetailView.as_view(),
+        name="navbar_items",
+    ),
+    url(
+        r"^subnavbar/(?P<slug>[-\w]+)/$",
+        SubHeaderPageDetailView.as_view(),
+        name="sub_navbar_items",
+    ),
 ]

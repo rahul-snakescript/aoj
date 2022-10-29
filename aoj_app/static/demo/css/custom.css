@@ -29,7 +29,7 @@
         margin-top: 168px;;
     }
     .policy_banner {
-        background: url(../images/aboutpolicy_bbanner.jpg) !important;
+        background: url(../images/aboutpolicy_bbanner.jpg);
         position: relative;
         height: 552px !important;
         background-repeat: no-repeat !important;

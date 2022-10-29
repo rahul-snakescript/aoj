@@ -2,9 +2,18 @@
 {% load staticfiles i18n aoj_extras %}
 {% load static %}
 
+{% block page_title %}
+{% get_site_config as config %}
+{% if config.donate_seo_title %}
+{{ config.donate_seo_title }}
+{% else %}
+The Arms of Jesus - Donate
+{% endif %}
+{% endblock page_title %}
 
 {% block body_temp %}
-<section class="child_banner">
+{% get_site_config as config %}
+<section class="child_banner" {% if config.donate_banner_image %}style="background-image:url({{ config.donate_banner_image.url }});"{% endif %}>
   {% get_desktop_nav %}
 {% comment %} {% include 'aoj_app/demo/header.html' %} {% endcomment %}
 <div class="container children_arm">

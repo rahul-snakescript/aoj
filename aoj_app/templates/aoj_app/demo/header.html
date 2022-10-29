@@ -19,7 +19,65 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                {% for header,sublink in drop_new_dict.items %}
+                {% if sublink %}
                 <li class="nav-item">
+                  <div class="dropdown">
+                    <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                      {{ header.title }}
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                      {% for data in sublink %}
+                      <li><a class="dropdown-item" href="{{ data.link }}">
+                        {{ data.title }}
+                      </a></li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+              </li>
+                 {% else %} 
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ header.link}} ">{{header.title}}
+                  </a>
+              </li>
+              {% endif %}
+                {% endfor %}
+                {% for data in header_list %}
+              <li class="nav-item">
+                <a class="nav-link" href="{{ data.get_absolute_url }}">
+                  {% if data.name_in_dropdown %}
+                  {{ data.name_in_dropdown }}
+                  {% else %}
+                  {{ data.title }}
+                  {% endif %}
+                  
+                </a>
+              </li>
+              {% endfor %}
+
+              {% if drop_dict %}
+                {% for header,subheader in drop_dict.items %}
+                <li class="nav-item">
+                  <div class="dropdown">
+                    <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                      {{ header.title }}
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                      {% for data in subheader %}
+                      <li><a class="dropdown-item" href="{{ data.get_absolute_url }}">
+                        {% if data.name_in_dropdown %}
+                        {{ data.name_in_dropdown }}
+                        {% else %}
+                        {{ data.title }}
+                        {% endif %}  </a></li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+              </li>
+                {% endfor %}
+              {% endif %}
+              
+                {% comment %} <li class="nav-item">
                   <div class="dropdown">
                     <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                       Home
@@ -29,21 +87,48 @@
                       {% if curr_page != 'newindex' %}
                       <li><a class="dropdown-item" href="{% url 'newindex' %}">Home</a>
                         {% endif %}
-                      <li><a class="dropdown-item" href="{% url 'blog' %}">Director's Blog</a></li>
-                      <li><a class="dropdown-item" href="{% url 'magazine' %}">Magazine</a></li>
+                      <li><a class="dropdown-item" href="{% url 'blog' %}">
+                        {% if config.directors_blog_name_in_navbar %}
+                        {{ config.directors_blog_name_in_navbar }}
+                        {% else %}
+                        Director's Blog
+                        {% endif %}
+                        
+                      </a></li>
+                      <li><a class="dropdown-item" href="{% url 'magazine' %}">
+                        {% if config.Magazine_name_in_navbar %}
+                        {{ config.Magazine_name_in_navbar }}
+                        {% else %}
+                        Magazine
+                        {% endif %}
+                        </a></li>
                       {% if config.facebook_page %}
                       <li><a class="dropdown-item" href="{{ config.facebook_page }}">Facebook</a></li>
                       {% else %}
                       <li><a class="dropdown-item" href="https://www.facebook.com/ArmsOfJesus/">Facebook</a></li>
                       {% endif %}
                       
-                      <li><a class="dropdown-item" href="{% url 'media' %}">Media</a></li>
+                      <li><a class="dropdown-item" href="{% url 'media' %}">
+                        {% if config.media_name_in__navbar %}
+                        {{ config.media_name_in__navbar }}
+                        {% else %}
+                        Media
+                        {% endif %}
+                        
+                      </a></li>
                     </ul>
                   </div>
                 </li> 
 
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'children' %}">Children</a>
+                  <a class="nav-link" href="{% url 'children' %}">
+                    {% if config.children_name_in_navbar %}
+                    {{ config.children_name_in_navbar }}
+                    {% else %}
+                    Children
+                    {% endif %}
+                    
+                  </a>
                 </li>
                 <li class="nav-item">
                   <div class="dropdown">
@@ -56,7 +141,13 @@
                       <li><a class="dropdown-item" href="{%  url 'mission_haiti' %}">Haiti</a></li>
                       <li><a class="dropdown-item" href="{% url 'mission_kenya' %}">Kenya</a></li>
                       {% for mission in missions %}
-                      <li><a class="dropdown-item" href="{{ mission.get_absolute_url }}">{{ mission.name }}</a></li>
+                      <li><a class="dropdown-item" href="{{ mission.get_absolute_url }}">
+                        {% if mission.name_in_dropdown %}
+                        {{ mission.name_in_dropdown }}
+                        {% else %}
+                        {{ mission.name }}
+                        {% endif %}
+                      </a></li>
                       {% endfor %}
                     </ul>
                   </div>
@@ -92,9 +183,15 @@
                     <li><a class="dropdown-item" href="{% url 'fund_policy' %}">About Fund Policy</a></li>
                     <li><a class="dropdown-item" href="{% url 'history' %}">About History</a></li>
                     <li><a class="dropdown-item" href="{% url 'mission' %}">About Mission</a></li>
-                    <li><a class="dropdown-item" href="{% url 'staff' %}">About Staff</a></li>
+                    <li><a class="dropdown-item" href="{% url 'staff' %}">
+                      {% if config.about_staff_name_in_navbar %}
+                      {{ config.about_staff_name_in_navbar }}
+                      {% else %}
+                      About Staff
+                      {% endif %}
+                    </a></li>
                     {% for about in aboutpages %}
-                      <li><a class="dropdown-item" href="{{ about.get_absolute_url }}">{{ about.name }}</a></li>
+                      <li><a class="dropdown-item" href="{{ about.get_absolute_url }}">{% if about.name_in_dropdown %}{{ about.name_in_dropdown}}{% else %}{{ about.name }}{% endif %}</a></li>
                     {% endfor %}
                   </ul>
                 </div>
@@ -105,18 +202,45 @@
                 </a>
               </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'contact_us' %}">Contact</a>
+                  <a class="nav-link" href="{% url 'contact_us' %}">
+                    {% if config.contact_name_in_navbar %}
+                    {{ config.contact_name_in_navbar }}
+                    {% else %}
+                    Contact
+                    {% endif %}
+                    </a>
                 </li>
                 <li class="nav-item">
                 {% if user.is_authenticated %}
-                  <a class="nav-link" href="/dashboard/orders">Dashboard</a>
+                  <a class="nav-link" href="/dashboard/orders">
+                    {% if config.dashboard_name_in_navbar %}
+                    {{ config.dashboard_name_in_navbar }}
+                    {% else %}
+                    Dashboard
+                    {% endif %}
+                    </a>
                 {% endif %}
-              </li>
+              </li> {% endcomment %}
+              
+
+
                
               </ul>
               <div class="header_btn">
-                <a href="{% url 'donate' %}" class="donate_btn">Donate</a>
-                <a href="{% url 'donate' %}" class="sponsor_btn">Sponsor</a>
+                <a href="{% url 'donate' %}" class="donate_btn">
+                  {% if config.donate_name_in_navbar %}
+                  {{ config.donate_name_in_navbar }}
+                  {% else %}
+                  Donate
+                  {% endif %}
+                </a>
+                <a href="{% url 'donate' %}" class="sponsor_btn">
+                  {% if config.sponsor_name_in_navbar %}
+                  {{ config.sponsor_name_in_navbar }}
+                  {% else %}
+                  Sponsor
+                  {% endif %}
+                  </a>
               </div>
             </div>
           </div>

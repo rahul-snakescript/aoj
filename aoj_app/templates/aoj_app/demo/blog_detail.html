@@ -2,8 +2,16 @@
 {% load staticfiles %}
 {% load aoj_extras %}
 
+{% block page_title %}
+    {% if object.seo_title %}
+        {{ object.seo_title}}
+    {% else %}
+        Blog    
+    {% endif %}
+{% endblock page_title %}
+
 {% block body_temp %}
-<section class="register_banner teamsBanner">
+<section class="register_banner teamsBanner" {% if object.banner_image %}style="background-image:url({{ object.banner_image.url }});"{% endif %}>
     <header>
         {% get_desktop_nav %}
       </header>

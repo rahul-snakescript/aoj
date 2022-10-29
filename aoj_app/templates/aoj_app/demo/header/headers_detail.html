@@ -2,21 +2,21 @@
 {% load i18n aoj_extras %}
 
 {% block page_title %}
-    {% if latestnews.seo_title %}
-        {{ latestnews.seo_title}}
+    {% if object.seo_title %}
+        {{ object.seo_title}}
     {% else %}
         The Arms of Jesus
     {% endif %}
 {% endblock page_title %}
 
 {% block body_temp %}
-<section class="policy_banner"{% if latestnews.banner_image %} style="background-image:url({{ latestnews.banner_image.url }});" {% endif %}>
+<section class="policy_banner"{% if object.banner_image %} style="background-image:url({{ object.banner_image.url }});" {% endif %}>
   {% get_desktop_nav %}
   <div class="container children_arm">
     <div class="row">
       <div class="col-md-12">
         <div class="banner_outer"> 
-          <h1>{{ latestnews.title }}</h1> 
+          <h1>{{ object.title }}</h1> 
         </div>
       </div>
     </div>
@@ -28,8 +28,8 @@
       <div class="row">
         <div class="col-md-12">
           <div class="policy_item">
-            <h2>{{ latestnews.title }}</h2>
-            {{ latestnews.body|safe }}
+            <h2>{{ object.title }}</h2>
+            {{ object.body|safe }}
           </div>
         </div>
       </div>

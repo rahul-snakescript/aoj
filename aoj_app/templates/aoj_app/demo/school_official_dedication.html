@@ -2,8 +2,27 @@
 {% load staticfiles i18n %}
 {% load aoj_extras %}
 
+{% block page_title %}
+{% get_site_config as config %}
+{% if config.Latest_news_seo_title %}
+{{ config.Latest_news_seo_title }}
+{% else %}
+The Arms of Jesus - Latest News
+{% endif %}
+{% endblock page_title %}
+
 {% block body_temp %}
-{% get_desktop_nav %}
+{% get_site_config as config %}
+<section class="register_banner teamsBanner" {% if config.Latest_news_banner_image %}style="background-image:url({{ config.Latest_news_banner_image.url }});"{% endif %}>
+  <header>
+      {% get_desktop_nav %}
+    </header>
+      <!-- header start here -->
+      
+      <div class="teamsConsider_outer">
+        <h1>LATEST NEWS</h1>
+      </div>
+</section>
     <div class="page-teams page-official-dedication">
         <div class="container">
             <div class="row">

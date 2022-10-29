@@ -2,9 +2,19 @@
 {% load staticfiles i18n %}
 {% load aoj_extras %}
 
+{% block page_title %}
+{% get_site_config as config %}
+{% if config.register_seo_title %}
+{{ config.register_seo_title }}
+{% else %}
+The Arms of Jesus - Login
+{% endif %}
+{% endblock page_title %}
+
 {% block body_temp %}
+{% get_site_config as config %}
   <!-- banner start here -->
-  <section class="register_banner">
+  <section class="register_banner" {% if config.register_banner_image %}style="background-image:url({{ config.register_banner_image.url }});"{% endif %}>
     {% get_desktop_nav %}
     <!-- header start here -->
     

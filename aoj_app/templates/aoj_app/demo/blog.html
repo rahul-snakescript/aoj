@@ -2,9 +2,20 @@
 {% load i18n staticfiles %}
 {% load aoj_extras %}
 
+
+{% block page_title %}
+{% get_site_config as config %}
+{% if config.directors_blog_seo_title %}
+{{ config.directors_blog_seo_title }}
+{% else %}
+The Arms of Jesus - Director's Blog
+{% endif %}
+{% endblock page_title %}
+
 {% block body_temp %}
+{% get_site_config as config %}
 {% comment %} {% get_desktop_nav %} {% endcomment %}
-<section class="register_banner teamsBanner">
+<section class="register_banner teamsBanner" {% if config.directors_blog_banner_image %}style="background-image:url({{ config.directors_blog_banner_image.url }});"{% endif %}>
     <header>
         {% get_desktop_nav %}
       </header>

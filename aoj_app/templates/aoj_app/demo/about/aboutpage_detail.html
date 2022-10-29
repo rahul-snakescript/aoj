@@ -1,8 +1,16 @@
 {% extends  'aoj_app/demo/base.html' %}
 {% load i18n aoj_extras %}
 
+{% block page_title %}
+    {% if aboutpage.seo_title %}
+        {{ aboutpage.seo_title}}
+    {% else %}
+        The Arms of Jesus
+    {% endif %}
+{% endblock page_title %}
+
 {% block body_temp %}
-<section class="banner policy_banner">
+<section class="policy_banner" {% if aboutpage.banner_image %} style="background-image:url({{ aboutpage.banner_image.url }});" {% endif %}>
   {% get_desktop_nav %}
   <div class="container children_arm">
     <div class="row">
@@ -21,7 +29,10 @@
         <div class="col-md-12">
           <div class="policy_item">
             <h2>{{ aboutpage.name }}</h2>
-            {{ aboutpage.body|safe }}
+            {% autoescape off %}
+            {{ aboutpage.body}}
+            {% endautoescape %}
+            
           </div>
         </div>
       </div>

@@ -1,9 +1,20 @@
 {% extends 'aoj_app/demo/base.html' %}
 {% load static %}
 {% load staticfiles i18n aoj_extras %}
+
+{% block page_title %}
+{% get_site_config as config %}
+{% if config.contact_seo_title %}
+{{ config.contact_seo_title }}
+{% else %}
+The Arms of Jesus - Contact Us
+{% endif %}
+{% endblock page_title %}
+
 {% block body_temp %}
- 
-  <section class="contact_banner">
+{% get_site_config as config %}
+
+  <section class="contact_banner" {% if config.contact_banner_image %}style="background-image:url({{ config.contact_banner_image.url }});"{% endif %}>
     
     {% get_desktop_nav %}
     <div class="container children_arm">

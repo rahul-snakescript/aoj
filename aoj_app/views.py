@@ -943,3 +943,11 @@ class MissionGuatemalaView(TemplateView):
 class LatestNewsPageDetailView(DetailView):
     template_name = "aoj_app/demo/latestnews/latestnews_detail.html"
     model = LatestNews
+
+class HeaderPageDetailView(DetailView):
+    template_name = "aoj_app/demo/header/headers_detail.html"
+    model = HeaderLinks
+
+class SubHeaderPageDetailView(DetailView):
+    template_name = "aoj_app/demo/subheader/subheaders_detail.html"
+    model = Subheader

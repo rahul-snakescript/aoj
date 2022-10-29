@@ -3,9 +3,19 @@
 {% load i18n aoj_extras %}
 {% load static %}
 
+{% block page_title %}
+{% get_site_config as config %}
+{% if config.cart_seo_title %}
+{{ config.cart_seo_title }}
+{% else %}
+The Arms of Jesus - Cart
+{% endif %}
+{% endblock page_title %}
+
 <div class="mamber_mainOuter">
 {% block body_temp %}
-<section class="catalog_banner">
+{% get_site_config as config %}
+<section class="catalog_banner" {% if config.cart_banner_image %}style="background-image:url({{ config.cart_banner_image.url }});"{% endif %}>
     {% get_desktop_nav %}
     
     <div class="container children_arm">

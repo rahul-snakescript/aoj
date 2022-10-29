@@ -2,6 +2,15 @@
 {% load staticfiles i18n %}
 {% load aoj_extras %}
 
+{% block page_title %}
+{% get_site_config as config %}
+{% if config.home_seo_title %}
+{{ config.home_seo_title }}
+{% else %}
+The Arms of Jesus
+{% endif %}
+{% endblock page_title %}
+
   {% block body_temp %}
   {% get_site_config as config %}
   <!-- banner start here -->

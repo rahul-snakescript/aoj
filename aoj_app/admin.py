@@ -145,3 +145,8 @@ class MissionKenyaAdmin(admin.ModelAdmin):
 
 admin.site.register(MissionPageAttributes)
 admin.site.register(LatestNews)
+admin.site.register(HeaderLinks)
+admin.site.register(Subheader)
+admin.site.register(ExistingPageLink)
+admin.site.register(ExistingPageSubLink)
+

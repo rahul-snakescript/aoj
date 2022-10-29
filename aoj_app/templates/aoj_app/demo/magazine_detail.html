@@ -1,9 +1,17 @@
 {% extends  'aoj_app/demo/base.html' %}
 {% load staticfiles %}
 {% load aoj_extras %}
-{% block body_temp %}
 
-<section class="register_banner teamsBanner">
+{% block page_title %}
+    {% if object.Magazine_detail_seo_title %}
+        {{ object.Magazine_detail_seo_title}}
+    {% else %}
+       The Arms of Jesus
+    {% endif %}
+{% endblock page_title %}
+
+{% block body_temp %}
+<section class="register_banner teamsBanner" {% if object.Magazine_detail_banner_image %}style="background-image:url({{ object.Magazine_detail_banner_image.url }});"{% endif %}>
     <header>
         {% get_desktop_nav %}
       </header>
