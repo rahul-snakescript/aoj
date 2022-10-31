@@ -775,7 +775,7 @@ class CreateNewPage(models.Model):
         if not self.body:
             if self.seo_title or self.banner_image:
                 raise ValidationError('Header without body has no need for seo_title or banner_image')
-        return super(CreateNewPage).clean()
+        return super(CreateNewPage,self).clean()
 
 
     def save(self, *args, **kwargs):
@@ -809,7 +809,7 @@ class CreateNewSubPage(models.Model):
         header=CreateNewPage.objects.get(pk=self.mainLink.id)
         if header.body:
             raise ValidationError('Main link with body cannot be a sublink')
-        return super(CreateNewSubPage).clean()
+        return super(CreateNewSubPage,self).clean()
         
 
     def save(self, *args, **kwargs):
