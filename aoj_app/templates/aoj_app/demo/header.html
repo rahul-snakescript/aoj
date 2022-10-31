@@ -77,11 +77,7 @@
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                       {% for data in subheader %}
                       <li><a class="dropdown-item" href="{{ data.get_absolute_url }}">
-                        {% if data.name_in_dropdown %}
-                        {{ data.name_in_dropdown }}
-                        {% else %}
-                        {{ data.title }}
-                        {% endif %}  </a></li>
+                        {{ data.title }}</a></li>
                       {% endfor %}
                     </ul>
                   </div>

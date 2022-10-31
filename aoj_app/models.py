@@ -431,13 +431,13 @@ class SiteConfiguration(SingletonModel):
         upload_to=upload_banner_image_to, blank=True, null=True
     )
     donate_seo_title=models.CharField(max_length=256,blank=True,null=True)
-    # donate_name_in_navbar=models.CharField(max_length=256,blank=True,null=True)
+    donate_name_in_navbar=models.CharField(max_length=256,blank=True,null=True)
 
     sponsor_banner_image=models.ImageField(
         upload_to=upload_banner_image_to, blank=True, null=True
     )
     sponsor_seo_title=models.CharField(max_length=256,blank=True,null=True)
-    # sponsor_name_in_navbar=models.CharField(max_length=256,blank=True,null=True)
+    sponsor_name_in_navbar=models.CharField(max_length=256,blank=True,null=True)
 
     about_staff_banner_image=models.ImageField(
         upload_to=upload_banner_image_to, blank=True, null=True
@@ -759,11 +759,11 @@ class CreateNewPage(models.Model):
     title=models.CharField(max_length=256)
     body=RichTextUploadingField(blank=True,null=True)
     slug = models.SlugField(max_length=200, unique=True,blank=True,null=True)
-    link = models.CharField(max_length=256,blank=True,null=True)
+    # link = models.CharField(max_length=256,blank=True,null=True)
     seo_title=models.CharField(max_length=256,blank=True,null=True)
     banner_image=models.ImageField(upload_to=upload_banner_image_to,blank=True,null=True)
     is_active=models.BooleanField(default=False)
-    name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
+    # name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
 
     class Meta:
         ordering=['sno']
@@ -788,7 +788,7 @@ class CreateNewPage(models.Model):
 
 class CreateNewSubPage(models.Model):
     mainLink= models.ForeignKey(CreateNewPage,on_delete=models.CASCADE)
-    link = models.CharField(max_length=256,blank=True,null=True)
+    # link = models.CharField(max_length=256,blank=True,null=True)
     seo_title=models.CharField(max_length=256,blank=True,null=True)
     banner_image=models.ImageField(upload_to=upload_banner_image_to,blank=True,null=True)
     sno = models.IntegerField()
@@ -796,7 +796,7 @@ class CreateNewSubPage(models.Model):
     body=RichTextUploadingField()
     slug = models.SlugField(max_length=200, unique=True,blank=True)
     is_active=models.BooleanField(default=False)
-    name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
+    # name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
     
 
     class Meta:
