@@ -63,9 +63,8 @@ def get_desktop_nav(context):
         except:
             drop_new_dict[data]=None
 
-    print(drop_dict)
     print(curr_page)
-    print(drop_new_dict)
+    print(req.path)
     return {'curr_page': curr_page, 'path': req.path, 'items_count': cart.count, 'user': req.user,
             'missions': Mission.objects.all(), 'aboutpages': AboutPage.objects.all(),'drop_dict':drop_dict,'header_list':header_list,'header_new_list':header_new_list,'drop_new_dict':drop_new_dict,'headers_links':header}
 

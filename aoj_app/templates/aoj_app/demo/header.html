@@ -28,16 +28,28 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                       {% for data in sublink %}
+                      {% if curr_page == "newindex" and data.title == 'Home' %}
+                        {% else %}
                       <li><a class="dropdown-item" href="{{ data.link }}">
                         {{ data.title }}
                       </a></li>
+                      {% endif %}
                       {% endfor %}
                     </ul>
                   </div>
               </li>
                  {% else %} 
                 <li class="nav-item">
-                  <a class="nav-link" href="{{ header.link}} ">{{header.title}}
+                  {% if header.title == 'Dashboard' %}
+                    {% if user.is_authenticated %}
+                    <a class="nav-link" href="{{ header.link}} ">{{header.title}}
+                    {% else %}
+                    {% endif %}
+                  {% else %}
+                  <a class="nav-link" href="{{ header.link}} ">{{header.title}}{% if header.title == 'Cart' %}
+                    <span id="cart-items-count">{% if items_count > 0 %}({{ items_count }})</span>{% endif %}
+                    {% endif %}
+                    {% endif %}
                   </a>
               </li>
               {% endif %}
