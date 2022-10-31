@@ -371,79 +371,79 @@ class SiteConfiguration(SingletonModel):
         upload_to=upload_banner_image_to, blank=True, null=True
     )
     directors_blog_seo_title=models.CharField(max_length=256,blank=True,null=True)
-    directors_blog_name_in_navbar=models.CharField(max_length=256,blank=True,null=True)
+    # directors_blog_name_in_navbar=models.CharField(max_length=256,blank=True,null=True)
     
     Magazine_banner_image=models.ImageField(
         upload_to=upload_banner_image_to, blank=True, null=True
     )
     Magazine_seo_title=models.CharField(max_length=256,blank=True,null=True)
-    Magazine_name_in_navbar=models.CharField(max_length=256,blank=True,null=True)
+    # Magazine_name_in_navbar=models.CharField(max_length=256,blank=True,null=True)
     
     Media_banner_image=models.ImageField(
         upload_to=upload_banner_image_to, blank=True, null=True
     )
     Media_seo_title=models.CharField(max_length=256,blank=True,null=True)
-    Media_name_in_navbar=models.CharField(max_length=256,blank=True,null=True)
+    # Media_name_in_navbar=models.CharField(max_length=256,blank=True,null=True)
     
     Latest_news_banner_image=models.ImageField(
         upload_to=upload_banner_image_to, blank=True, null=True
     )
     Latest_news_seo_title=models.CharField(max_length=256,blank=True,null=True)
-    Latest_news_name_in_navbar=models.CharField(max_length=256,blank=True,null=True)
+    # Latest_news_name_in_navbar=models.CharField(max_length=256,blank=True,null=True)
     
     children_banner_image=models.ImageField(
         upload_to=upload_banner_image_to, blank=True, null=True
     )
     children_seo_title=models.CharField(max_length=256,blank=True,null=True)
-    children_name_in_navbar=models.CharField(max_length=256,blank=True,null=True)
+    # children_name_in_navbar=models.CharField(max_length=256,blank=True,null=True)
 
     catalogue_banner_image=models.ImageField(
         upload_to=upload_banner_image_to, blank=True, null=True
     )
     catalogue_seo_title=models.CharField(max_length=256,blank=True,null=True)
-    catalogue_name_in_navbar=models.CharField(max_length=256,blank=True,null=True)
+    # catalogue_name_in_navbar=models.CharField(max_length=256,blank=True,null=True)
     
     contact_banner_image=models.ImageField(
         upload_to=upload_banner_image_to, blank=True, null=True
     )
     contact_seo_title=models.CharField(max_length=256,blank=True,null=True)
-    contact_name_in_navbar=models.CharField(max_length=256,blank=True,null=True)
+    # contact_name_in_navbar=models.CharField(max_length=256,blank=True,null=True)
 
     dashboard_banner_image=models.ImageField(
         upload_to=upload_banner_image_to, blank=True, null=True
     )
     dashboard_seo_title=models.CharField(max_length=256,blank=True,null=True)
-    dashboard_name_in_navbar=models.CharField(max_length=256,blank=True,null=True)
+    # dashboard_name_in_navbar=models.CharField(max_length=256,blank=True,null=True)
 
     cart_banner_image=models.ImageField(
         upload_to=upload_banner_image_to, blank=True, null=True
     )
     cart_seo_title=models.CharField(max_length=256,blank=True,null=True)
-    cart_name_in_navbar=models.CharField(max_length=256,blank=True,null=True)
+    # cart_name_in_navbar=models.CharField(max_length=256,blank=True,null=True)
 
     checkout_banner_image=models.ImageField(
         upload_to=upload_banner_image_to, blank=True, null=True
     )
     checkout_seo_title=models.CharField(max_length=256,blank=True,null=True)
-    checkout_name_in_navbar=models.CharField(max_length=256,blank=True,null=True)
+    # checkout_name_in_navbar=models.CharField(max_length=256,blank=True,null=True)
 
     donate_banner_image=models.ImageField(
         upload_to=upload_banner_image_to, blank=True, null=True
     )
     donate_seo_title=models.CharField(max_length=256,blank=True,null=True)
-    donate_name_in_navbar=models.CharField(max_length=256,blank=True,null=True)
+    # donate_name_in_navbar=models.CharField(max_length=256,blank=True,null=True)
 
     sponsor_banner_image=models.ImageField(
         upload_to=upload_banner_image_to, blank=True, null=True
     )
     sponsor_seo_title=models.CharField(max_length=256,blank=True,null=True)
-    sponsor_name_in_navbar=models.CharField(max_length=256,blank=True,null=True)
+    # sponsor_name_in_navbar=models.CharField(max_length=256,blank=True,null=True)
 
     about_staff_banner_image=models.ImageField(
         upload_to=upload_banner_image_to, blank=True, null=True
     )
     about_staff_seo_title=models.CharField(max_length=256,blank=True,null=True)
-    about_staff_name_in_navbar=models.CharField(max_length=256,blank=True,null=True)
+    # about_staff_name_in_navbar=models.CharField(max_length=256,blank=True,null=True)
 
     login_banner_image=models.ImageField(
         upload_to=upload_banner_image_to, blank=True, null=True
@@ -543,9 +543,9 @@ class AboutPage(models.Model):
     banner_image=models.ImageField(upload_to=upload_banner_image_to,blank=True,null=True)
     body = RichTextUploadingField()
     created_date = models.DateTimeField(auto_now_add=True)
-    name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
-    sno=models.IntegerField(blank=True,null=True)
-    is_active=models.BooleanField(default=True)
+    # name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
+    # sno=models.IntegerField(blank=True,null=True)
+    # is_active=models.BooleanField(default=True)
 
     def __str__(self):
         return self.name
@@ -561,8 +561,8 @@ class AboutStaff(models.Model):
     staff_name = models.CharField(max_length=200, blank=False)
     staff_image = models.ImageField(upload_to="",blank=True)
     staff_position = models.CharField(max_length=200,blank=False)
-    is_active=models.BooleanField(default=True)
-    name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
+    # is_active=models.BooleanField(default=True)
+    # name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
 
     class Meta:
         ordering = ["staff_name"]
@@ -575,8 +575,8 @@ class AboutWhatWeBelieve(models.Model):
     seo_title=models.CharField(max_length=256,blank=True,null=True)
     banner_image=models.ImageField(upload_to=upload_banner_image_to,blank=True,null=True)
     body=RichTextUploadingField()
-    is_active=models.BooleanField(default=True)
-    name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
+    # is_active=models.BooleanField(default=True)
+    # name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
 
     def __unicode__(self):
         return self.title
@@ -587,8 +587,8 @@ class AboutFundPolicy(models.Model):
     banner_image=models.ImageField(upload_to=upload_banner_image_to,blank=True,null=True)
     body=RichTextUploadingField()
     foot=models.CharField(max_length=200)
-    is_active=models.BooleanField(default=True)
-    name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
+    # is_active=models.BooleanField(default=True)
+    # name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
     
 
     def __unicode__(self):
@@ -599,8 +599,8 @@ class AboutHistory(models.Model):
     seo_title=models.CharField(max_length=256,blank=True,null=True)
     banner_image=models.ImageField(upload_to=upload_banner_image_to,blank=True,null=True)
     body=RichTextUploadingField()
-    is_active=models.BooleanField(default=True)
-    name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
+    # is_active=models.BooleanField(default=True)
+    # name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
 
     def __unicode__(self):
         return self.title
@@ -610,8 +610,8 @@ class AboutMission(models.Model):
     seo_title=models.CharField(max_length=256,blank=True,null=True)
     banner_image=models.ImageField(upload_to=upload_banner_image_to,blank=True,null=True)
     body=RichTextUploadingField()
-    is_active=models.BooleanField(default=True)
-    name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
+    # is_active=models.BooleanField(default=True)
+    # name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
 
     def __unicode__(self):
         return self.title
@@ -635,48 +635,48 @@ class TeamsPage(models.Model):
     #     return reverse("teamspage_detail", args=[self.slug])
 
 class TeamsBlog(models.Model):
-    sno = models.IntegerField(null=True,blank=True)
+    # sno = models.IntegerField(null=True,blank=True)
     # seo_detail=models.OneToOneField(TeamsPage,on_delete=models.DO_NOTHING,blank=True)
     title=models.CharField(max_length=50)
     image=models.ImageField(upload_to=upload_teamblog_image_to,blank=True,null=True)
     description=models.TextField()
-    is_active=models.BooleanField(default=True)
-    name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
+    # is_active=models.BooleanField(default=True)
+    # name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
 
 class TeamsConsider(models.Model):
-    sno = models.IntegerField(null=True,blank=True)
+    # sno = models.IntegerField(null=True,blank=True)
     # seo_detail=models.OneToOneField(TeamsPage,on_delete=models.DO_NOTHING,blank=True)
     title=models.CharField(max_length=50,blank=True,null=True)
     image=models.ImageField(upload_to=upload_teamconsider_image_to)
     description=models.TextField(blank=True,null=True)
-    is_active=models.BooleanField(default=True)
-    name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
+    # is_active=models.BooleanField(default=True)
+    # name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
 
 class TeamsTraining(models.Model):
-    sno = models.IntegerField(null=True,blank=True)
+    # sno = models.IntegerField(null=True,blank=True)
     # seo_detail=models.OneToOneField(TeamsPage,on_delete=models.DO_NOTHING,blank=True)
     title=models.CharField(max_length=50,blank=True,null=True)
     media=models.FileField(upload_to=upload_teamtraining_image_to)
     description=models.TextField(blank=True,null=True)
-    is_active=models.BooleanField(default=True)
-    name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
+    # is_active=models.BooleanField(default=True)
+    # name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
 
 class TeamsResources(models.Model):
-    sno = models.IntegerField(null=True,blank=True)
+    # sno = models.IntegerField(null=True,blank=True)
     # seo_detail=models.OneToOneField(TeamsPage,on_delete=models.DO_NOTHING,blank=True)
     title=models.CharField(max_length=50,blank=True,null=True)
     media=models.FileField(upload_to=upload_teamresource_image_to)
-    is_active=models.BooleanField(default=True)
-    name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
+    # is_active=models.BooleanField(default=True)
+    # name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
  
 class TeamsCalenderDate(models.Model):
-    sno = models.IntegerField(null=True,blank=True)
+    # sno = models.IntegerField(null=True,blank=True)
     # seo_detail=models.OneToOneField(TeamsPage,on_delete=models.DO_NOTHING,blank=True)
     starting_date=models.DateField(auto_now_add=False,auto_now=False)
     ending_date=models.DateField(auto_now_add=False,auto_now=False)
     mission_trip=models.CharField(max_length=100)
-    is_active=models.BooleanField(default=True)
-    name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
+    # is_active=models.BooleanField(default=True)
+    # name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
 
 class MissionHaiti(models.Model):
     title=models.CharField(max_length=200)
@@ -684,8 +684,8 @@ class MissionHaiti(models.Model):
     banner_image=models.ImageField(upload_to=upload_banner_image_to,blank=True,null=True)
     body=RichTextUploadingField()
     country=models.ForeignKey(Country,on_delete=models.CASCADE,blank=True,null=True)
-    is_active=models.BooleanField(default=True)
-    name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
+    # is_active=models.BooleanField(default=True)
+    # name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
 
 class MissionKenya(models.Model):
     title=models.CharField(max_length=200)
@@ -693,8 +693,8 @@ class MissionKenya(models.Model):
     banner_image=models.ImageField(upload_to=upload_banner_image_to,blank=True,null=True)
     body=RichTextUploadingField()
     country=models.ForeignKey(Country,on_delete=models.CASCADE,blank=True,null=True)
-    is_active=models.BooleanField(default=True)
-    name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
+    # is_active=models.BooleanField(default=True)
+    # name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
 
 class MissionGuatemala(models.Model):
     title=models.CharField(max_length=200)
@@ -702,8 +702,8 @@ class MissionGuatemala(models.Model):
     banner_image=models.ImageField(upload_to=upload_banner_image_to,blank=True,null=True)
     body=RichTextUploadingField()
     country=models.ForeignKey(Country,on_delete=models.CASCADE,blank=True,null=True)
-    is_active=models.BooleanField(default=True)
-    name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
+    # is_active=models.BooleanField(default=True)
+    # name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
 
 class LatestNews(models.Model):
     title=models.CharField(max_length=200)
