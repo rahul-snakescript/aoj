@@ -754,7 +754,7 @@ class ExistingPageSubLink(models.Model):
     def get_absolute_url(self):
         return reverse("navbar_itemss", args=[self.link])
 
-class HeaderLinks(models.Model):
+class CreateNewPage(models.Model):
     sno = models.IntegerField()
     title=models.CharField(max_length=256)
     body=RichTextUploadingField(blank=True,null=True)
@@ -780,14 +780,14 @@ class HeaderLinks(models.Model):
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)     
-        super(HeaderLinks, self).save(*args, **kwargs)
+        super(CreateNewPage, self).save(*args, **kwargs)
 
     def get_absolute_url(self):
         return reverse("navbar_items", args=[self.slug])
 
 
-class Subheader(models.Model):
-    mainLink= models.ForeignKey(HeaderLinks,on_delete=models.CASCADE)
+class CreateNewSubPage(models.Model):
+    mainLink= models.ForeignKey(CreateNewPage,on_delete=models.CASCADE)
     link = models.CharField(max_length=256,blank=True,null=True)
     seo_title=models.CharField(max_length=256,blank=True,null=True)
     banner_image=models.ImageField(upload_to=upload_banner_image_to,blank=True,null=True)
@@ -806,7 +806,7 @@ class Subheader(models.Model):
         return self.title+' is a sub part of '+str(self.mainLink)
 
     def clean(self):
-        header=HeaderLinks.objects.get(pk=self.mainLink.id)
+        header=CreateNewPage.objects.get(pk=self.mainLink.id)
         if header.body:
             raise ValidationError('Main link with body cannot be a sublink')
         return super().clean()
@@ -814,7 +814,7 @@ class Subheader(models.Model):
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
-        super(Subheader, self).save(*args, **kwargs)
+        super(CreateNewPage, self).save(*args, **kwargs)
     
     def get_absolute_url(self):
         return reverse("sub_navbar_items", args=[self.slug])

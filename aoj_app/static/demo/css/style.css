@@ -69,8 +69,32 @@
     font-style: normal;
     font-display: swap;
 }
+/*-----Start Header fixes----*/
+.children_header .navbar-brand {
+    width: 10%;
+}
+.children_header div#navbarSupportedContent{
+    width: 90%;
+}
+.children_header .navbar-nav {
+    width: 76%;
+    display: block;
+}
+.children_header .header_btn{
+    width: 26%;
+}
+.children_header .navbar-nav li {
+    display: inline-block;
+}
+.children_header .dropdown-menu li{
+    width: 100%;
+}
+/*-----End Header fixes----*/
 .header.no_dashboard .nav-item a.nav-link{
-    padding-left: 32px !important;
+    padding-left: 23px !important;
+}
+.in-cart.text-success {
+    padding-top: 5px;
 }
 /*----Start Dashboard css----*/
 /* .inner_dashboard .nav-pills {
@@ -88,7 +112,12 @@
 
 } */
 /*----End Dashboard css----*/
-
+.td-img img {
+    width: 100% !IMPORTANT;
+}
+.main_product_name {
+    height: 55px;
+}
 .magazineImg {
     width: 100%;
     height: 520px;
@@ -552,7 +581,7 @@ h3.text-right {
         font-size: 18px;
         color: #ffffff;
         text-decoration: none;
-        margin-left: 27px;
+        margin-left: 21px;
         font-family: 'Proxima Nova Alt Rg';
     }
     a.donate_btn:hover {
@@ -569,7 +598,7 @@ h3.text-right {
     .header .nav-item a.nav-link {
         font-size: 18px;
         color: #000000;
-        padding-left: 20px !important;
+        padding-left: 11px !important;
         font-family: 'Proxima Nova Rg';
     }
     .active {
@@ -2151,6 +2180,14 @@ h2.mission_teamHadding {
         font-family: 'Proxima Nova Alt Rg';
     }
 }
+@media only screen and (max-width: 1280px) {
+    .header .nav-item a.nav-link{
+    padding-left: 7px !important;
+    }
+    .header.no_dashboard .nav-item a.nav-link {
+    padding-left: 17px !important;
+    }
+}
 @media only screen and (max-width: 1200px) {
     .news_outer {
     margin-top: 70px;
@@ -2163,7 +2200,7 @@ h2.mission_teamHadding {
     }
     .header .nav-item a.nav-link{
     font-size: 14px;
-    padding-left: 10px !important;
+    padding-left: 5px !important;
     }
     a.donate_btn{
     font-size: 14px;   
@@ -2343,6 +2380,7 @@ h2.mission_teamHadding {
     }
     /* mission close here */ 
 }
+
 @media only screen and (max-width: 1025px) {
     .haitiHadding_btnItem a {
         width: 180px; 
@@ -2533,6 +2571,22 @@ h2.mission_teamHadding {
     
 }
 @media only screen and (max-width: 992px) {
+    /*-----Start Top-Header-Navigation---*/
+    .children_header .navbar-nav {
+    width: 100%;
+    }
+    .children_header .header_btn {
+    width: 100%;
+    }
+    .children_header .navbar-nav li {
+        display: block;
+    }
+    /*-----End Top-Header-Navigation---*/
+    .main_product_name{
+    font-size: 14px;
+    line-height: 18px;
+    height: 60px;
+    }
     .children_header div#navbarSupportedContent li {
     padding-bottom: 10px !IMPORTANT;
     }
@@ -2986,6 +3040,9 @@ h2.mission_teamHadding {
     /* mission css close */
 }
 @media only screen and (max-width: 768px) {
+    .main_product_name {
+    height: 85px;
+    }
     .behave_outer ul li{
     font-size: 14px !important;
     line-height: 24px !IMPORTANT;
@@ -3722,6 +3779,18 @@ h2.mission_teamHadding {
     font-size: 15px !important;
     }
 }
+@media only screen and (max-width: 575px) {
+.main_product_name {
+    height: auto;
+    padding-bottom: 10px;    
+    }   
+    .children_header div#navbarSupportedContent{
+    top: 64px;   
+    }
+    .children_header div#navbarSupportedContent{
+    width: 93%;    
+    }
+} 
 @media only screen and (max-width: 542px) {
 .days li {
     width: 152px;
@@ -3845,6 +3914,9 @@ h2.mission_teamHadding {
 }
 }
 @media only screen and (max-width: 380px) {
+    .children_header div#navbarSupportedContent {
+    top: 60px;
+    }    
     .footer_manu_item1 {
     width: 100%;
     padding-right: 3px !IMPORTANT;
@@ -3875,6 +3947,9 @@ h2.mission_teamHadding {
 }
 }
 @media only screen and (max-width: 362px) {
+    .children_header div#navbarSupportedContent {
+    top: 55px;
+    }
 .days li {
     width: 138px;
 }
@@ -4618,5 +4693,11 @@ padding: 149px 150px !IMPORTANT;
 margin-bottom: 0px;
 }
 /*----Guatenmala mission page end---*/
+@media only screen and (max-width: 1041px) and (min-width: 992px) {
+    .header .nav-item a.nav-link{
+    padding-left: 5px !important;
+    padding-right: 5px;
+    }
+}
 
 

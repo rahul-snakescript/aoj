@@ -946,8 +946,8 @@ class LatestNewsPageDetailView(DetailView):
 
 class HeaderPageDetailView(DetailView):
     template_name = "aoj_app/demo/header/headers_detail.html"
-    model = HeaderLinks
+    model = CreateNewPage
 
 class SubHeaderPageDetailView(DetailView):
     template_name = "aoj_app/demo/subheader/subheaders_detail.html"
-    model = Subheader
+    model = CreateNewSubPage

@@ -5,7 +5,7 @@ from django import template
 from carton.cart import Cart
 from aoj_app.models import ExistingPageSubLink
 from aoj_app.models import ExistingPageLink
-from aoj_app.models import HeaderLinks, Subheader
+from aoj_app.models import CreateNewPage, CreateNewSubPage
 
 from aoj_app.models import SiteConfiguration, Mission, AboutPage
 
@@ -39,10 +39,10 @@ def get_desktop_nav(context):
     curr_page = req.resolver_match.url_name
     drop_dict={}
     header_list=[]
-    header=HeaderLinks.objects.all()
+    header=CreateNewPage.objects.all()
     for data in header:
         try:
-            subheader=Subheader.objects.filter(mainLink=data)
+            subheader=CreateNewSubPage.objects.filter(mainLink=data)
             if subheader:
                 drop_dict[data]=subheader
             else:
