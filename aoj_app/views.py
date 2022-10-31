@@ -26,6 +26,14 @@ from .forms import UserCreationForm
 from .models import *
 from .functions import calculate_fp_hash
 
+
+
+from django import template
+
+register = template.Library()
+
+
+
 logger = logging.getLogger(__name__)
 
 
@@ -158,6 +166,8 @@ class CatalogueView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(CatalogueView, self).get_context_data(**kwargs)
+        context['object_listt']=context['object_list']
+        print(context['object_listt'])
         cart = Cart(self.request.session, session_key=None)
         context["cart"] = cart
         return context
@@ -706,6 +716,19 @@ def ajax_dropdown_list(request):
             data_list.append(video_new)
         data_dict = {'dataresponse': data_list}
         return JsonResponse(data_dict)
+
+def ajax_show_more(request):
+    # product = Product.objects.get(id=request.GET.get("product_id"))
+    # _item = None
+    # for item in cart.items:
+    #     if item.product == product:
+    #         _item = item
+    return JsonResponse(
+        {
+            "error": 0,
+            "message": "Added to cart",
+        }
+    )
 
 
 # demo views

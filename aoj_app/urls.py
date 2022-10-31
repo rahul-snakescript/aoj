@@ -11,6 +11,7 @@ api_patterns = [
         ajax_product_change_quantity,
         name="ajax_product_change_quantity",
     ),
+    url(r"^showmore/$", ajax_show_more, name="ajax_show_more"),
     url(
         r"^product_increment_quantity/$",
         ajax_product_increment_quantity,

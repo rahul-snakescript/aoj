@@ -41,29 +41,31 @@ The Arms of Jesus - Catalogue
     </a>
   </div> {% endcomment %}
    <div class="row catalog_section_main">
-    {% for product in object_list %}
+    {% for product in object_listt %}
      <div class="col-md-4 col-sm-4">
       <div class="catalog_section">
          <img src="{{ product.image.url }}" alt="catalog">
          <div class="toy_section">
-            <p class="main_product_name">{{ product.name }}</p>
+            <p class="main_product_name">{{ product.name }}{{product.id}}</p>
             <p>${{ product.price }}</p>
-            <!-- <button class="add_to_cart">Add to Cart</button> -->
             <button href="javascript:void(0);" type="button" class="add_to_cart" data-id="{{ product.id }}">Add to Cart</button>
             <h6 class="in-cart text-success" data-id="{{ product.id }}">
               {% if product in cart %}
-                
                   {% trans "IN CART" %} ({% get_product_count_in_cart product %})
               {% else %}
                   &nbsp;
               {% endif %}
-              </h5>
+              </h6>
           </div>
       </div>
      </div>
      {% endfor %}
+     
      </div>
      </div>
+     <div class="LatestNews_btn">
+      <a type='button' class="showmore" id="showmore">{{object_listt.last.id}}Show More</a>
+    </div>
      {% else %}
      <h1 class='text-warning'>Sorry, No Items Present in the Catalogue</h1>
 {% endif %}
@@ -98,6 +100,17 @@ The Arms of Jesus - Catalogue
         }).always(function (e) {
             ajax_loading_modal(false);
         });
+    }
+    $('.showmore').click(function () {
+      showmore();
+    });
+    function showmore(){
+      ajax_loading_modal(true);
+      $.get('/api/showmore/',function (e){
+        if (e['error']==0){
+          alert('help');
+        }
+      })
     }
 </script>
 
