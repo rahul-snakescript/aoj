@@ -39,35 +39,25 @@ The Arms of Jesus - Director's Blog
                         {% for entry in blogentry %}
                             <div class="latest-blogs-div">
                                 <div class="lb-box">
-                                <h2 class="blog-title">
-                                    {{ entry.title }}</h2>
-                                <p class="text-muted DateText">{{ entry.created_date|date:"SHORT_DATE_FORMAT" }}</p>
-                                <div class="blog-wrapper">
-                                    {% autoescape off %}
-                                    {{ entry.body|slice:"1000" }}..
-                                    {% endautoescape %}
+                                    <h2 class="blog-title">
+                                        {{ entry.title }}</h2>
+                                    <p class="text-muted DateText">{{ entry.created_date|date:"SHORT_DATE_FORMAT" }}</p>
+                                    <div class="blog-wrapper">
+                                        {% autoescape off %}
+                                        {{ entry.body|slice:"1000" }}..
+                                        {% endautoescape %}
+                                    </div>
                                     <div class="clearfix"></div>
-                                    {% comment %} <div> {% endcomment %}
-                                        {% comment %} <div class="fb-like"
-                                             data-href="http://127.0.0.1:8000{% url 'blog_detail' entry.slug %}"
-                                             data-layout="button_count" data-action="like" data-size="small"
-                                             data-show-faces="true"
-                                             data-share="false"></div>
-                                        <a class="twitter-share-button"
-                                           href="https://twitter.com/intent/tweet?text={{ entry.title }} - The Arms of Jesus Children's Mission ">
-                                            Tweet</a>
-                                    </div> {% endcomment %}
                                     <div class="blog-read-more-btn">
                                         <a href="{% url 'blog_detail' entry.slug %}" class="read-more-btn text-decoration-none">Read More</a>
                                     </div>
                                     <hr>
                                 </div>
                             </div>
-                            </div>
                         {% endfor %}
 
-                        {% if is_paginated %}
-                            <div class="pagination justify-content-center blog-pagination">
+                    {% if is_paginated %}
+                        <div class="pagination justify-content-center blog-pagination">
                         <span class="page-links">
                             {% if page_obj.has_previous %}
                                 <a href="{% url 'blog' %}?page={{ page_obj.previous_page_number }}" class="latestblog-pagination-next-btn text-decoration-none">{% trans "Previous" %}</a>
@@ -79,8 +69,8 @@ The Arms of Jesus - Director's Blog
                                 <a href="{% url 'blog' %}?page={{ page_obj.next_page_number }}" class="latestblog-pagination-next-btn text-decoration-none">{% trans "Next" %}</a>
                             {% endif %}
                         </span>
-                            </div>
-                        {% endif %}
+                        </div>
+                    {% endif %}
                     {% else %}
                         <h1 class="text-center">{% trans "THERE ARE NO ENTRIES" %}</h1>
                     {% endif %}
