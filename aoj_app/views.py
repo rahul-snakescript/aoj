@@ -100,12 +100,11 @@ class ChildrenDetailView(DetailView):
 class BlogView(ListView):
     model = BlogEntry
     template_name = "aoj_app/demo/blog.html"
-    paginate_by = 5
-    
-    def get_context_data(self, **kwargs):
-        context = super(BlogView,self).get_context_data(**kwargs)
-        context['blogentry']= BlogEntry.objects.filter(category="DB")
-        return context
+    paginate_by = 7
+    context_object_name= "blogentry"
+
+    def get_queryset(self):
+        return BlogEntry.objects.filter(category="DB")
 
 
 class BlogDetailView(DetailView):
