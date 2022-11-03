@@ -102,7 +102,10 @@ The Arms of Jesus
         <div class="col-md-4">
           <div class="card" style="cursor:pointer; border=0px;" onclick="location.href='{% url "blog_detail" blog.slug %}'">
             {% if blog.cover %}
-            <img src="{{blog.cover.url|default_if_none:"/demo/images/news_img1.jpg" }}" height="400px;" width="390px" class="card-img-top" alt="...">
+            <img src="{{blog.cover.url|default_if_none:'{% static "demo/images/news_img1.jpg" %}' }}" height="400px;" width="390px" class="card-img-top" alt="...">
+            {% else %}
+            <img src="{% static "demo/images/news_img1.jpg" %}" height="400px;" width="390px" class="card-img-top" alt="...">
+            
             {% endif %}
             <div class="card-body" style="padding:1rem 1rem 2rem;">
               <h5 class="card-title text-center">{{ blog.title }}</h5>

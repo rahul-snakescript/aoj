@@ -30,7 +30,9 @@
                     <img src="{{ blog.cover.url }}" alt="" height="400px;" width="390px">
                     </a>
                     {% else %}
+                    <a href="{% static 'demo/images/Team_Blogs3.jpg' %}" target="_blank">
                     <img src="{% static 'demo/images/Team_Blogs3.jpg' %}" alt="">
+                    </a>
                     {% endif %}
                       <div class="teamsBlogs_item">
                           <h5><a href="{% url 'blog_detail' blog.slug %}" style="text-decoration:none; color:#000000;">
