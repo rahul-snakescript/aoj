@@ -56,9 +56,9 @@ urlpatterns = [
     url(r"^cart/$", CartView.as_view(), name="cart"),
     url(r"^checkout/$", CheckoutView.as_view(), name="checkout"),
     url(r"^silentpost/$", SilentPostView.as_view(), name="silent_post"),
-    url(r"^directors-blog/$", BlogView.as_view(), name="blog"),
+    url(r"^blogs/$", BlogView.as_view(), name="blog"),
     url(
-        r"^directors-blog/(?P<slug>[-\w]+)/$",
+        r"^blogs/(?P<slug>[-\w]+)/$",
         BlogDetailView.as_view(),
         name="blog_detail",
     ),

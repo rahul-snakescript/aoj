@@ -101,6 +101,11 @@ class BlogView(ListView):
     model = BlogEntry
     template_name = "aoj_app/demo/blog.html"
     paginate_by = 5
+    
+    def get_context_data(self, **kwargs):
+        context = super(BlogView,self).get_context_data(**kwargs)
+        context['blogentry']= BlogEntry.objects.filter(category="DB")
+        return context
 
 
 class BlogDetailView(DetailView):
@@ -745,7 +750,7 @@ class NewIndexView(TemplateView):
         context["latest_magazines"] = Magazine.objects.all()
         context["countries"] = Country.objects.all()
         context["latest_news"] = LatestNews.objects.order_by('-created_date')[0:2]       
-        context["blog"] = BlogEntry.objects.order_by('-created_date')[0:3]
+        context["blog"] = BlogEntry.objects.filter(featured=True).order_by('-created_date')[0:3]
         print(context['blog'])
         context['curr_page']=self.request.resolver_match.url_name
         first_country = Country.objects.first()
@@ -876,8 +881,13 @@ class RegisterView(View):
 
 
 class TeamsBlogView(ListView):
-    model = TeamsBlog
+    model = BlogEntry
     template_name = "aoj_app/demo/teams/teams_blog.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(TeamsBlogView,self).get_context_data(**kwargs)
+        context['blogentry']= BlogEntry.objects.filter(category="TB")
+        return context
 
 
 class TeamsConsiderView(ListView):

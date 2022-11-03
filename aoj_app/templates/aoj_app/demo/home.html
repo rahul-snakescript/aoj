@@ -100,19 +100,30 @@ The Arms of Jesus
       <div class="row lastestNews_outer">
         {% for blog in blog %}
         <div class="col-md-4">
-          <div class="news_item1">
+          <div class="card" style="cursor:pointer; border=0px;" onclick="location.href='{% url "blog_detail" blog.slug %}'">
+            <img src="{{blog.cover.url}}" height="400px;" width="390px" class="card-img-top" alt="...">
+            <div class="card-body" style="padding:1rem 1rem 2rem;">
+              <h5 class="card-title text-center">{{ blog.title }}</h5>
+              {% autoescape off %}
+              <p class="card-text text-center">{{ blog.short_description|slice:'120' }}</p>
+              {% endautoescape %}
+              
+              
+            </div>
+          </div>
+          {% comment %} <div class="news_item1">
             <div class="latest_img">
               {% if blog.cover %}
               <a href="{{ blog.cover.url }}" target="_blank">
-              <img src="{{blog.cover.url}}" alt="">
+              <img src="{{blog.cover.url}}" style="height:220px;" alt="">
               </a>
               {% endif %}
             </div>
             <div class="donors_hadding">
               <p>{{ blog.body|safe }}</p>
-              <h4><a href="{% url 'blog_detail' blog.slug %}" style="text-decoration:none; color:black;">{{ blog.title }}</a></h4>
+              <h4><a href="" style="text-decoration:none; color:black;">{{ blog.title }}</a></h4>
             </div>
-          </div>
+          </div> {% endcomment %}
         </div>
         {% endfor %}
         

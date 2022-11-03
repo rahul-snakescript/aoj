@@ -26,7 +26,14 @@
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1">
                     <h2>{{ object.title }}</h2>
-                    <p class="text-muted">{{ object.created_date|date:"SHORT_DATE_FORMAT" }}</p> 
+                    <p class="text-muted"><i class="fa fa-calendar me-3" aria-hidden="true"></i>{{ object.created_date|date:"SHORT_DATE_FORMAT" }}</p>
+                    <p class="text-muted">
+                        {% if object.category == "DB" %}
+                            Director's Blog
+                        {% else %}
+                            Team Blog
+                        {% endif %}
+                    </p> 
                     </div>
                     <div class="blog-wrapper">
                         {% autoescape off %}
@@ -34,14 +41,11 @@
                         {% endautoescape %}
                         <div class="clearfix"></div>
                         <div>
-                            <div class="fb-like"
-                                 data-href="http://127.0.0.1:8000{% url 'blog_detail' object.slug %}"
-                                 data-layout="button_count" data-action="like" data-size="small"
-                                 data-show-faces="true"
-                                 data-share="false"></div>
-                            <a class="twitter-share-button"
+                            <a class="blog-detail-social" 
+                                href="https://www.facebook.com/sharer/sharer.php?u=http://127.0.0.1:8000/directors-blog/{{ object.slug }}/"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a class="blog-detail-social twitter"
                                href="https://twitter.com/intent/tweet?text={{ object.title }} - The Arms of Jesus Children's Mission ">
-                                Tweet</a>
+                               <i class="fa-brands fa-twitter"></i></a>
                         </div>
                     </div>
                 </div>

@@ -47,7 +47,9 @@ The Arms of Jesus - Donate
             <h4>{% trans "Donor Information" %}</h4>
             <div class="row">
               <div class="col-sm-6">
-                <form action="https://checkout.e-xact.com/payment" method="POST" id="form-donate">
+                {% comment %} <form action="https://checkout.e-xact.com/payment" method="POST" id="form-donate"> {% endcomment %}
+                  <form action="https://checkout.e-xact.com/payment" method="POST" id="form-donate">
+
                   {% csrf_token %}
                   <div class="form-group">
                     <label for="cbfEmail">{% trans "Email address" %}</label>

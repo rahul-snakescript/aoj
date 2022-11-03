@@ -2,6 +2,7 @@
 
 {% block dash_body_block %}
   {% if object_list %}
+  <div class="dashboard-order-table">
     <table class="table table-striped">
       <thead>
       <tr>
@@ -28,6 +29,7 @@
       {% endfor %}
       </tbody>
     </table>
+  </div>
   {% else %}
     <h4>You have no orders.</h4>
   {% endif %}

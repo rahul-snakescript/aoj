@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from django.urls import reverse_lazy
 from django.views.generic import TemplateView, UpdateView, ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
-
+from aoj_app.models import CheckoutRequest
 from authtools.views import PasswordChangeView
 
 
@@ -12,7 +12,8 @@ class DashOrdersView(LoginRequiredMixin, ListView):
     template_name = "dashboard/pages/orders.html"
 
     def get_queryset(self):
-        return self.request.user.checkoutrequest_set.all()
+        # return self.request.user.checkoutrequest_set.all()
+        return CheckoutRequest.objects.filter(email=self.request.user.email)
 
 
 class DashProfileView(LoginRequiredMixin, UpdateView):

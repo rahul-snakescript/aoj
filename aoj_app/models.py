@@ -325,13 +325,23 @@ class Children(models.Model):
 
 
 class BlogEntry(models.Model):
+    Directors_blog = 'DB'
+    TeamBlog = 'TB'
+    
+    BLOG_TYPE = [
+        (Directors_blog, "Director's Blog"),
+        (TeamBlog, "Team's Blog"),
+    ]
+    category=models.CharField(max_length=50,choices=BLOG_TYPE,default=Directors_blog)
     title = models.CharField(max_length=200, blank=False)
     slug = models.SlugField(max_length=200, unique=True)
     seo_title=models.CharField(max_length=256,blank=True,null=True)
+    short_description = models.TextField(blank=True,null=True)
     banner_image=models.ImageField(upload_to=upload_banner_image_to,blank=True,null=True)
     cover=models.ImageField(upload_to=upload_blogentry_image_to,blank=True,null=True)
     body = RedactorField(verbose_name="Body", allow_image_upload=True)
     created_date = models.DateTimeField(default=timezone.now)
+    featured=models.BooleanField(default=False)
 
     def get_first_image(self):
         soup = BeautifulSoup(self.body, "html.parser")
@@ -634,14 +644,14 @@ class TeamsPage(models.Model):
     # def get_absolute_url(self):
     #     return reverse("teamspage_detail", args=[self.slug])
 
-class TeamsBlog(models.Model):
-    # sno = models.IntegerField(null=True,blank=True)
-    # seo_detail=models.OneToOneField(TeamsPage,on_delete=models.DO_NOTHING,blank=True)
-    title=models.CharField(max_length=50)
-    image=models.ImageField(upload_to=upload_teamblog_image_to,blank=True,null=True)
-    description=models.TextField()
-    # is_active=models.BooleanField(default=True)
-    # name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
+# class TeamsBlog(models.Model):
+#     # sno = models.IntegerField(null=True,blank=True)
+#     # seo_detail=models.OneToOneField(TeamsPage,on_delete=models.DO_NOTHING,blank=True)
+#     title=models.CharField(max_length=50)
+#     image=models.ImageField(upload_to=upload_teamblog_image_to,blank=True,null=True)
+#     description=models.TextField()
+#     # is_active=models.BooleanField(default=True)
+#     # name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
 
 class TeamsConsider(models.Model):
     # sno = models.IntegerField(null=True,blank=True)

@@ -111,9 +111,9 @@ class StaffAdmin(admin.ModelAdmin):
 class StaffAdmin(admin.ModelAdmin):
     list_display= ['title','body']
 
-@admin.register(TeamsBlog)
-class TeamsBlogAdmin(admin.ModelAdmin):
-    list_display= ['title','image','description']
+# @admin.register(TeamsBlog)
+# class TeamsBlogAdmin(admin.ModelAdmin):
+#     list_display= ['title','image','description']
 
 @admin.register(TeamsConsider)
 class TeamsConsiderAdmin(admin.ModelAdmin):

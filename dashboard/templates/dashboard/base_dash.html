@@ -27,11 +27,12 @@ The Arms of Jesus - Dashboard
         </div>
       </div>
     </section>
-  <div id="page-dash" class="inner_dashboard">
+  <div id="page-dash" class="inner_dashboard dashborad-sidenav" >
     <div class="container">
       <div class="row">
         <div class="col-lg-3">
-          <ul class="nav nav-pills nav-stacked">
+          <div class="dashboard-side-nav">
+          <ul class="nav nav-pills nav-stacked ">
             <li class="{% if request.resolver_match.view_name == "dashboard:orders" %}active{% endif %}">
               <a href="{% url "dashboard:orders" %}">ORDERS</a></li>
             <li class="{% if request.resolver_match.view_name == "dashboard:profile" %}active{% endif %}">
@@ -39,6 +40,7 @@ The Arms of Jesus - Dashboard
             <li class="{% if request.resolver_match.view_name == "dashboard:password" %}active{% endif %}">
               <a href="{% url "dashboard:password" %}">CHANGE PASSWORD</a></li>
           </ul>
+        </div>
         </div>
         <div class="col-lg-9">
           {% block dash_body_block %}

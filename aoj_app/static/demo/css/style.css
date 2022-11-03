@@ -69,6 +69,81 @@
     font-style: normal;
     font-display: swap;
 }
+
+
+/* Dashboad sidenav css start */
+.dashborad-sidenav{
+padding:30px 0px;
+
+}
+.dashboard-side-nav ul {
+    display: grid;
+}
+
+.dashboard-side-nav ul li.active {
+    background: #174cb5;
+    text-align: start;
+    padding: 7px 26px;
+    border-radius: 5px;
+    width: 230px;
+
+}
+.dashboard-side-nav ul li.active a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500!important;
+    text-align: center;
+    text-decoration:none;
+    font-family: var(--bs-font-sans-serif);
+}
+
+.dashboard-side-nav ul li {
+    text-align: center;
+    text-align: start;
+    padding: 7px 26px;
+    border-radius: 5px;
+    width: 230px;
+    margin-bottom: 25px;
+}
+.dashboard-side-nav ul li a {
+    color: #174cb5;
+    text-decoration:none;
+    font-size: 16px;
+}
+
+.dashboard-profile-form button.btn.btn-aoj {
+    background: #f7941d;
+    color: #fff!important;
+    border: none!important;
+    padding: 10px 40px !important;
+    float: left;
+    border-radius: 5px!important;
+}
+
+.dashboard-profile-form .form-control {
+    margin-bottom: 20px;
+    border-radius: 5px!important;
+}
+
+.dashboard-order-table table tr th {
+    background: #f7941d!important;
+    color: #fff;
+    padding: 15px;
+}
+
+.dashboard-order-table table tr td {
+    padding: 15px!important;
+}
+.dashboard-order-table  .table-striped > tbody > tr:nth-of-type(odd){
+    --bs-table-accent-bg: transparent;
+}
+.dashboard-order-table  .table-striped > tbody > tr{
+border-bottom: 1px solid #ddd;
+}
+/* Dashboad sidenav css end */
+
+
 /*-----Start Header fixes----*/
 .children_header .navbar-brand {
     width: 10%;
@@ -380,9 +455,107 @@ hr {
 .page-blog {
     margin-top: 20px;
 }
+
+.page-blog .lb-box{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0px;
+}
+.page-blog  .latest-blogs-div:nth-child(even) {
+    background: #f9f9f9 ;
+}
+.page-blog  .latest-blogs-div .blog-title{
+    color:#000;
+    text-transform: uppercase;
+}
+.page-blog  .latest-blogs-div a.read-more-btn {
+    padding: 10px 40px !important;
+    background: #f7941d;
+    border: 1px solid #f7941d;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 18px;
+    text-decoration: none;
+    font-family: 'Proxima Nova Alt Rg';
+}
+.page-blog  .latest-blogs-div a.read-more-btn:hover {
+background: none;
+    color: #f7941d;
+}
+.page-blog  .latest-blogs-div .blog-wrapper p {
+    color: gray;
+}
+.page-blog  .latest-blogs-div .blog-read-more-btn {
+    display: inline-block;
+}
+
+.blog-pagination a.latestblog-pagination-next-btn {
+    background: #f19433;
+    color: #fff;
+    padding: 12px 25px;
+    display: inline-block;
+    border: 1px solid #f7941d;
+}
+.blog-pagination a.latestblog-pagination-next-btn:hover{
+background: none;
+    color: #f7941d;
+
+}
+.pagination.blog-pagination {
+    margin-top: 60px;
+
+}
 /* director blog close here */
 
+/* director blog detail page close here */
+.page-blog-detail {
+    padding: 70px 0px 70px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
+.page-blog-detail .blog-detail-social {
+  background-color: #3a5a97;
+    width: 55px;
+    height: 55px;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 100px;
+    margin-left: 20px;
+    font-size: 22px;
+}
+.page-blog-detail .blog-detail-social:hover{
+   
+    border: 1px solid #3a5a97;
+    background-color: #fff;
+}
+.page-blog-detail .blog-detail-social:hover i{
+color:#3a5a97;
+}
+
+.page-blog-detail  a.blog-detail-social.twitter{
+    background: #3ea6f0;
+
+}
+
+
+
+.page-blog-detail a.blog-detail-social.twitter:hover{
+   border: 1px solid #3ea6f0;
+   background-color: #fff;
+}
+.page-blog-detail a.blog-detail-social.twitter:hover i{
+    color:#3ea6f0;
+}
+/* director blog detail page close here */
 /* magazine start here */
 h1.magazineHadding {
     margin-bottom: 10px;
@@ -2189,6 +2362,9 @@ h2.mission_teamHadding {
     }
 }
 @media only screen and (max-width: 1200px) {
+    .latest-blogs-div {
+        padding: 0px 20px;
+    }
     .news_outer {
     margin-top: 70px;
     }
@@ -2571,6 +2747,14 @@ h2.mission_teamHadding {
     
 }
 @media only screen and (max-width: 992px) {
+
+    .dashboard-side-nav ul {
+        display: flex;
+    }
+    .dashboard-side-nav ul li.active , .dashboard-side-nav ul li{
+        text-align: center;
+
+    }
     /*-----Start Top-Header-Navigation---*/
     .children_header .navbar-nav {
     width: 100%;
@@ -3379,6 +3563,13 @@ h2.mission_teamHadding {
     /* mission close here */
 }
 @media only screen and (max-width: 767px) {
+    .dashboard-side-nav ul li.active , .dashboard-side-nav ul li{
+        width:auto;
+    }
+    .dashboard-side-nav ul li {
+     
+        padding: 7px 10px!important;
+    }
     /* mission start here */
     
 
@@ -3880,6 +4071,10 @@ h2.mission_teamHadding {
 }
 }
 @media only screen and (max-width: 394px) {
+
+    .dashboard-side-nav ul li a{
+        font-size:14px;
+    }
     .days li {
         width: 155px;
     }
@@ -3947,6 +4142,9 @@ h2.mission_teamHadding {
 }
 }
 @media only screen and (max-width: 362px) {
+    .dashboard-side-nav ul {
+        display: grid;
+    }
     .children_header div#navbarSupportedContent {
     top: 55px;
     }
