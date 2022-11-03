@@ -766,6 +766,10 @@ h3.text-right {
     .header ul.navbar-nav.ms-auto.mb-2.mb-lg-0 {
         margin-right: 31px;
     }
+    span.active_link {
+        font-weight: bold;
+        text-decoration: underline;
+    }
     .header .nav-item a.nav-link {
         font-size: 18px;
         color: #000000;

@@ -55,6 +55,7 @@ def get_desktop_nav(context):
     header=ExistingPageLink.objects.all()
     for data in header:
         try:
+            print(data.link)
             subheader=ExistingPageSubLink.objects.filter(existingpage=data)
             if subheader:
                 drop_new_dict[data]=subheader
@@ -62,7 +63,7 @@ def get_desktop_nav(context):
                 drop_new_dict[data]=None
         except:
             drop_new_dict[data]=None
-
+    
     print(curr_page)
     print(req.path)
     return {'curr_page': curr_page, 'path': req.path, 'items_count': cart.count, 'user': req.user,
