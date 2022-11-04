@@ -37,35 +37,70 @@ register = template.Library()
 logger = logging.getLogger(__name__)
 
 
-class IndexView(TemplateView):
-    template_name = "aoj_app/pages/index.html"
+#home page view
+class NewIndexView(TemplateView):
+    template_name = "aoj_app/demo/home.html"
 
     def get_context_data(self, **kwargs):
-        context = super(IndexView, self).get_context_data(**kwargs)
-        try:
-            context["latest_post"] = BlogEntry.objects.latest("created_date")
-        except:
-            context["latest_post"] = None
-        context["latest_magazines"] = Magazine.objects.all()[:6]
+        
+        context = super(NewIndexView, self).get_context_data(**kwargs)
+        context["latest_magazines"] = Magazine.objects.all()
         context["countries"] = Country.objects.all()
+        context["latest_news"] = LatestNews.objects.order_by('-created_date')[0:2]       
+        context["blog"] = BlogEntry.objects.filter(featured=True).order_by('-created_date')[0:3]
+        context['curr_page']=self.request.resolver_match.url_name
+        first_country = Country.objects.first()
+        video_list = []
+        first_country_video = Media.objects.filter(country=first_country)[0:4]
+        
+        for video in first_country_video:
+            video_new=video.video.replace("watch?v=","embed/")
+            print(video_new)
+            video_list.append(video_new)
+        
+        context['country_video'] = video_list
         return context
 
-
-class MediaView(ListView):
-    template_name = "aoj_app/demo/media.html"
-    model = Country
-
-
-class MagazineView(ListView):
-    template_name = "aoj_app/demo/magazine.html"
-    model = Magazine
+#Login and Register Views
+class UserLogInView(LoginView):
+    template_name = 'aoj_app/demo/login.html'
+    LOGIN_REDIRECT_URL = 'newindex'
 
 
-class MagazineDetailView(DetailView):
-    template_name = "aoj_app/demo/magazine_detail.html"
-    model = Magazine
+class RegisterView(View):
+    
+    def post(self, request):
+        
+        form = UserCreationForm(request.POST)
+        country = request.POST['country']
+        
+        if form.is_valid():
+            
+            user = AuthUser.objects.create_user(
+                email=form.cleaned_data['email'],
+                password=form.cleaned_data['password'],
+                first_name=form.cleaned_data['first_name'],
+                last_name=form.cleaned_data['last_name'],
+                address=form.cleaned_data['address'],
+                city=form.cleaned_data['city'],
+                state=form.cleaned_data['state'],
+                country=form.cleaned_data['country'],
+                zip_code=form.cleaned_data['zip_code'],
+                phone_number=form.cleaned_data['phone_number']
+            )
+            login(request, user)
+            return redirect('newindex')
+        
+        else:
+            message = {"error_message": "form data has an error"}
+            return render(request, 'aoj_app/demo/register.html', {'form': form})
 
 
+    def get(self, request):
+        form = UserCreationForm()
+        return render(request, 'aoj_app/demo/register.html', {'form': form})
+
+#Children Views
 class ChildrenView(ListView):
     template_name = "aoj_app/demo/children.html"
     model = Children
@@ -85,7 +120,7 @@ class ChildrenView(ListView):
             context['child_data'] = data_dict
         return context
 
-
+#Children Detail view
 class ChildrenDetailView(DetailView):
     template_name = "aoj_app/demo/children_detail.html"
     model = Children
@@ -96,7 +131,42 @@ class ChildrenDetailView(DetailView):
             return redirect(reverse("children"))
         return super(ChildrenDetailView, self).get(*args, **kwargs)
 
+#media view 
+class MediaView(TemplateView):
+    template_name= "aoj_app/demo/media.html"
 
+    def get_context_data(self, **kwargs):    
+        context = super(MediaView, self).get_context_data(**kwargs)
+        context["countries"] = Country.objects.all()
+        first_country = Country.objects.first()
+        video_list = []
+        first_country_video = Media.objects.filter(country=first_country)
+        
+        for video in first_country_video:
+            video_new=video.video.replace("watch?v=","embed/")
+            video_list.append(video_new)
+        
+        context['country_video'] = video_list
+        return context
+
+
+#contact-us View
+class ContactUsView(TemplateView):
+    template_name = "aoj_app/demo/contact-us.html"
+
+
+#Magazine views
+class MagazineView(ListView):
+    template_name = "aoj_app/demo/magazine.html"
+    model = Magazine
+
+
+class MagazineDetailView(DetailView):
+    template_name = "aoj_app/demo/magazine_detail.html"
+    model = Magazine
+
+
+#Blog views
 class BlogView(ListView):
     model = BlogEntry
     template_name = "aoj_app/demo/blog.html"
@@ -112,6 +182,7 @@ class BlogDetailView(DetailView):
     model = BlogEntry
 
 
+#Mission views
 class MissionDetailView(DetailView):
     template_name = "aoj_app/demo/mission/mission_detail.html"
     model = Mission
@@ -119,22 +190,181 @@ class MissionDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context=super().get_context_data(**kwargs)
         mission=context['mission']
+        
         try:
             attributes=MissionPageAttributes.objects.filter(country=mission.country)
         except:
             attributes=None
-        print(attributes)
-        print(context)
+        
+        context['attributes']=attributes
+        return context
+
+class MissionHaitiView(TemplateView):
+
+    def get_context_data(self, **kwargs):
+        context = super(MissionHaitiView, self).get_context_data(**kwargs)
+        
+        try:
+            mission = MissionHaiti.objects.first()
+            attributes=MissionPageAttributes.objects.filter(country=mission.country)
+        except:
+            mission = None
+            attributes=None
+        
+        context['mission'] = mission
         context['attributes']=attributes
         return context
 
 
+class MissionKenyaView(TemplateView):
+    
+    def get_context_data(self, **kwargs):
+        context = super(MissionKenyaView, self).get_context_data(**kwargs)
+        
+        try:
+            mission = MissionKenya.objects.first()
+            attributes=MissionPageAttributes.objects.filter(country=mission.country)
+        except:
+            mission = None
+            attributes=None
+        
+        context['mission'] = mission
+        context['attributes']=attributes
+        return context
 
+
+class MissionGuatemalaView(TemplateView):
+    
+    def get_context_data(self, **kwargs):
+        context = super(MissionGuatemalaView, self).get_context_data(**kwargs)
+        try:
+            mission = MissionGuatemala.objects.first()
+            attributes=MissionPageAttributes.objects.filter(country=mission.country)
+        except:
+            mission = None
+            attributes=None
+        
+        context['mission'] = mission 
+        context['attributes']=attributes       
+        return context
+
+
+
+#About page Views
 class AboutPageDetailView(DetailView):
     template_name = "aoj_app/demo/about/aboutpage_detail.html"
     model = AboutPage
 
+class AboutStaffView(ListView):
+    template_name = "aoj_app/demo/about/about_staff.html"
+    model = AboutStaff
 
+
+class AboutbehaveView(TemplateView):
+    template_name = "aoj_app/demo/about/about_behave.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(AboutbehaveView, self).get_context_data(**kwargs)
+        
+        try:
+            text = AboutWhatWeBelieve.objects.first()
+        except:
+            text=None
+
+        context['data'] = text
+        return context
+
+
+class AboutFundPolicyView(TemplateView):
+    template_name = "aoj_app/demo/about/about_fund_policy.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(AboutFundPolicyView, self).get_context_data(**kwargs)
+        
+        try:
+            text = AboutFundPolicy.objects.first()
+        except:
+            text=None
+        
+        context['data'] = text
+        return context
+
+
+class HistoryView(TemplateView):
+    template_name = "aoj_app/demo/about/about_histroy.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(HistoryView, self).get_context_data(**kwargs)
+        
+        try:
+            text = AboutHistory.objects.first()
+        except:
+            text=None
+
+        context['data'] = text
+        return context
+
+
+class MissionView(TemplateView):
+    template_name = "aoj_app/demo/about/about_mission.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(MissionView, self).get_context_data(**kwargs)
+        try:
+            text = AboutMission.objects.first()
+        except:
+            text=None
+        
+        context['data'] = text
+        return context
+
+
+
+#Team page views
+class TeamsBlogView(ListView):
+    model = BlogEntry
+    template_name = "aoj_app/demo/teams/teams_blog.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(TeamsBlogView,self).get_context_data(**kwargs)
+        context['blogentry']= BlogEntry.objects.filter(category="TB")
+        return context
+
+
+class TeamsConsiderView(ListView):
+    model = TeamsConsider
+    template_name = "aoj_app/demo/teams/teams_consider.html"
+
+
+class TeamsTrainingView(ListView):
+    model = TeamsTraining
+    template_name = "aoj_app/demo/teams/teams_training.html"
+
+
+class TeamsResourceView(ListView):
+    model = TeamsResources
+    template_name = "aoj_app/demo/teams/teams_resources.html"
+
+
+class TeamsCalenderView(ListView):
+    model = TeamsCalenderDate
+    template_name = 'aoj_app/demo/teams/teams_calender.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(TeamsCalenderView,self).get_context_data(**kwargs)
+        data_dict = {}
+        dates = TeamsCalenderDate.objects.all()
+        for count, date in enumerate(dates):
+            data_list = []
+            data_list.append(date.starting_date)
+            data_list.append(date.ending_date)
+            data_list.append(date.mission_trip)
+            data_dict[count+1] = data_list
+        context['data'] = data_dict
+        return context
+
+
+#Donate view
 class DonateView(LoginRequiredMixin, TemplateView):
     template_name = "aoj_app/demo/donate.html"
 
@@ -163,6 +393,7 @@ class DonateView(LoginRequiredMixin, TemplateView):
         return context
 
 
+#Catalogue View
 class CatalogueView(ListView):
     model = Product
     template_name = "aoj_app/demo/Catalogue.html"
@@ -177,6 +408,7 @@ class CatalogueView(ListView):
         return context
 
 
+#Cart View
 class CartView(TemplateView):
     template_name = "aoj_app/demo/cart.html"
 
@@ -187,6 +419,23 @@ class CartView(TemplateView):
         return context
 
 
+#Latest News View
+class LatestNewsPageDetailView(DetailView):
+    template_name = "aoj_app/demo/latestnews/latestnews_detail.html"
+    model = LatestNews
+
+
+#New pages on Navbar view
+class HeaderPageDetailView(DetailView):
+    template_name = "aoj_app/demo/header/headers_detail.html"
+    model = CreateNewPage
+
+class SubHeaderPageDetailView(DetailView):
+    template_name = "aoj_app/demo/subheader/subheaders_detail.html"
+    model = CreateNewSubPage
+
+
+#Checkout view
 class CheckoutView(LoginRequiredMixin, TemplateView):
     template_name = "aoj_app/demo/checkout.html"
 
@@ -720,266 +969,3 @@ def ajax_dropdown_list(request):
             data_list.append(video_new)
         data_dict = {'dataresponse': data_list}
         return JsonResponse(data_dict)
-
-def ajax_show_more(request):
-    # product = Product.objects.get(id=request.GET.get("product_id"))
-    # _item = None
-    # for item in cart.items:
-    #     if item.product == product:
-    #         _item = item
-    return JsonResponse(
-        {
-            "error": 0,
-            "message": "Added to cart",
-        }
-    )
-
-
-# demo views
-
-class NewIndexView(TemplateView):
-    template_name = "aoj_app/demo/home.html"
-
-    def get_context_data(self, **kwargs):
-        context = super(NewIndexView, self).get_context_data(**kwargs)
-        # try:
-        #     context["latest_post"] = BlogEntry.objects.latest("created_date")
-        # except:
-        #     context['latest_post'] = None
-        context["latest_magazines"] = Magazine.objects.all()
-        context["countries"] = Country.objects.all()
-        context["latest_news"] = LatestNews.objects.order_by('-created_date')[0:2]       
-        context["blog"] = BlogEntry.objects.filter(featured=True).order_by('-created_date')[0:3]
-        print(context['blog'])
-        context['curr_page']=self.request.resolver_match.url_name
-        first_country = Country.objects.first()
-        video_list = []
-        first_country_video = Media.objects.filter(country=first_country)[0:4]
-        for video in first_country_video:
-            video_new=video.video.replace("watch?v=","embed/")
-            print(video_new)
-            video_list.append(video_new)
-        context['country_video'] = video_list
-        return context
-
-class MediaView(TemplateView):
-    template_name= "aoj_app/demo/media.html"
-
-    def get_context_data(self, **kwargs):
-        context = super(MediaView, self).get_context_data(**kwargs)
-        context["countries"] = Country.objects.all()
-        first_country = Country.objects.first()
-        video_list = []
-        first_country_video = Media.objects.filter(country=first_country)
-        for video in first_country_video:
-            video_new=video.video.replace("watch?v=","embed/")
-            print(video_new)
-            video_list.append(video_new)
-        context['country_video'] = video_list
-        return context
-
-
-
-class AboutStaffView(ListView):
-    template_name = "aoj_app/demo/about/about_staff.html"
-    model = AboutStaff
-
-
-class AboutbehaveView(TemplateView):
-    template_name = "aoj_app/demo/about/about_behave.html"
-
-    def get_context_data(self, **kwargs):
-        context = super(AboutbehaveView, self).get_context_data(**kwargs)
-        try:
-            text = AboutWhatWeBelieve.objects.first()
-        except:
-            text=None
-
-        # context['length'] = len(text)
-        context['data'] = text
-        print(context)
-        return context
-
-
-class AboutFundPolicyView(TemplateView):
-    template_name = "aoj_app/demo/about/about_fund_policy.html"
-
-    def get_context_data(self, **kwargs):
-        context = super(AboutFundPolicyView, self).get_context_data(**kwargs)
-        try:
-            text = AboutFundPolicy.objects.first()
-        except:
-            text=None
-        context['data'] = text
-        return context
-
-
-class ContactUsView(TemplateView):
-    template_name = "aoj_app/demo/contact-us.html"
-
-
-class HistoryView(TemplateView):
-    template_name = "aoj_app/demo/about/about_histroy.html"
-
-    def get_context_data(self, **kwargs):
-        context = super(HistoryView, self).get_context_data(**kwargs)
-        try:
-            text = AboutHistory.objects.first()
-        except:
-            text=None
-        context['data'] = text
-        return context
-
-
-class MissionView(TemplateView):
-    template_name = "aoj_app/demo/about/about_mission.html"
-
-    def get_context_data(self, **kwargs):
-        context = super(MissionView, self).get_context_data(**kwargs)
-        try:
-            text = AboutMission.objects.first()
-        except:
-            text=None
-        context['data'] = text
-        print(context)
-        return context
-
-
-class UserLogInView(LoginView):
-    template_name = 'aoj_app/demo/login.html'
-    LOGIN_REDIRECT_URL = 'newindex'
-
-
-class RegisterView(View):
-    def post(self, request):
-        form = UserCreationForm(request.POST)
-        country = request.POST['country']
-        if form.is_valid():
-            user = AuthUser.objects.create_user(
-                email=form.cleaned_data['email'],
-                password=form.cleaned_data['password'],
-                first_name=form.cleaned_data['first_name'],
-                last_name=form.cleaned_data['last_name'],
-                address=form.cleaned_data['address'],
-                city=form.cleaned_data['city'],
-                state=form.cleaned_data['state'],
-                country=form.cleaned_data['country'],
-                zip_code=form.cleaned_data['zip_code'],
-                phone_number=form.cleaned_data['phone_number']
-            )
-            login(request, user)
-            return redirect('newindex')
-        else:
-            message = {"error_message": "form data has an error"}
-            return render(request, 'aoj_app/demo/register.html', {'form': form})
-
-
-    def get(self, request):
-        form = UserCreationForm()
-        return render(request, 'aoj_app/demo/register.html', {'form': form})
-
-
-class TeamsBlogView(ListView):
-    model = BlogEntry
-    template_name = "aoj_app/demo/teams/teams_blog.html"
-
-    def get_context_data(self, **kwargs):
-        context = super(TeamsBlogView,self).get_context_data(**kwargs)
-        context['blogentry']= BlogEntry.objects.filter(category="TB")
-        return context
-
-
-class TeamsConsiderView(ListView):
-    model = TeamsConsider
-    template_name = "aoj_app/demo/teams/teams_consider.html"
-
-
-class TeamsTrainingView(ListView):
-    model = TeamsTraining
-    template_name = "aoj_app/demo/teams/teams_training.html"
-
-
-class TeamsResourceView(ListView):
-    model = TeamsResources
-    template_name = "aoj_app/demo/teams/teams_resources.html"
-
-
-class TeamsCalenderView(ListView):
-    model = TeamsCalenderDate
-    template_name = 'aoj_app/demo/teams/teams_calender.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(TeamsCalenderView,self).get_context_data(**kwargs)
-        data_dict = {}
-        dates = TeamsCalenderDate.objects.all()
-        for count, date in enumerate(dates):
-            data_list = []
-            data_list.append(date.starting_date)
-            data_list.append(date.ending_date)
-            data_list.append(date.mission_trip)
-            data_dict[count+1] = data_list
-        context['data'] = data_dict
-        return context
-
-
-class MissionHaitiView(TemplateView):
-    # model=MissionHaiti
-    def get_context_data(self, **kwargs):
-        context = super(MissionHaitiView, self).get_context_data(**kwargs)
-        try:
-            mission = MissionHaiti.objects.first()
-            attributes=MissionPageAttributes.objects.filter(country=mission.country)
-        except:
-            mission = None
-            attributes=None
-        context['mission'] = mission
-        context['attributes']=attributes
-        print(context)
-        print(attributes)
-        return context
-
-
-class MissionKenyaView(TemplateView):
-    # model=MissionKenya
-    def get_context_data(self, **kwargs):
-        context = super(MissionKenyaView, self).get_context_data(**kwargs)
-        try:
-            mission = MissionKenya.objects.first()
-            attributes=MissionPageAttributes.objects.filter(country=mission.country)
-        except:
-            mission = None
-            attributes=None
-        context['mission'] = mission
-        context['attributes']=attributes
-        print(context)
-        print(attributes)
-        return context
-
-
-class MissionGuatemalaView(TemplateView):
-    # model=MissionGuatemala
-    def get_context_data(self, **kwargs):
-        context = super(MissionGuatemalaView, self).get_context_data(**kwargs)
-        try:
-            mission = MissionGuatemala.objects.first()
-            attributes=MissionPageAttributes.objects.filter(country=mission.country)
-        except:
-            mission = None
-            attributes=None
-        context['mission'] = mission 
-        context['attributes']=attributes       
-        print(context)
-        print(attributes)
-        return context
-
-class LatestNewsPageDetailView(DetailView):
-    template_name = "aoj_app/demo/latestnews/latestnews_detail.html"
-    model = LatestNews
-
-class HeaderPageDetailView(DetailView):
-    template_name = "aoj_app/demo/header/headers_detail.html"
-    model = CreateNewPage
-
-class SubHeaderPageDetailView(DetailView):
-    template_name = "aoj_app/demo/subheader/subheaders_detail.html"
-    model = CreateNewSubPage

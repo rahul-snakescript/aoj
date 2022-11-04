@@ -3,20 +3,25 @@
 {% load aoj_extras %}
 
 {% block page_title %}
-{% get_site_config as config %}
-{% if config.children_seo_title %}
-{{ config.children_seo_title }}
-{% else %}
-The Arms of Jesus - Children
-{% endif %}
+
+  {% get_site_config as config %}
+
+  {% if config.children_seo_title %}
+    {{ config.children_seo_title }}
+  {% else %}
+    The Arms of Jesus - Children
+  {% endif %}
+
 {% endblock page_title %}
 
 {% block body_temp %}
-{% get_site_config as config %}
+
+  {% get_site_config as config %}
+
   <!-- banner start here -->
   <section class="child_banner" {% if config.children_banner_image %}style="background-image:url({{ config.children_banner_image.url }});"{% endif %}>
-    <!-- header start here -->
-  {% get_desktop_nav %}    
+  
+    {% get_desktop_nav %}    
     <div class="container children_arm">
       <div class="row">
         <div class="col-md-12">
@@ -27,106 +32,47 @@ The Arms of Jesus - Children
       </div>
     </div>
   </section>
-  <!-- header close here -->
+  <!-- banner close here -->
 
 <!--Start Form Section-->
-{% for country,children in child_data.items %}
- <div class="container children_arm">
-   <div class="row gutenemala_text">
-     <div class="col-md-12">
-       <h2>{{ country }}</h2>
-     </div>
-   </div>
-   <div class="row">
-    {% for child in children %}
-     <div class="col-md-3 col-sm-6 child_circle">
-      {% if child.checked_out %}
-        <img src="{{ child.image1.url }}" alt="children">
-        <h5>{{ child }}</h5>
-        <p class="text-center text-danger">Checked out<p>
-      {% else %}
-      <a href="{% url 'children_detail' child.slug %}">
-        <img src="{{ child.image1.url }}" alt="children">
-      </a>
-        <h5>{{ child }}</h5>
-        <p>Available for Sponsor</p>
-      {% endif %}
-     </div>
+  {% for country,children in child_data.items %}
+    <div class="container children_arm">
+      <div class="row gutenemala_text">
+        <div class="col-md-12">
+          <h2>{{ country }}</h2>
+        </div>
+      </div>
+
+      <div class="row">
+
+        {% for child in children %}
+          <div class="col-md-3 col-sm-6 child_circle">
+
+            {% if child.checked_out %}
+              <img src="{{ child.image1.url }}" alt="children">
+              <h5>
+                {{ child }}
+              </h5>
+              <p class="text-center text-danger">
+                Checked out
+              <p>
+
+            {% else %}
+              <a href="{% url 'children_detail' child.slug %}">
+                <img src="{{ child.image1.url }}" alt="children">
+              </a>
+              <h5>
+                {{ child }}
+              </h5>
+              <p>
+                Available for Sponsor
+              </p>
+
+            {% endif %}
+          </div>
      
-    {% endfor %}
-  </div>
-</div>
-    {% endfor %}
-
-      {% comment %} <div class="col-md-3 col-sm-6 child_circle">
-        <img src="images/child2.jpg" alt="children">
-        <h5>Junior</h5>
-        <p>Available for Sponsor</p>
-     </div>
-     <div class="col-md-3 col-sm-6 child_circle">
-        <img src="images/child3.jpg" alt="children">
-        <h5>Francisco</h5>
-        <p>Available for Sponsor</p>
-     </div>
-     <div class="col-md-3 col-sm-6 child_circle">
-        <img src="images/child4.jpg" alt="children">
-        <h5>Leydy</h5>
-        <p>Available for Sponsor</p>
-     </div>
-   
-   
-     <div class="col-md-3 col-sm-6 child_circle">
-        <img src="images/child6.jpg" alt="children">
-        <h5>Franceska</h5>
-        <p>Available for Sponsor</p>
-     </div>
-     <div class="col-md-3 col-sm-6 child_circle">
-        <img src="images/child7.jpg" alt="children">
-        <h5>Jean</h5>
-        <p>Available for Sponsor</p>
-     </div>
-     <div class="col-md-3 col-sm-6 child_circle">
-        <img src="images/child8.jpg" alt="children">
-        <h5>Angelo</h5>
-        <p>Available for Sponsor</p>
-     </div> 
-   </div>
-   {% for child in object_list %}
-   {% if child %}
-   <div class="row gutenemala_text">
-     <div class="col-md-12">
-       <h2>Kenya</h2>
-     </div>
-   </div>
-    <div class="row">
-    {% if child.country == "Kenya" %}
-     <div class="col-md-3 col-sm-6 child_circle">
-        <img src="images/child5.jpg" alt="children">
-        <h5>{{ child.name }}</h5>
-        <p>Available for Sponsor</p>
-     </div>
-     {% endif %}
-     {% endif %}
-     {% endfor %} --> {% endcomment %}
-     <!-- <div class="col-md-3 col-sm-6 child_circle">
-        <img src="images/child6.jpg" alt="children">
-        <h5>Franceska</h5>
-        <p>Available for Sponsor</p>
-     </div>
-     <div class="col-md-3 col-sm-6 child_circle">
-        <img src="images/child7.jpg" alt="children">
-        <h5>Jean</h5>
-        <p>Available for Sponsor</p>
-     </div>
-     <div class="col-md-3 col-sm-6 child_circle">
-        <img src="images/child8.jpg" alt="children">
-        <h5>Angelo</h5>
-        <p>Available for Sponsor</p>
-     </div>
-   </div>
- </div>
-
-<!-Start Accredited Member section-->
-
-
+        {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
 {% endblock %}

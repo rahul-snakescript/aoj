@@ -11,7 +11,6 @@ api_patterns = [
         ajax_product_change_quantity,
         name="ajax_product_change_quantity",
     ),
-    url(r"^showmore/$", ajax_show_more, name="ajax_show_more"),
     url(
         r"^product_increment_quantity/$",
         ajax_product_increment_quantity,
@@ -43,19 +42,64 @@ api_patterns = [
 ]
 
 urlpatterns = [
-    url(r"^$", IndexView.as_view(), name="index"),
+    url(r"^api/", include(api_patterns)),
+    url(r"^redactor/", include("redactor.urls")),
+    url(r"^accounts/register/$", RegisterView.as_view(), name="register"),
+    url(r"^accounts/", include("authtools.urls")),
+    url(r"^ckeditor/", include("ckeditor_uploader.urls")),
+
+
+#view urls
+    url(r"^$", NewIndexView.as_view(), name="newindex"),
     url(r"^setlang/$", setlang_view, name="setlang"),
     url(
-        r"^contact/$",
-        TemplateView.as_view(template_name="aoj_app/pages/contact.html"),
-        name="contact",
+        r"^login/$",
+        UserLogInView.as_view(),
+        name="login",
     ),
-    url(r"^aoj-media/$", MediaView.as_view(), name="media"),
-    url(r"^donate/$", DonateView.as_view(), name="donate"),
-    url(r"^catalogue/$", CatalogueView.as_view(), name="catalogue"),
+     url(
+        r"^register/$",
+        RegisterView.as_view(),
+        name="register",
+    ),
+    url('logout',LogoutView.as_view(next_page='newindex'),name='logout'),
+
+#catelogue
+    url(
+        r"^catalogue/$",
+        CatalogueView.as_view(),
+        name="catalogue",
+    ),
+
+#cart
     url(r"^cart/$", CartView.as_view(), name="cart"),
+
+#checkout
     url(r"^checkout/$", CheckoutView.as_view(), name="checkout"),
     url(r"^silentpost/$", SilentPostView.as_view(), name="silent_post"),
+
+#donate
+    url(r"^donate/$", DonateView.as_view(), name="donate"),
+
+#media
+    url(r"^aoj-media/$", MediaView.as_view(), name="media"),
+
+#contact us
+    url(
+        r"^contact-us/$",
+        ContactUsView.as_view(),
+        name="contact_us",
+    ),
+
+#children urls
+    url(r"^children/$", ChildrenView.as_view(), name="children"),
+    url(
+        r"^children/(?P<slug>[-\w]+)/$",
+        ChildrenDetailView.as_view(),
+        name="children_detail",
+    ),
+
+#Director's Blog
     url(r"^blogs/$", BlogView.as_view(), name="blog"),
     url(
         r"^blogs/(?P<slug>[-\w]+)/$",
@@ -63,32 +107,69 @@ urlpatterns = [
         name="blog_detail",
     ),
     
-    url(r"^children/$", ChildrenView.as_view(), name="children"),
-    url(
-        r"^children/(?P<slug>[-\w]+)/$",
-        ChildrenDetailView.as_view(),
-        name="children_detail",
-    ),
+#magazine    
     url(r"^magazine/$", MagazineView.as_view(), name="magazine"),
     url(
         r"^magazine/(?P<slug>[-\w]+)/$",
         MagazineDetailView.as_view(),
         name="magazine_detail",
     ),
-    # MISSIONS
-    url(
-        r"^missions/(?P<slug>[-\w]+)/$",
-        MissionDetailView.as_view(),
-        name="mission_detail",
-    ),
-    # ABOUT PAGES
+
+# ABOUT
     url(
         r"^about/(?P<slug>[-\w]+)/$",
         AboutPageDetailView.as_view(),
         name="aboutpage_detail",
     ),
+    url(
+        r"^about/staff/$",
+        AboutStaffView.as_view(),
+        name="staff",
+    ),
+    url(
+        r"^about/behave/$",
+        AboutbehaveView.as_view(),
+        name="behave",
+    ),
+    url(
+        r"^about/fund-policy/$",
+        AboutFundPolicyView.as_view(),
+        name="fund_policy",
+    ),
+    url(
+        r"^about/history/$",
+        HistoryView.as_view(),
+        name="history",
+    ),
+    url(
+        r"^about/mission/$",
+        MissionView.as_view(),
+        name="mission",
+    ),
     
-    # TEAMS
+#Mission Pages
+    url(
+        r"^missions/(?P<slug>[-\w]+)/$",
+        MissionDetailView.as_view(),
+        name="mission_detail",
+    ),
+    url(
+        r"^missions/haiti/$",
+        MissionHaitiView.as_view(template_name="aoj_app/demo/mission/mission_haiti.html"),
+        name="mission_haiti",
+    ),
+    url(
+        r"^missions/kenya/$",
+        MissionKenyaView.as_view(template_name="aoj_app/demo/mission/mission_kenya.html"),
+        name="mission_kenya",
+    ),
+    url(
+        r"^missions/guatemala/$",
+        MissionGuatemalaView.as_view(template_name="aoj_app/demo/mission/guatemala_mission.html"),
+        name="guatemala_mission",
+    ),
+
+# TEAMS
     url(
         r"^consider-serving/$",
         TeamsConsiderView.as_view(),
@@ -114,33 +195,12 @@ urlpatterns = [
         TeamsBlogView.as_view(),
         name="t_blog",
     ),
-    # ABOUT
+
+#latest news detail pages
     url(
-        r"^mission-statement/$",
-        TemplateView.as_view(
-            template_name="aoj_app/pages/about/mission_statement.html"
-        ),
-        name="mission_statement",
-    ),
-    url(
-        r"^what-we-believe/$",
-        TemplateView.as_view(template_name="aoj_app/pages/about/what_we_believe.html"),
-        name="what_we_believe",
-    ),
-    url(
-        r"^funds-policy/$",
-        TemplateView.as_view(template_name="aoj_app/pages/about/funds_policy.html"),
-        name="funds_policy",
-    ),
-    url(
-        r"^our-history/$",
-        TemplateView.as_view(template_name="aoj_app/pages/about/our_history.html"),
-        name="our_history",
-    ),
-    url(
-        r"^staff/$",
-        TemplateView.as_view(template_name="aoj_app/pages/about/staff.html"),
-        name="staff",
+        r"^latestnews/(?P<slug>[-\w]+)/$",
+        LatestNewsPageDetailView.as_view(),
+        name="latest_news",
     ),
     url(
         r"^school-official-dedication/$",
@@ -149,82 +209,8 @@ urlpatterns = [
         ),
         name="school_official_dedication",
     ),
-    url(r"^api/", include(api_patterns)),
-    url(r"^redactor/", include("redactor.urls")),
-    url(r"^accounts/register/$", RegisterView.as_view(), name="register"),
-    url(r"^accounts/", include("authtools.urls")),
-    url(r"^ckeditor/", include("ckeditor_uploader.urls")),
 
-#demo urls
-    url(r"^demo/$", NewIndexView.as_view(), name="newindex"),
-    
-    url(
-        r"^demo/about/staff/$",
-        AboutStaffView.as_view(),
-        name="staff",
-    ),
-    url(
-        r"^demo/about/behave/$",
-        AboutbehaveView.as_view(),
-        name="behave",
-    ),
-    url(
-        r"^demo/about/fund-policy/$",
-        AboutFundPolicyView.as_view(),
-        name="fund_policy",
-    ),
-    url(
-        r"^demo/contact-us/$",
-        ContactUsView.as_view(),
-        name="contact_us",
-    ),
-    url(
-        r"^demo/history/$",
-        HistoryView.as_view(),
-        name="history",
-    ),
-    url(
-        r"^demo/mission/$",
-        MissionView.as_view(),
-        name="mission",
-    ),
-     url(
-        r"^demo/login/$",
-        UserLogInView.as_view(),
-        name="login",
-    ),
-     url(
-        r"^demo/register/$",
-        RegisterView.as_view(),
-        name="register",
-    ),
-    url('demo/logout',LogoutView.as_view(next_page='newindex'),name='logout'),
-    
-    url(
-        r"^demo/Catalogue/$",
-        CatalogueView.as_view(),
-        name="Catalogue",
-    ),
-    url(
-        r"^demo/missions/haiti/$",
-        MissionHaitiView.as_view(template_name="aoj_app/demo/mission/mission_haiti.html"),
-        name="mission_haiti",
-    ),
-    url(
-        r"^demo/missions/kenya/$",
-        MissionKenyaView.as_view(template_name="aoj_app/demo/mission/mission_kenya.html"),
-        name="mission_kenya",
-    ),
-    url(
-        r"^demo/missions/guatemala/$",
-        MissionGuatemalaView.as_view(template_name="aoj_app/demo/mission/guatemala_mission.html"),
-        name="guatemala_mission",
-    ),
-    url(
-        r"^latestnews/(?P<slug>[-\w]+)/$",
-        LatestNewsPageDetailView.as_view(),
-        name="latest_news",
-    ),
+#new nav bar items
     url(
         r"^navbar/(?P<slug>[-\w]+)/$",
         HeaderPageDetailView.as_view(),

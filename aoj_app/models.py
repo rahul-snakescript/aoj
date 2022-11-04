@@ -745,9 +745,15 @@ class ExistingPageLink(models.Model):
 
     def __str__(self):
         return self.title
+    
+    def save(self, *args, **kwargs):
+        if self.link[-1]!="/":
+            self.link+="/"
+        super(ExistingPageLink, self).save(*args, **kwargs)
 
     def get_absolute_url(self):
         return reverse("navbar_itemss", args=[self.link])
+    
 
 class ExistingPageSubLink(models.Model):
     existingpage=models.ForeignKey(ExistingPageLink,on_delete=models.CASCADE)
@@ -760,6 +766,11 @@ class ExistingPageSubLink(models.Model):
 
     def __str__(self):
         return self.title
+
+    def save(self, *args, **kwargs):
+        if self.link[-1]!="/": 
+            self.link+="/"
+        super(ExistingPageSubLink, self).save(*args, **kwargs)
 
     def get_absolute_url(self):
         return reverse("navbar_itemss", args=[self.link])
@@ -789,7 +800,7 @@ class CreateNewPage(models.Model):
 
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.title)     
+        self.slug = slugify(self.title) 
         super(CreateNewPage, self).save(*args, **kwargs)
 
     def get_absolute_url(self):

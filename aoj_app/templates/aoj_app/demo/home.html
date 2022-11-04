@@ -3,22 +3,24 @@
 {% load aoj_extras %}
 
 {% block page_title %}
-{% get_site_config as config %}
-{% if config.home_seo_title %}
-{{ config.home_seo_title }}
-{% else %}
-The Arms of Jesus
-{% endif %}
+  {% get_site_config as config %}
+
+  {% if config.home_seo_title %}
+    {{ config.home_seo_title }}
+  {% else %}
+    The Arms of Jesus
+  {% endif %}
+
 {% endblock page_title %}
 
   {% block body_temp %}
-  {% get_site_config as config %}
+  
+    {% get_site_config as config %}
+
   <!-- banner start here -->
   <section class="banner" {% if config.banner_image %}style="background-image:url({{ config.banner_image.url }});"{% endif %}>
+
     {% get_desktop_nav %}
-    <!-- header start here -->
-    
-  <!-- header close here -->
  
     <div class="container children_arm">
       <div class="row">
@@ -94,26 +96,35 @@ The Arms of Jesus
   <div class="news_outer">
     <div class="container children_arm">
       <div class="hadding_lastestNews">
-        <h2>LATEST BLOG</h2>
-        
+        <h2>LATEST BLOG</h2>  
       </div>
       <div class="row lastestNews_outer">
+
         {% for blog in blog %}
-        <div class="col-md-4">
-          <div class="card" style="cursor:pointer; border=0px;" onclick="location.href='{% url "blog_detail" blog.slug %}'">
-            {% if blog.cover %}
-            <img src="{{blog.cover.url|default_if_none:'{% static "demo/images/news_img1.jpg" %}' }}" height="400px;" width="390px" class="card-img-top" alt="...">
-            {% else %}
-            <img src="{% static "demo/images/news_img1.jpg" %}" height="400px;" width="390px" class="card-img-top" alt="...">
-            
-            {% endif %}
+
+          <div class="col-md-4">
+            <div class="card" style="cursor:pointer; border:0px;" onclick="location.href='{% url "blog_detail" blog.slug %}'">
+
+              {% if blog.cover %}
+                <img src="{{blog.cover.url|default_if_none:'{% static "demo/images/news_img1.jpg" %}' }}" height="400px;" width="390px" class="card-img-top" alt="...">
+              
+              {% else %}
+                <img src="{% static "demo/images/news_img1.jpg" %}" height="400px;" width="390px" class="card-img-top" alt="...">
+              
+              {% endif %}
+
             <div class="card-body" style="padding:1rem 1rem 2rem;">
-              <h5 class="card-title text-center">{{ blog.title }}</h5>
+              
+              <h5 class="card-title text-center">
+                {{ blog.title }}
+              </h5>
+
               {% autoescape off %}
-              <p class="card-text text-center">{{ blog.short_description|slice:'120' }}</p>
-              {% endautoescape %}
-              
-              
+                <p class="card-text text-center">
+                  {{ blog.short_description|slice:'120' }}
+                </p>
+              {% endautoescape %} 
+
             </div>
           </div>
           {% comment %} <div class="news_item1">
@@ -129,12 +140,14 @@ The Arms of Jesus
               <h4><a href="" style="text-decoration:none; color:black;">{{ blog.title }}</a></h4>
             </div>
           </div> {% endcomment %}
-        </div>
+          </div>
         {% endfor %}
-        
       </div>
+      
       <div class="LatestNews_btn">
-        <a href="{% url 'blog'%}">Read More</a>
+        <a href="{% url 'blog'%}">
+          Read More
+        </a>
       </div>
     </div>
   </div>
@@ -147,8 +160,8 @@ The Arms of Jesus
     <div class="container children_arm">
       <div class="hadding_lastestNews">
         <h2>LATEST NEWS</h2>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-          standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled</p>
+        {% comment %} <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+          standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled</p> {% endcomment %}
       </div>
       <div class="row lastestNews_outer">
         <div class="col-md-4">
@@ -178,45 +191,6 @@ The Arms of Jesus
           </div>
         </div>
         {% endfor %}
-        {% comment %} <div class="col-md-4">
-          <div class="news_item1">
-            <div class="latest_img">
-              <img src="{% static 'demo/images/news_img1.jpg' %}" alt="">
-            </div>
-            <div class="donors_hadding">
-              <h4>Thanks to Donors</h4>
-              <p>Lorem Ipsum is simply dummy text of the
-                printing and typesetting industry. Lorem
-                Ipsum has been the industry's</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="news_item1">
-            <div class="latest_img">
-              <img src="{% static 'demo/images/news_img2.jpg' %}" alt="">
-            </div>
-            <div class="donors_hadding">
-              <h4>School Dedication</h4>
-              <p>Lorem Ipsum is simply dummy text of the
-                printing and typesetting industry. Lorem
-                Ipsum has been the industry's</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="news_item1">
-            <div class="latest_img">
-              <img src="{% static 'demo/images/news_img3.jpg' %}" alt="">
-            </div>
-            <div class="donors_hadding">
-              <h4>Urgent Prayer Request</h4>
-              <p>Lorem Ipsum is simply dummy text of the
-                printing and typesetting industry. Lorem
-                Ipsum has been the industry's</p>
-            </div>
-          </div>
-        </div> {% endcomment %}
       </div>
       <div class="LatestNews_btn">
         <a href="#">Read More</a>

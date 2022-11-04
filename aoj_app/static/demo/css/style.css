@@ -788,7 +788,13 @@ h3.text-right {
         max-width: 100%;
         margin: 0 auto;
     }
-
+    .card-text {
+        color: #656565;
+        font-size: 18px;
+        line-height: 30px;
+        margin: 0;
+        font-family: 'Proxima Nova Rg';
+    }
 
     .magazine_reponsive {
         width: 100%;

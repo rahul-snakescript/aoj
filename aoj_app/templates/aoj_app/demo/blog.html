@@ -4,27 +4,30 @@
 
 
 {% block page_title %}
-{% get_site_config as config %}
-{% if config.directors_blog_seo_title %}
-{{ config.directors_blog_seo_title }}
-{% else %}
-The Arms of Jesus - Director's Blog
-{% endif %}
+
+    {% get_site_config as config %}
+
+    {% if config.directors_blog_seo_title %}
+        {{ config.directors_blog_seo_title }}
+    {% else %}
+        The Arms of Jesus - Director's Blog
+    {% endif %}
 {% endblock page_title %}
 
 {% block body_temp %}
-{% get_site_config as config %}
-{% comment %} {% get_desktop_nav %} {% endcomment %}
-<section class="register_banner teamsBanner" {% if config.directors_blog_banner_image %}style="background-image:url({{ config.directors_blog_banner_image.url }});"{% endif %}>
-    <header>
-        {% get_desktop_nav %}
-      </header>
-        <!-- header start here -->
-        
+
+    {% get_site_config as config %}
+
+    <section class="register_banner teamsBanner" {% if config.directors_blog_banner_image %}style="background-image:url({{ config.directors_blog_banner_image.url }});"{% endif %}>
+
+        <header>
+            {% get_desktop_nav %}
+        </header>
+
         <div class="teamsConsider_outer">
           <h1>DIRECTOR'S BLOG</h1>
         </div>
-</section>
+    </section>
 
 
     <div class="page-blog">
@@ -33,52 +36,73 @@ The Arms of Jesus - Director's Blog
                 <div class="col-lg-12 col-lg-offset-1">
 
                     {% if blogentry %}
-                    <div class="latest-blog-heading text-center my-4">
-                        <h2>Latest Blogs</h2>
-                    </div>
+                        <div class="latest-blog-heading text-center my-4">
+                            <h2>Latest Blogs</h2>
+                        </div>
                         {% for entry in blogentry %}
+
                             <div class="latest-blogs-div">
                                 <div class="lb-box">
                                     <h2 class="blog-title">
                                         {{ entry.title }}</h2>
-                                    <p class="text-muted DateText">{{ entry.created_date|date:"SHORT_DATE_FORMAT" }}</p>
+                                    <p class="text-muted DateText">
+                                        {{ entry.created_date|date:"SHORT_DATE_FORMAT" }}
+                                    </p>
                                     <div class="blog-wrapper">
+
                                         {% autoescape off %}
                                         {{ entry.body|slice:"1000" }}..
                                         {% endautoescape %}
+
                                     </div>
+
                                     <div class="clearfix"></div>
                                     <div class="blog-read-more-btn">
-                                        <a href="{% url 'blog_detail' entry.slug %}" class="read-more-btn text-decoration-none">Read More</a>
+                                        <a href="{% url 'blog_detail' entry.slug %}" class="read-more-btn text-decoration-none">
+                                            Read More
+                                        </a>
                                     </div>
                                     <hr>
                                 </div>
                             </div>
                         {% endfor %}
 
-                    {% if is_paginated %}
-                        <div class="pagination justify-content-center blog-pagination">
-                        <span class="page-links">
-                            {% if page_obj.has_previous %}
-                                <a href="{% url 'blog' %}?page={{ page_obj.previous_page_number }}" class="latestblog-pagination-next-btn text-decoration-none">{% trans "Previous" %}</a>
-                            {% endif %}
-                            <span class="page-current">
-                                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
-                            </span>
-                            {% if page_obj.has_next %}
-                                <a href="{% url 'blog' %}?page={{ page_obj.next_page_number }}" class="latestblog-pagination-next-btn text-decoration-none">{% trans "Next" %}</a>
-                            {% endif %}
-                        </span>
-                        </div>
-                    {% endif %}
+                        {% if is_paginated %}
+                            <div class="pagination justify-content-center blog-pagination">
+                                <span class="page-links">
+
+                                    {% if page_obj.has_previous %}
+                                        <a href="{% url 'blog' %}?page={{ page_obj.previous_page_number }}" class="latestblog-pagination-next-btn text-decoration-none">
+                                            {% trans "Previous" %}
+                                        </a>
+                                    {% endif %}
+
+                                    <span class="page-current">
+                                        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                                    </span>
+
+                                    {% if page_obj.has_next %}
+                                        <a href="{% url 'blog' %}?page={{ page_obj.next_page_number }}" class="latestblog-pagination-next-btn text-decoration-none">
+                                            {% trans "Next" %}
+                                        </a>
+                                    {% endif %}
+
+                                </span>
+                            </div>
+                        {% endif %}
+
                     {% else %}
-                        <h1 class="text-center">{% trans "THERE ARE NO ENTRIES" %}</h1>
+                        <h1 class="text-center">
+                            {% trans "THERE ARE NO ENTRIES" %}
+                        </h1>
                     {% endif %}
                 </div>
             </div>
         </div>
     </div>
+
     <script src="//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=190291501407"></script>
     <script src="https://platform.twitter.com/widgets.js"></script>
     <script src="//translate.google.com/translate_a/element.js?cb=TranslateInit"></script>
+    
 {% endblock %}

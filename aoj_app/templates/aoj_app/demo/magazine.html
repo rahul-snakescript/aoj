@@ -2,17 +2,17 @@
 {% load staticfiles i18n aoj_extras %}
 
 {% block page_title %}
-{% get_site_config as config %}
-{% if config.Magazine_seo_title %}
-{{ config.Magazine_seo_title }}
-{% else %}
-The Arms of Jesus - Magazine
-{% endif %}
+    {% get_site_config as config %}
+    {% if config.Magazine_seo_title %}
+        {{ config.Magazine_seo_title }}
+    {% else %}
+        The Arms of Jesus - Magazine
+    {% endif %}
 {% endblock page_title %}
 
 {% block body_temp %}
-{% get_site_config as config %}
-<section class="register_banner teamsBanner" {% if config.Magazine_banner_image %}style="background-image:url({{ config.Magazine_banner_image.url }});"{% endif %}>
+    {% get_site_config as config %}
+    <section class="register_banner teamsBanner" {% if config.Magazine_banner_image %}style="background-image:url({{ config.Magazine_banner_image.url }});"{% endif %}>
     <header>
         {% get_desktop_nav %}
       </header>
@@ -21,7 +21,7 @@ The Arms of Jesus - Magazine
         <div class="teamsConsider_outer">
           <h1>MAGAZINE</h1>
         </div>
-</section>
+    </section>
 
 
     <div class="page-magazine">

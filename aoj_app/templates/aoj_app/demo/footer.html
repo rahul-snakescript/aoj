@@ -32,28 +32,32 @@
                 <img src="{% static 'demo/images/footer-logo.png' %}" alt="footer-logo">
               </div>
               <div class="social_ic">
+
                 {% if config.facebook_page %}
-                <a href="{{ config.facebook_page }}" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a>
+                  <a href="{{ config.facebook_page }}" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a>
+
                 {% else %}
-                <a href="https://www.facebook.com/ArmsOfJesus/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a> 
+                  <a href="https://www.facebook.com/ArmsOfJesus/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a> 
                 {% endif %}
+
                 {% if config.twitter_link %}
-                <a href="{{ config.twitter_link }}"><i class="fa-brands fa-twitter"></i></a>
+                  <a href="{{ config.twitter_link }}"><i class="fa-brands fa-twitter"></i></a>
                 {% else %}
-                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                  <a href="#"><i class="fa-brands fa-twitter"></i></a>
                 {% endif %}
                 
                 {% if config.youtube_link %}
-                <a href="{{ config.youtube_link }}" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a>
+                  <a href="{{ config.youtube_link }}" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a>
                 {% else %}
-                <a href="https://www.youtube.com/channel/UCGLEAhozRUSUDzP7o-NGD1A" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a>
+                  <a href="https://www.youtube.com/channel/UCGLEAhozRUSUDzP7o-NGD1A" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a>
                 {% endif %}
+
               </div>
             </div>
+
             <div class="footer_manu">
               <div class="footer_manu_item1">
                 <h5>About Us</h5>
-
                 <ul>
                   <li><a href="#">About AOJ</a></li>
                   <li><a href="{% url 'mission' %}">Mission Statement</a></li>
