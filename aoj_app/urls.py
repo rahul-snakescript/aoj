@@ -116,11 +116,7 @@ urlpatterns = [
     ),
 
 # ABOUT
-    url(
-        r"^about/(?P<slug>[-\w]+)/$",
-        AboutPageDetailView.as_view(),
-        name="aboutpage_detail",
-    ),
+    
     url(
         r"^about/staff/$",
         AboutStaffView.as_view(),
@@ -146,10 +142,15 @@ urlpatterns = [
         MissionView.as_view(),
         name="mission",
     ),
+    url(
+        r"^about_us/(?P<slug>[-\w]+)/$",
+        AboutPageDetailView.as_view(),
+        name="aboutpage_detail",
+    ),
     
 #Mission Pages
     url(
-        r"^missions/(?P<slug>[-\w]+)/$",
+        r"^mission/(?P<slug>[-\w]+)/$",
         MissionDetailView.as_view(),
         name="mission_detail",
     ),
