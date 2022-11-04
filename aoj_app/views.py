@@ -188,7 +188,7 @@ class MissionDetailView(DetailView):
     model = Mission
     
     def get_context_data(self, **kwargs):
-        context=super().get_context_data(**kwargs)
+        context=super(MissionDetailView,self).get_context_data(**kwargs)
         mission=context['mission']
         
         try:
