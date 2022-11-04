@@ -722,6 +722,8 @@ def ajax_send_contact_form(request):
         message = request.POST.get("message", "")
 
         config = SiteConfiguration.get_solo()
+        email_list= config.get_email_list()
+        print(email_list)
 
         if first_name and last_name and email and message:
             try:
@@ -736,13 +738,15 @@ def ajax_send_contact_form(request):
                     email,
                     message,
                 )
-                send_mail(
-                    "Children Sponsorship Form", _message, None, config.get_email_list()
-                )
-            except:
+                print(_message)
+                send_mail("Children Sponsorship Form", _message,'rahulkumar@snakescript.com' ,['vijaysharma@snakescript.com'])
+
+            except Exception as e:
+                print(e)
                 return JsonResponse({"error": 1, "message": "Invalid header found."})
             return JsonResponse({"error": 0, "message": "success"})
         else:
+            print('else')
             return JsonResponse(
                 {"error": 1, "message": "Make sure all fields are entered and valid."}
             )
