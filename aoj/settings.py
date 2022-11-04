@@ -162,33 +162,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 if DEBUG:
-    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-    EMAIL_USE_TLS = True
-    EMAIL_HOST = 'roadster.websitewelcome.com'
-    EMAIL_PORT = 587
-    EMAIL_HOST_USER = 'rahulkumar@snakescript.com'
-    EMAIL_HOST_PASSWORD = 'epieuekcedipszyv' 
-    #epieuekcedipszyv
-
-    DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-    EMAIL_USE_TLS = True
+    EMAIL_USE_TLS = False
     EMAIL_HOST = 'roadster.websitewelcome.com'
-    EMAIL_PORT = 587
-    EMAIL_HOST_USER = 'rahulkumar@snakescript.com'
-    EMAIL_HOST_PASSWORD = 'epieuekcedipszyv' 
-    #epieuekcedipszyv
-
+    EMAIL_PORT = 25
+    EMAIL_HOST_USER = 'armsofjesus@webreign.ca'
+    EMAIL_HOST_PASSWORD = 'webreign2020'
     DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-    # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-    # EMAIL_USE_TLS = False
-    # EMAIL_HOST = 'roadster.websitewelcome.com'
-    # EMAIL_PORT = 25
-    # EMAIL_HOST_USER = 'armsofjesus@webreign.ca'
-    # EMAIL_HOST_PASSWORD = 'webreign2020'
-    # DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
