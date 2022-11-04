@@ -739,7 +739,7 @@ def ajax_send_contact_form(request):
                     message,
                 )
                 print(_message)
-                send_mail("Children Sponsorship Form", 'hii sir how are u','rahulkumar@snakescript.com' ,['vijaysharma@snakescript.com'])
+                send_mail("Children Sponsorship Form", _message,None ,config.get_email_list())
 
             except Exception as e:
                 print(e)
