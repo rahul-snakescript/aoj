@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '^$a$4*32@y940t@(5)#@l+i%&8+7(!)@ben@0g@_@c646+2_o@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 if DEBUG:
     ALLOWED_HOSTS = ['*']
@@ -97,26 +97,26 @@ WSGI_APPLICATION = 'aoj.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
-if DEBUG:
-    DATABASES = {
+# if DEBUG:
+DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
 
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-            'NAME': 'aojdb',
-            'USER': 'aoj',
-            'PASSWORD': 'i26adMi*',
-            'HOST': 'localhost',
-            'PORT': '',
-        }
-    }
+# else:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#             # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+#             'NAME': 'aojdb',
+#             'USER': 'aoj',
+#             'PASSWORD': 'i26adMi*',
+#             'HOST': 'localhost',
+#             'PORT': '',
+#         }
+#     }
 
     # Password validation
     # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
@@ -162,33 +162,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 if DEBUG:
-    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-    EMAIL_USE_TLS = True
-    EMAIL_HOST = 'smtp.gmail.com'
-    EMAIL_PORT = 587
-    EMAIL_HOST_USER = 'tu716599@gmail.com'
-    EMAIL_HOST_PASSWORD = 'inpphupkdjfjstlc' 
-    #epieuekcedipszyv
-
-    DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     EMAIL_USE_TLS = False
     EMAIL_HOST = 'roadster.websitewelcome.com'
     EMAIL_PORT = 25
-    EMAIL_HOST_USER = 'rahulkumar@snakescript.com'
-    EMAIL_HOST_PASSWORD = 'epieuekcedipszyv' 
-    #epieuekcedipszyv
-
+    EMAIL_HOST_USER = 'armsofjesus@webreign.ca'
+    EMAIL_HOST_PASSWORD = 'webreign2020'
     DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-    # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-    # EMAIL_USE_TLS = False
-    # EMAIL_HOST = 'roadster.websitewelcome.com'
-    # EMAIL_PORT = 25
-    # EMAIL_HOST_USER = 'armsofjesus@webreign.ca'
-    # EMAIL_HOST_PASSWORD = 'webreign2020'
-    # DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
