@@ -30,7 +30,7 @@ if DEBUG:
     ALLOWED_HOSTS = ['*']
 else:
 #     ALLOWED_HOSTS = ['*','.armsofjesus.org']
-    ALLOWED_HOSTS = ['127.0.0.1','localhost','.armsofjesus.org']
+    ALLOWED_HOSTS = ['127.0.0.1','localhost','armsofjesus.org']
 
 # ALLOWED_HOSTS = ['127.0.0.1','localhost','.armsofjesus.org']
 
