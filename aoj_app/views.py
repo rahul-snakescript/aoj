@@ -537,7 +537,6 @@ def ajax_remove_from_cart(request):
 def ajax_show_cart(request):
     cart = Cart(request.session, session_key=None)
     resp = {}
-
     products = []
     for item in cart.items:
         products.append(
@@ -943,12 +942,12 @@ def ajax_send_checkout_form(request):
 
 
 def setlang_view(request):
-    response = HttpResponseRedirect(request.META.get("HTTP_REFERER", "index"))
+    response = HttpResponseRedirect(request.META.get("HTTP_REFERER", "newindex"))
     lang = request.GET.get("lang", None)
     if lang == "en":
         response.delete_cookie("googtrans")
     else:
-        response.set_cookie("googtrans", urllib.quote_plus("/auto/" + lang))
+        response.set_cookie("googtrans", urllib.parse.quote_plus("/auto/" + lang))
     return response
 
 

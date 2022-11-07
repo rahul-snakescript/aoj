@@ -156,7 +156,7 @@ border-bottom: 1px solid #ddd;
     display: block;
 }
 .children_header .header_btn{
-    width: 26%;
+    width: 22%;
 }
 .children_header .navbar-nav li {
     display: inline-block;
@@ -724,8 +724,7 @@ h3.text-right {
     }
     a.donate_btn {
         height: 51px;
-       /* width: 153px;*/
-        padding: 10px 40px !important;
+        padding: 10px 20px !important;
         background: #f7941d;
         border: 1px solid #f7941d;
         float: left;
@@ -738,21 +737,40 @@ h3.text-right {
         text-decoration: none; 
         font-family: 'Proxima Nova Alt Rg';
     }
+    .header_btn .btn-warning {
+        color: #000;
+        background-color: vz;
+        border-color: rgb(23 76 181 / 71%);
+        background: rgb(23 76 181 / 71%);
+        
+        
+    }
+    .btn-warning {
+        color: #000; 
+        border-color: rgb(23 76 181 / 71%) !important;
+        background: rgb(23 76 181 / 71%) !important;
+        height: 51px !important;
+        border-radius: 0 10px 10px 0px !important;
+        color: #ffffff !important;
+        font-size: 18px !important;
+    }
+    .dropdown-menu[data-bs-popper] {
+        left: -100px !important;
+    }
     a.sponsor_btn {
         background: #174cb5;
         border: 1px solid #174cb5;
         height: 51px;
-        /*width: 153px;*/
-        padding: 10px 40px !important;
+        padding: 10px 20px !important;
         float: left;
-        border-radius: 10px;
+        border-radius: 10px 0 0 10px ;  
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 18px;
         color: #ffffff;
         text-decoration: none;
-        margin-left: 21px;
+        margin-left: 6px;
         font-family: 'Proxima Nova Alt Rg';
     }
     a.donate_btn:hover {
@@ -764,7 +782,7 @@ h3.text-right {
         color: #174cb5;
     }
     .header ul.navbar-nav.ms-auto.mb-2.mb-lg-0 {
-        margin-right: 31px;
+        margin-right: 0px;
     }
     span.active_link {
         font-weight: bold;
@@ -782,6 +800,7 @@ h3.text-right {
     }
     .header_btn {
         display: flex;
+        justify-content: flex-end;
     }
     .children_header{
         width: 1360px;
@@ -2333,32 +2352,10 @@ h2.mission_teamHadding {
 /* Media Query Start */
 @media only screen and (max-width: 1300px) {
     .header .nav-item a.nav-link {
-        font-size: 18px;
+        font-size: 14px;
         color: #000000;
-        padding-left: 32px !important;
+        padding-left: 20px !important;
         font-family: 'Proxima Nova Rg';
-    }
-    a.donate_btn {
-        height: 48px; 
-        padding: 5px 35px !important; 
-        font-size: 16px; 
-    }
-    a.sponsor_btn {
-        background: #174cb5;
-        border: 1px solid #174cb5;
-        height: 48px;
-        /* width: 153px; */
-        padding: 5px 30px !important;
-        float: left;
-        border-radius: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 18px;
-        color: #ffffff;
-        text-decoration: none;
-        margin-left: 10px;
-        font-family: 'Proxima Nova Alt Rg';
     }
 }
 @media only screen and (max-width: 1280px) {
@@ -2384,7 +2381,7 @@ h2.mission_teamHadding {
     }
     .header .nav-item a.nav-link{
     font-size: 14px;
-    padding-left: 5px !important;
+    padding-left: 12px !important;
     }
     a.donate_btn{
     font-size: 14px;   
@@ -2769,6 +2766,10 @@ h2.mission_teamHadding {
     }
     .children_header .header_btn {
     width: 100%;
+    justify-content: start;
+    }
+    .btn-warning {
+        font-size: 14px !important;
     }
     .children_header .navbar-nav li {
         display: block;
@@ -4371,15 +4372,15 @@ h3.angelTest1 {
     font-size: 22px;
 }
 
-.ajax-loading-modal {
+.ajax_loading_modal {
     display: none;
     position: fixed;
-    z-index: 9999;
+    z-index: 999999999;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
-    background: rgba(255, 255, 255, .5) url('/static/demo/images/ajax-loader.gif') 50% 50% no-repeat;
+    background: rgba(255, 255, 255, .5) url("../images/ajax-loader.gif") 50% 50% no-repeat;
 }
 
 body {
@@ -4393,7 +4394,7 @@ body.loading {
     overflow: hidden;
 }
 
-body.loading .ajax-loading-modal {
+body.loading .ajax_loading_modal {
     display: block;
 }
 /*

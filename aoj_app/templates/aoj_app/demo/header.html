@@ -32,6 +32,7 @@
                   
                   {% if sublink %}
                     <li class="nav-item">
+
                       <div class="dropdown">
                         
                         <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
@@ -163,7 +164,7 @@
                 {% endif %} 
               </ul>
 
-              <div class="header_btn">
+              <div class="header_btn" style="width:auto;">
                 <a href="{% url 'donate' %}" class="donate_btn">
                   
                   {% if config.donate_name_in_navbar %}
@@ -183,11 +184,45 @@
                   {% endif %}
 
                 </a>
-
+                <div class="pull-right">
+                  <div class="dropdown">
+                  <button class="btn btn-warning dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa fa-language" aria-hidden="true"></i>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="{% url 'setlang' %}?lang=en" class="as-link" style="text-decoration:none;"data-google-lang="en">
+                        <img src="{% static 'img/flag-en.png' %}" alt="">
+                        <span style="text-decoration:none;color:#000;">English<span>
+                      </a>
+                    </li>
+                    <li> 
+                      <a href="{% url 'setlang' %}?lang=es" class="as-link" data-google-lang="es" style="text-decoration:none;">
+                        <img src="{% static 'img/flag-es.png' %}" alt=""> 
+                        <span style="text-decoration:none;color:#000;">Spanish<span>
+                      </a>
+                    </li>
+                    <li> 
+                      <a href="{% url 'setlang' %}?lang=fr" class="as-link" data-google-lang="fr" style="text-decoration:none;">
+                        <img src="{% static 'img/flag-fr.png' %}" alt="">
+                        <span style="text-decoration:none;color:#000;">French<span>
+                      </a>
+                    </li>
+                  </ul>
+                  </div>
+                </div>
               </div>
+              
+              
             </div>
+            
+            
+           
           </div>
+          
         </nav>
+        
+        
       </div>
     </div>
   </header>

@@ -97,6 +97,7 @@ The Arms of Jesus - Contact Us
       <!--Mission USA END-->
     </div>
       <div class="col-md-6 send_message_form form-wrapper">
+       
         <h3>Send Us A Message:</h3>
         <form method="POST" id="form-contact">
           {% csrf_token %}
@@ -108,6 +109,7 @@ The Arms of Jesus - Contact Us
             <label>Last Name</label>
             <input type="text" name="last_name" value="">
           </div>
+          <div id='innerdiv1'></div>
           <div class="form-group">
             <label>Email Address</label>
             <input type="email" name="email" value="">
@@ -126,8 +128,9 @@ The Arms of Jesus - Contact Us
       <div class="f-message f-error">
           <h3>{% trans "Something went wrong, try refreshing and submitting the form again." %}</h3>
       </div>
-      </div>
+      
     </div>
+  </div>
   </div>
 <!----Start Accredited Member section---->
 
@@ -144,6 +147,16 @@ The Arms of Jesus - Contact Us
 <script src="//translate.google.com/translate_a/element.js?cb=TranslateInit"></script>
 
 <script>
+  function ajax_loading_modal(tf) {
+    if (tf) {
+        $('body').addClass("loading");
+        $('#innerdiv1').addClass('ajax_loading_modal')
+    } else {
+        $('body').removeClass("loading");
+        $('#innerdiv1').removeClass('ajax_loading_modal')
+    }
+  }
+
   $('#form-contact').validate({
         rules: {
             first_name: {

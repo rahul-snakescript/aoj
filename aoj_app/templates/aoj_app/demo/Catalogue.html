@@ -54,6 +54,7 @@
                 <button href="javascript:void(0);" type="button" class="add_to_cart" data-id="{{ product.id }}">
                   Add to Cart
                 </button>
+                <div id='innerdiv1'></div>
                 <h6 class="in-cart text-success" data-id="{{ product.id }}">
 
                   {% if product in cart %}
@@ -70,9 +71,9 @@
       </div>
     </div>
 
-    <div class="LatestNews_btn">
-      <a type='button' class="showmore" id="showmore">{{object_listt.last.id}}Show More</a>
-    </div>
+    {% comment %} <div class="LatestNews_btn">
+      <a type='button' class="showmore" id="showmore">Show More</a>
+    </div> {% endcomment %}
 
   {% else %}
 
@@ -95,6 +96,15 @@
 <script src="https://platform.twitter.com/widgets.js"></script>
 <script src="//translate.google.com/translate_a/element.js?cb=TranslateInit"></script>
 <script>
+  function ajax_loading_modal(tf) {
+    if (tf) {
+        $('body').addClass("loading");
+        $('#innerdiv1').addClass('ajax_loading_modal')
+    } else {
+        $('body').removeClass("loading");
+        $('#innerdiv1').removeClass('ajax_loading_modal')
+    }
+  }
   $('.add_to_cart').click(function () {
         add_to_cart($(this).data('id'));
     });
@@ -115,7 +125,7 @@
             ajax_loading_modal(false);
         });
     }
-    $('.showmore').click(function () {
+    {% comment %} $('.showmore').click(function () {
       showmore();
     });
     function showmore(){
@@ -124,8 +134,10 @@
         if (e['error']==0){
           alert('help');
         }
-      })
-    }
+      }).always(function (e) {
+        ajax_loading_modal(false);
+    });
+    } {% endcomment %}
 </script>
 
 

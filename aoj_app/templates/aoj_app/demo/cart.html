@@ -86,7 +86,7 @@
                                                 </span>
                                             </div>
                                         </td>
-
+                                        <div id='innerdiv1'></div>
                                         <td class="tdCARD_item">
                                             <a class="btn-remove-from-cart" data-id="{{ item.product.id }}"
                                             href="javascript:void(0)">
@@ -137,6 +137,15 @@
 <script src="https://platform.twitter.com/widgets.js"></script>
 <script src="//translate.google.com/translate_a/element.js?cb=TranslateInit"></script>
     <script>
+        function ajax_loading_modal(tf) {
+            if (tf) {
+                $('body').addClass("loading");
+                $('#innerdiv1').addClass('ajax_loading_modal')
+            } else {
+                $('body').removeClass("loading");
+                $('#innerdiv1').removeClass('ajax_loading_modal')
+            }
+          }
         // REMOVE FROM CART
     $('.btn-remove-from-cart').click(function () {
         remove_from_cart(this, $(this).data('id'));
