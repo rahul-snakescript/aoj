@@ -947,7 +947,11 @@ def setlang_view(request):
     if lang == "en":
         response.delete_cookie("googtrans")
     else:
-        response.set_cookie("googtrans", urllib.parse.quote_plus("/auto/" + lang))
+        try:
+            response.set_cookie("googtrans", urllib.parse.quote_plus("/auto/" + lang))
+        except:
+            response.set_cookie("googtrans", urllib.quote_plus("/auto/" + lang))
+
     return response
 
 
