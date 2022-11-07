@@ -207,24 +207,24 @@ if DEBUG:
     EXACT_TRANSACTION_KEY = "NjPQvH_CSt9sTgpAs3vZ"
     FILE_UPLOAD_DIRECTORY_PERMISSIONS = 0o755
     FILE_UPLOAD_PERMISSIONS = 0o644
-    LOGGING = {
-        'version': 1,
-        'disable_existing_loggers': False,
-        'handlers': {
-            'file': {
-                'level': 'INFO',
-                'class': 'logging.FileHandler',
-                'filename': '/var/log/aoj.log',
-            },
-        },
-        'loggers': {
-            '': {
-                'handlers': ['file'],
-                'level': 'INFO',
-                'propagate': True,
-            },
-        },
-    }
+    # LOGGING = {
+    #     'version': 1,
+    #     'disable_existing_loggers': False,
+    #     'handlers': {
+    #         'file': {
+    #             'level': 'INFO',
+    #             'class': 'logging.FileHandler',
+    #             'filename': '/var/log/aoj.log',
+    #         },
+    #     },
+    #     'loggers': {
+    #         '': {
+    #             'handlers': ['file'],
+    #             'level': 'INFO',
+    #             'propagate': True,
+    #         },
+    #     },
+    # }
 else:
     EXACT_X_LOGIN = "WSP-ARMS-EZpLiQAGHQ"
     EXACT_TRANSACTION_KEY = "NjPQvH_CSt9sTgpAs3vZ"
