@@ -69,9 +69,6 @@ def get_desktop_nav(context):
 
         except:
             drop_new_dict[data]=None
-    
-    print(curr_page)
-    print(req.path)
     return {
         'curr_page': curr_page,
         'path': req.path, 

@@ -44,7 +44,7 @@ class NewIndexView(TemplateView):
     def get_context_data(self, **kwargs):
         
         context = super(NewIndexView, self).get_context_data(**kwargs)
-        context["latest_magazines"] = Magazine.objects.all()
+        context["latest_magazines"] = Magazine.objects.all()[0:4]
         context["countries"] = Country.objects.all()
         context["latest_news"] = LatestNews.objects.order_by('-created_date')[0:2]       
         context["blog"] = BlogEntry.objects.filter(featured=True).order_by('-created_date')[0:3]
