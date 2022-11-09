@@ -943,7 +943,9 @@ def ajax_send_checkout_form(request):
 
 def setlang_view(request):
     response = HttpResponseRedirect(request.META.get("HTTP_REFERER", "newindex"))
+    print(response)
     lang = request.GET.get("lang", None)
+    print(lang)
     if lang == "en":
         # response.set_cookie("googtrans", "################")
         response.delete_cookie("googtrans")
@@ -952,7 +954,7 @@ def setlang_view(request):
             response.set_cookie("googtrans", urllib.parse.quote_plus("/auto/" + lang))
         except:
             response.set_cookie("googtrans", urllib.quote_plus("/auto/" + lang))
-
+    print(response)
     return response
 
 
