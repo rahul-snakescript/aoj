@@ -1391,7 +1391,7 @@ h3.text-right {
     background-repeat: no-repeat; 
     background-position: bottom center;
     position: relative;
-    /* height: 552px; */
+    height: 552px;
 }
 .make_donation {
     text-align: center;
