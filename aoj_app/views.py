@@ -945,7 +945,8 @@ def setlang_view(request):
     response = HttpResponseRedirect(request.META.get("HTTP_REFERER", "newindex"))
     lang = request.GET.get("lang", None)
     if lang == "en":
-        response.delete_cookie("googtrans")
+        response.set_cookie("googtrans", "################")
+        # response.delete_cookie("googtrans")
     else:
         try:
             response.set_cookie("googtrans", urllib.parse.quote_plus("/auto/" + lang))
