@@ -212,24 +212,24 @@ else:
     FILE_UPLOAD_DIRECTORY_PERMISSIONS = 0o755
     FILE_UPLOAD_PERMISSIONS = 0o644
 
-    # LOGGING = {
-    #     'version': 1,
-    #     'disable_existing_loggers': False,
-    #     'handlers': {
-    #         'file': {
-    #             'level': 'INFO',
-    #             'class': 'logging.FileHandler',
-    #             'filename': '/var/log/aoj.log',
-    #         },
-    #     },
-    #     'loggers': {
-    #         '': {
-    #             'handlers': ['file'],
-    #             'level': 'INFO',
-    #             'propagate': True,
-    #         },
-    #     },
-    # }
+    LOGGING = {
+        'version': 1,
+        'disable_existing_loggers': False,
+        'handlers': {
+            'file': {
+                'level': 'INFO',
+                'class': 'logging.FileHandler',
+                'filename': '/home/aoj/logs/aoj.log',
+            },
+        },
+        'loggers': {
+            '': {
+                'handlers': ['file'],
+                'level': 'INFO',
+                'propagate': True,
+            },
+        },
+    }
 
 AUTH_USER_MODEL = 'aoj_app.AuthUser'
 LOGIN_URL = "login"
