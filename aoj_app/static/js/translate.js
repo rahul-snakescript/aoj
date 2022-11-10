@@ -59,6 +59,8 @@ function createCookie(name, value, days) {
     } else {
         expires = "";
     }
+    console.log(expires)
+    console.log(naem)
     document.cookie = encodeURIComponent(name) + "=" + encodeURIComponent(value) + expires + "; path=/";
 }
 
@@ -70,12 +72,14 @@ function readCookie(name) {
         while (c.charAt(0) === ' ')
             c = c.substring(1, c.length);
         if (c.indexOf(nameEQ) === 0)
+            console.log(c,nameEQ)
             return decodeURIComponent(c.substring(nameEQ.length, c.length));
     }
     return null;
 }
 
 function eraseCookie(name) {
+    console.log(name)
     createCookie(name, "", -1);
 }
 
@@ -89,11 +93,11 @@ function TranslateInit() {
     // Находим флаг с выбранным языком для перевода и добавляем к нему активный класс
     $('[data-google-lang="' + code + '"]').addClass('language__img_active');
 
-    // if (code == googleTranslateConfig.lang) {
+    if (code == googleTranslateConfig.lang) {
     //     // Если язык по умолчанию, совпадает с языком на который переводим
     //     // То очищаем куки
-    //     TranslateClearCookie();
-    // }
+         TranslateClearCookie();
+     }
 
     // Инициализируем виджет с языком по умолчанию
     new google.translate.TranslateElement({
@@ -115,6 +119,7 @@ function TranslateClearCookie() {
 }
 
 function TranslateSetCookie(code) {
+    console.log(code)
     // Записываем куки /язык_который_переводим/язык_на_который_переводим
     createCookie('googtrans', "/auto/" + code);
 }
