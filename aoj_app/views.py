@@ -4,7 +4,7 @@ from re import L
 import urllib
 import time
 import logging
-
+from django.conf import settings
 from django.utils.decorators import method_decorator
 from django.http import JsonResponse, HttpResponseRedirect, HttpResponse
 from django.views.generic import View, TemplateView, ListView, DetailView, FormView
@@ -948,15 +948,21 @@ def setlang_view(request):
     lang = request.GET.get("lang", None)
     print(lang)
     if lang == "en":
-        # response.set_cookie("googtrans", "################")
         response.delete_cookie("googtrans")
         response.delete_cookie("googtrans",domain="armsofjesus.org")
         response.delete_cookie("googtrans",domain=".armsofjesus.org")
     else:
-        try:
-            response.set_cookie("googtrans", urllib.parse.quote_plus("/auto/" + lang))
-        except:
-            response.set_cookie("googtrans", urllib.quote_plus("/auto/" + lang))
+        if settings.SESSION_COOKIE_DOMAIN:
+            try:
+                response.set_cookie("googtrans", urllib.parse.quote_plus("/auto/" + lang),domain=settings.SESSION_COOKIE_DOMAIN)
+            except:
+                response.set_cookie("googtrans", urllib.quote_plus("/auto/" + lang),domain=settings.SESSION_COOKIE_DOMAIN)
+        else:
+            try:
+                response.set_cookie("googtrans", urllib.parse.quote_plus("/auto/" + lang))
+            except:
+                response.set_cookie("googtrans", urllib.quote_plus("/auto/" + lang))
+            
     print(response)
     return response
 
