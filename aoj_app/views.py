@@ -834,7 +834,6 @@ def ajax_send_donate_form(request):
 
 @login_required
 def ajax_send_checkout_form(request):
-    print(request.POST)
     email = request.POST.get("x_email", "")
     first_name = request.POST.get("x_first_name", "")
     last_name = request.POST.get("x_last_name", "")
