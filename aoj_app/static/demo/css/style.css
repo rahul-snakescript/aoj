@@ -2963,7 +2963,8 @@ h2.mission_teamHadding {
     margin-right: 0px;     
     } 
     .our_magzine_product img{
-    width: 70%;   
+    width: 100%;
+    padding: 18px;   
     }
     .slider_autoplay .slick-prev:after{
     width: 45px;
