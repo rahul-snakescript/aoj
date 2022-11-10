@@ -107,7 +107,7 @@ function TranslateInit() {
 function TranslateGetCode() {
     // Если куки нет, то передаем дефолтный язык
     let lang = readCookie('googtrans') ? readCookie('googtrans') : googleTranslateConfig.lang;
-    return lang.substr(-2);
+    return lang.substring(-2);
 }
 
 function TranslateClearCookie() {
