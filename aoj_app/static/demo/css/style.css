@@ -2426,6 +2426,11 @@ h2.mission_teamHadding {
 
 /* Media Query Start */
 /* Media Query Start */
+@media only screen and (max-width: 1399px) {
+    .banner_outer h1 {
+        font-size: 56px;
+    }
+}
 @media only screen and (max-width: 1300px) {
     .header .nav-item a.nav-link {
         font-size: 14px;

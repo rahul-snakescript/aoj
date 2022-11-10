@@ -949,8 +949,7 @@ def setlang_view(request):
     print(lang)
     if lang == "en":
         response.delete_cookie("googtrans")
-        response.delete_cookie("googtrans",domain="armsofjesus.org")
-        response.delete_cookie("googtrans",domain=".armsofjesus.org")
+        
     else:
         if settings.SESSION_COOKIE_DOMAIN:
             try:
