@@ -950,6 +950,8 @@ def setlang_view(request):
     if lang == "en":
         # response.set_cookie("googtrans", "################")
         response.delete_cookie("googtrans")
+        response.delete_cookie("googtrans",domain="armsofjesus.org")
+        response.delete_cookie("googtrans",domain=".armsofjesus.org")
     else:
         try:
             response.set_cookie("googtrans", urllib.parse.quote_plus("/auto/" + lang))
