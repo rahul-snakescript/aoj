@@ -464,6 +464,7 @@ class CheckoutView(LoginRequiredMixin, TemplateView):
         context["x_email_customer"] = "TRUE"
 
         line_items = []
+        print(cart)
         for item in cart.items:
             line_items.append(
                 "%s<|>%s<|>%s<|>%s<|>%s<|>Y"
@@ -833,6 +834,7 @@ def ajax_send_donate_form(request):
 
 @login_required
 def ajax_send_checkout_form(request):
+    print(request.POST)
     email = request.POST.get("x_email", "")
     first_name = request.POST.get("x_first_name", "")
     last_name = request.POST.get("x_last_name", "")
