@@ -1,6 +1,7 @@
 from email.header import Header
 from re import sub
 from django import template
+import logging
 
 from carton.cart import Cart
 from aoj_app.models import ExistingPageSubLink
@@ -10,6 +11,7 @@ from aoj_app.models import CreateNewPage, CreateNewSubPage
 from aoj_app.models import SiteConfiguration, Mission, AboutPage
 
 register = template.Library()
+log = logging.getLogger(__name__)
 
 
 @register.simple_tag()
@@ -34,7 +36,7 @@ def get_product_count_in_cart(context, product):
 def get_desktop_nav(context):
     req = context['request']
     req.COOKIES['googtrans']=""
-    print(req.COOKIES['googtrans'])
+    log.debug(req.COOKIES['googtrans'])
     cart = Cart(req.session, session_key=None)
     curr_page = req.resolver_match.url_name
     drop_dict={}
