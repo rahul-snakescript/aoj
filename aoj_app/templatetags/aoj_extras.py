@@ -36,7 +36,7 @@ def get_product_count_in_cart(context, product):
 def get_desktop_nav(context):
     req = context['request']
     req.COOKIES['googtrans']=""
-    log.debug(req.COOKIES['googtrans'])
+    print(req.COOKIES['googtrans'])
     cart = Cart(req.session, session_key=None)
     curr_page = req.resolver_match.url_name
     drop_dict={}
