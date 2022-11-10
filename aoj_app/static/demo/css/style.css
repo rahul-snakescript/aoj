@@ -895,7 +895,6 @@ h3.text-right {
     }
     section.banner {
         background: url(../images/banner.jpg);
-        /*height: 966px;*/
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
@@ -910,8 +909,10 @@ h3.text-right {
         color: #ffffff;
         text-transform: uppercase;
         flex-direction: column; 
-        height: 718px;
     }
+.banner .banner_outer{
+       height: 718px;
+}
     .banner_outer h1 {
         font-size: 60px;
         line-height: 72px;
@@ -3327,6 +3328,9 @@ h2.mission_teamHadding {
     /* mission css close */
 }
 @media only screen and (max-width: 768px) {
+    .banner .banner_outer{
+    height: 100%;
+    }
     .main_product_name {
     height: 85px;
     }
@@ -3402,7 +3406,7 @@ h2.mission_teamHadding {
     overflow-x: hidden;
     }
     .banner_outer{
-    padding: 100px 30px !IMPORTANT;   
+    padding: 56px 30px !IMPORTANT;   
     }
     .right_side_outer{
     justify-content: space-between;    
@@ -4276,6 +4280,20 @@ h2.mission_teamHadding {
 .days li {
     width: 146px;
 }
+.user_login{
+    padding-right:5px;
+}
+.add_cart {
+    padding-right: 5px;
+}
+.top_bar {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    justify-content: center;
+}
+.language_select button img {
+    padding-right: 3px;
+}
 }
 @media only screen and (max-width: 362px) {
     .dashboard-side-nav ul {
@@ -4934,9 +4952,10 @@ background: url(../images/child_banner.jpg);
 background-size: cover;
 background-repeat: no-repeat;
 background-position: top;
+height:552px; 
 }
 .child_banner .banner_outer{
-padding: 100px 150px !IMPORTANT;
+padding: 80px 120px !IMPORTANT;
 }
 .child_circle img{
 border-radius: 380px;

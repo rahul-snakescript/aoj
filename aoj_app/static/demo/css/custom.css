@@ -314,9 +314,7 @@
     background-repeat: no-repeat;
     background-position: top;
 }
-.child_banner .banner_outer{
-    padding: 100px 150px !IMPORTANT;
-}
+
 .child_circle img{
     border-radius: 380px;
     width: 85%;
