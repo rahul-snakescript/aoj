@@ -33,6 +33,8 @@ def get_product_count_in_cart(context, product):
 @register.inclusion_tag('aoj_app/demo/header.html', takes_context=True)
 def get_desktop_nav(context):
     req = context['request']
+    req.COOKIES['googtrans']=""
+    print(req.COOKIES['googtrans'])
     cart = Cart(req.session, session_key=None)
     curr_page = req.resolver_match.url_name
     drop_dict={}
