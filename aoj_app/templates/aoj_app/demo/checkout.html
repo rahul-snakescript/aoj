@@ -164,5 +164,39 @@ The Arms of Jesus - Checkout
       </div>
     </div>
   </div>
+<script>
+  $('#form-checkout').submit(function () {
+    $(this).find('input[type="submit"]').attr('disabled', 'disabled');
 
+    // First name
+    $(this).find('input[name="x_ship_to_first_name"]').val($(this).find('input[name="x_first_name"]').val());
+    // Last name
+    $(this).find('input[name="x_ship_to_last_name"]').val($(this).find('input[name="x_last_name"]').val());
+    // Address
+    $(this).find('input[name="x_ship_to_address"]').val($(this).find('input[name="x_address"]').val());
+    // City
+    $(this).find('input[name="x_ship_to_city"]').val($(this).find('input[name="x_city"]').val());
+    // State
+    $(this).find('input[name="x_ship_to_state"]').val($(this).find('input[name="x_state"]').val());
+    // Zip
+    $(this).find('input[name="x_ship_to_zip"]').val($(this).find('input[name="x_zip"]').val());
+    // Country
+    $(this).find('input[name="x_ship_to_country"]').val($(this).find('input[name="x_country"]').val());
+
+    // SEND EMAIL BEFORE SUBMITTING THE FORM
+    $.ajax({
+        method: "POST",
+        url: "/api/send_checkout_form/",
+        data: $(this).serialize(),
+        async: false,
+        timeout: 30000,
+    }).done(function (data) {
+        $('#form-checkout input[name="x_fp_timestamp"]').val(data["x_fp_timestamp"]);
+        $('#form-checkout input[name="x_fp_hash"]').val(data["x_fp_hash"]);
+        return true;
+    }).fail(function () {
+        return false;
+    });
+});
+</script>
 {% endblock %}
