@@ -300,42 +300,6 @@
   <!-- member start here -->
   
   <!-- footer close here -->
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
 
-
-<script>
-$(document).ready(function() {
-    $('.cars').change(function(){
-        var name = $(this).val();
-        var row_div=$('#append_row') 
-      $.ajax({
-                  type: "GET",
-                  url: "{% url 'ajaxdropdown' %}",
-                  data: {
-                      "country": name,
-                  },
-                  success: function (data) {
-                    video_link=data.dataresponse
-                    if (video_link.length>0){
-                    video_link.forEach(function(item,index){
-                      var outer_div=$('<div>').addClass('col-md-6 select_video');
-                      var inner_div=$('<div>').addClass('video_outer');
-                      var videoframe=$('<iframe>').addClass('video-iframe').attr("src",item);
-                      $(inner_div).append(videoframe);
-                      $(outer_div).append(inner_div)
-                      $(row_div).append(outer_div); 
-                    });
-                  }
-                  else{
-                    var errormsg = $('<h3>').addClass('text-center text-danger')
-                    $(errormsg).append('Sorry! No Media')
-                    $(row_div).append(errormsg)
-                  }                     
-                  },
-              });
-              row_div.html('');
-})});
-
-</script>
 
 {% endblock %}
