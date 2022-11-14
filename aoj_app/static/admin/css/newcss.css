@@ -1,0 +1,33 @@
+a:link, a:visited { color: awesome; text-decoration: none;font-weight: bold; }
+
+#header{
+    height: 112px !important;
+    background: #000;
+    
+}
+
+#site-name {
+    background-color: #fff;
+}
+.module h2, .module caption, .inline-group h2 {
+    background: #0d6efd;
+    border-radius: 4px;
+}
+#user-tools {
+    padding-top: 25px;
+    font-size: 19px;
+}
+#content-related .module h2 {
+    background: #f7941d;
+    color: #fff;
+    border-radius: 9px;
+}
+#content {
+    padding: 30px 103px;
+}
+#content-main {
+    margin-right: 80px;
+}
+#content-main th{
+    font-weight: 20px !important;
+}
