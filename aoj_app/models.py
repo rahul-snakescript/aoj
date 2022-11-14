@@ -525,6 +525,7 @@ class Mission(models.Model):
 
     class Meta:
         ordering = ["name"]
+        verbose_name = "Create New Mission Page"
 
     def __unicode__(self):
         return self.name
@@ -557,6 +558,9 @@ class AboutPage(models.Model):
     # sno=models.IntegerField(blank=True,null=True)
     # is_active=models.BooleanField(default=True)
 
+    class Meta:
+        verbose_name = "Create New About Page"
+
     def __str__(self):
         return self.name
 
@@ -575,6 +579,7 @@ class AboutStaff(models.Model):
     # name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
 
     class Meta:
+        verbose_name = "Staff"
         ordering = ["staff_name"]
 
     def __unicode__(self):
@@ -588,6 +593,9 @@ class AboutWhatWeBelieve(models.Model):
     # is_active=models.BooleanField(default=True)
     # name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
 
+    class Meta:
+        verbose_name = "What We Believe"
+
     def __unicode__(self):
         return self.title
 
@@ -600,6 +608,8 @@ class AboutFundPolicy(models.Model):
     # is_active=models.BooleanField(default=True)
     # name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
     
+    class Meta:
+        verbose_name = "FundPolicy"
 
     def __unicode__(self):
         return self.title
@@ -612,6 +622,9 @@ class AboutHistory(models.Model):
     # is_active=models.BooleanField(default=True)
     # name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
 
+    class Meta:
+        verbose_name = "History"
+
     def __unicode__(self):
         return self.title
 
@@ -622,6 +635,9 @@ class AboutMission(models.Model):
     body=RichTextUploadingField()
     # is_active=models.BooleanField(default=True)
     # name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
+
+    class Meta:
+        verbose_name = "Mission"
 
     def __unicode__(self):
         return self.title
@@ -696,6 +712,8 @@ class MissionHaiti(models.Model):
     country=models.ForeignKey(Country,on_delete=models.CASCADE,blank=True,null=True)
     # is_active=models.BooleanField(default=True)
     # name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
+    class Meta:
+        verbose_name = "Haiti"
 
 class MissionKenya(models.Model):
     title=models.CharField(max_length=200)
@@ -706,6 +724,9 @@ class MissionKenya(models.Model):
     # is_active=models.BooleanField(default=True)
     # name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
 
+    class Meta:
+        verbose_name = "Kenya"
+
 class MissionGuatemala(models.Model):
     title=models.CharField(max_length=200)
     seo_title=models.CharField(max_length=256,blank=True,null=True)
@@ -714,6 +735,9 @@ class MissionGuatemala(models.Model):
     country=models.ForeignKey(Country,on_delete=models.CASCADE,blank=True,null=True)
     # is_active=models.BooleanField(default=True)
     # name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
+
+    class Meta:
+        verbose_name = "Guatemala"
 
 class LatestNews(models.Model):
     title=models.CharField(max_length=200)
