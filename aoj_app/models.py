@@ -251,6 +251,8 @@ class Media(models.Model):
     class Meta:
         ordering = ["-created_date"]
 
+#add
+
 class Magazine(models.Model):
     title = models.CharField(max_length=128, blank=False, null=False)
     slug = models.SlugField(max_length=128, blank=True, unique=True)
