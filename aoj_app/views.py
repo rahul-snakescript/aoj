@@ -962,10 +962,6 @@ def setlang_view(request):
             except:
                 response.set_cookie("googtrans", urllib.quote_plus("/auto/" + lang))
     return response
-    
-            
-    print(response.cookies['googtrans'])
-    return response
 
 
 def ajax_dropdown(request):
