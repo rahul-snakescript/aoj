@@ -40,7 +40,12 @@ The Arms of Jesus
         <div class="col-md-3 col-sm-6 col-6">
           <div class="staff_item">
             <div class="staff_img">
-              <img src="{{ staff.staff_image.url }}" alt="staff">
+              {% if staff.staff_image %}
+                <img src="{{ staff.staff_image.url }}" alt="staff">
+              {% else %}
+                <img src="{% static 'demo/images/our-staff.jpg' %}" alt="staff">
+              {% endif %}
+              
             </div>
             <div class="staff_hadding">
               <h5>{{ staff.staff_name }}</h5>

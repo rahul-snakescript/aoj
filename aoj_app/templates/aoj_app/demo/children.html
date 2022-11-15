@@ -49,7 +49,18 @@
           <div class="col-md-3 col-sm-6 child_circle">
 
             {% if child.checked_out %}
-              <img src="{{ child.image1.url }}" alt="children">
+
+              {% if child.image1 %}
+              <h1>hiii</h1>
+                <img src="{{ child.image1.url }}" alt="children">
+              {% elif child.image2 %}
+              <h1>hiii</h1>
+                <img src="{{ child.image2.url }}" alt="children">
+              {% else %}
+              <h1>hiii</h1>
+                <img src="{% static 'demo/images/our-staff.jpg' %}" alt="children">
+              {% endif %}
+
               <h5>
                 {{ child }}
               </h5>
@@ -59,7 +70,13 @@
 
             {% else %}
               <a href="{% url 'children_detail' child.slug %}">
-                <img src="{{ child.image1.url }}" alt="children">
+                {% if child.image1 %}
+                  <img src="{{ child.image1.url }}" alt="children">
+                {% elif child.image2 %}
+                  <img src="{{ child.image2.url }}" alt="children">
+                {% else %}
+                  <img src="{% static 'demo/images/our-staff.jpg' %}" alt="children">
+                {% endif %}
               </a>
               <h5>
                 {{ child }}
