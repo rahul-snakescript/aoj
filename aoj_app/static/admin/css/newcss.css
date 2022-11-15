@@ -31,3 +31,6 @@ a:link, a:visited { color: awesome; text-decoration: none;font-weight: bold; }
 #content-main th{
     font-weight: 20px !important;
 }
+div.breadcrumbs {
+    background: #47ace1;
+}

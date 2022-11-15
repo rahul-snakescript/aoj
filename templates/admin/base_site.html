@@ -2,15 +2,27 @@
 {% load static %}
 
 {% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
 {% block extrastyle %}
+{% if user.is_authenticated %}
 <link href="{% static 'admin/css/newcss.css' %}" rel="stylesheet" type="text/css" media="screen,projection" />
+{% else %}
+<style>
+    #site-name a img{
+        margin-left: 120px;
+    }
+</style>
+{% endif %}
 {% endblock %}
+
+
 {% block branding %}
     <h1 id="site-name">
         <a href="{% url 'admin:index' %}">
             <img src="{% static 'demo/images/logo.png' %}">
         </a>
     </h1>
-{% endblock %}
+    {% endblock %}
+
 
 {% block nav-global %}{% endblock %}
