@@ -874,7 +874,8 @@ class CreateNewSubPage(models.Model):
     def get_absolute_url(self):
         return reverse("sub_navbar_items", args=[self.slug])
 
-    
+#dummy
+
     
 
 
