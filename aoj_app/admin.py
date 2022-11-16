@@ -101,7 +101,7 @@ class StaffAdmin(admin.ModelAdmin):
 
 @admin.register(AboutFundPolicy)
 class StaffAdmin(admin.ModelAdmin):
-    list_display= ['title','body','foot']
+    list_display= ['title','body','Sub_Text']
 
 @admin.register(AboutHistory)
 class StaffAdmin(admin.ModelAdmin):
@@ -149,4 +149,3 @@ admin.site.register(CreateNewPage)
 admin.site.register(CreateNewSubPage)
 admin.site.register(ExistingPageLink)
 admin.site.register(ExistingPageSubLink)
-

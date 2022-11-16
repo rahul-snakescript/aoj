@@ -606,7 +606,7 @@ class AboutFundPolicy(models.Model):
     seo_title=models.CharField(max_length=256,blank=True,null=True)
     banner_image=models.ImageField(upload_to=upload_banner_image_to,blank=True,null=True)
     body=RichTextUploadingField()
-    foot=models.CharField(max_length=200)
+    Sub_Text=models.CharField(max_length=200,blank=True,null=True)
     # is_active=models.BooleanField(default=True)
     # name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
     
@@ -679,6 +679,8 @@ class TeamsConsider(models.Model):
     description=models.TextField(blank=True,null=True)
     # is_active=models.BooleanField(default=True)
     # name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
+    class Meta:
+        verbose_name = "Consider Serving"
 
 class TeamsTraining(models.Model):
     # sno = models.IntegerField(null=True,blank=True)
@@ -688,6 +690,8 @@ class TeamsTraining(models.Model):
     description=models.TextField(blank=True,null=True)
     # is_active=models.BooleanField(default=True)
     # name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
+    class Meta:
+        verbose_name = "Training"
 
 class TeamsResources(models.Model):
     # sno = models.IntegerField(null=True,blank=True)
@@ -696,6 +700,8 @@ class TeamsResources(models.Model):
     media=models.FileField(upload_to=upload_teamresource_image_to)
     # is_active=models.BooleanField(default=True)
     # name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
+    class Meta:
+        verbose_name = "Resources"
  
 class TeamsCalenderDate(models.Model):
     # sno = models.IntegerField(null=True,blank=True)
@@ -705,6 +711,8 @@ class TeamsCalenderDate(models.Model):
     mission_trip=models.CharField(max_length=100)
     # is_active=models.BooleanField(default=True)
     # name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
+    class Meta:
+        verbose_name = "Calendar"
 
 class MissionHaiti(models.Model):
     title=models.CharField(max_length=200)

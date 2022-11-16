@@ -70,6 +70,11 @@
     font-display: swap;
 }
 
+.haitiMission {
+    margin-bottom: 30px;
+    overflow: auto;
+}
+
 .goog-te-banner-frame{
     display: none !important
     }
@@ -2083,6 +2088,7 @@ h2.mission_teamHadding {
     }
 
     .haitiHadding_btnItem {
+        margin-top: 20px;
         float: left;
         width: 229px;
     }
