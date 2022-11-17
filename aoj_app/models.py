@@ -249,6 +249,7 @@ class Media(models.Model):
         return self.video
 
     class Meta:
+        verbose_name_plural = "Media"
         ordering = ["-created_date"]
 
 #add
@@ -274,6 +275,7 @@ class Magazine(models.Model):
         super(Magazine, self).save(*args, **kwargs)
 
     class Meta:
+        verbose_name_plural = "Magazine"
         ordering = ["-created_date"]
 
 
@@ -527,7 +529,7 @@ class Mission(models.Model):
 
     class Meta:
         ordering = ["name"]
-        verbose_name = "Create New Mission Page"
+        verbose_name_plural = "Create New Mission Page"
 
     def __unicode__(self):
         return self.name
@@ -547,6 +549,8 @@ class MissionPageAttributes(models.Model):
 
     def __str__(self):
         return self.title+" of "+str(self.country)
+    class Meta:
+        verbose_name_plural = "Mission Page Attributes"
 
 
 class AboutPage(models.Model):
@@ -561,7 +565,7 @@ class AboutPage(models.Model):
     # is_active=models.BooleanField(default=True)
 
     class Meta:
-        verbose_name = "Create New About Page"
+        verbose_name_plural = "Create New About Page"
 
     def __str__(self):
         return self.name
@@ -579,9 +583,9 @@ class AboutStaff(models.Model):
     staff_position = models.CharField(max_length=200,blank=False)
     # is_active=models.BooleanField(default=True)
     # name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
-
+     
     class Meta:
-        verbose_name = "Staff"
+        verbose_name_plural = "Staff"
         ordering = ["staff_name"]
 
     def __unicode__(self):
@@ -596,7 +600,7 @@ class AboutWhatWeBelieve(models.Model):
     # name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
 
     class Meta:
-        verbose_name = "What We Believe"
+        verbose_name_plural = "What We Believe"
 
     def __unicode__(self):
         return self.title
@@ -611,7 +615,7 @@ class AboutFundPolicy(models.Model):
     # name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
     
     class Meta:
-        verbose_name = "FundPolicy"
+        verbose_name_plural = "Fund Policy"
 
     def __unicode__(self):
         return self.title
@@ -625,7 +629,7 @@ class AboutHistory(models.Model):
     # name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
 
     class Meta:
-        verbose_name = "History"
+        verbose_name_plural = "History"
 
     def __unicode__(self):
         return self.title
@@ -639,7 +643,7 @@ class AboutMission(models.Model):
     # name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
 
     class Meta:
-        verbose_name = "Mission"
+        verbose_name_plural = "Mission"
 
     def __unicode__(self):
         return self.title
@@ -680,7 +684,7 @@ class TeamsConsider(models.Model):
     # is_active=models.BooleanField(default=True)
     # name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
     class Meta:
-        verbose_name = "Consider Serving"
+        verbose_name_plural = "Consider Serving"
 
 class TeamsTraining(models.Model):
     # sno = models.IntegerField(null=True,blank=True)
@@ -691,7 +695,7 @@ class TeamsTraining(models.Model):
     # is_active=models.BooleanField(default=True)
     # name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
     class Meta:
-        verbose_name = "Training"
+        verbose_name_plural = "Training"
 
 class TeamsResources(models.Model):
     # sno = models.IntegerField(null=True,blank=True)
@@ -701,7 +705,7 @@ class TeamsResources(models.Model):
     # is_active=models.BooleanField(default=True)
     # name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
     class Meta:
-        verbose_name = "Resources"
+        verbose_name_plural = "Resources"
  
 class TeamsCalenderDate(models.Model):
     # sno = models.IntegerField(null=True,blank=True)
@@ -712,7 +716,7 @@ class TeamsCalenderDate(models.Model):
     # is_active=models.BooleanField(default=True)
     # name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
     class Meta:
-        verbose_name = "Calendar"
+        verbose_name_plural = "Calendar"
 
 class MissionHaiti(models.Model):
     title=models.CharField(max_length=200)
@@ -723,7 +727,7 @@ class MissionHaiti(models.Model):
     # is_active=models.BooleanField(default=True)
     # name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
     class Meta:
-        verbose_name = "Haiti"
+        verbose_name_plural = "Haiti"
 
 class MissionKenya(models.Model):
     title=models.CharField(max_length=200)
@@ -735,7 +739,7 @@ class MissionKenya(models.Model):
     # name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
 
     class Meta:
-        verbose_name = "Kenya"
+        verbose_name_plural = "Kenya"
 
 class MissionGuatemala(models.Model):
     title=models.CharField(max_length=200)
@@ -747,7 +751,7 @@ class MissionGuatemala(models.Model):
     # name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
 
     class Meta:
-        verbose_name = "Guatemala"
+        verbose_name_plural = "Guatemala"
 
 class LatestNews(models.Model):
     title=models.CharField(max_length=200)
@@ -821,6 +825,7 @@ class CreateNewPage(models.Model):
     # name_in_dropdown=models.CharField(max_length=256,blank=True,null=True)
 
     class Meta:
+        verbose_name_plural = "Create New Page"
         ordering=['sno']
 
     def __str__(self):
@@ -855,6 +860,7 @@ class CreateNewSubPage(models.Model):
     
 
     class Meta:
+        verbose_name_plural = "Create New Sub Page"
         ordering=['sno']
 
     def __str__(self):

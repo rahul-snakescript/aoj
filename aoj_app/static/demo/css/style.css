@@ -1944,8 +1944,8 @@ h2.mission_teamHadding {
         margin: 0;
         font-size: 48px;
         text-align: center;
-        padding-bottom: 52px !important;
-        padding-top: 90px !important;
+        padding-bottom: 10px !important;
+        padding-top: 30px !important;
         font-family: 'Proxima Nova Rg';
     }
     .haitiHadding_btn { 
@@ -1979,7 +1979,7 @@ h2.mission_teamHadding {
     }
     .missionHatti_bg {
         background: #fbfbfb;
-        padding: 64px 0 !important;
+        padding: 30px 0 !important;
     }
     .ministries_hadding h2 {
         font-size: 48px;
