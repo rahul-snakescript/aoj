@@ -151,8 +151,12 @@ class MediaView(TemplateView):
 
 
 #contact-us View
-class ContactUsView(TemplateView):
-    template_name = "aoj_app/demo/contact-us.html"
+# class ContactUsView(TemplateView):
+#     template_name = "aoj_app/demo/contact-us.html"
+
+
+def ContactUsView(request):
+    return render(request,'aoj_app/demo/contact-us.html')
 
 
 #Magazine views

@@ -87,7 +87,7 @@ urlpatterns = [
 #contact us
     url(
         r"^contact-us/$",
-        ContactUsView.as_view(),
+        ContactUsView,
         name="contact_us",
     ),
 

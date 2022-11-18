@@ -90,7 +90,7 @@ The Arms of Jesus - Donate
                   <div class="row">
                     <div class="col-sm-8">
                       <div class="form-group">
-                        <label for="cbfState">{% trans "State" %}</label>
+                        <label for="cbfState">{% trans "Province" %}</label>
                         <input type="text" class="form-control" id="cbfState" name="x_state"
                                required="required" value="{{ latest_cr.state }}">
                       </div>
@@ -116,6 +116,7 @@ The Arms of Jesus - Donate
                   <div class="form-group">
                     <label for="cbfAmount">{% trans "Cash Donation" %}</label>
                     <select class="form-control" id="cbfAmount" required="required">
+                      <option value="" disabled selected>Choose Amount</option>
                       <option value="25.00">$25</option>
                       <option value="50.00">$50</option>
                       <option value="100.00">$100</option>
