@@ -16,11 +16,11 @@ The Arms of Jesus - Donate
 <section class="child_banner" {% if config.donate_banner_image %}style="background-image:url({{ config.donate_banner_image.url }});"{% endif %}>
   {% get_desktop_nav %}
 {% comment %} {% include 'aoj_app/demo/header.html' %} {% endcomment %}
-<div class="container children_arm">
+<div class="container children_arm" style="margin-top: 70px;">
   <div class="row">
     <div class="col-md-12">
       <div class="banner_outer"> 
-        <h1>YOU CAN SPONSOR A CHILD FOR $40.00 A MONTH OR $480 A YEAR... JUST $1.32 PER DAY</h1>
+        <h1>Sponsorship</h1>
       </div>
     </div>
   </div>
@@ -97,7 +97,7 @@ The Arms of Jesus - Donate
                     </div>
                     <div class="col-sm-4">
                       <div class="form-group">
-                        <label for="cbfZip">{% trans "Zip Code" %}</label>
+                        <label for="cbfZip">{% trans "Postal Code" %}</label>
                         <input type="text" class="form-control" id="cbfZip" name="x_zip"
                                required="required" value="{{ latest_cr.zip_code }}">
                       </div>
