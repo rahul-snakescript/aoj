@@ -13,11 +13,11 @@
 {% block body_temp %}
 <section class="child_banner" {% if object.detail_page_banner_image %}style="background-image:url({{ object.detail_page_banner_image.url }});"{% endif %}>
     {% get_desktop_nav %}
-<div class="container children_arm" >
+<div class="container children_arm" style="margin-top: 70px;">
     <div class="row">
       <div class="col-md-12">
         <div class="banner_outer"> 
-          <h1>YOU CAN SPONSOR A CHILD FOR $40.00 A MONTH OR $480 A YEAR... JUST $1.32 PER DAY</h1>
+          <h1>Sponsorship</h1>
         </div>
       </div>
     </div>
@@ -92,7 +92,7 @@
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-group fromGroup_outer">
-                                                <label for="cbfState">{% trans "State" %}</label>
+                                                <label for="cbfState">{% trans "Province" %}</label>
                                                 <input type="text" class="form-control" id="cbfState" name="state">
                                             </div>
                                         </div>
@@ -100,7 +100,7 @@
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <div class="form-group fromGroup_outer">
-                                                <label for="cbfZip">{% trans "Zip Code" %}</label>
+                                                <label for="cbfZip">{% trans "Postal Code" %}</label>
                                                 <input type="text" class="form-control" id="cbfZip" name="zip">
                                             </div>
                                         </div>

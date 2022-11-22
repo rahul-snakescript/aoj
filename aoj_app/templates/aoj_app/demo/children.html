@@ -22,24 +22,24 @@
   <section class="child_banner" {% if config.children_banner_image %}style="background-image:url({{ config.children_banner_image.url }});"{% endif %}>
   
     {% get_desktop_nav %}    
-    <div class="container children_arm">
+    <div class="container children_arm" style="margin-top: 70px;">
       <div class="row">
         <div class="col-md-12">
           <div class="banner_outer"> 
-            <h1>YOU CAN SPONSOR A CHILD FOR $40.00 A MONTH OR $480 A YEAR... JUST $1.32 PER DAY</h1>
+            <h1>Sponsorship</h1>
           </div>
         </div>
       </div>
     </div>
   </section>
   <!-- banner close here -->
-
+  <h1 class="text-center" style="margin-top:50px;">Children Available to Sponsor<h1>
 <!--Start Form Section-->
   {% for country,children in child_data.items %}
     <div class="container children_arm">
       <div class="row gutenemala_text">
         <div class="col-md-12">
-          <h2>{{ country }}</h2>
+          <h2 style="margin-top: -50px;">{{ country }}</h2>
         </div>
       </div>
 
@@ -51,13 +51,10 @@
             {% if child.checked_out %}
 
               {% if child.image1 %}
-              <h1>hiii</h1>
                 <img src="{{ child.image1.url }}" alt="children">
               {% elif child.image2 %}
-              <h1>hiii</h1>
                 <img src="{{ child.image2.url }}" alt="children">
               {% else %}
-              <h1>hiii</h1>
                 <img src="{% static 'demo/images/our-staff.jpg' %}" alt="children">
               {% endif %}
 
@@ -65,7 +62,7 @@
                 {{ child }}
               </h5>
               <p class="text-center text-danger">
-                Checked out
+                Chosen by Potential Sponsor
               <p>
 
             {% else %}
@@ -81,9 +78,6 @@
               <h5>
                 {{ child }}
               </h5>
-              <p>
-                Available for Sponsor
-              </p>
 
             {% endif %}
           </div>
@@ -92,4 +86,22 @@
       </div>
     </div>
   {% endfor %}
+  <section >
+  
+    
+    <div class="container ">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="p-3"> 
+            
+            <h2 class="p-2 text-center">WHAT IS SPONSORSHIP?</h2>
+            <p style="font-weight:60;font-size:20px;color:#222;line-height:normal;font-family:Proxima Nova Rg;">Sponsorship provides a child in need with the opportunity to go to school and gain an education. It covers a child’s school fees and provides them with school shoes and basic school supplies. Students attending our schools in Guatemala and Haiti study and learn in classes, receive support from our teachers and social work team, and are taught truth from the Bible. Sponsorship is a unique opportunity to show the love of Jesus to a child in need while also meeting an important need in their life: education.
+              You can sponsor a child for $40.00 a month or $480 a year … just $1.32 per day.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
 {% endblock %}
+

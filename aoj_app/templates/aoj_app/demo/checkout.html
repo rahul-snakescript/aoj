@@ -15,11 +15,11 @@ The Arms of Jesus - Checkout
 {% get_site_config as config %}
 <section class="child_banner" {% if config.checkout_banner_image %}style="background-image:url({{ config.checkout_banner_image.url }});"{% endif %}>
   {% get_desktop_nav %}
-<div class="container children_arm">
+<div class="container children_arm" style="margin-top: 70px;">
   <div class="row">
     <div class="col-md-12">
       <div class="banner_outer"> 
-        <h1>YOU CAN SPONSOR A CHILD FOR $40.00 A MONTH OR $480 A YEAR... JUST $1.32 PER DAY</h1>
+        <h1>Sponsorship</h1>
       </div>
     </div>
   </div>
@@ -75,14 +75,14 @@ The Arms of Jesus - Checkout
                   <div class="row">
                     <div class="col-sm-8">
                       <div class="form-group groupName">
-                        <label for="cbfState">{% trans "State" %}</label>
+                        <label for="cbfState">{% trans "Province" %}</label>
                         <input type="text" class="form-control" id="cbfState" name="x_state"
                                required="required" value="{{ latest_cr.state }}">
                       </div>
                     </div>
                     <div class="col-sm-4">
                       <div class="form-group">
-                        <label for="cbfZip">{% trans "Zip Code" %}</label>
+                        <label for="cbfZip">{% trans "Postal Code" %}</label>
                         <input type="text" class="form-control" id="cbfZip" name="x_zip"
                                required="required" value="{{ latest_cr.zip_code }}">
                       </div>
