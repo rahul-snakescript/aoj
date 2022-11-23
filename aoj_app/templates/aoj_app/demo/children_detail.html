@@ -11,6 +11,7 @@
 {% endblock page_title %}
 
 {% block body_temp %}
+
 <section class="child_banner" {% if object.detail_page_banner_image %}style="background-image:url({{ object.detail_page_banner_image.url }});"{% endif %}>
     {% get_desktop_nav %}
 <div class="container children_arm" style="margin-top: 70px;">
@@ -38,11 +39,11 @@
                     <div class="outerImg">
                         {% if object.image1 %}
                         <a class="cd-image-link-1 fancy-image" rel="child" href="{{ object.image1.url }}">
-                            <img class="img-responsive" src="{{ object.image1.url }}" alt=""></a>
+                            <img class="img-responsive" style=" height:300px;           width:auto;" src="{{ object.image1.url }}" alt=""></a>
                     {% endif %}
                     {% if object.image2 %}
                         <a class="cd-image-link-2 fancy-image" rel="child" href="{{ object.image2.url }}">
-                            <img class="img-responsive " src="{{ object.image2.url }}" alt=""></a>
+                            <img class="img-responsive " style=" height:300px;           width:auto;" src="{{ object.image2.url }}" alt=""></a>
                     {% endif %}
                     </div>
                     
