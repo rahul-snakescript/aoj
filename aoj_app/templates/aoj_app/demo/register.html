@@ -32,14 +32,11 @@ The Arms of Jesus - Login
   
 </div>
 <!--Start Form Section-->
-<form method="post">
+<form method="post" style="margin-top:30px;">
   {% csrf_token %}
 <div class="container registeration_form">
-  <div class="row donnar_bg">
-    <div class="col-md-12">
-      <h2>Donor Information</h2>
-    </div>
-  </div>
+ 
+
   <div class="text-warning">
     {{ form.non_field_errors }}
 </div>
@@ -93,7 +90,7 @@ The Arms of Jesus - Login
         <div class="row first_last_name">
           <div class="col-md-6">
             <div class="form-group">
-              <lable>State*</lable>
+              <lable>Province*</lable>
               <!-- <input type="text" name="state" value=""> -->
               {{ form.state }}
                 {{ form.state.errors }}
@@ -101,7 +98,7 @@ The Arms of Jesus - Login
             </div>
             <div class="col-md-6">
                 <div class="form-group lst_items">
-                  <lable>Zip Code*</lable>
+                  <lable>Postal Code*</lable>
                  <!-- <input type="text" name="zip_code" value=""> -->
                 {{ form.zip_code }}
                   {{ form.zip_code.errors }}

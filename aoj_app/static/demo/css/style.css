@@ -4514,9 +4514,9 @@ h3.angelTest1 {
     position: relative;
 }
 .fancy-image img.img-responsive.img-cd {
-    height: 440px;
+    height: auto;
     margin-right: 32px;
-    width: 25%;
+    width: 56%;
 }
 .paragraph_date1 {
     margin-bottom: 20px;
