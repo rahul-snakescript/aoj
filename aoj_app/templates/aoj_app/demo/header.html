@@ -152,7 +152,8 @@
                 {% endfor %}
                 
                 {% for data in header_list %}
-                  
+              
+                  {% if data.is_active == True %}
                   <li class="nav-item">
                     <a class="nav-link" href="{{ data.get_absolute_url }}">
                       {% if data.name_in_dropdown %}
@@ -171,12 +172,18 @@
                   
                     </a>
                   </li>
+                  {% else %}
+                  
+                  {% endif %}
+                  
 
                 {% endfor %}
 
                 {% if drop_dict %}
                   
                   {% for header,subheader in drop_dict.items %}
+                  {{header.is_active}}
+                    {% if header.is_active %}
                     <li class="nav-item">
                       <div class="dropdown">
                         
@@ -189,6 +196,7 @@
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                           
                           {% for data in subheader %}
+                            {% if data.is_active == True %}
                             
                             <li>
                               <a class="dropdown-item" href="{{ data.get_absolute_url }}">
@@ -197,12 +205,17 @@
                                 </span>
                               </a>
                             </li>
+                            {% else %}
+                            
+                            {% endif %}
 
                           {% endfor %}
 
                         </ul>
                       </div>
                     </li>
+                    {% else %}
+                    {% endif %}
                   {% endfor %}
                 {% endif %} 
               </ul>

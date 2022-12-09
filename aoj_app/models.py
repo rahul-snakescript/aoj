@@ -875,12 +875,12 @@ class CreateNewSubPage(models.Model):
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
-        super(CreateNewPage, self).save(*args, **kwargs)
+        super(CreateNewSubPage, self).save(*args, **kwargs)
     
     def get_absolute_url(self):
         return reverse("sub_navbar_items", args=[self.slug])
 
-#dummy
+
 
     
 
